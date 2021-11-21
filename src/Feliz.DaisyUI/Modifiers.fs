@@ -196,4 +196,96 @@ type indicator =
     /// align vertically to middle
     static member inline middle = prop.className "indicator-middle"
     /// align vertically to bottom
-    static member inline bottom = prop.className "indicator-bottom" 
+    static member inline bottom = prop.className "indicator-bottom"
+
+[<Erase>]
+type kbd =
+    /// Large size
+    static member inline lg = prop.className "kbd-lg"
+    /// Medium size (default)
+    static member inline md = prop.className "kbd-md"
+    /// Small size
+    static member inline sm = prop.className "kbd-sm"
+    /// Extra small size
+    static member inline xs = prop.className "kbd-xs"
+
+[<Erase>]
+type link =
+    /// Link with `primary` color
+    static member inline primary = prop.className "link-primary"
+    /// Link with `secondary` color
+    static member inline secondary = prop.className "link-secondary"
+    /// Link with `accent` color
+    static member inline accent = prop.className "link-accent"
+    /// Link with `neutral` color
+    static member inline neutral = prop.className "link-neutral"
+    /// Only show underline on hover
+    static member inline hover = prop.className "link-hover"
+
+[<Erase>]
+type mask =
+    /// Applies `squircle` shape
+    static member inline squircle = prop.className "mask mask-squircle"
+    /// Applies `heart` shape
+    static member inline heart = prop.className "mask mask-heart"
+    /// Applies `hexagon` shape
+    static member inline hexagon = prop.className "mask mask-hexagon"
+    /// Applies `hexagon` alternative shape
+    static member inline hexagon2 = prop.className "mask mask-hexagon-2"
+    /// Applies `decagon` shape
+    static member inline decagon = prop.className "mask mask-decagon"
+    /// Applies `pentagon` shape
+    static member inline pentagon = prop.className "mask mask-pentagon"
+    /// Applies `diamond` shape
+    static member inline diamond = prop.className "mask mask-diamond"
+    /// Applies `square` shape
+    static member inline square = prop.className "mask mask-square"
+    /// Applies `circle` shape
+    static member inline circle = prop.className "mask mask-circle"
+    /// Applies `parallelogram` shape
+    static member inline parallelogram = prop.className "mask mask-parallelogram"
+    /// Applies `parallelogram` alternative shape
+    static member inline parallelogram2 = prop.className "mask mask-parallelogram-2"
+    /// Applies `parallelogram` alternative shape
+    static member inline parallelogram3 = prop.className "mask mask-parallelogram-3"
+    /// Applies `parallelogram` alternative shape
+    static member inline parallelogram4 = prop.className "mask mask-parallelogram-4"
+    /// Applies `star` shape
+    static member inline star = prop.className "mask mask-star"
+    /// Applies `star` alternative shape
+    static member inline star2 = prop.className "mask mask-star-2"
+    /// Applies `triangle` shape
+    static member inline triangle = prop.className "mask mask-triangle"
+    /// Applies `triangle` alternative shape
+    static member inline triangle2 = prop.className "mask mask-triangle-2"
+    /// Applies `triangle` alternative shape
+    static member inline triangle3 = prop.className "mask mask-triangle-3"
+    /// Applies `triangle` alternative shape
+    static member inline triangle4 = prop.className "mask mask-triangle-4"
+
+[<Erase>]
+type menu =
+    /// Makes menu more compact
+    static member inline compact = prop.className "compact"
+
+[<Erase>]
+type modal =
+    /// Add/remove this class to open/close the modal using JS
+    static member inline open' = prop.className "modal-open"
+
+[<Erase>]
+type progress =
+    /// Adds `primary` color
+    static member inline primary = prop.className "progress-primary"
+    /// Adds `secondary` color
+    static member inline secondary = prop.className "progress-secondary"
+    /// Adds `accent` color
+    static member inline accent = prop.className "progress-accent"
+    /// Adds `info` color
+    static member inline info = prop.className "progress-info"
+    /// Adds `success` color
+    static member inline success = prop.className "progress-success"
+    /// Adds `warning` color
+    static member inline warning = prop.className "progress-warning"
+    /// Adds `error` color
+    static member inline error = prop.className "progress-error"

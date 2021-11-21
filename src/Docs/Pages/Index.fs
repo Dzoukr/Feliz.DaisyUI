@@ -9,17 +9,5 @@ open Feliz.DaisyUI
 [<ReactComponent>]
 let IndexView () =
 
-    DaisyUI.alert [
-        alert.warning
-        prop.children [
-            Html.div "AHOJ"
-        ]
-    ]
+    Html.img [ prop.src "https://picsum.photos/id/1005/200/200"; mask.diamond ]
 
-    DaisyUI.artboard [
-        artboard.demo
-        artboard.phone2
-        prop.children [
-            Html.div "AHOJ"
-        ]
-    ]

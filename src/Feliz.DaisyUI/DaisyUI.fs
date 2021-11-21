@@ -193,6 +193,120 @@ type DaisyUI =
     static member inline indicatorItem int = Elm.int Html.div int "indicator-item"
     static member inline indicatorItem float = Elm.float Html.div float "indicator-item"
 
+    static member inline kbd props = Elm.props Html.kbd props "kbd"
+    static member inline kbd children = Elm.children Html.kbd children "kbd"
+    static member inline kbd elm = Elm.elm Html.kbd elm "kbd"
+    static member inline kbd string = Elm.string Html.kbd string "kbd"
+    static member inline kbd int = Elm.int Html.kbd int "kbd"
+    static member inline kbd float = Elm.float Html.kbd float "kbd"
+
+    static member inline link props = Elm.props Html.a props "link"
+    static member inline link children = Elm.children Html.a children "link"
+    static member inline link elm = Elm.elm Html.a elm "link"
+    static member inline link string = Elm.string Html.a string "link"
+    static member inline link int = Elm.int Html.a int "link"
+    static member inline link float = Elm.float Html.a float "link"
+
+//    static member inline mask props = Elm.props Html.div props "mask"
+//    static member inline mask children = Elm.children Html.div children "mask"
+//    static member inline mask elm = Elm.elm Html.div elm "mask"
+
+    static member inline menu props = Elm.props Html.ul props "menu"
+    static member inline menu children = Elm.children Html.ul children "menu"
+    static member inline menu elm = Elm.elm Html.ul elm "menu"
+
+    static member inline menuTitle props = Elm.props Html.li props "menu-title"
+    static member inline menuTitle children = Elm.children Html.li children "menu-title"
+    static member inline menuTitle elm = Elm.elm Html.li elm "menu-title"
+
+    static member inline modal props = Elm.props Html.div props "modal"
+    static member inline modal children = Elm.children Html.div children "modal"
+    static member inline modal elm = Elm.elm Html.div elm "modal"
+
+    static member inline modalBox props = Elm.props Html.div props "modal-box"
+    static member inline modalBox children = Elm.children Html.div children "modal-box"
+    static member inline modalBox elm = Elm.elm Html.div elm "modal-box"
+
+    static member inline modalAction props = Elm.props Html.div props "modal-action"
+    static member inline modalAction children = Elm.children Html.div children "modal-action"
+    static member inline modalAction elm = Elm.elm Html.div elm "modal-action"
+
+    static member inline modalToggle props = Elm.props Html.input (prop.type'.checkbox :: props) "modal-toggle"
+
+    static member inline modalButton props = Elm.props Html.label props "btn modal-button"
+    static member inline modalButton children = Elm.children Html.label children "btn modal-button"
+    static member inline modalButton elm = Elm.elm Html.label elm "btn modal-button"
+    static member inline modalButton string = Elm.string Html.label string "btn modal-button"
+    static member inline modalButton int = Elm.int Html.label int "btn modal-button"
+    static member inline modalButton float = Elm.float Html.label float "btn modal-button"
+
+    static member inline navbar props = Elm.props Html.div props "navbar"
+    static member inline navbar children = Elm.children Html.div children "navbar"
+    static member inline navbar elm = Elm.elm Html.div elm "navbar"
+
+    static member inline navbarStart props = Elm.props Html.div props "navbar-start"
+    static member inline navbarStart children = Elm.children Html.div children "navbar-start"
+    static member inline navbarStart elm = Elm.elm Html.div elm "navbar-start"
+
+    static member inline navbarCenter props = Elm.props Html.div props "navbar-center"
+    static member inline navbarCenter children = Elm.children Html.div children "navbar-center"
+    static member inline navbarCenter elm = Elm.elm Html.div elm "navbar-center"
+
+    static member inline navbarEnd props = Elm.props Html.div props "navbar-end"
+    static member inline navbarEnd children = Elm.children Html.div children "navbar-end"
+    static member inline navbarEnd elm = Elm.elm Html.div elm "navbar-end"
+
+    static member inline progress props = Elm.props Html.progress props "progress"
+    static member inline progress children = Elm.children Html.progress children "progress"
+    static member inline progress elm = Elm.elm Html.progress elm "progress"
+
+    static member inline stack props = Elm.props Html.div props "stack"
+    static member inline stack children = Elm.children Html.div children "stack"
+    static member inline stack elm = Elm.elm Html.div elm "stack"
+
+    static member inline stats props = Elm.props Html.div props "stats"
+    static member inline stats children = Elm.children Html.div children "stats"
+    static member inline stats elm = Elm.elm Html.div elm "stats"
+    static member inline stats string = Elm.string Html.div string "stats"
+    static member inline stats int = Elm.int Html.div int "stats"
+    static member inline stats float = Elm.float Html.div float "stats"
+
+    static member inline stat props = Elm.props Html.div props "stat"
+    static member inline stat children = Elm.children Html.div children "stat"
+    static member inline stat elm = Elm.elm Html.div elm "stat"
+    static member inline stat string = Elm.string Html.div string "stat"
+    static member inline stat int = Elm.int Html.div int "stat"
+    static member inline stat float = Elm.float Html.div float "stat"
+
+    static member inline statTitle props = Elm.props Html.div props "stat-title"
+    static member inline statTitle children = Elm.children Html.div children "stat-title"
+    static member inline statTitle elm = Elm.elm Html.div elm "stat-title"
+    static member inline statTitle string = Elm.string Html.div string "stat-title"
+    static member inline statTitle int = Elm.int Html.div int "stat-title"
+    static member inline statTitle float = Elm.float Html.div float "stat-title"
+
+    static member inline statValue props = Elm.props Html.div props "stat-value"
+    static member inline statValue children = Elm.children Html.div children "stat-value"
+    static member inline statValue elm = Elm.elm Html.div elm "stat-value"
+    static member inline statValue string = Elm.string Html.div string "stat-value"
+    static member inline statValue int = Elm.int Html.div int "stat-value"
+    static member inline statValue float = Elm.float Html.div float "stat-value"
+
+    static member inline statDesc props = Elm.props Html.div props "stat-desc"
+    static member inline statDesc children = Elm.children Html.div children "stat-desc"
+    static member inline statDesc elm = Elm.elm Html.div elm "stat-desc"
+    static member inline statDesc string = Elm.string Html.div string "stat-desc"
+    static member inline statDesc int = Elm.int Html.div int "stat-desc"
+    static member inline statDesc float = Elm.float Html.div float "stat-desc"
+
+    static member inline statFigure props = Elm.props Html.div props "stat-figure"
+    static member inline statFigure children = Elm.children Html.div children "stat-figure"
+    static member inline statFigure elm = Elm.elm Html.div elm "stat-figure"
+    static member inline statFigure string = Elm.string Html.div string "stat-figure"
+    static member inline statFigure int = Elm.int Html.div int "stat-figure"
+    static member inline statFigure float = Elm.float Html.div float "stat-figure"
+
+
 module DaisyUI =
     [<Erase>]
     type button =
