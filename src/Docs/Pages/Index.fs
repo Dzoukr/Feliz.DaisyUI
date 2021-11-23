@@ -8,6 +8,6 @@ open Feliz.DaisyUI
 
 [<ReactComponent>]
 let IndexView () =
-
-    Html.img [ prop.src "https://picsum.photos/id/1005/200/200"; mask.diamond ]
+    //Html.img [ prop.src "https://picsum.photos/id/1005/200/200"; mask.diamond ]
+    Html.div "TODO"
 

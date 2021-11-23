@@ -289,3 +289,495 @@ type progress =
     static member inline warning = prop.className "progress-warning"
     /// Adds `error` color
     static member inline error = prop.className "progress-error"
+
+[<Erase>]
+type steps =
+    /// makes `steps` vertical
+    static member inline vertical = prop.className "steps-vertical"
+
+[<Erase>]
+type step =
+    /// Adds `primary` color to step
+    static member inline primary = prop.className "step-primary"
+    /// Adds `secondary` color to step
+    static member inline secondary = prop.className "step-secondary"
+    /// Adds `accent` color to step
+    static member inline accent = prop.className "step-accent"
+    /// Adds `info` color to step
+    static member inline info = prop.className "step-info"
+    /// Adds `success` color to step
+    static member inline success = prop.className "step-success"
+    /// Adds `warning` color to step
+    static member inline warning = prop.className "step-warning"
+    /// Adds `error` color to step
+    static member inline error = prop.className "step-error"
+
+[<Erase>]
+type tabs =
+    /// Adds a box style to tabs container
+    static member inline boxed = prop.className "tabs-boxed"
+
+[<Erase>]
+type tab =
+    /// For the active tab
+    static member inline active = prop.className "tab-active"
+    /// Adds bottom border to tab item
+    static member inline bordered = prop.className "tab-bordered"
+    /// Adds lifted style to tab item
+    static member inline lifted = prop.className "tab-lifted"
+    /// Shows tab in extra small size
+    static member inline xs = prop.className "tab-xs"
+    /// Shows tab in small size
+    static member inline sm = prop.className "tab-sm"
+    /// Shows tab in medium (default) size
+    static member inline md = prop.className "tab-md"
+    /// Shows tab in large size
+    static member inline lg = prop.className "tab-lg"
+
+[<Erase>]
+type table =
+    /// For the active tab
+    static member inline zebra = prop.className "table-zebra"
+    /// Make table more compact
+    static member inline compact = prop.className "table-compact"
+    /// For <tr> to highlight current row
+    static member inline active = prop.className "active"
+    /// For <tr> to highlight current row on hover
+    static member inline hover = prop.className "hover"
+
+[<Erase>]
+type tooltip =
+    /// Tooltip content
+    static member inline text (t:string) = prop.custom("data-tip", t)
+    /// Force open tooltip
+    static member inline open' = prop.className "tooltip-open"
+    /// Put tooltip on bottom
+    static member inline bottom = prop.className "tooltip-bottom"
+    /// Put tooltip on left
+    static member inline left = prop.className "tooltip-left"
+    /// Put tooltip on right
+    static member inline right = prop.className "tooltip-right"
+    /// Adds `primary` color to tooltip
+    static member inline primary = prop.className "tooltip-primary"
+    /// Adds `secondary` color to tooltip
+    static member inline secondary = prop.className "tooltip-secondary"
+    /// Adds `accent` color to tooltip
+    static member inline accent = prop.className "tooltip-accent"
+    /// Adds `info` color to tooltip
+    static member inline info = prop.className "tooltip-info"
+    /// Adds `success` color to tooltip
+    static member inline success = prop.className "tooltip-success"
+    /// Adds `warning` color to tooltip
+    static member inline warning = prop.className "tooltip-warning"
+    /// Adds `error` color to tooltip
+    static member inline error = prop.className "tooltip-error"
+
+[<Erase>]
+type checkbox =
+    /// Adds `primary` to checkbox
+    static member inline primary = prop.className "checkbox-primary"
+    /// Adds `secondary` to checkbox
+    static member inline secondary = prop.className "checkbox-secondary"
+    /// Adds `accent` to checkbox
+    static member inline accent = prop.className "checkbox-accent"
+    /// Large checkbox
+    static member inline lg = prop.className "checkbox-lg"
+    /// Medium checkbox (default)
+    static member inline md = prop.className "checkbox-md"
+    /// Small checkbox
+    static member inline sm = prop.className "checkbox-sm"
+    /// Extra small checkbox
+    static member inline xs = prop.className "checkbox-xs"
+
+[<Erase>]
+type input =
+    /// Adds border to input
+    static member inline bordered = prop.className "input-bordered"
+    /// Adds ghost style to checkbox
+    static member inline ghost = prop.className "input-ghost"
+    /// Adds `primary` color to input
+    static member inline primary = prop.className "input-primary"
+    /// Adds `secondary` color to input
+    static member inline secondary = prop.className "input-secondary"
+    /// Adds `accent` color to input
+    static member inline accent = prop.className "input-accent"
+    /// Adds `info` color to input
+    static member inline info = prop.className "input-info"
+    /// Adds `success` color to input
+    static member inline success = prop.className "input-success"
+    /// Adds `warning` color to input
+    static member inline warning = prop.className "input-warning"
+    /// Adds `error` color to input
+    static member inline error = prop.className "input-error"
+    /// Large size for input
+    static member inline lg = prop.className "input-lg"
+    /// Medium (default) size for input
+    static member inline md = prop.className "input-md"
+    /// Small size for input
+    static member inline sm = prop.className "input-sm"
+    /// Extra small size for input
+    static member inline xs = prop.className "input-xs"
+
+[<Erase>]
+type inputGroup =
+    /// Large size for input-group wrapper
+    static member inline lg = prop.className "input-group-lg"
+    /// Medium (default) size for input-group wrapper
+    static member inline md = prop.className "input-group-md"
+    /// Small size for input-group wrapper
+    static member inline sm = prop.className "input-group-sm"
+    /// Extra small size for input-group wrapper
+    static member inline xs = prop.className "input-group-xs"
+    /// Vertical direction for input-group items
+    static member inline vertical = prop.className "input-group-vertical"
+
+[<Erase>]
+type radio =
+    /// Adds `primary` to radio
+    static member inline primary = prop.className "radio-primary"
+    /// Adds `secondary` to radio
+    static member inline secondary = prop.className "radio-secondary"
+    /// Adds `accent` to radio
+    static member inline accent = prop.className "radio-accent"
+    /// Large radio
+    static member inline lg = prop.className "radio-lg"
+    /// Medium radio (default)
+    static member inline md = prop.className "radio-md"
+    /// Small radio
+    static member inline sm = prop.className "radio-sm"
+    /// Extra small radio
+    static member inline xs = prop.className "radio-xs"
+
+[<Erase>]
+type range =
+    /// primary color
+    static member inline primary = prop.className "range-primary"
+    /// secondary color
+    static member inline secondary = prop.className "range-secondary"
+    /// accent color
+    static member inline accent = prop.className "range-accent"
+    /// Large range
+    static member inline lg = prop.className "range-lg"
+    /// Medium range (default)
+    static member inline md = prop.className "range-md"
+    /// Small range
+    static member inline sm = prop.className "range-sm"
+    /// Extra small range
+    static member inline xs = prop.className "range-xs"
+
+[<Erase>]
+type select =
+    /// Adds border to select
+    static member inline bordered = prop.className "select-bordered"
+    /// Adds ghost style to checkbox
+    static member inline ghost = prop.className "select-ghost"
+    /// Adds `primary` color to select
+    static member inline primary = prop.className "select-primary"
+    /// Adds `secondary` color to select
+    static member inline secondary = prop.className "select-secondary"
+    /// Adds `accent` color to select
+    static member inline accent = prop.className "select-accent"
+    /// Adds `info` color to select
+    static member inline info = prop.className "select-info"
+    /// Adds `success` color to select
+    static member inline success = prop.className "select-success"
+    /// Adds `warning` color to select
+    static member inline warning = prop.className "select-warning"
+    /// Adds `error` color to select
+    static member inline error = prop.className "select-error"
+    /// Large size for select
+    static member inline lg = prop.className "select-lg"
+    /// Medium (default) size for select
+    static member inline md = prop.className "select-md"
+    /// Small size for select
+    static member inline sm = prop.className "select-sm"
+    /// Extra small size for select
+    static member inline xs = prop.className "select-xs"
+
+[<Erase>]
+type textarea =
+    /// Adds border to textarea
+    static member inline bordered = prop.className "textarea-bordered"
+    /// Adds ghost style to checkbox
+    static member inline ghost = prop.className "textarea-ghost"
+    /// Adds `primary` color to textarea
+    static member inline primary = prop.className "textarea-primary"
+    /// Adds `secondary` color to textarea
+    static member inline secondary = prop.className "textarea-secondary"
+    /// Adds `accent` color to textarea
+    static member inline accent = prop.className "textarea-accent"
+    /// Adds `info` color to textarea
+    static member inline info = prop.className "textarea-info"
+    /// Adds `success` color to textarea
+    static member inline success = prop.className "textarea-success"
+    /// Adds `warning` color to textarea
+    static member inline warning = prop.className "textarea-warning"
+    /// Adds `error` color to textarea
+    static member inline error = prop.className "textarea-error"
+
+[<Erase>]
+type toggle =
+    /// Adds `primary` to toggle
+    static member inline primary = prop.className "toggle-primary"
+    /// Adds `secondary` to toggle
+    static member inline secondary = prop.className "toggle-secondary"
+    /// Adds `accent` to toggle
+    static member inline accent = prop.className "toggle-accent"
+    /// Large toggle
+    static member inline lg = prop.className "toggle-lg"
+    /// Medium toggle (default)
+    static member inline md = prop.className "toggle-md"
+    /// Small toggle
+    static member inline sm = prop.className "toggle-sm"
+    /// Extra small toggle
+    static member inline xs = prop.className "toggle-xs"
+
+[<Erase>]
+type theme =
+    /// Set 'light' theme
+    static member inline light = prop.custom("data-theme", "light")
+    /// Set 'dark' theme
+    static member inline dark = prop.custom("data-theme", "dark")
+    /// Set 'cupcake' theme
+    static member inline cupcake = prop.custom("data-theme", "cupcake")
+    /// Set 'bumblebee' theme
+    static member inline bumblebee = prop.custom("data-theme", "bumblebee")
+    /// Set 'emerald' theme
+    static member inline emerald = prop.custom("data-theme", "emerald")
+    /// Set 'corporate' theme
+    static member inline corporate = prop.custom("data-theme", "corporate")
+    /// Set 'synthwave' theme
+    static member inline synthwave = prop.custom("data-theme", "synthwave")
+    /// Set 'retro' theme
+    static member inline retro = prop.custom("data-theme", "retro")
+    /// Set 'cyberpunk' theme
+    static member inline cyberpunk = prop.custom("data-theme", "cyberpunk")
+    /// Set 'valentine' theme
+    static member inline valentine = prop.custom("data-theme", "valentine")
+    /// Set 'halloween' theme
+    static member inline halloween = prop.custom("data-theme", "halloween")
+    /// Set 'garden' theme
+    static member inline garden = prop.custom("data-theme", "garden")
+    /// Set 'forest' theme
+    static member inline forest = prop.custom("data-theme", "forest")
+    /// Set 'aqua' theme
+    static member inline aqua = prop.custom("data-theme", "aqua")
+    /// Set 'lofi' theme
+    static member inline lofi = prop.custom("data-theme", "lofi")
+    /// Set 'pastel' theme
+    static member inline pastel = prop.custom("data-theme", "pastel")
+    /// Set 'fantasy' theme
+    static member inline fantasy = prop.custom("data-theme", "fantasy")
+    /// Set 'wireframe' theme
+    static member inline wireframe = prop.custom("data-theme", "wireframe")
+    /// Set 'black' theme
+    static member inline black = prop.custom("data-theme", "black")
+    /// Set 'luxury' theme
+    static member inline luxury = prop.custom("data-theme", "luxury")
+    /// Set 'dracula' theme
+    static member inline dracula = prop.custom("data-theme", "dracula")
+    /// Set 'cmyk' theme
+    static member inline cmyk = prop.custom("data-theme", "cmyk")
+
+[<Erase>]
+type color =
+    static member inline bgPrimary = prop.className "bg-primary"
+    static member inline bgPrimaryFocus = prop.className "bg-primary-focus"
+    static member inline bgPrimaryContent = prop.className "bg-primary-content"
+    static member inline bgSecondary = prop.className "bg-secondary"
+    static member inline bgSecondaryFocus = prop.className "bg-secondary-focus"
+    static member inline bgSecondaryContent = prop.className "bg-secondary-content"
+    static member inline bgAccent = prop.className "bg-accent"
+    static member inline bgAccentFocus = prop.className "bg-accent-focus"
+    static member inline bgAccentContent = prop.className "bg-accent-content"
+    static member inline bgneutral = prop.className "bg-neutral"
+    static member inline bgNeutralFocus = prop.className "bg-neutral-focus"
+    static member inline bgNeutralContent = prop.className "bg-neutral-content"
+    static member inline bgBase100 = prop.className "bg-base-100"
+    static member inline bgBase200 = prop.className "bg-base-200"
+    static member inline bgBase300 = prop.className "bg-base-300"
+    static member inline bgBaseContent = prop.className "bg-base-content"
+    static member inline bgInfo = prop.className "bg-info"
+    static member inline bgSuccess = prop.className "bg-success"
+    static member inline bgWarning = prop.className "bg-warning"
+    static member inline bgError = prop.className "bg-error"
+    static member inline textPrimary = prop.className "text-primary"
+    static member inline textPrimaryFocus = prop.className "text-primary-focus"
+    static member inline textPrimaryContent = prop.className "text-primary-content"
+    static member inline textSecondary = prop.className "text-secondary"
+    static member inline textSecondaryFocus = prop.className "text-secondary-focus"
+    static member inline textSecondaryContent = prop.className "text-secondary-content"
+    static member inline textAccent = prop.className "text-accent"
+    static member inline textAccentFocus = prop.className "text-accent-focus"
+    static member inline textAccentContent = prop.className "text-accent-content"
+    static member inline textNeutral = prop.className "text-neutral"
+    static member inline textNeutralFocus = prop.className "text-neutral-focus"
+    static member inline textNeutralContent = prop.className "text-neutral-content"
+    static member inline textBase100 = prop.className "text-base-100"
+    static member inline textBase200 = prop.className "text-base-200"
+    static member inline textBase300 = prop.className "text-base-300"
+    static member inline textBaseContent = prop.className "text-base-content"
+    static member inline textInfo = prop.className "text-info"
+    static member inline textSuccess = prop.className "text-success"
+    static member inline textWarning = prop.className "text-warning"
+    static member inline textError = prop.className "text-error"
+    static member inline borderPrimary = prop.className "border-primary"
+    static member inline borderPrimaryFocus = prop.className "border-primary-focus"
+    static member inline borderPrimaryContent = prop.className "border-primary-content"
+    static member inline borderSecondary = prop.className "border-secondary"
+    static member inline borderSecondaryFocus = prop.className "border-secondary-focus"
+    static member inline borderSecondaryContent = prop.className "border-secondary-content"
+    static member inline borderAccent = prop.className "border-accent"
+    static member inline borderAccentFocus = prop.className "border-accent-focus"
+    static member inline borderAccentContent = prop.className "border-accent-content"
+    static member inline borderNeutral = prop.className "border-neutral"
+    static member inline borderNeutralFocus = prop.className "border-neutral-focus"
+    static member inline borderNeutralContent = prop.className "border-neutral-content"
+    static member inline borderBase100 = prop.className "border-base-100"
+    static member inline borderBase200 = prop.className "border-base-200"
+    static member inline borderBase300 = prop.className "border-base-300"
+    static member inline borderBaseContent = prop.className "border-base-content"
+    static member inline borderInfo = prop.className "border-info"
+    static member inline borderSuccess = prop.className "border-success"
+    static member inline borderWarning = prop.className "border-warning"
+    static member inline borderError = prop.className "border-error"
+    static member inline fromPrimary = prop.className "from-primary"
+    static member inline fromPrimaryFocus = prop.className "from-primary-focus"
+    static member inline fromPrimaryContent = prop.className "from-primary-content"
+    static member inline fromSecondary = prop.className "from-secondary"
+    static member inline fromSecondaryFocus = prop.className "from-secondary-focus"
+    static member inline fromSecondaryContent = prop.className "from-secondary-content"
+    static member inline fromAccent = prop.className "from-accent"
+    static member inline fromAccentFocus = prop.className "from-accent-focus"
+    static member inline fromAccentContent = prop.className "from-accent-content"
+    static member inline fromNeutral = prop.className "from-neutral"
+    static member inline fromNeutralFocus = prop.className "from-neutral-focus"
+    static member inline fromNeutralContent = prop.className "from-neutral-content"
+    static member inline fromBase100 = prop.className "from-base-100"
+    static member inline fromBase200 = prop.className "from-base-200"
+    static member inline fromBase300 = prop.className "from-base-300"
+    static member inline fromBaseContent = prop.className "from-base-content"
+    static member inline fromInfo = prop.className "from-info"
+    static member inline fromSuccess = prop.className "from-success"
+    static member inline fromWarning = prop.className "from-warning"
+    static member inline fromError = prop.className "from-error"
+    static member inline viaPrimary = prop.className "via-primary"
+    static member inline viaPrimaryFocus = prop.className "via-primary-focus"
+    static member inline viaPrimaryContent = prop.className "via-primary-content"
+    static member inline viaSecondary = prop.className "via-secondary"
+    static member inline viaSecondaryFocus = prop.className "via-secondary-focus"
+    static member inline viaSecondaryContent = prop.className "via-secondary-content"
+    static member inline viaAccent = prop.className "via-accent"
+    static member inline viaAccentFocus = prop.className "via-accent-focus"
+    static member inline viaAccentContent = prop.className "via-accent-content"
+    static member inline viaNeutral = prop.className "via-neutral"
+    static member inline viaNeutralFocus = prop.className "via-neutral-focus"
+    static member inline viaNeutralContent = prop.className "via-neutral-content"
+    static member inline viaBase100 = prop.className "via-base-100"
+    static member inline viaBase200 = prop.className "via-base-200"
+    static member inline viaBase300 = prop.className "via-base-300"
+    static member inline viaBaseContent = prop.className "via-base-content"
+    static member inline viaInfo = prop.className "via-info"
+    static member inline viaSuccess = prop.className "via-success"
+    static member inline viaWarning = prop.className "via-warning"
+    static member inline viaError = prop.className "via-error"
+    static member inline toPrimary = prop.className "to-primary"
+    static member inline toPrimaryFocus = prop.className "to-primary-focus"
+    static member inline toPrimaryContent = prop.className "to-primary-content"
+    static member inline toSecondary = prop.className "to-secondary"
+    static member inline toSecondaryFocus = prop.className "to-secondary-focus"
+    static member inline toSecondaryContent = prop.className "to-secondary-content"
+    static member inline toAccent = prop.className "to-accent"
+    static member inline toAccentFocus = prop.className "to-accent-focus"
+    static member inline toAccentContent = prop.className "to-accent-content"
+    static member inline toNeutral = prop.className "to-neutral"
+    static member inline toNeutralFocus = prop.className "to-neutral-focus"
+    static member inline toNeutralContent = prop.className "to-neutral-content"
+    static member inline toBase100 = prop.className "to-base-100"
+    static member inline toBase200 = prop.className "to-base-200"
+    static member inline toBase300 = prop.className "to-base-300"
+    static member inline toBaseContent = prop.className "to-base-content"
+    static member inline toInfo = prop.className "to-info"
+    static member inline toSuccess = prop.className "to-success"
+    static member inline toWarning = prop.className "to-warning"
+    static member inline toError = prop.className "to-error"
+    static member inline placeholderPrimary = prop.className "placeholder-primary"
+    static member inline placeholderPrimaryFocus = prop.className "placeholder-primary-focus"
+    static member inline placeholderPrimaryContent = prop.className "placeholder-primary-content"
+    static member inline placeholderSecondary = prop.className "placeholder-secondary"
+    static member inline placeholderSecondaryFocus = prop.className "placeholder-secondary-focus"
+    static member inline placeholderSecondaryContent = prop.className "placeholder-secondary-content"
+    static member inline placeholderAccent = prop.className "placeholder-accent"
+    static member inline placeholderAccentFocus = prop.className "placeholder-accent-focus"
+    static member inline placeholderAccentContent = prop.className "placeholder-accent-content"
+    static member inline placeholderNeutral = prop.className "placeholder-neutral"
+    static member inline placeholderNeutralFocus = prop.className "placeholder-neutral-focus"
+    static member inline placeholderNeutralContent = prop.className "placeholder-neutral-content"
+    static member inline placeholderBase100 = prop.className "placeholder-base-100"
+    static member inline placeholderBase200 = prop.className "placeholder-base-200"
+    static member inline placeholderBase300 = prop.className "placeholder-base-300"
+    static member inline placeholderBaseContent = prop.className "placeholder-base-content"
+    static member inline placeholderInfo = prop.className "placeholder-info"
+    static member inline placeholderSuccess = prop.className "placeholder-success"
+    static member inline placeholderWarning = prop.className "placeholder-warning"
+    static member inline placeholderError = prop.className "placeholder-error"
+    static member inline dividePrimary = prop.className "divide-primary"
+    static member inline dividePrimaryFocus = prop.className "divide-primary-focus"
+    static member inline dividePrimaryContent = prop.className "divide-primary-content"
+    static member inline divideSecondary = prop.className "divide-secondary"
+    static member inline divideSecondaryFocus = prop.className "divide-secondary-focus"
+    static member inline divideSecondaryContent = prop.className "divide-secondary-content"
+    static member inline divideAccent = prop.className "divide-accent"
+    static member inline divideAccentFocus = prop.className "divide-accent-focus"
+    static member inline divideAccentContent = prop.className "divide-accent-content"
+    static member inline divideNeutral = prop.className "divide-neutral"
+    static member inline divideNeutralFocus = prop.className "divide-neutral-focus"
+    static member inline divideNeutralContent = prop.className "divide-neutral-content"
+    static member inline divideBase100 = prop.className "divide-base-100"
+    static member inline divideBase200 = prop.className "divide-base-200"
+    static member inline divideBase300 = prop.className "divide-base-300"
+    static member inline divideBaseContent = prop.className "divide-base-content"
+    static member inline divideInfo = prop.className "divide-info"
+    static member inline divideSuccess = prop.className "divide-success"
+    static member inline divideWarning = prop.className "divide-warning"
+    static member inline divideError = prop.className "divide-error"
+    static member inline ringPrimary = prop.className "ring-primary"
+    static member inline ringPrimaryFocus = prop.className "ring-primary-focus"
+    static member inline ringPrimaryContent = prop.className "ring-primary-content"
+    static member inline ringSecondary = prop.className "ring-secondary"
+    static member inline ringSecondaryFocus = prop.className "ring-secondary-focus"
+    static member inline ringSecondaryContent = prop.className "ring-secondary-content"
+    static member inline ringAccent = prop.className "ring-accent"
+    static member inline ringAccentFocus = prop.className "ring-accent-focus"
+    static member inline ringAccentContent = prop.className "ring-accent-content"
+    static member inline ringNeutral = prop.className "ring-neutral"
+    static member inline ringNeutralFocus = prop.className "ring-neutral-focus"
+    static member inline ringNeutralContent = prop.className "ring-neutral-content"
+    static member inline ringBase100 = prop.className "ring-base-100"
+    static member inline ringBase200 = prop.className "ring-base-200"
+    static member inline ringBase300 = prop.className "ring-base-300"
+    static member inline ringBaseContent = prop.className "ring-base-content"
+    static member inline ringInfo = prop.className "ring-info"
+    static member inline ringSuccess = prop.className "ring-success"
+    static member inline ringWarning = prop.className "ring-warning"
+    static member inline ringError = prop.className "ring-error"
+    static member inline ringOffsetPrimary = prop.className "ring-offset-primary"
+    static member inline ringOffsetPrimaryFocus = prop.className "ring-offset-primary-focus"
+    static member inline ringOffsetPrimaryContent = prop.className "ring-offset-primary-content"
+    static member inline ringOffsetSecondary = prop.className "ring-offset-secondary"
+    static member inline ringOffsetSecondaryFocus = prop.className "ring-offset-secondary-focus"
+    static member inline ringOffsetSecondaryContent = prop.className "ring-offset-secondary-content"
+    static member inline ringOffsetAccent = prop.className "ring-offset-accent"
+    static member inline ringOffsetAccentFocus = prop.className "ring-offset-accent-focus"
+    static member inline ringOffsetAccentContent = prop.className "ring-offset-accent-content"
+    static member inline ringOffsetNeutral = prop.className "ring-offset-neutral"
+    static member inline ringOffsetNeutralFocus = prop.className "ring-offset-neutral-focus"
+    static member inline ringOffsetNeutralContent = prop.className "ring-offset-neutral-content"
+    static member inline ringOffsetBase100 = prop.className "ring-offset-base-100"
+    static member inline ringOffsetBase200 = prop.className "ring-offset-base-200"
+    static member inline ringOffsetBase300 = prop.className "ring-offset-base-300"
+    static member inline ringOffsetBaseContent = prop.className "ring-offset-base-content"
+    static member inline ringOffsetInfo = prop.className "ring-offset-info"
+    static member inline ringOffsetSuccess = prop.className "ring-offset-success"
+    static member inline ringOffsetWarning = prop.className "ring-offset-warning"
+    static member inline ringOffsetError = prop.className "ring-offset-error"

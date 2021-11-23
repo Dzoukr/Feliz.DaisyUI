@@ -44,6 +44,42 @@ type {name} ="""
     |> String.concat ""
     |> fun x -> head + x
 
+let colorMods = [
+    "primary"
+    "primary-focus"
+    "primary-content"
+    "secondary"
+    "secondary-focus"
+    "secondary-content"
+    "accent"
+    "accent-focus"
+    "accent-content"
+    "neutral"
+    "neutral-focus"
+    "neutral-content"
+    "base-100"
+    "base-200"
+    "base-300"
+    "base-content"
+    "info"
+    "success"
+    "warning"
+    "error"
+]
+
+let colorTypes = [
+    "bg"
+    "text"
+    "border"
+    "from"
+    "via"
+    "to"
+    "placeholder"
+    "divide"
+    "ring"
+    "ring-offset"
+]
+
 [<ReactComponent>]
 let GeneratorView () =
     let code,setCode = React.useState("")
@@ -61,13 +97,22 @@ let GeneratorView () =
         (c |> List.map (writeComponent "div") |> String.concat "\n") + "\n\n" + (u |> writeUtilities)
         |> setCode
 
+    let setColors _ =
+
+        [ for t in colorTypes do
+            for m in colorMods do
+                let mm = m.Replace("-","")
+                yield $"static member inline {t}{mm} = prop.className \"{t}-{m}\""
+        ]
+        |> String.concat "\n"
+        |> setCode
 
     Html.div [
 
         Html.divClassed "form-control" [
             Html.textarea [
                 prop.className "textarea h-24 textarea-bordered"
-                prop.onTextChange processText
+                prop.onTextChange setColors
             ]
         ]
 
