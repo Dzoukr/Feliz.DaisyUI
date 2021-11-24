@@ -5,23 +5,26 @@ open Feliz.Router
 open Fable.Core.JsInterop
 
 type Page =
-    | Index
-    | Generator
+    | Install
+    | Themes
+    | Colors
 
 [<RequireQualifiedAccess>]
 module Page =
-    let defaultPage = Page.Index
+    let defaultPage = Page.Install
 
     let parseFromUrlSegments = function
-        | [ "generator" ] -> Page.Generator
-        | [ ] -> Page.Index
+        | [ "themes" ] -> Page.Themes
+        | [ "colors" ] -> Page.Colors
+        | [ ] -> Page.Install
         | _ -> defaultPage
 
     let noQueryString segments : string list * (string * string) list = segments, []
 
     let toUrlSegments = function
-        | Page.Index -> [ ] |> noQueryString
-        | Page.Generator -> [ "generator" ] |> noQueryString
+        | Page.Install -> [ ] |> noQueryString
+        | Page.Themes -> [ "themes" ] |> noQueryString
+        | Page.Colors -> [ "colors" ] |> noQueryString
 
 [<RequireQualifiedAccess>]
 module Router =

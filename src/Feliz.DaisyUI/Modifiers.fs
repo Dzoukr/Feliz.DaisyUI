@@ -269,6 +269,11 @@ type menu =
     static member inline compact = prop.className "compact"
 
 [<Erase>]
+type menuItem =
+    /// Set menu item as active
+    static member inline active = prop.className "active"
+
+[<Erase>]
 type modal =
     /// Add/remove this class to open/close the modal using JS
     static member inline open' = prop.className "modal-open"
@@ -578,6 +583,7 @@ type theme =
     static member inline dracula = prop.custom("data-theme", "dracula")
     /// Set 'cmyk' theme
     static member inline cmyk = prop.custom("data-theme", "cmyk")
+    static member inline custom (t:string) = prop.custom("data-theme", t)
 
 [<Erase>]
 type color =

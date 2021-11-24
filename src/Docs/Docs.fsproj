@@ -6,8 +6,9 @@
     <ItemGroup>
         <Compile Include="Router.fs" />
         <Compile Include="SharedView.fs" />
-        <Compile Include="Pages\Index.fs" />
-        <Compile Include="Pages\Generator.fs" />
+        <Compile Include="Pages\Install.fs" />
+        <Compile Include="Pages\Themes.fs" />
+        <Compile Include="Pages\Colors.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
         <Content Include="index.html" />
