@@ -58,11 +58,9 @@ Target.create "Run" (fun _ ->
 )
 
 let dependencies = [
-    "InstallClient"
-        ==> "Publish"
-
-    "InstallClient"
-        ==> "Run"
+    "InstallClient" ==> "PublishDocs"
+    "InstallClient" ==> "Publish"
+    "InstallClient" ==> "Run"
 ]
 
 [<EntryPoint>]

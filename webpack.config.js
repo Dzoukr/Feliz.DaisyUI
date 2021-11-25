@@ -28,7 +28,7 @@ var CONFIG = {
     indexHtmlTemplate: './src/Docs/index.html',
     fsharpEntry: './.fable-build/App.js',
     cssEntry: './src/Docs/styles/styles.css',
-    outputDir: './publish/app/public',
+    outputDir: './publish/docs/public',
     assetsDir: './src/Docs/public',
     devServerPort: 8080,
     // When using webpack-dev-server, you may need to redirect some calls
