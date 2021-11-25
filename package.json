@@ -15,7 +15,6 @@
     },
     "devDependencies": {
         "@tailwindcss/jit": "^0.1.18",
-        "@tailwindcss/typography":"^0.4.1",
         "autoprefixer":"^10.4.0",
         "copy-webpack-plugin": "^9.0.1",
         "core-js": "^3.16.1",

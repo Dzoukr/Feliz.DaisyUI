@@ -8,6 +8,7 @@ type Page =
     | Install
     | Themes
     | Colors
+    | Alert
 
 [<RequireQualifiedAccess>]
 module Page =
@@ -16,6 +17,7 @@ module Page =
     let parseFromUrlSegments = function
         | [ "themes" ] -> Page.Themes
         | [ "colors" ] -> Page.Colors
+        | [ "alert" ] -> Page.Alert
         | [ ] -> Page.Install
         | _ -> defaultPage
 
@@ -25,6 +27,7 @@ module Page =
         | Page.Install -> [ ] |> noQueryString
         | Page.Themes -> [ "themes" ] |> noQueryString
         | Page.Colors -> [ "colors" ] |> noQueryString
+        | Page.Alert -> [ "alert" ] |> noQueryString
 
 [<RequireQualifiedAccess>]
 module Router =

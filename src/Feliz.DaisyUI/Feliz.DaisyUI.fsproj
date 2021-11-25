@@ -1,15 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageId>Feliz.DaisyUI</PackageId>
+        <Description>Feliz wrapper for DaisyUI TailwindCSS component library</Description>
+        <RepositoryUrl>https://github.com/Dzoukr/Feliz.DaisyUI</RepositoryUrl>
+        <PackageProjectUrl>https://dzoukr.github.io/Feliz.DaisyUI</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/Dzoukr/Feliz.DaisyUI/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageIconUrl></PackageIconUrl>
+        <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
+        <Authors>Roman Provazník</Authors>
+        <Version>1.0.0</Version>
+        <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     </PropertyGroup>
-
     <ItemGroup>
         <Compile Include="Modifiers.fs" />
         <Compile Include="DaisyUI.fs" />
         <Compile Include="Operators.fs" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
-
 </Project>

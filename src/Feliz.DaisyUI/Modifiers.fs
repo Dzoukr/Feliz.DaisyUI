@@ -521,6 +521,12 @@ type textarea =
     static member inline error = prop.className "textarea-error"
 
 [<Erase>]
+type mockupCode =
+    /// Add prefix on a code line (used on PRE element level)
+    static member inline prefix (prefix:string) = prop.custom("data-prefix", prefix)
+
+
+[<Erase>]
 type toggle =
     /// Adds `primary` to toggle
     static member inline primary = prop.className "toggle-primary"

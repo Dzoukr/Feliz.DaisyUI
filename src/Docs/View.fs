@@ -24,7 +24,7 @@ let update (msg:Msg) (state:State) : State * Cmd<Msg> =
 
 Html.div []
 
-let private inLayout (p:Page) (elm:ReactElement) =
+let private inLayout (title:string) (p:Page) (elm:ReactElement) =
 
     let mi (t:string) (mp:Page) =
         Html.li [
@@ -41,9 +41,9 @@ let private inLayout (p:Page) (elm:ReactElement) =
         prop.children [
             Daisy.drawerToggle [ prop.id "main-menu" ]
             Daisy.drawerSide [
-                Daisy.drawerOverlay [ prop.for' "main-menu" ]
+                Daisy.drawerOverlay [ prop.htmlFor "main-menu" ]
                 Html.aside [
-                    prop.className "flex flex-col justify-between border-r w-80"
+                    prop.className "flex flex-col border-r w-80"
                     prop.children [
                         Html.divClassed "inline-block text-3xl font-title px-5 py-5 font-bold" [
                             Html.span [
@@ -68,7 +68,7 @@ let private inLayout (p:Page) (elm:ReactElement) =
                             prop.className "flex flex-col p-4 pt-0"
                             prop.children [
                                 Daisy.menuTitle [ Html.span "Components" ]
-                                mi "Alert" Page.Install
+                                mi "Alert" Page.Alert
                             ]
                         ]
                     ]
@@ -76,7 +76,14 @@ let private inLayout (p:Page) (elm:ReactElement) =
                 ]
             ]
             Daisy.drawerContent [
-                elm
+                Html.divClassed "px-5 py-5" [
+                    Html.h2 [
+                        color.textPrimary
+                        ++ prop.className "my-6 text-5xl font-bold"
+                        prop.text title
+                    ]
+                    elm
+                ]
             ]
         ]
     ]
@@ -85,14 +92,14 @@ let private inLayout (p:Page) (elm:ReactElement) =
 [<ReactComponent>]
 let AppView (state:State) (dispatch:Msg -> unit) =
 
-    let content =
+    let title,content =
         match state.Page with
-        | Page.Install -> Pages.Install.InstallView()
-        | Page.Themes -> Pages.Themes.ThemesView ()
-        | Page.Colors -> Pages.Colors.ColorsView ()
+        | Page.Install -> "Installation", Pages.Install.InstallView()
+        | Page.Themes -> "Themes", Pages.Themes.ThemesView ()
+        | Page.Colors -> "Colors", Pages.Colors.ColorsView ()
 
     React.router [
         router.pathMode
         router.onUrlChanged (Page.parseFromUrlSegments >> UrlChanged >> dispatch)
-        router.children [ content |> inLayout state.Page ]
+        router.children [ content |> inLayout title state.Page ]
     ]

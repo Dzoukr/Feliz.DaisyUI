@@ -3,6 +3,7 @@ open Fake.Core
 open Fake.IO
 open Fake.IO.FileSystemOperators
 open Fake.Core.TargetOperators
+open System.IO
 
 open BuildHelpers
 open BuildTools
@@ -12,6 +13,7 @@ initializeContext()
 let publishPath = Path.getFullName "publish"
 let srcPath = Path.getFullName "src"
 let clientSrcPath = srcPath </> "Docs"
+let librarySrcPath = srcPath </> "Feliz.DaisyUI"
 let appPublishPath = publishPath </> "app"
 
 // Targets
@@ -25,11 +27,29 @@ Target.create "InstallClient" (fun _ ->
     Tools.yarn "install --frozen-lockfile" clientSrcPath
 )
 
+let createNuget proj =
+    clean proj
+    Tools.yarn "install" proj
+    Tools.dotnet "restore --no-cache" proj
+    Tools.dotnet "pack -c Release" proj
+
+let publishNuget proj =
+    createNuget proj
+    let nugetKey =
+        match Environment.environVarOrNone "NUGET_KEY" with
+        | Some nugetKey -> nugetKey
+        | None -> failwith "The Nuget API key must be set in a NUGET_KEY environmental variable"
+    let nupkg =
+        Directory.GetFiles(proj </> "bin" </> "Release")
+        |> Seq.head
+        |> Path.GetFullPath
+    Tools.dotnet (sprintf "nuget push %s -s nuget.org -k %s" nupkg nugetKey) proj
+
 Target.create "Publish" (fun _ ->
-//    [ appPublishPath ] |> Shell.cleanDirs
-//    let publishArgs = sprintf "publish -c Release -o \"%s\"" appPublishPath
-//    Tools.dotnet publishArgs serverSrcPath
-//    [ appPublishPath </> "appsettings.Development.json" ] |> File.deleteAll
+    publishNuget librarySrcPath
+)
+
+Target.create "PublishDocs" (fun _ ->
     Tools.yarn "build" ""
 )
 
