@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+a.link {
+    @apply text-primary underline font-semibold;
+}
+
 .description {
     @apply my-5;
 }

@@ -74,7 +74,7 @@ let ex2 =
     ]
 ]"""
     let title =
-        Html.div [ prop.dangerouslySetInnerHTML "You can even use it on any element or any part of page. Yes, also for whole <code class='code'>&lt;body&gt;</code>!" ]
+        Html.div [ prop.dangerouslySetInnerHTML "You can use it on any element or any part of page. Yes, even for whole <code class='code'>&lt;body&gt;</code>!" ]
 
     codedView title code example
 

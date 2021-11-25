@@ -15,14 +15,12 @@ type State = {
 }
 
 let init () =
-    let nextPage = Router.currentPath() |> Page.parseFromUrlSegments
+    let nextPage = Router.currentUrl() |> Page.parseFromUrlSegments
     { Page = nextPage }, Cmd.navigatePage nextPage
 
 let update (msg:Msg) (state:State) : State * Cmd<Msg> =
     match msg with
     | UrlChanged page -> { state with Page = page }, Cmd.none
-
-Html.div []
 
 let private inLayout (title:string) (p:Page) (elm:ReactElement) =
 
