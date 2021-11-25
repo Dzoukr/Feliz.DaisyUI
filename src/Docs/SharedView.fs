@@ -6,7 +6,7 @@ open Feliz.DaisyUI
 
 type prop
     with
-        static member inline href (p:Page) = prop.href (p |> Page.toUrlSegments |> Router.formatPath)
+        static member inline href (p:Page) = prop.href (p |> Page.toUrlSegments |> Router.format)
 
 type Html
     with

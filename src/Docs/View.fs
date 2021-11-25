@@ -99,7 +99,7 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Colors -> "Colors", Pages.Colors.ColorsView ()
 
     React.router [
-        router.pathMode
+        router.hashMode
         router.onUrlChanged (Page.parseFromUrlSegments >> UrlChanged >> dispatch)
         router.children [ content |> inLayout title state.Page ]
     ]

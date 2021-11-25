@@ -34,10 +34,10 @@ module Router =
     let goToUrl (e:MouseEvent) =
         e.preventDefault()
         let href : string = !!e.currentTarget?attributes?href?value
-        Router.navigatePath href
+        Router.navigate href
 
-    let navigatePage (p:Page) = p |> Page.toUrlSegments |> Router.navigatePath
+    let navigatePage (p:Page) = p |> Page.toUrlSegments |> Router.navigate
 
 [<RequireQualifiedAccess>]
 module Cmd =
-    let navigatePage (p:Page) = p |> Page.toUrlSegments |> Cmd.navigatePath
+    let navigatePage (p:Page) = p |> Page.toUrlSegments |> Cmd.navigate
