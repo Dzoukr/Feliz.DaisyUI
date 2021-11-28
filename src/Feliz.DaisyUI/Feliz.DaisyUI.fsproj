@@ -10,13 +10,16 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.2.0</Version>
-        <PackageReleaseNotes>Lowering NuGet dependencies versions</PackageReleaseNotes>
+        <Version>1.2.1</Version>
+        <PackageReleaseNotes>Fixing NuGet dependencies</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />
         <Compile Include="DaisyUI.fs" />
         <Compile Include="Operators.fs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="*.fsproj; *.fs; *.js;" PackagePath="fable\" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
