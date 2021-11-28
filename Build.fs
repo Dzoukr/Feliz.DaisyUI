@@ -45,6 +45,10 @@ let publishNuget proj =
         |> Path.GetFullPath
     Tools.dotnet (sprintf "nuget push %s -s nuget.org -k %s" nupkg nugetKey) proj
 
+Target.create "Pack" (fun _ ->
+    createNuget librarySrcPath
+)
+
 Target.create "Publish" (fun _ ->
     publishNuget librarySrcPath
 )
@@ -60,6 +64,7 @@ Target.create "Run" (fun _ ->
 let dependencies = [
     "InstallClient" ==> "PublishDocs"
     "InstallClient" ==> "Publish"
+    "InstallClient" ==> "Pack"
     "InstallClient" ==> "Run"
 ]
 

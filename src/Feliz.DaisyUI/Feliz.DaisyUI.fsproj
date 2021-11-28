@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.1.0</Version>
-        <PackageReleaseNotes>Adding label variant to button</PackageReleaseNotes>
+        <Version>1.2.0</Version>
+        <PackageReleaseNotes>Lowering NuGet dependencies versions</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />

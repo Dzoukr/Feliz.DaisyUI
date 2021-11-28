@@ -4,16 +4,21 @@ source https://api.nuget.org/v3/index.json
 framework: net6.0, netstandard2.0
 storage: none
 
-nuget Fable.Core
-nuget Fable.React
-nuget Feliz
-nuget Feliz.Router
-nuget Feliz.UseElmish
-nuget Fable.Elmish
-nuget Fable.Elmish.React
-nuget Fable.Elmish.Debugger
-nuget Fable.Elmish.HMR
-nuget FsToolkit.ErrorHandling.TaskResult
+nuget FSharp.Core ~> 4.7.2
+nuget Feliz ~> 1.32.0
+
+group Docs
+    source https://api.nuget.org/v3/index.json
+    framework: net6.0
+    storage: none
+
+    nuget FSharp.Core
+    nuget Feliz.Router
+    nuget Feliz.UseElmish
+    nuget Fable.Elmish
+    nuget Fable.Elmish.React
+    nuget Fable.Elmish.Debugger
+    nuget Fable.Elmish.HMR
 
 group Build
     source https://api.nuget.org/v3/index.json
