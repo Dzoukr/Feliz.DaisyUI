@@ -411,6 +411,13 @@ module Daisy =
         static member inline button int = Helpers.Elm.int Html.button int "btn"
         static member inline button float = Helpers.Elm.float Html.button float "btn"
 
+        static member inline label props = Helpers.Elm.props Html.label props "btn"
+        static member inline label (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "btn"
+        static member inline label elm = Helpers.Elm.elm Html.label elm "btn"
+        static member inline label string = Helpers.Elm.string Html.label string "btn"
+        static member inline label int = Helpers.Elm.int Html.label int "btn"
+        static member inline label float = Helpers.Elm.float Html.label float "btn"
+
         static member inline a props = Helpers.Elm.props Html.a props "btn"
         static member inline a (children: #seq<ReactElement>) = Helpers.Elm.children Html.a children "btn"
         static member inline a elm = Helpers.Elm.elm Html.a elm "btn"
