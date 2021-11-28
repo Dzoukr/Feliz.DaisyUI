@@ -170,9 +170,10 @@ module.exports = {
                         ? MiniCssExtractPlugin.loader
                         : 'style-loader',
                     'css-loader',
+                    'resolve-url-loader',
                     'postcss-loader'
                 ],
-            },
+            }
         ]
     }
 };

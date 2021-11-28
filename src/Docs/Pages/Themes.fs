@@ -13,7 +13,7 @@ let ex1 =
             prop.children [
                 Daisy.button.button [
                     button.primary
-                    prop.text "This is haloween style button"
+                    prop.text "This is cupcake style button"
                 ]
             ]
         ]
@@ -23,7 +23,7 @@ let ex1 =
     prop.children [
         Daisy.button.button [
             button.primary
-            prop.text "This is haloween style button"
+            prop.text "This is cupcake style button"
         ]
     ]
 ]"""

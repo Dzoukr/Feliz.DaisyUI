@@ -7,6 +7,13 @@
         <Compile Include="Router.fs" />
         <Compile Include="SharedView.fs" />
         <Compile Include="Pages\Install.fs" />
+        <Compile Include="Pages\Use.fs" />
+        <Compile Include="Pages\Alert.fs" />
+        <Compile Include="Pages\Artboard.fs" />
+        <Compile Include="Pages\Button.fs" />
+        <Compile Include="Pages\Breadcrumbs.fs" />
+        <Compile Include="Pages\Badge.fs" />
+        <Compile Include="Pages\Avatar.fs" />
         <Compile Include="Pages\Themes.fs" />
         <Compile Include="Pages\Colors.fs" />
         <Compile Include="View.fs" />

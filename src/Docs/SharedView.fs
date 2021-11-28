@@ -22,23 +22,26 @@ type Html
                 prop.children elm
             ]
 
-let codedView (title:ReactElement) (code:string) example =
+let linedMockupCode (code:string) =
     let lines = code.Split("\n")
+    Daisy.mockupCode (
+        lines |> Seq.mapi (fun i l ->
+            Html.pre [
+                mockupCode.prefix (i + 1 |> string)
+                if l.Contains("// ") then color.textWarning
+                prop.children [ Html.code l ]
+            ]
+        )
+    )
+
+let codedView (title:ReactElement) (code:string) example =
     Html.divClassed "mb-10" [
         Html.divClassed "description" [ title ]
-        Html.divClassed "flex lg:flex-row w-full" [
-            Html.divClassed "w-full" [
-                Daisy.mockupCode (
-                    lines |> Seq.mapi (fun i l ->
-                        Html.pre [
-                            mockupCode.prefix (i + 1 |> string)
-                            if l.Contains("// ") then color.textWarning
-                            prop.children [ Html.code l ]
-                        ]
-                    )
-                )
+        Html.divClassed "flex flex-row w-full" [
+            Html.divClassed "grid flex-1 h-full" [
+                linedMockupCode code
             ]
             Daisy.divider [ divider.vertical; prop.text "👉"; color.textNeutral; prop.className "after:bg-opacity-30 before:bg-opacity-30" ]
-            Html.divClassed "w-full" [ example ]
+            Html.divClassed "grid flex-1" [ example ]
         ]
     ]
