@@ -10,6 +10,7 @@
         <Compile Include="Pages\Use.fs" />
         <Compile Include="Pages\Alert.fs" />
         <Compile Include="Pages\Artboard.fs" />
+        <Compile Include="Pages\ButtonGroup.fs" />
         <Compile Include="Pages\Button.fs" />
         <Compile Include="Pages\Breadcrumbs.fs" />
         <Compile Include="Pages\Badge.fs" />

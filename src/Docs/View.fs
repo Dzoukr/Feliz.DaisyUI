@@ -25,7 +25,7 @@ let update (msg:Msg) (state:State) : State * Cmd<Msg> =
     | UrlChanged page -> { state with Page = page }, Cmd.none
     | SetTheme theme -> { state with Theme = theme }, Cmd.none
 
-let private rightSide state dispatch (title:string) elm =
+let private rightSide state dispatch (title:string) (docLink:string) elm =
     let themes =
         [
             "light", "🌝 light"
@@ -76,24 +76,26 @@ let private rightSide state dispatch (title:string) elm =
                 Daisy.dropdown [
                     dropdown.end'
                     prop.children [
-                        Daisy.button.button [ button.secondary; prop.text "Change Theme" ]
+                        Daisy.button.div [ prop.tabIndex 0; button.secondary; prop.text "Change Theme" ]
                         Daisy.dropdownContent [
-                            Daisy.menu [
-                                menu.compact
-                                color.bgBase200
-                                color.textBaseContent
-                                prop.className "p-4 h-96 w-52 rounded-b-box overflow-y-auto"
+                            prop.tabIndex 0
+                            prop.children [
+                                Daisy.menu [
+                                    menu.compact
+                                    color.bgBase200
+                                    color.textBaseContent
+                                    prop.className "p-4 h-96 w-52 rounded-b-box overflow-y-auto"
 
-                                prop.children [
-                                    for n,t in themes do
-                                        Html.li [
-                                            Html.a [
-                                                if n = state.Theme then prop.className "active"
-                                                prop.href "javascript:;"
-                                                prop.text t
-                                                prop.onClick (fun _ -> SetTheme n |> dispatch )
+                                    prop.children [
+                                        for n,t in themes do
+                                            Html.li [
+                                                Html.a [
+                                                    if n = state.Theme then prop.className "active"
+                                                    prop.text t
+                                                    prop.onClick (fun _ -> SetTheme n |> dispatch )
+                                                ]
                                             ]
-                                        ]
+                                    ]
                                 ]
                             ]
                         ]
@@ -106,8 +108,22 @@ let private rightSide state dispatch (title:string) elm =
             Html.h2 [
                 color.textPrimary
                 ++ prop.className "my-6 text-5xl font-bold"
-                prop.text title
+
+                prop.children [
+                    Html.text title
+                    Daisy.button.a [
+                        prop.className "ml-2"
+                        button.warning
+                        button.outline
+                        button.xs
+                        prop.href $"https://daisyui.com{docLink}"
+                        prop.children [
+                            Html.text "daisyui docs"
+                        ]
+                    ]
+                ]
             ]
+
             elm
         ]
     ]
@@ -203,7 +219,7 @@ let private leftSide (p:Page) =
         ]
     ]
 
-let private inLayout state dispatch (title:string) (p:Page) (elm:ReactElement) =
+let private inLayout state dispatch (title:string) (docLink:string)  (p:Page) (elm:ReactElement) =
     Html.div [
         prop.className "bg-base-100 text-base-content h-screen"
         theme.custom state.Theme
@@ -212,7 +228,7 @@ let private inLayout state dispatch (title:string) (p:Page) (elm:ReactElement) =
                 drawer.mobile
                 prop.children [
                     Daisy.drawerToggle [ prop.id "main-menu" ]
-                    rightSide state dispatch title elm
+                    rightSide state dispatch title docLink elm
                     leftSide p
                 ]
             ]
@@ -255,58 +271,58 @@ let AppView (state:State) (dispatch:Msg -> unit) =
             ]
         ]
 
-    let title,content =
+    let title,docLink,content =
         match state.Page with
-        | Page.Install -> "Installation", Pages.Install.InstallView()
-        | Page.Use -> "How to use", Pages.Use.UseView()
-        | Page.Themes -> "Themes", Pages.Themes.ThemesView ()
-        | Page.Colors -> "Colors", Pages.Colors.ColorsView ()
-        | Page.Alert -> "Alert", Pages.Alert.AlertView ()
-        | Page.Artboard -> "Artboard", Pages.Artboard.ArtboardView ()
-        | Page.Avatar -> "Avatar", Pages.Avatar.AvatarView ()
-        | Page.Badge -> "Badge", Pages.Badge.BadgeView ()
-        | Page.Breadcrumbs -> "Breadcrumbs", Pages.Breadcrumbs.BreadcrumbsView ()
-        | Page.Button -> "Button", Pages.Button.ButtonView ()
-        | Page.ButtonGroup -> "ButtonGroup", wipSection "button-group"
-        | Page.Card -> "Card", wipSection "card"
-        | Page.Carousel -> "Carousel", wipSection "carousel"
-        | Page.Collapse -> "Collapse", wipSection "collapse"
-        | Page.Countdown -> "Countdown", wipSection "countdown"
-        | Page.Divider -> "Divider", wipSection "divider"
-        | Page.Drawer -> "Drawer", wipSection "drawer"
-        | Page.Dropdown -> "Dropdown", wipSection "dropdown"
-        | Page.Footer -> "Footer", wipSection "footer"
-        | Page.Hero -> "Hero", wipSection "hero"
-        | Page.Indicator -> "Indicator", wipSection "indicator"
-        | Page.Kbd -> "Kbd", wipSection "kbd"
-        | Page.Link -> "Link", wipSection "link"
-        | Page.Mask -> "Mask", wipSection "mask"
-        | Page.Menu -> "Menu", wipSection "menu"
-        | Page.Modal -> "Modal", wipSection "modal"
-        | Page.Navbar -> "Navbar", wipSection "navbar"
-        | Page.Pagination -> "Pagination", wipSection "pagination"
-        | Page.Progress -> "Progress", wipSection "progress"
-        | Page.Stack -> "Stack", wipSection "stack"
-        | Page.Stat -> "Stat", wipSection "stat"
-        | Page.Steps -> "Steps", wipSection "steps"
-        | Page.Tab -> "Tab", wipSection "tab"
-        | Page.Table -> "Table", wipSection "table"
-        | Page.Tooltip -> "Tooltip", wipSection "tooltip"
-        | Page.FormCheckbox -> "Form - Checkbox", wipSection "form/checkbox"
-        | Page.FormInput -> "Form - Input", wipSection "form/input"
-        | Page.FormRadio -> "Form - Radio", wipSection "form/radio"
-        | Page.FormRange -> "Form - Range", wipSection "form/range"
-        | Page.FormSelect -> "Form - Select", wipSection "form/select"
-        | Page.FormTextarea -> "Form - Textarea", wipSection "form/textarea"
-        | Page.FormToggle -> "Form - Toggle", wipSection "form/toggle"
-        | Page.MockupCode -> "MockupCode", wipSection "mockup/code"
-        | Page.MockupPhone -> "MockupPhone", wipSection "mockup/phone"
-        | Page.MockupWindow -> "MockupWindow", wipSection "mockup/window"
+        | Page.Install -> "Installation", "/docs/install", Pages.Install.InstallView()
+        | Page.Use -> "How to use", "/docs/use", Pages.Use.UseView()
+        | Page.Themes -> "Themes", "/docs/default-themes", Pages.Themes.ThemesView ()
+        | Page.Colors -> "Colors", "/core/colors", Pages.Colors.ColorsView ()
+        | Page.Alert -> "Alert", "/components/alert", Pages.Alert.AlertView ()
+        | Page.Artboard -> "Artboard", "/components/artboard", Pages.Artboard.ArtboardView ()
+        | Page.Avatar -> "Avatar", "/components/avatar", Pages.Avatar.AvatarView ()
+        | Page.Badge -> "Badge", "/components/badge", Pages.Badge.BadgeView ()
+        | Page.Breadcrumbs -> "Breadcrumbs", "/components/breadcrumbs", Pages.Breadcrumbs.BreadcrumbsView ()
+        | Page.Button -> "Button","/components/button", Pages.Button.ButtonView ()
+        | Page.ButtonGroup -> "ButtonGroup", "/components/button-group", Pages.ButtonGroup.ButtonGroupView ()
+        | Page.Card -> "Card", "/components/card", wipSection "card"
+        | Page.Carousel -> "Carousel", "/components/carousel", wipSection "carousel"
+        | Page.Collapse -> "Collapse", "/components/collapse", wipSection "collapse"
+        | Page.Countdown -> "Countdown", "/components/countdown", wipSection "countdown"
+        | Page.Divider -> "Divider", "/components/divider", wipSection "divider"
+        | Page.Drawer -> "Drawer", "/components/drawer", wipSection "drawer"
+        | Page.Dropdown -> "Dropdown", "/components/dropdown", wipSection "dropdown"
+        | Page.Footer -> "Footer", "/components/footer", wipSection "footer"
+        | Page.Hero -> "Hero", "/components/hero", wipSection "hero"
+        | Page.Indicator -> "Indicator", "/components/indicator", wipSection "indicator"
+        | Page.Kbd -> "Kbd", "/components/kdb", wipSection "kbd"
+        | Page.Link -> "Link", "/components/link", wipSection "link"
+        | Page.Mask -> "Mask", "/components/mask", wipSection "mask"
+        | Page.Menu -> "Menu", "/components/menu", wipSection "menu"
+        | Page.Modal -> "Modal", "/components/modal", wipSection "modal"
+        | Page.Navbar -> "Navbar", "/components/navbar", wipSection "navbar"
+        | Page.Pagination -> "Pagination", "/components/pagination", wipSection "pagination"
+        | Page.Progress -> "Progress", "/components/progress", wipSection "progress"
+        | Page.Stack -> "Stack", "/components/stack", wipSection "stack"
+        | Page.Stat -> "Stat", "/components/stat", wipSection "stat"
+        | Page.Steps -> "Steps", "/components/steps", wipSection "steps"
+        | Page.Tab -> "Tab", "/components/tab", wipSection "tab"
+        | Page.Table -> "Table", "/components/table", wipSection "table"
+        | Page.Tooltip -> "Tooltip", "/components/tooltip", wipSection "tooltip"
+        | Page.FormCheckbox -> "Form - Checkbox", "/components/form/checkbox", wipSection "form/checkbox"
+        | Page.FormInput -> "Form - Input", "/components/form/input", wipSection "form/input"
+        | Page.FormRadio -> "Form - Radio", "/components/form/radio", wipSection "form/radio"
+        | Page.FormRange -> "Form - Range", "/components/form/range", wipSection "form/range"
+        | Page.FormSelect -> "Form - Select", "components/form/select", wipSection "form/select"
+        | Page.FormTextarea -> "Form - Textarea", "components/form/textarea", wipSection "form/textarea"
+        | Page.FormToggle -> "Form - Toggle", "components/form/toggle", wipSection "form/toggle"
+        | Page.MockupCode -> "MockupCode", "components/mockup/code", wipSection "mockup/code"
+        | Page.MockupPhone -> "MockupPhone", "components/mockup/phone", wipSection "mockup/phone"
+        | Page.MockupWindow -> "MockupWindow", "components/mockup/window", wipSection "mockup/window"
 
 
 
     React.router [
         router.hashMode
         router.onUrlChanged (Page.parseFromUrlSegments >> UrlChanged >> dispatch)
-        router.children [ content |> inLayout state dispatch title state.Page ]
+        router.children [ content |> inLayout state dispatch title docLink state.Page ]
     ]
