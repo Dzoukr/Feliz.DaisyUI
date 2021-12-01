@@ -404,6 +404,13 @@ type Daisy =
 module Daisy =
     [<Erase>]
     type button =
+        static member inline div props = Helpers.Elm.props Html.div props "btn"
+        static member inline div (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "btn"
+        static member inline div elm = Helpers.Elm.elm Html.div elm "btn"
+        static member inline div string = Helpers.Elm.string Html.div string "btn"
+        static member inline div int = Helpers.Elm.int Html.div int "btn"
+        static member inline div float = Helpers.Elm.float Html.div float "btn"
+
         static member inline button props = Helpers.Elm.props Html.button props "btn"
         static member inline button (children: #seq<ReactElement>) = Helpers.Elm.children Html.button children "btn"
         static member inline button elm = Helpers.Elm.elm Html.button elm "btn"

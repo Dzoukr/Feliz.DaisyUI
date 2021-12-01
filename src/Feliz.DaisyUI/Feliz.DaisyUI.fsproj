@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.2.1</Version>
-        <PackageReleaseNotes>Fixing NuGet dependencies</PackageReleaseNotes>
+        <Version>1.3.0</Version>
+        <PackageReleaseNotes>Adding div as button element</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />
