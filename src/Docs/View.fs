@@ -302,14 +302,14 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Dropdown     -> "Dropdown"       , "/components/dropdown"     , Pages.Dropdown.DropdownView ()
         | Page.Footer       -> "Footer"         , "/components/footer"       , Pages.Footer.FooterView ()
         | Page.Hero         -> "Hero"           , "/components/hero"         , Pages.Hero.HeroView ()
-        | Page.Indicator    -> "Indicator"      , "/components/indicator"    , wipSection "indicator"
+        | Page.Indicator    -> "Indicator"      , "/components/indicator"    , Pages.Indicator.IndicatorView ()
         | Page.Kbd          -> "Kbd"            , "/components/kdb"          , Pages.Kbd.KbdView ()
         | Page.Link         -> "Link"           , "/components/link"         , Pages.Link.LinkView ()
         | Page.Mask         -> "Mask"           , "/components/mask"         , Pages.Mask.MaskView ()
-        | Page.Menu         -> "Menu"           , "/components/menu"         , wipSection "menu"
-        | Page.Modal        -> "Modal"          , "/components/modal"        , wipSection "modal"
+        | Page.Menu         -> "Menu"           , "/components/menu"         , Pages.Menu.MenuView ()
+        | Page.Modal        -> "Modal"          , "/components/modal"        , Pages.Modal.ModalView ()
         | Page.Navbar       -> "Navbar"         , "/components/navbar"       , wipSection "navbar"
-        | Page.Pagination   -> "Pagination"     , "/components/pagination"   , wipSection "pagination"
+        | Page.Pagination   -> "Pagination"     , "/components/pagination"   , Pages.Pagination.PaginationView ()
         | Page.Progress     -> "Progress"       , "/components/progress"     , Pages.Progress.ProgressView ()
         | Page.Stack        -> "Stack"          , "/components/stack"        , wipSection "stack"
         | Page.Stat         -> "Stat"           , "/components/stat"         , Pages.Stat.StatView ()
@@ -324,7 +324,7 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.FormSelect   -> "Form - Select"  , "/components/form/select"  , Pages.FormSelect.FormSelectView ()
         | Page.FormTextarea -> "Form - Textarea", "/components/form/textarea", Pages.FormTextarea.FormTextareaView ()
         | Page.FormToggle   -> "Form - Toggle"  , "/components/form/toggle"  , Pages.FormToggle.FormToggleView ()
-        | Page.MockupCode   -> "MockupCode"     , "/components/mockup/code"  , wipSection "mockup/code"
+        | Page.MockupCode   -> "MockupCode"     , "/components/mockup/code"  , Pages.MockupCode.MockupCodeView ()
         | Page.MockupPhone  -> "MockupPhone"    , "/components/mockup/phone" , wipSection "mockup/phone"
         | Page.MockupWindow -> "MockupWindow"   , "/components/mockup/window", wipSection "mockup/window"
 

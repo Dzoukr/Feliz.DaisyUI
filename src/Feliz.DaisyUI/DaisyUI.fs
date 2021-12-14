@@ -220,6 +220,7 @@ type Daisy =
     static member inline menuTitle props = Helpers.Elm.props Html.li props "menu-title"
     static member inline menuTitle (children: #seq<ReactElement>) = Helpers.Elm.children Html.li children "menu-title"
     static member inline menuTitle elm = Helpers.Elm.elm Html.li elm "menu-title"
+    static member inline menuTitle (title: string) = Helpers.Elm.children Html.li [Html.span title] "menu-title"
 
     static member inline modal props = Helpers.Elm.props Html.div props "modal"
     static member inline modal (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "modal"
