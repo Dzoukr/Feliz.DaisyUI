@@ -24,6 +24,12 @@
         <Compile Include="Pages\Footer.fs" />
         <Compile Include="Pages\Hero.fs" />
         <Compile Include="Pages\FormCheckbox.fs" />
+        <Compile Include="Pages\FormInput.fs" />
+        <Compile Include="Pages\FormRadio.fs" />
+        <Compile Include="Pages\FormRange.fs" />
+        <Compile Include="Pages\FormSelect.fs" />
+        <Compile Include="Pages\FormTextarea.fs" />
+        <Compile Include="Pages\FormToggle.fs" />
         <Compile Include="Pages\Kbd.fs" />
         <Compile Include="Pages\Link.fs" />
         <Compile Include="Pages\Mask.fs" />

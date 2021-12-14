@@ -291,7 +291,7 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Avatar       -> "Avatar"         , "/components/avatar"       , Pages.Avatar.AvatarView ()
         | Page.Badge        -> "Badge"          , "/components/badge"        , Pages.Badge.BadgeView ()
         | Page.Breadcrumbs  -> "Breadcrumbs"    , "/components/breadcrumbs"  , Pages.Breadcrumbs.BreadcrumbsView ()
-        | Page.Button       -> "Button"         ,"/components/button"        , Pages.Button.ButtonView ()
+        | Page.Button       -> "Button"         , "/components/button"       , Pages.Button.ButtonView ()
         | Page.ButtonGroup  -> "ButtonGroup"    , "/components/button-group" , Pages.ButtonGroup.ButtonGroupView ()
         | Page.Card         -> "Card"           , "/components/card"         , Pages.Card.CardView ()
         | Page.Carousel     -> "Carousel"       , "/components/carousel"     , Pages.Carousel.CarouselView ()
@@ -318,15 +318,15 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Table        -> "Table"          , "/components/table"        , Pages.Table.TableView ()
         | Page.Tooltip      -> "Tooltip"        , "/components/tooltip"      , Pages.Tooltip.TooltipView ()
         | Page.FormCheckbox -> "Form - Checkbox", "/components/form/checkbox", Pages.FormCheckbox.FormCheckboxView ()
-        | Page.FormInput    -> "Form - Input"   , "/components/form/input"   , wipSection "form/input"
-        | Page.FormRadio    -> "Form - Radio"   , "/components/form/radio"   , wipSection "form/radio"
-        | Page.FormRange    -> "Form - Range"   , "/components/form/range"   , wipSection "form/range"
-        | Page.FormSelect   -> "Form - Select"  , "components/form/select"   , wipSection "form/select"
-        | Page.FormTextarea -> "Form - Textarea", "components/form/textarea" , wipSection "form/textarea"
-        | Page.FormToggle   -> "Form - Toggle"  , "components/form/toggle"   , wipSection "form/toggle"
-        | Page.MockupCode   -> "MockupCode"     , "components/mockup/code"   , wipSection "mockup/code"
-        | Page.MockupPhone  -> "MockupPhone"    , "components/mockup/phone"  , wipSection "mockup/phone"
-        | Page.MockupWindow -> "MockupWindow"   , "components/mockup/window" , wipSection "mockup/window"
+        | Page.FormInput    -> "Form - Input"   , "/components/form/input"   , Pages.FormInput.FormInputView ()
+        | Page.FormRadio    -> "Form - Radio"   , "/components/form/radio"   , Pages.FormRadio.FormRadioView ()
+        | Page.FormRange    -> "Form - Range"   , "/components/form/range"   , Pages.FormRange.FormRangeView ()
+        | Page.FormSelect   -> "Form - Select"  , "/components/form/select"  , Pages.FormSelect.FormSelectView ()
+        | Page.FormTextarea -> "Form - Textarea", "/components/form/textarea", Pages.FormTextarea.FormTextareaView ()
+        | Page.FormToggle   -> "Form - Toggle"  , "/components/form/toggle"  , Pages.FormToggle.FormToggleView ()
+        | Page.MockupCode   -> "MockupCode"     , "/components/mockup/code"  , wipSection "mockup/code"
+        | Page.MockupPhone  -> "MockupPhone"    , "/components/mockup/phone" , wipSection "mockup/phone"
+        | Page.MockupWindow -> "MockupWindow"   , "/components/mockup/window", wipSection "mockup/window"
 
     React.router [
         router.hashMode

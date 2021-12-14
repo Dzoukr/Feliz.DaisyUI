@@ -471,6 +471,10 @@ type range =
     static member inline sm = prop.className "range-sm"
     /// Extra small range
     static member inline xs = prop.className "range-xs"
+    /// Helper for the max value
+    static member inline max (v: int) = prop.max v
+    /// Helper for the value
+    static member inline value (v: int) = prop.value v
 
 [<Erase>]
 type select =
