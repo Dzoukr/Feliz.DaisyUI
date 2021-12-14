@@ -1,4 +1,4 @@
-﻿module Docs.Router
+module Docs.Router
 
 open Browser.Types
 open Feliz.Router

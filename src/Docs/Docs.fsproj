@@ -15,7 +15,10 @@
         <Compile Include="Pages\Breadcrumbs.fs" />
         <Compile Include="Pages\Badge.fs" />
         <Compile Include="Pages\Card.fs" />
+        <Compile Include="Pages\Carousel.fs" />
         <Compile Include="Pages\Collapse.fs" />
+        <Compile Include="Pages\Countdown.fs" />
+        <Compile Include="Pages\Divider.fs" />
         <Compile Include="Pages\FormCheckbox.fs" />
         <Compile Include="Pages\Kbd.fs" />
         <Compile Include="Pages\Link.fs" />

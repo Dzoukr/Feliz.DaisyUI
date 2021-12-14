@@ -127,6 +127,8 @@ type Daisy =
     static member inline countdown (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "countdown"
     static member inline countdown elm = Helpers.Elm.elm Html.span elm "countdown"
 
+    static member inline countdownValue (value: int) = Html.span [prop.style [style.custom("--value", value)]]
+
     static member inline divider props = Helpers.Elm.props Html.div props "divider"
     static member inline divider (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "divider"
     static member inline divider elm = Helpers.Elm.elm Html.div elm "divider"
