@@ -282,51 +282,51 @@ let AppView (state:State) (dispatch:Msg -> unit) =
 
     let title,docLink,content =
         match state.Page with
-        | Page.Install      -> "Installation"   , "/docs/install"            , Pages.Install.InstallView()             
-        | Page.Use          -> "How to use"     , "/docs/use"                , Pages.Use.UseView()                     
-        | Page.Themes       -> "Themes"         , "/docs/default-themes"     , Pages.Themes.ThemesView ()              
-        | Page.Colors       -> "Colors"         , "/core/colors"             , Pages.Colors.ColorsView ()              
-        | Page.Alert        -> "Alert"          , "/components/alert"        , Pages.Alert.AlertView ()                
-        | Page.Artboard     -> "Artboard"       , "/components/artboard"     , Pages.Artboard.ArtboardView ()          
-        | Page.Avatar       -> "Avatar"         , "/components/avatar"       , Pages.Avatar.AvatarView ()              
-        | Page.Badge        -> "Badge"          , "/components/badge"        , Pages.Badge.BadgeView ()                
-        | Page.Breadcrumbs  -> "Breadcrumbs"    , "/components/breadcrumbs"  , Pages.Breadcrumbs.BreadcrumbsView ()    
-        | Page.Button       -> "Button"         ,"/components/button"        , Pages.Button.ButtonView ()              
-        | Page.ButtonGroup  -> "ButtonGroup"    , "/components/button-group" , Pages.ButtonGroup.ButtonGroupView ()    
-        | Page.Card         -> "Card"           , "/components/card"         , Pages.Card.CardView ()                  
+        | Page.Install      -> "Installation"   , "/docs/install"            , Pages.Install.InstallView()
+        | Page.Use          -> "How to use"     , "/docs/use"                , Pages.Use.UseView()
+        | Page.Themes       -> "Themes"         , "/docs/default-themes"     , Pages.Themes.ThemesView ()
+        | Page.Colors       -> "Colors"         , "/core/colors"             , Pages.Colors.ColorsView ()
+        | Page.Alert        -> "Alert"          , "/components/alert"        , Pages.Alert.AlertView ()
+        | Page.Artboard     -> "Artboard"       , "/components/artboard"     , Pages.Artboard.ArtboardView ()
+        | Page.Avatar       -> "Avatar"         , "/components/avatar"       , Pages.Avatar.AvatarView ()
+        | Page.Badge        -> "Badge"          , "/components/badge"        , Pages.Badge.BadgeView ()
+        | Page.Breadcrumbs  -> "Breadcrumbs"    , "/components/breadcrumbs"  , Pages.Breadcrumbs.BreadcrumbsView ()
+        | Page.Button       -> "Button"         ,"/components/button"        , Pages.Button.ButtonView ()
+        | Page.ButtonGroup  -> "ButtonGroup"    , "/components/button-group" , Pages.ButtonGroup.ButtonGroupView ()
+        | Page.Card         -> "Card"           , "/components/card"         , Pages.Card.CardView ()
         | Page.Carousel     -> "Carousel"       , "/components/carousel"     , Pages.Carousel.CarouselView ()
-        | Page.Collapse     -> "Collapse"       , "/components/collapse"     , Pages.Collapse.CollapseView ()          
-        | Page.Countdown    -> "Countdown"      , "/components/countdown"    , Pages.Countdown.CountdownView state dispatch 
-        | Page.Divider      -> "Divider"        , "/components/divider"      , Pages.Divider.DividerView ()            
-        | Page.Drawer       -> "Drawer"         , "/components/drawer"       , wipSection "drawer"                     
-        | Page.Dropdown     -> "Dropdown"       , "/components/dropdown"     , wipSection "dropdown"                   
-        | Page.Footer       -> "Footer"         , "/components/footer"       , wipSection "footer"                     
-        | Page.Hero         -> "Hero"           , "/components/hero"         , wipSection "hero"                       
-        | Page.Indicator    -> "Indicator"      , "/components/indicator"    , wipSection "indicator"                  
-        | Page.Kbd          -> "Kbd"            , "/components/kdb"          , Pages.Kbd.KbdView ()                    
-        | Page.Link         -> "Link"           , "/components/link"         , Pages.Link.LinkView ()                  
-        | Page.Mask         -> "Mask"           , "/components/mask"         , Pages.Mask.MaskView ()                  
-        | Page.Menu         -> "Menu"           , "/components/menu"         , wipSection "menu"                       
-        | Page.Modal        -> "Modal"          , "/components/modal"        , wipSection "modal"                      
-        | Page.Navbar       -> "Navbar"         , "/components/navbar"       , wipSection "navbar"                     
-        | Page.Pagination   -> "Pagination"     , "/components/pagination"   , wipSection "pagination"                 
-        | Page.Progress     -> "Progress"       , "/components/progress"     , Pages.Progress.ProgressView ()          
-        | Page.Stack        -> "Stack"          , "/components/stack"        , wipSection "stack"                      
-        | Page.Stat         -> "Stat"           , "/components/stat"         , wipSection "stat"                       
-        | Page.Steps        -> "Steps"          , "/components/steps"        , Pages.Step.StepView ()                  
-        | Page.Tab          -> "Tab"            , "/components/tab"          , wipSection "tab"                        
-        | Page.Table        -> "Table"          , "/components/table"        , wipSection "table"                      
-        | Page.Tooltip      -> "Tooltip"        , "/components/tooltip"      , Pages.Tooltip.TooltipView ()            
-        | Page.FormCheckbox -> "Form - Checkbox", "/components/form/checkbox", Pages.FormCheckbox.FormCheckboxView ()  
-        | Page.FormInput    -> "Form - Input"   , "/components/form/input"   , wipSection "form/input"                 
-        | Page.FormRadio    -> "Form - Radio"   , "/components/form/radio"   , wipSection "form/radio"                 
-        | Page.FormRange    -> "Form - Range"   , "/components/form/range"   , wipSection "form/range"                 
-        | Page.FormSelect   -> "Form - Select"  , "components/form/select"   , wipSection "form/select"                
-        | Page.FormTextarea -> "Form - Textarea", "components/form/textarea" , wipSection "form/textarea"              
-        | Page.FormToggle   -> "Form - Toggle"  , "components/form/toggle"   , wipSection "form/toggle"                
-        | Page.MockupCode   -> "MockupCode"     , "components/mockup/code"   , wipSection "mockup/code"                
-        | Page.MockupPhone  -> "MockupPhone"    , "components/mockup/phone"  , wipSection "mockup/phone"               
-        | Page.MockupWindow -> "MockupWindow"   , "components/mockup/window" , wipSection "mockup/window"              
+        | Page.Collapse     -> "Collapse"       , "/components/collapse"     , Pages.Collapse.CollapseView ()
+        | Page.Countdown    -> "Countdown"      , "/components/countdown"    , Pages.Countdown.CountdownView state dispatch
+        | Page.Divider      -> "Divider"        , "/components/divider"      , Pages.Divider.DividerView ()
+        | Page.Drawer       -> "Drawer"         , "/components/drawer"       , Pages.Drawer.DrawerView ()
+        | Page.Dropdown     -> "Dropdown"       , "/components/dropdown"     , Pages.Dropdown.DropdownView ()
+        | Page.Footer       -> "Footer"         , "/components/footer"       , Pages.Footer.FooterView ()
+        | Page.Hero         -> "Hero"           , "/components/hero"         , Pages.Hero.HeroView ()
+        | Page.Indicator    -> "Indicator"      , "/components/indicator"    , wipSection "indicator"
+        | Page.Kbd          -> "Kbd"            , "/components/kdb"          , Pages.Kbd.KbdView ()
+        | Page.Link         -> "Link"           , "/components/link"         , Pages.Link.LinkView ()
+        | Page.Mask         -> "Mask"           , "/components/mask"         , Pages.Mask.MaskView ()
+        | Page.Menu         -> "Menu"           , "/components/menu"         , wipSection "menu"
+        | Page.Modal        -> "Modal"          , "/components/modal"        , wipSection "modal"
+        | Page.Navbar       -> "Navbar"         , "/components/navbar"       , wipSection "navbar"
+        | Page.Pagination   -> "Pagination"     , "/components/pagination"   , wipSection "pagination"
+        | Page.Progress     -> "Progress"       , "/components/progress"     , Pages.Progress.ProgressView ()
+        | Page.Stack        -> "Stack"          , "/components/stack"        , wipSection "stack"
+        | Page.Stat         -> "Stat"           , "/components/stat"         , Pages.Stat.StatView ()
+        | Page.Steps        -> "Steps"          , "/components/steps"        , Pages.Step.StepView ()
+        | Page.Tab          -> "Tab"            , "/components/tab"          , Pages.Tab.TabView ()
+        | Page.Table        -> "Table"          , "/components/table"        , Pages.Table.TableView ()
+        | Page.Tooltip      -> "Tooltip"        , "/components/tooltip"      , Pages.Tooltip.TooltipView ()
+        | Page.FormCheckbox -> "Form - Checkbox", "/components/form/checkbox", Pages.FormCheckbox.FormCheckboxView ()
+        | Page.FormInput    -> "Form - Input"   , "/components/form/input"   , wipSection "form/input"
+        | Page.FormRadio    -> "Form - Radio"   , "/components/form/radio"   , wipSection "form/radio"
+        | Page.FormRange    -> "Form - Range"   , "/components/form/range"   , wipSection "form/range"
+        | Page.FormSelect   -> "Form - Select"  , "components/form/select"   , wipSection "form/select"
+        | Page.FormTextarea -> "Form - Textarea", "components/form/textarea" , wipSection "form/textarea"
+        | Page.FormToggle   -> "Form - Toggle"  , "components/form/toggle"   , wipSection "form/toggle"
+        | Page.MockupCode   -> "MockupCode"     , "components/mockup/code"   , wipSection "mockup/code"
+        | Page.MockupPhone  -> "MockupPhone"    , "components/mockup/phone"  , wipSection "mockup/phone"
+        | Page.MockupWindow -> "MockupWindow"   , "components/mockup/window" , wipSection "mockup/window"
 
     React.router [
         router.hashMode
