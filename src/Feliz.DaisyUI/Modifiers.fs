@@ -475,6 +475,8 @@ type range =
     static member inline max (v: int) = prop.max v
     /// Helper for the value
     static member inline value (v: int) = prop.value v
+    /// Helper for the defaultValue
+    static member inline defaultValue (v: int) = prop.defaultValue v
 
 [<Erase>]
 type select =

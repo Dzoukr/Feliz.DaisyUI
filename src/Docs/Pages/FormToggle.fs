@@ -1,4 +1,3 @@
-/// TODO: figure out why isChecked locks in the value
 module Docs.Pages.FormToggle
 
 open Feliz
@@ -56,7 +55,7 @@ let colors =
                     Daisy.formControl [
                         Daisy.label [
                             Daisy.labelText colorText
-                            Daisy.toggle [color; prop.isChecked true]
+                            Daisy.toggle [color; prop.defaultChecked true]
                         ]
                     ]
             ]
@@ -74,7 +73,7 @@ Daisy.card [
             Daisy.formControl [
                 Daisy.label [
                     Daisy.labelText colorText
-                    Daisy.toggle [color; prop.isChecked true]
+                    Daisy.toggle [color; prop.defaultChecked true]
                 ]
             ]
     ]

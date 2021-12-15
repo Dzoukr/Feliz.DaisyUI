@@ -1,4 +1,3 @@
-/// TODO: use nameof everywhere
 module Docs.Pages.FormCheckbox
 
 open Feliz
@@ -9,10 +8,17 @@ open Docs.SharedView
 let basic =
     let example =
         Daisy.checkbox []
-        |> Html.div
 
     let code = """Daisy.checkbox []"""
     let title = Html.text "Basic"
+    codedView title code example
+
+let basicChecked =
+    let example =
+        Daisy.checkbox [prop.defaultChecked true]
+
+    let code = """Daisy.checkbox [prop.defaultChecked true]"""
+    let title = Html.text "Checked"
     codedView title code example
 
 let basicLabel =
@@ -23,7 +29,6 @@ let basicLabel =
                 Daisy.checkbox []
             ]
         ]
-        |> Html.div
 
     let code = """Daisy.formControl [
     Daisy.label [
@@ -31,65 +36,67 @@ let basicLabel =
         Daisy.checkbox []
     ]
 ]"""
-    let title = Html.text "Basic"
+    let title = Html.text "Basic Label"
     codedView title code example
 
 let all =
     let example =
-        let colors =
-            [ checkbox.primary  , "primary"
-              checkbox.secondary, "secondary"
-              checkbox.accent   , "accent" ]
+        let colors = [
+            checkbox.primary  , "primary"
+            checkbox.secondary, "secondary"
+            checkbox.accent   , "accent"
+        ]
 
-        let sizes =
-            [ checkbox.lg, "lg"
-              checkbox.md, "md"
-              checkbox.sm, "sm"
-              checkbox.xs, "xs" ]
+        let sizes = [
+            checkbox.lg, "lg"
+            checkbox.md, "md"
+            checkbox.sm, "sm"
+            checkbox.xs, "xs"
+        ]
 
-        // TODO: for some reason if I set isChecked to true it won't allow the user to uncheck
         Html.div [
             for size, sizeText in sizes do
                 for color, colorText in colors do
                     Daisy.formControl [
                         Daisy.label [
                             Daisy.labelText (sprintf "%s - %s" sizeText colorText)
-                            Daisy.checkbox [color; size; prop.value "checked"; prop.isChecked true]
+                            Daisy.checkbox [color; size; prop.defaultChecked true]
                         ]
                     ]
                     Daisy.formControl [
                         Daisy.label [
                             Daisy.labelText (sprintf "%s - %s (disabled)" sizeText colorText)
-                            Daisy.checkbox [color; size; prop.disabled true; prop.isChecked true]
+                            Daisy.checkbox [color; size; prop.disabled true; prop.defaultChecked true]
                         ]
                     ]
         ]
 
-    let code = """let colors =
-    [ checkbox.primary  , "primary"
-      checkbox.secondary, "secondary"
-      checkbox.accent   , "accent" ]
+    let code = """let colors = [
+    checkbox.primary  , "primary"
+    checkbox.secondary, "secondary"
+    checkbox.accent   , "accent"
+]
 
-let sizes =
-    [ checkbox.lg, "lg"
-      checkbox.md, "md"
-      checkbox.sm, "sm"
-      checkbox.xs, "xs" ]
+let sizes = [
+    checkbox.lg, "lg"
+    checkbox.md, "md"
+    checkbox.sm, "sm"
+    checkbox.xs, "xs"
+]
 
-// TODO: for some reason if I set isChecked to true it won't allow the user to uncheck
 Html.div [
     for size, sizeText in sizes do
         for color, colorText in colors do
             Daisy.formControl [
                 Daisy.label [
                     Daisy.labelText (sprintf "%s - %s" sizeText colorText)
-                    Daisy.checkbox [color; size; prop.value "checked"; prop.isChecked true]
+                    Daisy.checkbox [color; size; prop.defaultChecked true]
                 ]
             ]
             Daisy.formControl [
                 Daisy.label [
                     Daisy.labelText (sprintf "%s - %s (disabled)" sizeText colorText)
-                    Daisy.checkbox [color; size; prop.disabled true; prop.isChecked true]
+                    Daisy.checkbox [color; size; prop.disabled true; prop.defaultChecked true]
                 ]
             ]
 ]"""
@@ -101,6 +108,7 @@ Html.div [
 let FormCheckboxView () =
     React.fragment [
         basic
+        basicChecked
         basicLabel
         all
     ]
