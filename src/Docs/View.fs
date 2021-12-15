@@ -308,10 +308,10 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Mask         -> "Mask"           , "/components/mask"         , Pages.Mask.MaskView ()
         | Page.Menu         -> "Menu"           , "/components/menu"         , Pages.Menu.MenuView ()
         | Page.Modal        -> "Modal"          , "/components/modal"        , Pages.Modal.ModalView ()
-        | Page.Navbar       -> "Navbar"         , "/components/navbar"       , wipSection "navbar"
+        | Page.Navbar       -> "Navbar"         , "/components/navbar"       , Pages.Navbar.NavbarView ()
         | Page.Pagination   -> "Pagination"     , "/components/pagination"   , Pages.Pagination.PaginationView ()
         | Page.Progress     -> "Progress"       , "/components/progress"     , Pages.Progress.ProgressView ()
-        | Page.Stack        -> "Stack"          , "/components/stack"        , wipSection "stack"
+        | Page.Stack        -> "Stack"          , "/components/stack"        , Pages.Stack.StackView ()
         | Page.Stat         -> "Stat"           , "/components/stat"         , Pages.Stat.StatView ()
         | Page.Steps        -> "Steps"          , "/components/steps"        , Pages.Step.StepView ()
         | Page.Tab          -> "Tab"            , "/components/tab"          , Pages.Tab.TabView ()
@@ -325,8 +325,8 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.FormTextarea -> "Form - Textarea", "/components/form/textarea", Pages.FormTextarea.FormTextareaView ()
         | Page.FormToggle   -> "Form - Toggle"  , "/components/form/toggle"  , Pages.FormToggle.FormToggleView ()
         | Page.MockupCode   -> "MockupCode"     , "/components/mockup/code"  , Pages.MockupCode.MockupCodeView ()
-        | Page.MockupPhone  -> "MockupPhone"    , "/components/mockup/phone" , wipSection "mockup/phone"
-        | Page.MockupWindow -> "MockupWindow"   , "/components/mockup/window", wipSection "mockup/window"
+        | Page.MockupPhone  -> "MockupPhone"    , "/components/mockup/phone" , Pages.MockupPhone.MockupPhoneView ()
+        | Page.MockupWindow -> "MockupWindow"   , "/components/mockup/window", Pages.MockupWindow.MockupWindowView ()
 
     React.router [
         router.hashMode

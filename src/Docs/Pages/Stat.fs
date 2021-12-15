@@ -153,7 +153,7 @@ let centered =
         ]
     ]
 ]"""
-    let title = Html.text "With Figure"
+    let title = Html.text "Centered"
     codedView title code example
 
 [<ReactComponent>]

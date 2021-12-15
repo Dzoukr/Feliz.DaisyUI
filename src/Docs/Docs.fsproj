@@ -36,10 +36,14 @@
         <Compile Include="Pages\Mask.fs" />
         <Compile Include="Pages\Menu.fs" />
         <Compile Include="Pages\MockupCode.fs" />
+        <Compile Include="Pages\MockupPhone.fs" />
+        <Compile Include="Pages\MockupWindow.fs" />
         <Compile Include="Pages\Modal.fs" />
+        <Compile Include="Pages\Navbar.fs" />
         <Compile Include="Pages\Pagination.fs" />
         <Compile Include="Pages\Progress.fs" />
         <Compile Include="Pages\Stat.fs" />
+        <Compile Include="Pages\Stack.fs" />
         <Compile Include="Pages\Step.fs" />
         <Compile Include="Pages\Tab.fs" />
         <Compile Include="Pages\TableView.fs" />

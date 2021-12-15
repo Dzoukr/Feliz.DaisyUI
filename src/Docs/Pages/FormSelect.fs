@@ -84,7 +84,7 @@ Html.div [
             ]
         ]
 ]"""
-    let title = Html.text "Basic"
+    let title = Html.text "Colors"
     codedView title code example
 
 let sizes =
@@ -136,7 +136,7 @@ Html.div [
             ]
         ]
 ]"""
-    let title = Html.text "Basic"
+    let title = Html.text "Sizes"
     codedView title code example
 
 let disabled =

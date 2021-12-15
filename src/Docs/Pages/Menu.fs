@@ -4,12 +4,13 @@ module Docs.Pages.Menu
 open Feliz
 open Elmish
 open Feliz.DaisyUI
+open Feliz.DaisyUI.Operators
 open Docs.SharedView
 
 let basic =
     let example =
-        Html.div [
-            prop.className "py-4 artboard artboard-demo bg-base-200"
+        Daisy.artboard [
+            prop.className "py-4" ++ artboard.demo ++ color.bgBase200
             prop.children [
                 Daisy.menu [
                     prop.className "py-3 bg-base-100 rounded-box"
@@ -34,8 +35,8 @@ let basic =
             ]
         ]
 
-    let code = """Html.div [
-    prop.className "py-4 artboard artboard-demo bg-base-200"
+    let code = """Daisy.artboard [
+    prop.className "py-4" ++ artboard.demo ++ color.bgBase200
     prop.children [
         Daisy.menu [
             prop.className "py-3 bg-base-100 rounded-box"
@@ -64,8 +65,8 @@ let basic =
 
 let bordered =
     let example =
-        Html.div [
-            prop.className "py-4 artboard artboard-demo bg-base-200"
+        Daisy.artboard [
+            prop.className "py-4" ++ artboard.demo ++ color.bgBase200
             prop.children [
                 Daisy.menu [
                     prop.className "py-3 bg-base-100 rounded-box"
@@ -89,8 +90,8 @@ let bordered =
             ]
         ]
 
-    let code = """Html.div [
-    prop.className "py-4 artboard artboard-demo bg-base-200"
+    let code = """Daisy.artboard [
+    prop.className "py-4" ++ artboard.demo ++ color.bgBase200
     prop.children [
         Daisy.menu [
             prop.className "py-3 bg-base-100 rounded-box"
@@ -118,8 +119,8 @@ let bordered =
 
 let horizontal =
     let example =
-        Html.div [
-            prop.className "py-4 artboard artboard-demo bg-base-200"
+        Daisy.artboard [
+            prop.className "py-4" ++ artboard.demo ++ color.bgBase200
             prop.children [
                 Daisy.menu [
                     prop.className "menu items-stretch px-3 shadow-lg bg-base-100 horizontal rounded-box"
@@ -143,8 +144,8 @@ let horizontal =
             ]
         ]
 
-    let code = """Html.div [
-    prop.className "py-4 artboard artboard-demo bg-base-200"
+    let code = """Daisy.artboard [
+    prop.className "py-4" ++ artboard.demo ++ color.bgBase200
     prop.children [
         Daisy.menu [
             prop.className "menu items-stretch px-3 shadow-lg bg-base-100 horizontal rounded-box"
@@ -167,13 +168,13 @@ let horizontal =
         ]
     ]
 ]"""
-    let title = Html.text "Basic"
+    let title = Html.text "Horizontal"
     codedView title code example
 
 let tree =
     let example =
-        Html.div [
-            prop.className "py-4 artboard artboard-demo bg-base-200"
+        Daisy.artboard [
+            prop.className "py-4" ++ artboard.demo ++ color.bgBase200
             prop.children [
                 Daisy.menu [
                     prop.className "py-3 bg-base-100 rounded-box"
@@ -198,8 +199,8 @@ let tree =
             ]
         ]
 
-    let code = """Html.div [
-    prop.className "py-4 artboard artboard-demo bg-base-200"
+    let code = """Daisy.artboard [
+    prop.className "py-4" ++ artboard.demo ++ color.bgBase200
     prop.children [
         Daisy.menu [
             prop.className "py-3 bg-base-100 rounded-box"

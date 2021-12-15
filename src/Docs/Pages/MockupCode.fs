@@ -11,7 +11,7 @@ let noPrefix =
         Daisy.mockupCode [Html.pre [Html.code [prop.text "npm i daisyui"]]]
 
     let code = """Daisy.mockupCode [Html.pre [Html.code [prop.text "npm i daisyui"]]]"""
-    let title = Html.text "Prefix"
+    let title = Html.text "No prefix"
     codedView title code example
 
 let prefix =

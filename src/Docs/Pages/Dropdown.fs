@@ -62,6 +62,7 @@ let hover =
                 ]
             ]
         ]
+        |> Html.div
 
     let code = """Daisy.dropdown [
     dropdown.hover

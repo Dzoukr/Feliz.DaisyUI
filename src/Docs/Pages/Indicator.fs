@@ -1,4 +1,3 @@
-/// TODO: why does allPositions look weird
 module Docs.Pages.Indicator
 
 open Feliz
@@ -90,12 +89,10 @@ let allPositions =
                 Daisy.indicatorItem [indicator.bottom; indicator.start ; badge.secondary; prop.className "badge"; prop.text "7"]
                 Daisy.indicatorItem [indicator.bottom; indicator.center; badge.secondary; prop.className "badge"; prop.text "8"]
                 Daisy.indicatorItem [indicator.bottom; indicator.end'  ; badge.secondary; prop.className "badge"; prop.text "9"]
-                Html.div [
-                    prop.className "grid w-32 h-32 bg-base-300 place-items-center"
-                    prop.text "Content"
-                ]
+                Html.div [prop.className "grid w-32 h-32 bg-base-300 place-items-center"]
             ]
         ]
+        |> Html.div
 
     let code = """Daisy.indicator [
     prop.className "m-6"
@@ -109,10 +106,7 @@ let allPositions =
         Daisy.indicatorItem [indicator.bottom; indicator.start ; badge.secondary; prop.className "badge"; prop.text "7"]
         Daisy.indicatorItem [indicator.bottom; indicator.center; badge.secondary; prop.className "badge"; prop.text "8"]
         Daisy.indicatorItem [indicator.bottom; indicator.end'  ; badge.secondary; prop.className "badge"; prop.text "9"]
-        Html.div [
-            prop.className "grid w-32 h-32 bg-base-300 place-items-center"
-            prop.text "Content"
-        ]
+        Html.div [prop.className "grid w-32 h-32 bg-base-300 place-items-center"]
     ]
 ]"""
     let title = Html.text "All Positions"
