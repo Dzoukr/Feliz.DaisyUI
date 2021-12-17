@@ -1,4 +1,4 @@
-﻿namespace Feliz.DaisyUI
+namespace Feliz.DaisyUI
 
 open Feliz
 open Fable.Core
@@ -127,6 +127,8 @@ type Daisy =
     static member inline countdown (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "countdown"
     static member inline countdown elm = Helpers.Elm.elm Html.span elm "countdown"
 
+    static member inline countdownValue (value: int) = Html.span [prop.style [style.custom("--value", value)]]
+
     static member inline divider props = Helpers.Elm.props Html.div props "divider"
     static member inline divider (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "divider"
     static member inline divider elm = Helpers.Elm.elm Html.div elm "divider"
@@ -207,9 +209,9 @@ type Daisy =
     static member inline link int = Helpers.Elm.int Html.a int "link"
     static member inline link float = Helpers.Elm.float Html.a float "link"
 
-//    static member inline mask props = Helpers.Elm.props Html.div props "mask"
-//    static member inline mask (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mask"
-//    static member inline mask elm = Helpers.Elm.elm Html.div elm "mask"
+    //static member inline mask props = Helpers.Elm.props Html.img props "mask"
+    //static member inline mask (children: #seq<ReactElement>) = Helpers.Elm.children Html.img children "mask"
+    //static member inline mask elm = Helpers.Elm.elm Html.img elm "mask"
 
     static member inline menu props = Helpers.Elm.props Html.ul props "menu"
     static member inline menu (children: #seq<ReactElement>) = Helpers.Elm.children Html.ul children "menu"
@@ -218,6 +220,7 @@ type Daisy =
     static member inline menuTitle props = Helpers.Elm.props Html.li props "menu-title"
     static member inline menuTitle (children: #seq<ReactElement>) = Helpers.Elm.children Html.li children "menu-title"
     static member inline menuTitle elm = Helpers.Elm.elm Html.li elm "menu-title"
+    static member inline menuTitle (title: string) = Helpers.Elm.children Html.li [Html.span title] "menu-title"
 
     static member inline modal props = Helpers.Elm.props Html.div props "modal"
     static member inline modal (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "modal"

@@ -1,8 +1,18 @@
-﻿module Docs.SharedView
+module Docs.SharedView
 
 open Feliz
 open Router
 open Feliz.DaisyUI
+
+type Msg =
+    | UrlChanged of Page
+    | SetTheme of string
+    | CountdownChange of int
+
+type State =
+    { Page : Page
+      Theme : string
+      Countdown : int }
 
 type prop
     with
