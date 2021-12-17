@@ -3,6 +3,7 @@ module Docs.Pages.Table
 open Feliz
 open Elmish
 open Feliz.DaisyUI
+open Feliz.DaisyUI.Operators
 open Docs.SharedView
 
 let simple =
@@ -126,9 +127,8 @@ let tableWithVisuals =
                         prop.classes ["flex"; "items-center"; "space-x-3"]
                         prop.children [
                             Daisy.avatar [
-                                Daisy.mask [
-                                    mask.squircle
-                                    prop.classes ["w-12"; "h-12"]
+                                Html.img [
+                                    mask.squircle ++ prop.className "w-12 h-12"
                                     prop.src url
                                 ]
                             ]
@@ -182,8 +182,7 @@ let tableWithVisuals =
         ]
         |> Html.div
 
-    let code = """
-let row (url: string, name: string, country: string, group: string, title: string, color: string) =
+    let code = """let row (url: string, name: string, country: string, group: string, title: string, color: string) =
     Html.tr [
         Html.td [Daisy.checkbox []]
         Html.td [
@@ -191,9 +190,8 @@ let row (url: string, name: string, country: string, group: string, title: strin
                 prop.classes ["flex"; "items-center"; "space-x-3"]
                 prop.children [
                     Daisy.avatar [
-                        Daisy.mask [
-                            mask.squircle
-                            prop.classes ["w-12"; "h-12"]
+                        Html.img [
+                            mask.squircle ++ prop.className "w-12 h-12"
                             prop.src url
                         ]
                     ]
