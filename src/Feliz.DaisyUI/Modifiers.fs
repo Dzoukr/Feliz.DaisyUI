@@ -471,12 +471,6 @@ type range =
     static member inline sm = prop.className "range-sm"
     /// Extra small range
     static member inline xs = prop.className "range-xs"
-    /// Helper for the max value
-    static member inline max (v: int) = prop.max v
-    /// Helper for the value
-    static member inline value (v: int) = prop.value v
-    /// Helper for the defaultValue
-    static member inline defaultValue (v: int) = prop.defaultValue v
 
 [<Erase>]
 type select =
@@ -801,23 +795,3 @@ type color =
     static member inline ringOffsetSuccess = prop.className "ring-offset-success"
     static member inline ringOffsetWarning = prop.className "ring-offset-warning"
     static member inline ringOffsetError = prop.className "ring-offset-error"
-
-[<Erase>]
-type shadow =
-    static member inline sm = prop.className "shadow-sm"
-    static member inline shadow = prop.className "shadow"
-    static member inline md = prop.className "shadow-md"
-    static member inline lg = prop.className "shadow-lg"
-    static member inline xl = prop.className "shadow-xl"
-    static member inline xl2 = prop.className "shadow-2xl"
-    static member inline inner = prop.className "shadow-inner"
-    static member inline none = prop.className "shadow-none"
-
-[<Erase>]
-type justify =
-    static member inline start = prop.className "justify-start"
-    static member inline end' = prop.className "justify-end"
-    static member inline center = prop.className "center"
-    static member inline between = prop.className "between"
-    static member inline around = prop.className "around"
-    static member inline evenly = prop.className "evenly"

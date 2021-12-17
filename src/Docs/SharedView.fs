@@ -4,16 +4,6 @@ open Feliz
 open Router
 open Feliz.DaisyUI
 
-type Msg =
-    | UrlChanged of Page
-    | SetTheme of string
-    | CountdownChange of int
-
-type State =
-    { Page : Page
-      Theme : string
-      Countdown : int }
-
 type prop
     with
         static member inline href (p:Page) = prop.href (p |> Page.toUrlSegments |> Router.format)

@@ -7,15 +7,22 @@ open SharedView
 open Feliz.DaisyUI
 open Feliz.DaisyUI.Operators
 
+type Msg =
+    | UrlChanged of Page
+    | SetTheme of string
+
+type State =
+    { Page : Page
+      Theme : string }
+
 let init () =
     let nextPage = Router.currentUrl() |> Page.parseFromUrlSegments
-    { Page = nextPage; Theme = "light"; Countdown = 60 }, Cmd.navigatePage nextPage
+    { Page = nextPage; Theme = "light" }, Cmd.navigatePage nextPage
 
 let update (msg:Msg) (state:State) : State * Cmd<Msg> =
     match msg with
     | UrlChanged page -> { state with Page = page }, Cmd.none
     | SetTheme theme -> { state with Theme = theme }, Cmd.none
-    | CountdownChange chg -> { state with Countdown = chg }, Cmd.none
 
 let private rightSide state dispatch (title:string) (docLink:string) elm =
     let themes =
@@ -40,8 +47,8 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
             "wireframe", "📝 wireframe"
             "black", "🏴 black"
             "luxury", "💎 luxury"
-            "️ dracula", "🧛‍️ dracula"
-            "CMYK", "🖨 CMYK"
+            "️dracula", "🧛‍️ dracula"
+            "cmyk", "🖨 CMYK"
         ]
 
     Daisy.drawerContent [
@@ -121,13 +128,13 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
     ]
 
 let private leftSide (p:Page) =
-    let miUpdated (t: string) mp =
+    let miUpdated (t: string) (mp:Page) =
         Html.li [
             Html.a [
-                if p = mp then menuItem.active
                 prop.href mp
                 prop.onClick Router.goToUrl
-                prop.className "justify-between"
+                if p = mp then (menuItem.active ++ prop.className "justify-between")
+                else prop.className "justify-between"
                 prop.children [
                     Html.span t
                     Html.span [
@@ -249,37 +256,6 @@ let private inLayout state dispatch (title:string) (docLink:string)  (p:Page) (e
 [<ReactComponent>]
 let AppView (state:State) (dispatch:Msg -> unit) =
 
-    let wipSection l =
-        let link = "https://daisyui.com/components/" + l
-        Daisy.hero [
-            Daisy.heroContent [
-                prop.className "text-center"
-                prop.children [
-                    Html.divClassed "max-w-md" [
-                        Html.h2 [
-                            prop.className "mb-5 text-4xl font-bold"
-                            prop.text "Documentation WIP"
-                        ]
-                        Html.divClassed "mb-5" [
-                            Html.p "This documentation section is currently in progress. However PR are more than welcome!"
-                        ]
-                        Html.divClassed "space-x-8" [
-                            Daisy.button.a [
-                                button.primary
-                                prop.text "Send a Pull Request"
-                                prop.href "https://github.com/Dzoukr/Feliz.DaisyUI/pulls"
-                            ]
-                            Daisy.button.a [
-                                button.secondary
-                                prop.text "See original DaisyUI docs"
-                                prop.href link
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ]
-
     let title,docLink,content =
         match state.Page with
         | Page.Install      -> "Installation"   , "/docs/install"            , Pages.Install.InstallView()
@@ -296,7 +272,7 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Card         -> "Card"           , "/components/card"         , Pages.Card.CardView ()
         | Page.Carousel     -> "Carousel"       , "/components/carousel"     , Pages.Carousel.CarouselView ()
         | Page.Collapse     -> "Collapse"       , "/components/collapse"     , Pages.Collapse.CollapseView ()
-        | Page.Countdown    -> "Countdown"      , "/components/countdown"    , Pages.Countdown.CountdownView state dispatch
+        | Page.Countdown    -> "Countdown"      , "/components/countdown"    , Pages.Countdown.CountdownView ()
         | Page.Divider      -> "Divider"        , "/components/divider"      , Pages.Divider.DividerView ()
         | Page.Drawer       -> "Drawer"         , "/components/drawer"       , Pages.Drawer.DrawerView ()
         | Page.Dropdown     -> "Dropdown"       , "/components/dropdown"     , Pages.Dropdown.DropdownView ()

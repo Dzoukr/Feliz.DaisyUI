@@ -209,10 +209,6 @@ type Daisy =
     static member inline link int = Helpers.Elm.int Html.a int "link"
     static member inline link float = Helpers.Elm.float Html.a float "link"
 
-    //static member inline mask props = Helpers.Elm.props Html.img props "mask"
-    //static member inline mask (children: #seq<ReactElement>) = Helpers.Elm.children Html.img children "mask"
-    //static member inline mask elm = Helpers.Elm.elm Html.img elm "mask"
-
     static member inline menu props = Helpers.Elm.props Html.ul props "menu"
     static member inline menu (children: #seq<ReactElement>) = Helpers.Elm.children Html.ul children "menu"
     static member inline menu elm = Helpers.Elm.elm Html.ul elm "menu"

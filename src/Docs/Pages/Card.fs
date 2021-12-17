@@ -94,7 +94,7 @@ let cardTopImage =
 let cardWithShadowNoImage =
     let example =
         Daisy.card [
-            shadow.lg
+            prop.className "shadow-lg"
             prop.children [
                 Daisy.cardBody [
                     Daisy.cardTitle "Card with shadow no image"
@@ -109,7 +109,7 @@ let cardWithShadowNoImage =
         |> Html.div
 
     let code = """Daisy.card [
-    shadow.lg
+    prop.className "shadow-lg"
     prop.children [
         Daisy.cardBody [
             Daisy.cardTitle "No Images"
