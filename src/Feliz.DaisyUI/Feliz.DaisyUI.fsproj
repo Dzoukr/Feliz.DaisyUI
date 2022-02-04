@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>1.4.0</Version>
-        <PackageReleaseNotes>Adding helper modifiers</PackageReleaseNotes>
+        <Version>1.5.0</Version>
+        <PackageReleaseNotes>Added support for Rating component</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />

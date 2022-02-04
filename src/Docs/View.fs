@@ -195,40 +195,41 @@ let private leftSide (p:Page) =
                         mi "Breadcrumbs" Page.Breadcrumbs
                         mi "Button" Page.Button
                         mi "ButtonGroup" Page.ButtonGroup
-                        miUpdated "Card" Page.Card
-                        miUpdated "Carousel" Page.Carousel
-                        miUpdated "Collapse" Page.Collapse
-                        miUpdated "Countdown" Page.Countdown
-                        miUpdated "Divider" Page.Divider
-                        miUpdated "Drawer" Page.Drawer
-                        miUpdated "Dropdown" Page.Dropdown
-                        miUpdated "Footer" Page.Footer
-                        miUpdated "Hero" Page.Hero
-                        miUpdated "Indicator" Page.Indicator
-                        miUpdated "Kbd" Page.Kbd
-                        miUpdated "Link" Page.Link
-                        miUpdated "Mask" Page.Mask
-                        miUpdated "Menu" Page.Menu
-                        miUpdated "Modal" Page.Modal
-                        miUpdated "Navbar" Page.Navbar
-                        miUpdated "Pagination" Page.Pagination
-                        miUpdated "Progress" Page.Progress
-                        miUpdated "Stack" Page.Stack
-                        miUpdated "Stat" Page.Stat
-                        miUpdated "Steps" Page.Steps
-                        miUpdated "Tab" Page.Tab
-                        miUpdated "Table" Page.Table
-                        miUpdated "Tooltip" Page.Tooltip
-                        miUpdated "Form - Checkbox" Page.FormCheckbox
-                        miUpdated "Form - Input" Page.FormInput
-                        miUpdated "Form - Radio" Page.FormRadio
-                        miUpdated "Form - Range" Page.FormRange
-                        miUpdated "Form - Select" Page.FormSelect
-                        miUpdated "Form - Textarea" Page.FormTextarea
-                        miUpdated "Form - Toggle" Page.FormToggle
-                        miUpdated "MockupCode" Page.MockupCode
-                        miUpdated "MockupPhone" Page.MockupPhone
-                        miUpdated "MockupWindow" Page.MockupWindow
+                        mi "Card" Page.Card
+                        mi "Carousel" Page.Carousel
+                        mi "Collapse" Page.Collapse
+                        mi "Countdown" Page.Countdown
+                        mi "Divider" Page.Divider
+                        mi "Drawer" Page.Drawer
+                        mi "Dropdown" Page.Dropdown
+                        mi "Footer" Page.Footer
+                        mi "Hero" Page.Hero
+                        mi "Indicator" Page.Indicator
+                        mi "Kbd" Page.Kbd
+                        mi "Link" Page.Link
+                        mi "Mask" Page.Mask
+                        mi "Menu" Page.Menu
+                        mi "Modal" Page.Modal
+                        mi "Navbar" Page.Navbar
+                        mi "Pagination" Page.Pagination
+                        mi "Progress" Page.Progress
+                        miUpdated "Rating" Page.Rating
+                        mi "Stack" Page.Stack
+                        mi "Stat" Page.Stat
+                        mi "Steps" Page.Steps
+                        mi "Tab" Page.Tab
+                        mi "Table" Page.Table
+                        mi "Tooltip" Page.Tooltip
+                        mi "Form - Checkbox" Page.FormCheckbox
+                        mi "Form - Input" Page.FormInput
+                        mi "Form - Radio" Page.FormRadio
+                        mi "Form - Range" Page.FormRange
+                        mi "Form - Select" Page.FormSelect
+                        mi "Form - Textarea" Page.FormTextarea
+                        mi "Form - Toggle" Page.FormToggle
+                        mi "MockupCode" Page.MockupCode
+                        mi "MockupPhone" Page.MockupPhone
+                        mi "MockupWindow" Page.MockupWindow
                     ]
                 ]
             ]
@@ -287,6 +288,7 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Navbar       -> "Navbar"         , "/components/navbar"       , Pages.Navbar.NavbarView ()
         | Page.Pagination   -> "Pagination"     , "/components/pagination"   , Pages.Pagination.PaginationView ()
         | Page.Progress     -> "Progress"       , "/components/progress"     , Pages.Progress.ProgressView ()
+        | Page.Rating       -> "Rating"         , "/components/rating"       , Pages.Rating.RatingView ()
         | Page.Stack        -> "Stack"          , "/components/stack"        , Pages.Stack.StackView ()
         | Page.Stat         -> "Stat"           , "/components/stat"         , Pages.Stat.StatView ()
         | Page.Steps        -> "Steps"          , "/components/steps"        , Pages.Step.StepView ()

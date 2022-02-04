@@ -399,6 +399,10 @@ type Daisy =
     static member inline mockupWindow (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-window"
     static member inline mockupWindow elm = Helpers.Elm.elm Html.div elm "mockup-window"
 
+    static member inline rating props = Helpers.Elm.props Html.div props "rating"
+    static member inline rating (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "rating"
+    static member inline rating elm = Helpers.Elm.elm Html.div elm "rating"
+
 
 module Daisy =
     [<Erase>]

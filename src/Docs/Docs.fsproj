@@ -42,6 +42,7 @@
         <Compile Include="Pages\Navbar.fs" />
         <Compile Include="Pages\Pagination.fs" />
         <Compile Include="Pages\Progress.fs" />
+        <Compile Include="Pages\Rating.fs" />
         <Compile Include="Pages\Stat.fs" />
         <Compile Include="Pages\Stack.fs" />
         <Compile Include="Pages\Step.fs" />

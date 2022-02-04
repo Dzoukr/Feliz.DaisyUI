@@ -40,7 +40,7 @@
     "dependencies": {
         "react": "^17.0.2",
         "tailwindcss":"^2.2.19",
-        "daisyui": "^1.16.2",
+        "daisyui": "^1.25.4",
         "@fortawesome/fontawesome-free": "^5.15.4"
     }
 }

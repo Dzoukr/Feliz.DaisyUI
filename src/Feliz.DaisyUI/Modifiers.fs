@@ -546,6 +546,17 @@ type toggle =
     static member inline xs = prop.className "toggle-xs"
 
 [<Erase>]
+type rating =
+    /// Large size for rating
+    static member inline lg = prop.className "rating-lg"
+    /// Medium (default) size for rating
+    static member inline md = prop.className "rating-md"
+    /// Small size for rating
+    static member inline sm = prop.className "rating-sm"
+    /// Extra small size for rating
+    static member inline xs = prop.className "rating-xs"
+
+[<Erase>]
 type theme =
     /// Set 'light' theme
     static member inline light = prop.custom("data-theme", "light")

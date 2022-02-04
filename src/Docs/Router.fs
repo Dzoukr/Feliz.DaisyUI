@@ -50,6 +50,7 @@ type Page =
     | MockupCode
     | MockupPhone
     | MockupWindow
+    | Rating
 
 [<RequireQualifiedAccess>]
 module Page =
@@ -100,7 +101,7 @@ module Page =
         | [ "mockupcode" ] -> Page.MockupCode
         | [ "mockupphone" ] -> Page.MockupPhone
         | [ "mockupwindow" ] -> Page.MockupWindow
-
+        | [ "rating" ] -> Page.Rating
         | [ ] -> Page.Install
         | _ -> defaultPage
 
@@ -152,6 +153,7 @@ module Page =
         | Page.MockupCode -> [ "mockupcode" ] |> noQueryString
         | Page.MockupPhone -> [ "mockupphone" ] |> noQueryString
         | Page.MockupWindow -> [ "mockupwindow" ] |> noQueryString
+        | Page.Rating -> [ "rating" ] |> noQueryString
 
 [<RequireQualifiedAccess>]
 module Router =
