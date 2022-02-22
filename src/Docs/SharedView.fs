@@ -41,7 +41,7 @@ let codedView (title:ReactElement) (code:string) example =
             Html.divClassed "grid flex-1 h-full" [
                 linedMockupCode code
             ]
-            Daisy.divider [ divider.vertical; prop.text "👉"; color.textNeutral; prop.className "after:bg-opacity-30 before:bg-opacity-30" ]
+            Daisy.divider [ divider.horizontal; prop.text "👉"; color.textNeutral; prop.className "after:bg-opacity-30 before:bg-opacity-30" ]
             Html.divClassed "grid flex-1" [ example ]
         ]
     ]

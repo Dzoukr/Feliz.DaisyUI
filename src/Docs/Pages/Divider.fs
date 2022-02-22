@@ -5,7 +5,7 @@ open Elmish
 open Feliz.DaisyUI
 open Docs.SharedView
 
-let horizontal =
+let vertical =
     let example =
         Html.div [
             prop.className "flex flex-col w-full"
@@ -36,10 +36,10 @@ let horizontal =
         ]
     ]
 ]"""
-    let title = Html.text "Horizontal"
+    let title = Html.text "Vertical (default)"
     codedView title code example
 
-let vertical =
+let horizontal =
     let example =
         Html.div [
             prop.className "flex flex-row w-full"
@@ -49,7 +49,7 @@ let vertical =
                     prop.text "content"
                 ]
                 Daisy.divider [
-                    divider.vertical
+                    divider.horizontal
                     prop.text "OR"
                 ]
                 Html.div [
@@ -68,7 +68,7 @@ let vertical =
             prop.text "content"
         ]
         Daisy.divider [
-            divider.vertical
+            divider.horizontal
             prop.text "OR"
         ]
         Html.div [
@@ -83,6 +83,6 @@ let vertical =
 [<ReactComponent>]
 let DividerView () =
     React.fragment [
-        horizontal
         vertical
+        horizontal
     ]

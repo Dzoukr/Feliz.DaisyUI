@@ -10,10 +10,10 @@ open Docs.SharedView
 let basic =
     let example =
         Daisy.artboard [
-            prop.className "py-4" ++ artboard.demo ++ color.bgBase200
+            artboard.demo ++ color.bgBase200
             prop.children [
                 Daisy.menu [
-                    prop.className "py-3 bg-base-100 rounded-box"
+                    prop.className "bg-base-100 rounded-box"
                     prop.children [
                         Daisy.menuTitle "Menu title"
                         Html.li [Html.a [prop.text "Item without icon"]]
@@ -36,10 +36,10 @@ let basic =
         ]
 
     let code = """Daisy.artboard [
-    prop.className "py-4" ++ artboard.demo ++ color.bgBase200
+    artboard.demo ++ color.bgBase200
     prop.children [
         Daisy.menu [
-            prop.className "py-3 bg-base-100 rounded-box"
+            prop.className "bg-base-100 rounded-box"
             prop.children [
                 Daisy.menuTitle "Menu title"
                 Html.li [Html.a [prop.text "Item without icon"]]
@@ -66,10 +66,10 @@ let basic =
 let bordered =
     let example =
         Daisy.artboard [
-            prop.className "py-4" ++ artboard.demo ++ color.bgBase200
+            artboard.demo ++ color.bgBase200
             prop.children [
                 Daisy.menu [
-                    prop.className "py-3 bg-base-100 rounded-box"
+                    prop.className "bg-base-100 rounded-box"
                     prop.children [
                         Daisy.menuTitle "Menu title"
                         Html.li [Html.a [prop.text "Non Bordered"]]
@@ -91,7 +91,7 @@ let bordered =
         ]
 
     let code = """Daisy.artboard [
-    prop.className "py-4" ++ artboard.demo ++ color.bgBase200
+    artboard.demo ++ color.bgBase200
     prop.children [
         Daisy.menu [
             prop.className "py-3 bg-base-100 rounded-box"
@@ -120,10 +120,11 @@ let bordered =
 let horizontal =
     let example =
         Daisy.artboard [
-            prop.className "py-4" ++ artboard.demo ++ color.bgBase200
+            artboard.demo ++ color.bgBase200
             prop.children [
                 Daisy.menu [
-                    prop.className "menu items-stretch px-3 shadow-lg bg-base-100 horizontal rounded-box"
+                    menu.horizontal
+                    prop.className "items-stretch shadow-lg bg-base-100 rounded-box"
                     prop.children [
                         Html.li [Html.a [prop.text "With link"]]
                         Html.li [
@@ -145,10 +146,11 @@ let horizontal =
         ]
 
     let code = """Daisy.artboard [
-    prop.className "py-4" ++ artboard.demo ++ color.bgBase200
+    artboard.demo ++ color.bgBase200
     prop.children [
         Daisy.menu [
-            prop.className "menu items-stretch px-3 shadow-lg bg-base-100 horizontal rounded-box"
+            menu.horizontal
+            prop.className "items-stretch shadow-lg bg-base-100 rounded-box"
             prop.children [
                 Html.li [Html.a [prop.text "With link"]]
                 Html.li [
@@ -177,21 +179,18 @@ let tree =
             prop.className "py-4" ++ artboard.demo ++ color.bgBase200
             prop.children [
                 Daisy.menu [
-                    prop.className "py-3 bg-base-100 rounded-box"
+                    prop.className "bg-base-100 rounded-box"
                     prop.children [
                         Daisy.menuTitle "Menu title"
                         Html.li [Html.a [prop.text "Level 1"]]
                         Html.li [
-                            Html.a [prop.text "Level 1"]
-                            Daisy.menu [
-                                Html.li [Html.a [prop.text "Level 2"]]
-                                Html.li [
-                                    Html.a [prop.text "Level 2"]
-                                    Daisy.menu [
-                                        Html.li [Html.a [prop.text "Level 3"]]
-                                    ]
+                            Html.span "Parent"
+                            Html.ul [
+                                prop.className "rounded-box p-2 bg-base-100"
+                                prop.children [
+                                    Html.li [Html.a [prop.text "Level 2/1"]]
+                                    Html.li [Html.a [prop.text "Level 2/2"]]
                                 ]
-                                Html.li [Html.a [prop.text "Level 2"]]
                             ]
                         ]
                     ]
@@ -203,21 +202,18 @@ let tree =
     prop.className "py-4" ++ artboard.demo ++ color.bgBase200
     prop.children [
         Daisy.menu [
-            prop.className "py-3 bg-base-100 rounded-box"
+            prop.className "bg-base-100 rounded-box"
             prop.children [
                 Daisy.menuTitle "Menu title"
                 Html.li [Html.a [prop.text "Level 1"]]
                 Html.li [
-                    Html.a [prop.text "Level 1"]
-                    Daisy.menu [
-                        Html.li [Html.a [prop.text "Level 2"]]
-                        Html.li [
-                            Html.a [prop.text "Level 2"]
-                            Daisy.menu [
-                                Html.li [Html.a [prop.text "Level 3"]]
-                            ]
+                    Html.span "Parent"
+                    Html.ul [
+                        prop.className "rounded-box p-2 bg-base-100"
+                        prop.children [
+                            Html.li [Html.a [prop.text "Level 2/1"]]
+                            Html.li [Html.a [prop.text "Level 2/2"]]
                         ]
-                        Html.li [Html.a [prop.text "Level 2"]]
                     ]
                 ]
             ]

@@ -9,6 +9,7 @@
         <Compile Include="Pages\Install.fs" />
         <Compile Include="Pages\Use.fs" />
         <Compile Include="Pages\Alert.fs" />
+        <Compile Include="Pages\Swap.fs" />
         <Compile Include="Pages\Artboard.fs" />
         <Compile Include="Pages\ButtonGroup.fs" />
         <Compile Include="Pages\Button.fs" />
@@ -42,6 +43,7 @@
         <Compile Include="Pages\Navbar.fs" />
         <Compile Include="Pages\Pagination.fs" />
         <Compile Include="Pages\Progress.fs" />
+        <Compile Include="Pages\RadialProgress.fs" />
         <Compile Include="Pages\Rating.fs" />
         <Compile Include="Pages\Stat.fs" />
         <Compile Include="Pages\Stack.fs" />

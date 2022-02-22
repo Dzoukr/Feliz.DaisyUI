@@ -34,9 +34,11 @@ type Page =
     | Navbar
     | Pagination
     | Progress
+    | RadialProgress
     | Stack
     | Stat
     | Steps
+    | Swap
     | Tab
     | Table
     | Tooltip
@@ -85,9 +87,11 @@ module Page =
         | [ "navbar" ] -> Page.Navbar
         | [ "pagination" ] -> Page.Pagination
         | [ "progress" ] -> Page.Progress
+        | [ "radialprogress" ] -> Page.RadialProgress
         | [ "stack" ] -> Page.Stack
         | [ "stat" ] -> Page.Stat
         | [ "steps" ] -> Page.Steps
+        | [ "swap" ] -> Page.Swap
         | [ "tab" ] -> Page.Tab
         | [ "table" ] -> Page.Table
         | [ "tooltip" ] -> Page.Tooltip
@@ -137,9 +141,11 @@ module Page =
         | Page.Navbar -> [ "navbar" ] |> noQueryString
         | Page.Pagination -> [ "pagination" ] |> noQueryString
         | Page.Progress -> [ "progress" ] |> noQueryString
+        | Page.RadialProgress -> [ "radialprogress" ] |> noQueryString
         | Page.Stack -> [ "stack" ] |> noQueryString
         | Page.Stat -> [ "stat" ] |> noQueryString
         | Page.Steps -> [ "steps" ] |> noQueryString
+        | Page.Swap -> [ "swap" ] |> noQueryString
         | Page.Tab -> [ "tab" ] |> noQueryString
         | Page.Table -> [ "table" ] |> noQueryString
         | Page.Tooltip -> [ "tooltip" ] |> noQueryString

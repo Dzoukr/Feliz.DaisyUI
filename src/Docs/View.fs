@@ -49,6 +49,10 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
             "luxury", "💎 luxury"
             "️dracula", "🧛‍️ dracula"
             "cmyk", "🖨 CMYK"
+            "autumn", "🍁 autumn"
+            "business", "💼 business"
+            "acid", "💊 acid"
+            "lemonade", "🍋 lemonade"
         ]
 
     Daisy.drawerContent [
@@ -128,7 +132,7 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
     ]
 
 let private leftSide (p:Page) =
-    let miUpdated (t: string) (mp:Page) =
+    let miBadge (b:string) (t: string) (mp:Page) =
         Html.li [
             Html.a [
                 prop.href mp
@@ -139,7 +143,7 @@ let private leftSide (p:Page) =
                     Html.span t
                     Html.span [
                         prop.className "badge"
-                        prop.text "updated"
+                        prop.text b
                     ]
                 ]
             ]
@@ -199,7 +203,7 @@ let private leftSide (p:Page) =
                         mi "Carousel" Page.Carousel
                         mi "Collapse" Page.Collapse
                         mi "Countdown" Page.Countdown
-                        mi "Divider" Page.Divider
+                        miBadge "updated" "Divider" Page.Divider
                         mi "Drawer" Page.Drawer
                         mi "Dropdown" Page.Dropdown
                         mi "Footer" Page.Footer
@@ -213,17 +217,19 @@ let private leftSide (p:Page) =
                         mi "Navbar" Page.Navbar
                         mi "Pagination" Page.Pagination
                         mi "Progress" Page.Progress
-                        miUpdated "Rating" Page.Rating
+                        miBadge "new" "Radial Progress" Page.RadialProgress
+                        mi "Rating" Page.Rating
                         mi "Stack" Page.Stack
-                        mi "Stat" Page.Stat
+                        miBadge "updated" "Stat" Page.Stat
                         mi "Steps" Page.Steps
+                        miBadge "new" "Swap" Page.Swap
                         mi "Tab" Page.Tab
                         mi "Table" Page.Table
                         mi "Tooltip" Page.Tooltip
                         mi "Form - Checkbox" Page.FormCheckbox
                         mi "Form - Input" Page.FormInput
                         mi "Form - Radio" Page.FormRadio
-                        mi "Form - Range" Page.FormRange
+                        miBadge "updated" "Form - Range" Page.FormRange
                         mi "Form - Select" Page.FormSelect
                         mi "Form - Textarea" Page.FormTextarea
                         mi "Form - Toggle" Page.FormToggle
@@ -288,10 +294,12 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Navbar       -> "Navbar"         , "/components/navbar"       , Pages.Navbar.NavbarView ()
         | Page.Pagination   -> "Pagination"     , "/components/pagination"   , Pages.Pagination.PaginationView ()
         | Page.Progress     -> "Progress"       , "/components/progress"     , Pages.Progress.ProgressView ()
+        | Page.RadialProgress -> "RadialProgress", "/components/radial-progress", Pages.RadialProgress.RadialProgressView ()
         | Page.Rating       -> "Rating"         , "/components/rating"       , Pages.Rating.RatingView ()
         | Page.Stack        -> "Stack"          , "/components/stack"        , Pages.Stack.StackView ()
         | Page.Stat         -> "Stat"           , "/components/stat"         , Pages.Stat.StatView ()
         | Page.Steps        -> "Steps"          , "/components/steps"        , Pages.Step.StepView ()
+        | Page.Swap         -> "Swap"           , "/components/swap"         , Pages.Swap.SwapView ()
         | Page.Tab          -> "Tab"            , "/components/tab"          , Pages.Tab.TabView ()
         | Page.Table        -> "Table"          , "/components/table"        , Pages.Table.TableView ()
         | Page.Tooltip      -> "Tooltip"        , "/components/tooltip"      , Pages.Tooltip.TooltipView ()

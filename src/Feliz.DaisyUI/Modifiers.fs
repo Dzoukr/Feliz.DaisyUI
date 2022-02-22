@@ -153,8 +153,10 @@ type collapse =
 
 [<Erase>]
 type divider =
-    /// Divide elements next to each other
+    /// Divide elements on top of each other (default)
     static member inline vertical = prop.className "divider-vertical"
+    /// Divide elements next to each other
+    static member inline horizontal = prop.className "divider-horizontal"
 
 [<Erase>]
 type drawer =
@@ -266,7 +268,13 @@ type mask =
 [<Erase>]
 type menu =
     /// Makes menu more compact
-    static member inline compact = prop.className "compact"
+    static member inline compact = prop.className "menu-compact"
+    /// Normal text size and normal spacing (default)
+    static member inline normal = prop.className "menu-normal"
+    /// Vertical menu (default)
+    static member inline vertical = prop.className "menu-vertical"
+    /// Horizontal menu
+    static member inline horizontal = prop.className "menu-horizontal"
 
 [<Erase>]
 type menuItem =
@@ -557,6 +565,22 @@ type rating =
     static member inline xs = prop.className "rating-xs"
 
 [<Erase>]
+type swap =
+    /// Activates the swap (no need for checkbox)
+    static member inline active = prop.className "swap-active"
+    /// Adds rotate effect to swap
+    static member inline rotate = prop.className "swap-rotate"
+    /// Adds flip effect to swap
+    static member inline flip = prop.className "swap-flip"
+
+[<Erase>]
+type stats =
+    /// Shows items horizontally (default)
+    static member inline horizontal = prop.className "stats-horizontal"
+    /// Shows items vertically
+    static member inline vertical = prop.className "stats-vertical"
+
+[<Erase>]
 type theme =
     /// Set 'light' theme
     static member inline light = prop.custom("data-theme", "light")
@@ -602,6 +626,15 @@ type theme =
     static member inline dracula = prop.custom("data-theme", "dracula")
     /// Set 'cmyk' theme
     static member inline cmyk = prop.custom("data-theme", "cmyk")
+    /// Set 'autumn' theme
+    static member inline autumn = prop.custom("data-theme", "autumn")
+    /// Set 'business' theme
+    static member inline business = prop.custom("data-theme", "business")
+    /// Set 'acid' theme
+    static member inline acid = prop.custom("data-theme", "acid")
+    /// Set 'lemonade' theme
+    static member inline lemonade = prop.custom("data-theme", "lemonade")
+    /// Set custom theme
     static member inline custom (t:string) = prop.custom("data-theme", t)
 
 [<Erase>]
@@ -615,7 +648,7 @@ type color =
     static member inline bgAccent = prop.className "bg-accent"
     static member inline bgAccentFocus = prop.className "bg-accent-focus"
     static member inline bgAccentContent = prop.className "bg-accent-content"
-    static member inline bgneutral = prop.className "bg-neutral"
+    static member inline bgNeutral = prop.className "bg-neutral"
     static member inline bgNeutralFocus = prop.className "bg-neutral-focus"
     static member inline bgNeutralContent = prop.className "bg-neutral-content"
     static member inline bgBase100 = prop.className "bg-base-100"
@@ -806,3 +839,7 @@ type color =
     static member inline ringOffsetSuccess = prop.className "ring-offset-success"
     static member inline ringOffsetWarning = prop.className "ring-offset-warning"
     static member inline ringOffsetError = prop.className "ring-offset-error"
+    static member inline infoContent = prop.className "info-content"
+    static member inline successContent = prop.className "success-content"
+    static member inline warningContent = prop.className "warning-content"
+    static member inline errorContent = prop.className "error-content"

@@ -403,6 +403,37 @@ type Daisy =
     static member inline rating (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "rating"
     static member inline rating elm = Helpers.Elm.elm Html.div elm "rating"
 
+    static member inline swap props = Helpers.Elm.props Html.label props "swap"
+    static member inline swap (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "swap"
+    static member inline swap elm = Helpers.Elm.elm Html.label elm "swap"
+
+    static member inline swapOn props = Helpers.Elm.props Html.div props "swap-on"
+    static member inline swapOn (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "swap-on"
+    static member inline swapOn elm = Helpers.Elm.elm Html.div elm "swap-on"
+    static member inline swapOn string = Helpers.Elm.string Html.div string "swap-on"
+    static member inline swapOn int = Helpers.Elm.int Html.div int "swap-on"
+    static member inline swapOn float = Helpers.Elm.float Html.div float "swap-on"
+
+    static member inline swapOff props = Helpers.Elm.props Html.div props "swap-off"
+    static member inline swapOff (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "swap-off"
+    static member inline swapOff elm = Helpers.Elm.elm Html.div elm "swap-off"
+    static member inline swapOff string = Helpers.Elm.string Html.div string "swap-off"
+    static member inline swapOff int = Helpers.Elm.int Html.div int "swap-off"
+    static member inline swapOff float = Helpers.Elm.float Html.div float "swap-off"
+
+    static member inline swapIndeterminate props = Helpers.Elm.props Html.div props "swap-indeterminate"
+    static member inline swapIndeterminate (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "swap-indeterminate"
+    static member inline swapIndeterminate elm = Helpers.Elm.elm Html.div elm "swap-indeterminate"
+    static member inline swapIndeterminate string = Helpers.Elm.string Html.div string "swap-indeterminate"
+    static member inline swapIndeterminate int = Helpers.Elm.int Html.div int "swap-indeterminate"
+    static member inline swapIndeterminate float = Helpers.Elm.float Html.div float "swap-indeterminate"
+
+    static member inline radialProgress props = Helpers.Elm.props Html.div props "radial-progress"
+    static member inline radialProgress (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "radial-progress"
+    static member inline radialProgress elm = Helpers.Elm.elm Html.div elm "radial-progress"
+    static member inline radialProgress string = Helpers.Elm.string Html.div string "radial-progress"
+    static member inline radialProgress int = Helpers.Elm.int Html.div int "radial-progress"
+    static member inline radialProgress float = Helpers.Elm.float Html.div float "radial-progress"
 
 module Daisy =
     [<Erase>]
