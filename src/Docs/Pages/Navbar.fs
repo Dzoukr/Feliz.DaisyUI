@@ -9,7 +9,11 @@ open Feliz.DaisyUI.Operators
 let iconAndText =
     let example =
         Daisy.navbar [
-            prop.className "mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"
+            shadow.shadowLg
+            margin.mb2
+            color.bgNeutral
+            color.textNeutralContent
+            navbar.roundedBox
             prop.children [
                 Html.div [
                     prop.className "flex-none"
@@ -34,7 +38,11 @@ let iconAndText =
         |> Html.div
 
     let code = """Daisy.navbar [
-    prop.className "mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"
+    shadow.shadowLg
+    margin.mb2
+    color.bgNeutral
+    color.textNeutralContent
+    navbar.roundedBox
     prop.children [
         Html.div [
             prop.className "flex-none"
@@ -62,7 +70,11 @@ let iconAndText =
 let startCenterEnd =
     let example =
         Daisy.navbar [
-            prop.className "mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"
+            margin.mb2
+            shadow.shadowLg
+            color.bgNeutral
+            color.textNeutralContent
+            navbar.roundedBox
             prop.children [
                 Daisy.navbarStart [
                     Daisy.button.button [
@@ -88,7 +100,11 @@ let startCenterEnd =
         |> Html.div
 
     let code = """Daisy.navbar [
-    prop.className "mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"
+    margin.mb2
+    shadow.shadowLg
+    color.bgNeutral
+    color.textNeutralContent
+    navbar.roundedBox
     prop.children [
         Daisy.navbarStart [
             Daisy.button.button [
@@ -117,7 +133,11 @@ let startCenterEnd =
 let withInput =
     let example =
         Daisy.navbar [
-            prop.className "mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"
+            margin.mb2
+            shadow.shadowLg
+            color.bgNeutral
+            color.textNeutralContent
+            prop.className "rounded-box"
             prop.children [
                 Html.div [
                     prop.className "flex-none"
@@ -144,7 +164,11 @@ let withInput =
         |> Html.div
 
     let code = """Daisy.navbar [
-    prop.className "mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"
+    margin.mb2
+    shadow.shadowLg
+    color.bgNeutral
+    color.textNeutralContent
+    navbar.roundedBox
     prop.children [
         Html.div [
             prop.className "flex-none"

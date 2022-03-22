@@ -120,6 +120,8 @@ type button =
     /// Disables click animation
     static member inline animation = prop.className "no-animation"
 
+
+
 [<Erase>]
 type card =
     /// Adds border
@@ -223,6 +225,16 @@ type link =
     static member inline neutral = prop.className "link-neutral"
     /// Only show underline on hover
     static member inline hover = prop.className "link-hover"
+
+[<Erase>]
+type navbar =
+    /// Navbar with `rounded-box` color
+    static member inline roundedBox = prop.className "rounded-box"
+
+[<Erase>]
+type margin =
+    /// Margin bottom `mb-2` 0.5 rem
+    static member inline mb2 = prop.className "mb-2"
 
 [<Erase>]
 type mask =
@@ -563,6 +575,11 @@ type rating =
     static member inline sm = prop.className "rating-sm"
     /// Extra small size for rating
     static member inline xs = prop.className "rating-xs"
+
+[<Erase>]
+type shadow =
+    /// Box shadow with `shadow-lg` color
+    static member inline shadowLg = prop.className "shadow-lg"
 
 [<Erase>]
 type swap =
