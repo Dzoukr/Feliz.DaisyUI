@@ -13,7 +13,12 @@ let simple =
                 prop.text "Dropdown"
             ]
             Daisy.dropdownContent [
-                prop.className "p-2 shadow menu bg-base-100 rounded-box w-52"
+                padding.p2
+                shadow.shadow
+                dropdown.menu
+                color.bgBase100
+                box.roundedBox
+                width.w52
                 prop.tabIndex 0
                 prop.children [
                     Html.li [Html.a [prop.text "Item 1"]]
@@ -29,7 +34,12 @@ let simple =
         prop.text "Dropdown"
     ]
     Daisy.dropdownContent [
-        prop.className "p-2 shadow menu bg-base-100 rounded-box w-52"
+        padding.p2
+        shadow.shadow
+        dropdown.menu
+        color.bgBase100
+        box.roundedBox
+        width.w52
         prop.tabIndex 0
         prop.children [
             Html.li [Html.a [prop.text "Item 1"]]
@@ -52,7 +62,12 @@ let hover =
                     prop.text "Hover"
                 ]
                 Daisy.dropdownContent [
-                    prop.className "p-2 shadow menu bg-base-100 rounded-box w-52"
+                    padding.p2
+                    shadow.shadow
+                    dropdown.menu
+                    color.bgBase100
+                    box.roundedBox
+                    width.w52
                     prop.tabIndex 0
                     prop.children [
                         Html.li [Html.a [prop.text "Item 1"]]
@@ -72,7 +87,12 @@ let hover =
             prop.text "Hover"
         ]
         Daisy.dropdownContent [
-            prop.className "p-2 shadow menu bg-base-100 rounded-box w-52"
+            padding.p2
+            shadow.shadow
+            dropdown.menu
+            color.bgBase100
+            box.roundedBox
+            width.w52
             prop.tabIndex 0
             prop.children [
                 Html.li [Html.a [prop.text "Item 1"]]
@@ -96,7 +116,12 @@ let open' =
                     prop.text "Opened"
                 ]
                 Daisy.dropdownContent [
-                    prop.className "p-2 shadow menu bg-base-100 rounded-box w-52"
+                    padding.p2
+                    shadow.shadow
+                    dropdown.menu
+                    color.bgBase100
+                    box.roundedBox
+                    width.w52
                     prop.tabIndex 0
                     prop.children [
                         Html.li [Html.a [prop.text "Item 1"]]
@@ -115,7 +140,12 @@ let open' =
             prop.text "Opened"
         ]
         Daisy.dropdownContent [
-            prop.className "p-2 shadow menu bg-base-100 rounded-box w-52"
+            padding.p2
+            shadow.shadow
+            dropdown.menu
+            color.bgBase100
+            box.roundedBox
+            width.w52
             prop.tabIndex 0
             prop.children [
                 Html.li [Html.a [prop.text "Item 1"]]
@@ -148,7 +178,12 @@ let directions =
                             prop.text dirText
                         ]
                         Daisy.dropdownContent [
-                            prop.className "p-2 shadow menu bg-base-100 rounded-box w-52"
+                            padding.p2
+                            shadow.shadow
+                            dropdown.menu
+                            color.bgBase100
+                            box.roundedBox
+                            width.w52
                             prop.tabIndex 0
                             prop.children [
                                 Html.li [Html.a [prop.text "Item 1"]]
@@ -177,7 +212,12 @@ Html.div [
                     prop.text dirText
                 ]
                 Daisy.dropdownContent [
-                    prop.className "p-2 shadow menu bg-base-100 rounded-box w-52"
+                    padding.p2
+                    shadow.shadow
+                    dropdown.menu
+                    color.bgBase100
+                    box.roundedBox
+                    width.w52
                     prop.tabIndex 0
                     prop.children [
                         Html.li [Html.a [prop.text "Item 1"]]

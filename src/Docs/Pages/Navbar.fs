@@ -13,7 +13,7 @@ let iconAndText =
             margin.mb2
             color.bgNeutral
             color.textNeutralContent
-            navbar.roundedBox
+            box.roundedBox
             prop.children [
                 Html.div [
                     prop.className "flex-none"
@@ -42,7 +42,7 @@ let iconAndText =
     margin.mb2
     color.bgNeutral
     color.textNeutralContent
-    navbar.roundedBox
+    box.roundedBox
     prop.children [
         Html.div [
             prop.className "flex-none"
@@ -74,7 +74,7 @@ let startCenterEnd =
             shadow.shadowLg
             color.bgNeutral
             color.textNeutralContent
-            navbar.roundedBox
+            box.roundedBox
             prop.children [
                 Daisy.navbarStart [
                     Daisy.button.button [
@@ -104,7 +104,7 @@ let startCenterEnd =
     shadow.shadowLg
     color.bgNeutral
     color.textNeutralContent
-    navbar.roundedBox
+    box.roundedBox
     prop.children [
         Daisy.navbarStart [
             Daisy.button.button [
@@ -137,7 +137,7 @@ let withInput =
             shadow.shadowLg
             color.bgNeutral
             color.textNeutralContent
-            prop.className "rounded-box"
+            box.roundedBox
             prop.children [
                 Html.div [
                     prop.className "flex-none"
@@ -168,7 +168,7 @@ let withInput =
     shadow.shadowLg
     color.bgNeutral
     color.textNeutralContent
-    navbar.roundedBox
+    box.roundedBox
     prop.children [
         Html.div [
             prop.className "flex-none"

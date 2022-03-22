@@ -181,6 +181,8 @@ type dropdown =
     static member inline hover = prop.className "dropdown-hover"
     /// Force open
     static member inline open' = prop.className "dropdown-open"
+    /// Menu
+    static member inline menu = prop.className "menu"
 
 [<Erase>]
 type footer =
@@ -227,7 +229,7 @@ type link =
     static member inline hover = prop.className "link-hover"
 
 [<Erase>]
-type navbar =
+type box =
     /// Navbar with `rounded-box` color
     static member inline roundedBox = prop.className "rounded-box"
 
@@ -549,21 +551,13 @@ type mockupCode =
 
 
 [<Erase>]
-type toggle =
-    /// Adds `primary` to toggle
-    static member inline primary = prop.className "toggle-primary"
-    /// Adds `secondary` to toggle
-    static member inline secondary = prop.className "toggle-secondary"
-    /// Adds `accent` to toggle
-    static member inline accent = prop.className "toggle-accent"
-    /// Large toggle
-    static member inline lg = prop.className "toggle-lg"
-    /// Medium toggle (default)
-    static member inline md = prop.className "toggle-md"
-    /// Small toggle
-    static member inline sm = prop.className "toggle-sm"
-    /// Extra small toggle
-    static member inline xs = prop.className "toggle-xs"
+type padding =
+    /// Padding 0
+    static member inline p0 = prop.className "p-0"
+    /// Padding 1
+    static member inline p1 = prop.className "p-1"
+    /// Padding 2
+    static member inline p2 = prop.className "p-2"
 
 [<Erase>]
 type rating =
@@ -578,6 +572,8 @@ type rating =
 
 [<Erase>]
 type shadow =
+    /// Box shadow with `shadow` color
+    static member inline shadow = prop.className "shadow"
     /// Box shadow with `shadow-lg` color
     static member inline shadowLg = prop.className "shadow-lg"
 
@@ -653,6 +649,23 @@ type theme =
     static member inline lemonade = prop.custom("data-theme", "lemonade")
     /// Set custom theme
     static member inline custom (t:string) = prop.custom("data-theme", t)
+
+[<Erase>]
+type toggle =
+    /// Adds `primary` to toggle
+    static member inline primary = prop.className "toggle-primary"
+    /// Adds `secondary` to toggle
+    static member inline secondary = prop.className "toggle-secondary"
+    /// Adds `accent` to toggle
+    static member inline accent = prop.className "toggle-accent"
+    /// Large toggle
+    static member inline lg = prop.className "toggle-lg"
+    /// Medium toggle (default)
+    static member inline md = prop.className "toggle-md"
+    /// Small toggle
+    static member inline sm = prop.className "toggle-sm"
+    /// Extra small toggle
+    static member inline xs = prop.className "toggle-xs"
 
 [<Erase>]
 type color =
@@ -860,3 +873,15 @@ type color =
     static member inline successContent = prop.className "success-content"
     static member inline warningContent = prop.className "warning-content"
     static member inline errorContent = prop.className "error-content"
+
+
+
+[<Erase>]
+type width =
+    static member inline w52 = prop.className "w-52"
+    static member inline wAuto = prop.className "w-auto"
+    static member inline wMin = prop.className "w-min"
+    static member inline wMax = prop.className "w-max"
+    static member inline wFit = prop.className "w-fit"
+    static member inline wFull = prop.className "w-full"
+    static member inline wScreen = prop.className "w-screen"
