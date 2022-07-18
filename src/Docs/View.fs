@@ -203,7 +203,7 @@ let private leftSide (p:Page) =
                         mi "Carousel" Page.Carousel
                         mi "Collapse" Page.Collapse
                         mi "Countdown" Page.Countdown
-                        miBadge "updated" "Divider" Page.Divider
+                        mi "Divider" Page.Divider
                         mi "Drawer" Page.Drawer
                         mi "Dropdown" Page.Dropdown
                         mi "Footer" Page.Footer
@@ -217,19 +217,20 @@ let private leftSide (p:Page) =
                         mi "Navbar" Page.Navbar
                         mi "Pagination" Page.Pagination
                         mi "Progress" Page.Progress
-                        miBadge "new" "Radial Progress" Page.RadialProgress
+                        mi "Radial Progress" Page.RadialProgress
                         mi "Rating" Page.Rating
                         mi "Stack" Page.Stack
-                        miBadge "updated" "Stat" Page.Stat
+                        mi "Stat" Page.Stat
                         mi "Steps" Page.Steps
-                        miBadge "new" "Swap" Page.Swap
+                        mi "Swap" Page.Swap
                         mi "Tab" Page.Tab
                         mi "Table" Page.Table
+                        miBadge "new" "Toast" Page.Toast
                         mi "Tooltip" Page.Tooltip
                         mi "Form - Checkbox" Page.FormCheckbox
                         mi "Form - Input" Page.FormInput
                         mi "Form - Radio" Page.FormRadio
-                        miBadge "updated" "Form - Range" Page.FormRange
+                        mi "Form - Range" Page.FormRange
                         mi "Form - Select" Page.FormSelect
                         mi "Form - Textarea" Page.FormTextarea
                         mi "Form - Toggle" Page.FormToggle
@@ -302,6 +303,7 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Swap         -> "Swap"           , "/components/swap"         , Pages.Swap.SwapView ()
         | Page.Tab          -> "Tab"            , "/components/tab"          , Pages.Tab.TabView ()
         | Page.Table        -> "Table"          , "/components/table"        , Pages.Table.TableView ()
+        | Page.Toast        -> "Toast"          , "/components/toast"        , Pages.Toast.ToastView ()
         | Page.Tooltip      -> "Tooltip"        , "/components/tooltip"      , Pages.Tooltip.TooltipView ()
         | Page.FormCheckbox -> "Form - Checkbox", "/components/form/checkbox", Pages.FormCheckbox.FormCheckboxView ()
         | Page.FormInput    -> "Form - Input"   , "/components/form/input"   , Pages.FormInput.FormInputView ()

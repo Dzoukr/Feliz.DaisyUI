@@ -41,6 +41,7 @@ type Page =
     | Swap
     | Tab
     | Table
+    | Toast
     | Tooltip
     | FormCheckbox
     | FormInput
@@ -94,6 +95,7 @@ module Page =
         | [ "swap" ] -> Page.Swap
         | [ "tab" ] -> Page.Tab
         | [ "table" ] -> Page.Table
+        | [ "toast" ] -> Page.Toast
         | [ "tooltip" ] -> Page.Tooltip
         | [ "formcheckbox" ] -> Page.FormCheckbox
         | [ "forminput" ] -> Page.FormInput
@@ -148,6 +150,7 @@ module Page =
         | Page.Swap -> [ "swap" ] |> noQueryString
         | Page.Tab -> [ "tab" ] |> noQueryString
         | Page.Table -> [ "table" ] |> noQueryString
+        | Page.Toast -> [ "toast" ] |> noQueryString
         | Page.Tooltip -> [ "tooltip" ] |> noQueryString
         | Page.FormCheckbox -> [ "formcheckbox" ] |> noQueryString
         | Page.FormInput -> [ "forminput" ] |> noQueryString

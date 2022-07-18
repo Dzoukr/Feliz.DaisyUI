@@ -581,6 +581,21 @@ type stats =
     static member inline vertical = prop.className "stats-vertical"
 
 [<Erase>]
+type toast =
+    /// Align horizontally to the left
+    static member inline start = prop.className "toast-start"
+    /// Align horizontally to the center
+    static member inline center = prop.className "toast-center"
+    /// Align horizontally to the right (default)
+    static member inline end' = prop.className "toast-end"
+    /// Align vertically to top
+    static member inline top = prop.className "toast-top"
+    /// Align vertically to middle
+    static member inline middle = prop.className "toast-middle"
+    /// Align vertically to bottom (default)
+    static member inline bottom = prop.className "toast-bottom"
+
+[<Erase>]
 type theme =
     /// Set 'light' theme
     static member inline light = prop.custom("data-theme", "light")

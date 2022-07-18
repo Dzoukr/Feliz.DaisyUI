@@ -51,6 +51,7 @@
         <Compile Include="Pages\Tab.fs" />
         <Compile Include="Pages\TableView.fs" />
         <Compile Include="Pages\Tooltip.fs" />
+        <Compile Include="Pages\Toast.fs" />
         <Compile Include="Pages\Avatar.fs" />
         <Compile Include="Pages\Themes.fs" />
         <Compile Include="Pages\Colors.fs" />

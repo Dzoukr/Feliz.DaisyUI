@@ -435,6 +435,11 @@ type Daisy =
     static member inline radialProgress int = Helpers.Elm.int Html.div int "radial-progress"
     static member inline radialProgress float = Helpers.Elm.float Html.div float "radial-progress"
 
+    static member inline toast props = Helpers.Elm.props Html.div props "toast"
+    static member inline toast (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "toast"
+    static member inline toast elm = Helpers.Elm.elm Html.div elm "toast"
+
+
 module Daisy =
     [<Erase>]
     type button =
