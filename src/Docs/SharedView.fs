@@ -37,11 +37,11 @@ let linedMockupCode (code:string) =
 let codedView (title:ReactElement) (code:string) example =
     Html.divClassed "mb-10" [
         Html.divClassed "description" [ title ]
-        Html.divClassed "flex flex-row w-full" [
+        Html.divClassed "flex flex-col md:flex-row w-full" [
             Html.divClassed "grid flex-1 h-full" [
                 linedMockupCode code
             ]
-            Daisy.divider [ divider.horizontal; prop.text "👉"; color.textNeutral; prop.className "after:bg-opacity-30 before:bg-opacity-30" ]
-            Html.divClassed "grid flex-1" [ example ]
+            Daisy.divider [ prop.text "👉"; color.textNeutral; prop.className "after:bg-opacity-30 before:bg-opacity-30 md:divider-horizontal" ]
+            Html.divClassed "grid flex-1 min-h-[10rem]" [ example ]
         ]
     ]
