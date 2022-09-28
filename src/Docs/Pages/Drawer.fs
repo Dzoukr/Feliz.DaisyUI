@@ -26,7 +26,7 @@ let simple =
                     ]
                 ]
                 Daisy.drawerSide [
-                    Daisy.drawerOverlay [prop.name "my-drawer"]
+                    Daisy.drawerOverlay [prop.htmlFor "my-drawer"]
                     Daisy.menu [
                         prop.className "p-4 overflow-y-auto w-80 bg-base-100 text-base-content"
                         prop.children [
@@ -58,7 +58,7 @@ let simple =
             ]
         ]
         Daisy.drawerSide [
-            Daisy.drawerOverlay [prop.name "my-drawer"]
+            Daisy.drawerOverlay [prop.htmlFor "my-drawer"]
             Daisy.menu [
                 prop.className "p-4 overflow-y-auto w-80 bg-base-100 text-base-content"
                 prop.children [
