@@ -43,6 +43,7 @@ type Page =
     | Table
     | Toast
     | Tooltip
+    | FileInput
     | FormCheckbox
     | FormInput
     | FormRadio
@@ -97,6 +98,7 @@ module Page =
         | [ "table" ] -> Page.Table
         | [ "toast" ] -> Page.Toast
         | [ "tooltip" ] -> Page.Tooltip
+        | [ "fileinput" ] -> Page.FileInput
         | [ "formcheckbox" ] -> Page.FormCheckbox
         | [ "forminput" ] -> Page.FormInput
         | [ "formradio" ] -> Page.FormRadio
@@ -152,6 +154,7 @@ module Page =
         | Page.Table -> [ "table" ] |> noQueryString
         | Page.Toast -> [ "toast" ] |> noQueryString
         | Page.Tooltip -> [ "tooltip" ] |> noQueryString
+        | Page.FileInput -> [ "fileinput" ] |> noQueryString
         | Page.FormCheckbox -> [ "formcheckbox" ] |> noQueryString
         | Page.FormInput -> [ "forminput" ] |> noQueryString
         | Page.FormRadio -> [ "formradio" ] |> noQueryString
