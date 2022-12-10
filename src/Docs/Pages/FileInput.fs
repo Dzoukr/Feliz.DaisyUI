@@ -183,31 +183,6 @@ let fileWithButton =
     codedView title code example
 
 
-let fileWithVertical =
-    let example =
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Vertical"]
-            Daisy.fileGroup [
-                fileGroup.vertical
-                prop.children [
-                    Html.span "Email"
-                    Daisy.file [file.bordered]
-                ]
-            ]
-        ]
-
-    let code = """Daisy.formControl [
-    Daisy.label [Daisy.labelText "Vertical"]
-    Daisy.fileGroup [
-        fileGroup.vertical
-        prop.children [
-            Html.span "Email"
-            Daisy.file [file.bordered]
-        ]
-    ]
-]"""
-    let title = Html.text "File Input with vertical"
-    codedView title code example
 
 [<ReactComponent>]
 let FileInputView () =
@@ -219,6 +194,4 @@ let FileInputView () =
         fileWithColors
         fileWithSizes
         fileWithButton
-        fileWithGroup
-        fileWithVertical
     ]
