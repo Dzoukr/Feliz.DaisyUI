@@ -227,6 +227,7 @@ let private leftSide (p:Page) =
                         mi "Table" Page.Table
                         miBadge "new" "Toast" Page.Toast
                         mi "Tooltip" Page.Tooltip
+                        miBadge "new " "File - Input" Page.FileInput
                         mi "Form - Checkbox" Page.FormCheckbox
                         mi "Form - Input" Page.FormInput
                         mi "Form - Radio" Page.FormRadio
@@ -305,6 +306,7 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Table        -> "Table"          , "/components/table"        , Pages.Table.TableView ()
         | Page.Toast        -> "Toast"          , "/components/toast"        , Pages.Toast.ToastView ()
         | Page.Tooltip      -> "Tooltip"        , "/components/tooltip"      , Pages.Tooltip.TooltipView ()
+        | Page.FileInput    -> "File - Input"   , "/components/file/input"   , Pages.FileInput.FileInputView ()
         | Page.FormCheckbox -> "Form - Checkbox", "/components/form/checkbox", Pages.FormCheckbox.FormCheckboxView ()
         | Page.FormInput    -> "Form - Input"   , "/components/form/input"   , Pages.FormInput.FormInputView ()
         | Page.FormRadio    -> "Form - Radio"   , "/components/form/radio"   , Pages.FormRadio.FormRadioView ()

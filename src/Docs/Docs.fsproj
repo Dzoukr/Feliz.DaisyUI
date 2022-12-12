@@ -25,6 +25,7 @@
         <Compile Include="Pages\Footer.fs" />
         <Compile Include="Pages\Hero.fs" />
         <Compile Include="Pages\Indicator.fs" />
+        <Compile Include="Pages\FileInput.fs" />
         <Compile Include="Pages\FormCheckbox.fs" />
         <Compile Include="Pages\FormInput.fs" />
         <Compile Include="Pages\FormRadio.fs" />

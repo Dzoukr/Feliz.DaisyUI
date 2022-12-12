@@ -596,6 +596,35 @@ type toast =
     static member inline bottom = prop.className "toast-bottom"
 
 [<Erase>]
+type file =
+    /// Adds border to file-input
+    static member inline bordered = prop.className "file-input-bordered"
+    /// Adds ghost style to checkbox
+    static member inline ghost = prop.className "file-input-ghost"
+    /// Adds `primary` color to file-input
+    static member inline primary = prop.className "file-input-primary"
+    /// Adds `secondary` color to file-input
+    static member inline secondary = prop.className "file-input-secondary"
+    /// Adds `accent` color to file-input
+    static member inline accent = prop.className "file-input-accent"
+    /// Adds `info` color to file-input
+    static member inline info = prop.className "file-input-info"
+    /// Adds `success` color to file-input
+    static member inline success = prop.className "file-input-success"
+    /// Adds `warning` color to file-input
+    static member inline warning = prop.className "file-input-warning"
+    /// Adds `error` color to file-input
+    static member inline error = prop.className "file-input-error"
+    /// Large size for file-input
+    static member inline lg = prop.className "file-input-lg"
+    /// Medium (default) size for file-input
+    static member inline md = prop.className "file-input-md"
+    /// Small size for file-input
+    static member inline sm = prop.className "file-input-sm"
+    /// Extra small size for file-input
+    static member inline xs = prop.className "file-input-xs"
+
+[<Erase>]
 type theme =
     /// Set 'light' theme
     static member inline light = prop.custom("data-theme", "light")
