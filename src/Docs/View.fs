@@ -1,6 +1,7 @@
 module Docs.View
 
 open Feliz
+open Feliz.UseElmish
 open Router
 open Elmish
 open SharedView
@@ -263,8 +264,8 @@ let private inLayout state dispatch (title:string) (docLink:string)  (p:Page) (e
 
 
 [<ReactComponent>]
-let AppView (state:State) (dispatch:Msg -> unit) =
-
+let AppView () =
+    let state,dispatch = React.useElmish(init, update)
     let title,docLink,content =
         match state.Page with
         | Page.Install      -> "Installation"   , "/docs/install"            , Pages.Install.InstallView()
@@ -306,7 +307,7 @@ let AppView (state:State) (dispatch:Msg -> unit) =
         | Page.Table        -> "Table"          , "/components/table"        , Pages.Table.TableView ()
         | Page.Toast        -> "Toast"          , "/components/toast"        , Pages.Toast.ToastView ()
         | Page.Tooltip      -> "Tooltip"        , "/components/tooltip"      , Pages.Tooltip.TooltipView ()
-        | Page.FileInput    -> "File - Input"   , "/components/file/input"   , Pages.FileInput.FileInputView ()
+        | Page.FileInput    -> "File - Input"   , "/components/file-input"   , Pages.FileInput.FileInputView ()
         | Page.FormCheckbox -> "Form - Checkbox", "/components/form/checkbox", Pages.FormCheckbox.FormCheckboxView ()
         | Page.FormInput    -> "Form - Input"   , "/components/form/input"   , Pages.FormInput.FormInputView ()
         | Page.FormRadio    -> "Form - Radio"   , "/components/form/radio"   , Pages.FormRadio.FormRadioView ()

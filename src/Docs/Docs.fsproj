@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
+        <Compile Include="UseElmish.fs" />
         <Compile Include="Router.fs" />
         <Compile Include="SharedView.fs" />
         <Compile Include="Pages\Install.fs" />
@@ -58,7 +59,6 @@
         <Compile Include="Pages\Colors.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
-        <Content Include="index.html" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Feliz.DaisyUI\Feliz.DaisyUI.fsproj" />

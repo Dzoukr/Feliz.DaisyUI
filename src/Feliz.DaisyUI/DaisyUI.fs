@@ -439,7 +439,7 @@ type Daisy =
     static member inline toast (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "toast"
     static member inline toast elm = Helpers.Elm.elm Html.div elm "toast"
 
-    static member inline file props = Helpers.Elm.props Html.input (prop.type'.file :: props) "file"
+    static member inline file props = Helpers.Elm.props Html.input (prop.type'.file :: props) "file-input"
 
 
 
