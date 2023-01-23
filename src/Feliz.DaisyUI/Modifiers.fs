@@ -678,6 +678,12 @@ type theme =
     static member inline acid = prop.custom("data-theme", "acid")
     /// Set 'lemonade' theme
     static member inline lemonade = prop.custom("data-theme", "lemonade")
+    /// Set 'night' theme
+    static member inline night = prop.custom("data-theme", "night")
+    /// Set 'coffee' theme
+    static member inline coffee = prop.custom("data-theme", "coffee")
+    /// Set 'winter' theme
+    static member inline winter = prop.custom("data-theme", "winter")
     /// Set custom theme
     static member inline custom (t:string) = prop.custom("data-theme", t)
 
