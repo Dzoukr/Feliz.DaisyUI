@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>2.3.0</Version>
-        <PackageReleaseNotes>Added support for file-input #6</PackageReleaseNotes>
+        <Version>2.4.0</Version>
+        <PackageReleaseNotes>Add new themes #8</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />
