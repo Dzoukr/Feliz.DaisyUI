@@ -441,8 +441,34 @@ type Daisy =
 
     static member inline file props = Helpers.Elm.props Html.input (prop.type'.file :: props) "file-input"
 
+    static member inline chat props = Helpers.Elm.props Html.div props "chat"
+    static member inline chat (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "chat"
+    static member inline chat elm = Helpers.Elm.elm Html.div elm "chat"
 
+    static member inline chatImage props = Helpers.Elm.props Html.div props "chat-image"
+    static member inline chatImage (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "chat-image"
+    static member inline chatImage elm = Helpers.Elm.elm Html.div elm "chat-image"
 
+    static member inline chatHeader props = Helpers.Elm.props Html.div props "chat-header"
+    static member inline chatHeader (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "chat-header"
+    static member inline chatHeader elm = Helpers.Elm.elm Html.div elm "chat-header"
+    static member inline chatHeader string = Helpers.Elm.string Html.div string "chat-header"
+    static member inline chatHeader int = Helpers.Elm.int Html.div int "chat-header"
+    static member inline chatHeader float = Helpers.Elm.float Html.div float "chat-header"
+
+    static member inline chatFooter props = Helpers.Elm.props Html.div props "chat-footer"
+    static member inline chatFooter (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "chat-footer"
+    static member inline chatFooter elm = Helpers.Elm.elm Html.div elm "chat-footer"
+    static member inline chatFooter string = Helpers.Elm.string Html.div string "chat-footer"
+    static member inline chatFooter int = Helpers.Elm.int Html.div int "chat-footer"
+    static member inline chatFooter float = Helpers.Elm.float Html.div float "chat-footer"
+
+    static member inline chatBubble props = Helpers.Elm.props Html.div props "chat-bubble"
+    static member inline chatBubble (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "chat-bubble"
+    static member inline chatBubble elm = Helpers.Elm.elm Html.div elm "chat-bubble"
+    static member inline chatBubble string = Helpers.Elm.string Html.div string "chat-bubble"
+    static member inline chatBubble int = Helpers.Elm.int Html.div int "chat-bubble"
+    static member inline chatBubble float = Helpers.Elm.float Html.div float "chat-bubble"
 
 module Daisy =
     [<Erase>]

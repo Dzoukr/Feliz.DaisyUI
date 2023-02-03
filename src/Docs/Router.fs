@@ -18,6 +18,7 @@ type Page =
     | ButtonGroup
     | Card
     | Carousel
+    | ChatBubble
     | Collapse
     | Countdown
     | Divider
@@ -73,6 +74,7 @@ module Page =
         | [ "buttongroup" ] -> Page.ButtonGroup
         | [ "card" ] -> Page.Card
         | [ "carousel" ] -> Page.Carousel
+        | [ "chatbubble" ] -> Page.ChatBubble
         | [ "collapse" ] -> Page.Collapse
         | [ "countdown" ] -> Page.Countdown
         | [ "divider" ] -> Page.Divider
@@ -130,6 +132,7 @@ module Page =
         | Page.Card -> [ "card" ] |> noQueryString
         | Page.Carousel -> [ "carousel" ] |> noQueryString
         | Page.Collapse -> [ "collapse" ] |> noQueryString
+        | Page.ChatBubble -> [ "chatbubble" ] |> noQueryString
         | Page.Countdown -> [ "countdown" ] |> noQueryString
         | Page.Divider -> [ "divider" ] |> noQueryString
         | Page.Drawer -> [ "drawer" ] |> noQueryString

@@ -18,6 +18,7 @@
         <Compile Include="Pages\Badge.fs" />
         <Compile Include="Pages\Card.fs" />
         <Compile Include="Pages\Carousel.fs" />
+        <Compile Include="Pages\ChatBubble.fs" />
         <Compile Include="Pages\Collapse.fs" />
         <Compile Include="Pages\Countdown.fs" />
         <Compile Include="Pages\Divider.fs" />

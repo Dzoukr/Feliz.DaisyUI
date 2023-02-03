@@ -54,6 +54,9 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
             "business", "💼 business"
             "acid", "💊 acid"
             "lemonade", "🍋 lemonade"
+            "night", "🌃 night"
+            "coffee", "☕ coffee"
+            "winter", "❄ winter"
         ]
 
     Daisy.drawerContent [
@@ -202,6 +205,7 @@ let private leftSide (p:Page) =
                         mi "ButtonGroup" Page.ButtonGroup
                         mi "Card" Page.Card
                         mi "Carousel" Page.Carousel
+                        miBadge "new" "Chat bubble" Page.ChatBubble
                         mi "Collapse" Page.Collapse
                         mi "Countdown" Page.Countdown
                         mi "Divider" Page.Divider
@@ -281,6 +285,7 @@ let AppView () =
         | Page.ButtonGroup  -> "ButtonGroup"    , "/components/button-group" , Pages.ButtonGroup.ButtonGroupView ()
         | Page.Card         -> "Card"           , "/components/card"         , Pages.Card.CardView ()
         | Page.Carousel     -> "Carousel"       , "/components/carousel"     , Pages.Carousel.CarouselView ()
+        | Page.ChatBubble   -> "ChatBubble"     , "/components/chat"         , Pages.ChatBubble.ChatBubble ()
         | Page.Collapse     -> "Collapse"       , "/components/collapse"     , Pages.Collapse.CollapseView ()
         | Page.Countdown    -> "Countdown"      , "/components/countdown"    , Pages.Countdown.CountdownView ()
         | Page.Divider      -> "Divider"        , "/components/divider"      , Pages.Divider.DividerView ()

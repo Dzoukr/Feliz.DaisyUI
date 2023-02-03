@@ -41,6 +41,8 @@ type avatar =
     static member inline offline = prop.className "offline"
     /// to show some letters as avatar placeholder
     static member inline placeholder = prop.className "placeholder"
+    /// avatar class name usable for combination with other elements
+    static member inline className = prop.className "avatar"
 
 [<Erase>]
 type badge =
@@ -623,6 +625,31 @@ type file =
     static member inline sm = prop.className "file-input-sm"
     /// Extra small size for file-input
     static member inline xs = prop.className "file-input-xs"
+
+[<Erase>]
+type chat =
+    /// Aligns `chat` to left (required)
+    static member inline start = prop.className "chat-start"
+    /// Aligns `chat` to end (required)
+    static member inline end' = prop.className "chat-end"
+
+[<Erase>]
+type chatBubble =
+    /// Adds `primary` color to the chat bubble
+    static member inline primary = prop.className "chat-bubble-primary"
+    /// Adds `secondary` color to the chat bubble
+    static member inline secondary = prop.className "chat-bubble-secondary"
+    /// Adds `accent` color to the chat bubble
+    static member inline accent = prop.className "chat-bubble-accent"
+    /// Adds `info` color to the chat bubble
+    static member inline info = prop.className "chat-bubble-info"
+    /// Adds `success` color to the chat bubble
+    static member inline success = prop.className "chat-bubble-success"
+    /// Adds `warning` color to the chat bubble
+    static member inline warning = prop.className "chat-bubble-warning"
+    /// Adds `error` color to the chat bubble
+    static member inline error = prop.className "chat-bubble-error"
+
 
 [<Erase>]
 type theme =
