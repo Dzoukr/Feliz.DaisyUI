@@ -34,9 +34,9 @@ let ex2 =
         |> Html.div
 
     let code = """Daisy.badge [
-    badge.lg
-    badge.error
-    prop.text "Big error badge"
+    badge.sm
+    badge.success
+    prop.text "Success badge"
 ]"""
     let title = Html.text "Just a badge. Yup. Again."
     codedView title code example
