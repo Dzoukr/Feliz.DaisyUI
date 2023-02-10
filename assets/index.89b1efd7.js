@@ -130,9 +130,9 @@ Html.div [
     badge.error
     prop.text "Big error badge"
 ]`,o("div",{children:[o("div",m(f("badge",c([["className","badge-lg"],["className","badge-error"],["children","Big error badge"]]))))]})),Yg=C("Just a badge. Yup. Again.",`Daisy.badge [
-    badge.lg
-    badge.error
-    prop.text "Big error badge"
+    badge.sm
+    badge.success
+    prop.text "Success badge"
 ]`,o("div",{children:[o("div",m(f("badge",c([["className","badge-sm"],["className","badge-success"],["children","Success badge"]]))))]})),Kg=C("And now inside a button!",`Daisy.button.button [
     Html.text "This is button"
     Daisy.badge [
