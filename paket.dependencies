@@ -1,31 +1,31 @@
 version 5.249.0
 
 source https://api.nuget.org/v3/index.json
-framework: net6.0, netstandard2.0
+framework: net7.0, netstandard2.0
 storage: none
 strategy: min
 
-nuget FSharp.Core >= 4.7.2
-nuget Feliz >= 1.32.0
+//nuget FSharp.Core >= 4.7.2
+nuget Feliz >= 2.4.1
 
 group Docs
     source https://api.nuget.org/v3/index.json
     framework: net7.0
+    strategy: min
     storage: none
 
     nuget Fable.Core prerelease
     nuget Fable.React
-    nuget Feliz prerelease
-    nuget Feliz.CompilerPlugins prerelease
+    nuget Feliz
     nuget Feliz.Router
     nuget Feliz.UseElmish
 
 group Build
     source https://api.nuget.org/v3/index.json
-    framework: net6.0
+    framework: net7.0
+    strategy: min
     storage: none
 
-    nuget FSharp.Core
     nuget Fake.Core.Target
     nuget Fake.DotNet.Cli
     nuget Fake.IO.FileSystem
