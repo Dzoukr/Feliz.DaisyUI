@@ -28,5 +28,9 @@ let ex1 =
 [<ReactComponent>]
 let ButtonGroupView () =
     React.fragment [
+        Daisy.alert [
+            alert.warning
+            prop.text "This component is deprecated and will be removed in the next major version. Use Join instead."
+        ]
         ex1
     ]

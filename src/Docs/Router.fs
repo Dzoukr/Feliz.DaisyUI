@@ -9,6 +9,7 @@ type Page =
     | Use
     | Themes
     | Colors
+    | Accordion
     | Alert
     | Artboard
     | Avatar
@@ -26,9 +27,11 @@ type Page =
     | Dropdown
     | Footer
     | Hero
+    | Join
     | Indicator
     | Kbd
     | Link
+    | Loading
     | Mask
     | Menu
     | Modal
@@ -66,6 +69,7 @@ module Page =
         | [ "themes" ] -> Page.Themes
         | [ "colors" ] -> Page.Colors
         | [ "alert" ] -> Page.Alert
+        | [ "accordion" ] -> Page.Accordion
         | [ "artboard" ] -> Page.Artboard
         | [ "avatar" ] -> Page.Avatar
         | [ "badge" ] -> Page.Badge
@@ -83,8 +87,10 @@ module Page =
         | [ "footer" ] -> Page.Footer
         | [ "hero" ] -> Page.Hero
         | [ "indicator" ] -> Page.Indicator
+        | [ "join" ] -> Page.Join
         | [ "kbd" ] -> Page.Kbd
         | [ "link" ] -> Page.Link
+        | [ "loading" ] -> Page.Loading
         | [ "mask" ] -> Page.Mask
         | [ "menu" ] -> Page.Menu
         | [ "modal" ] -> Page.Modal
@@ -122,6 +128,7 @@ module Page =
         | Page.Use -> [ "use" ] |> noQueryString
         | Page.Themes -> [ "themes" ] |> noQueryString
         | Page.Colors -> [ "colors" ] |> noQueryString
+        | Page.Accordion -> [ "accordion" ] |> noQueryString
         | Page.Alert -> [ "alert" ] |> noQueryString
         | Page.Artboard -> [ "artboard" ] |> noQueryString
         | Page.Avatar -> [ "avatar" ] |> noQueryString
@@ -140,8 +147,10 @@ module Page =
         | Page.Footer -> [ "footer" ] |> noQueryString
         | Page.Hero -> [ "hero" ] |> noQueryString
         | Page.Indicator -> [ "indicator" ] |> noQueryString
+        | Page.Join -> [ "join" ] |> noQueryString
         | Page.Kbd -> [ "kbd" ] |> noQueryString
         | Page.Link -> [ "link" ] |> noQueryString
+        | Page.Loading -> [ "loading" ] |> noQueryString
         | Page.Mask -> [ "mask" ] |> noQueryString
         | Page.Menu -> [ "menu" ] |> noQueryString
         | Page.Modal -> [ "modal" ] |> noQueryString

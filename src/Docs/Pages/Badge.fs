@@ -48,7 +48,6 @@ let ex3 =
             Daisy.badge [
                 badge.sm
                 badge.success
-                prop.className "ml-2"
                 prop.text "NEW"
             ]
         ]
@@ -59,7 +58,6 @@ let ex3 =
     Daisy.badge [
         badge.sm
         badge.success
-        prop.className "ml-2"
         prop.text "NEW"
     ]
 ]"""

@@ -34,12 +34,17 @@ let ex1 =
 
 let ex2 =
     let example =
-        Html.divClassed "max-w-lg" [
+        Html.div [
             Daisy.card [
                 theme.cyberpunk
                 card.bordered
                 prop.children [
-                    Html.figure [ Html.img [ prop.src "https://picsum.photos/id/1005/400/250" ] ]
+                    Html.figure [
+                        prop.className "pt-10"
+                        prop.children [
+                            Html.img [ prop.src "https://picsum.photos/id/1005/400/250" ]
+                        ]
+                    ]
                     Daisy.cardBody [
                         Daisy.cardTitle "Some title"
                         Html.p "What a cool library, isn't it?"
@@ -59,7 +64,10 @@ let ex2 =
     card.bordered
     prop.children [
         Html.figure [
-            Html.img [ prop.src "https://picsum.photos/id/1005/400/250" ]
+            prop.className "pt-10"
+            prop.children [
+                Html.img [ prop.src "https://picsum.photos/id/1005/400/250" ]
+            ]
         ]
         Daisy.cardBody [
             Daisy.cardTitle "Some title"

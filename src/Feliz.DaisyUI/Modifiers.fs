@@ -72,6 +72,7 @@ type badge =
     static member inline sm = prop.className "badge-sm"
     /// badge with extra small size
     static member inline xs = prop.className "badge-xs"
+    static member inline neutral = prop.className "badge-neutral"
 
 [<Erase>]
 type button =
@@ -121,6 +122,7 @@ type button =
     static member inline loading = prop.className "loading"
     /// Disables click animation
     static member inline animation = prop.className "no-animation"
+    static member inline neutral = prop.className "btn-neutral"
 
 [<Erase>]
 type card =
@@ -162,8 +164,6 @@ type divider =
 
 [<Erase>]
 type drawer =
-    /// Makes drawer to open/close on mobile but will be always visible on desktop
-    static member inline mobile = prop.className "drawer-mobile"
     /// puts drawer to the right
     static member inline end' = prop.className "drawer-end"
 
@@ -203,6 +203,15 @@ type indicator =
     static member inline bottom = prop.className "indicator-bottom"
 
 [<Erase>]
+type join =
+    /// Item inside join. Can be a button, input, etc.
+    static member inline item = prop.className "join-item"
+    /// Show items vertically
+    static member inline vertical = prop.className "join-vertical"
+    /// Show items horizontally
+    static member inline horizontal = prop.className "join-horizontal"
+
+[<Erase>]
 type kbd =
     /// Large size
     static member inline lg = prop.className "kbd-lg"
@@ -225,6 +234,31 @@ type link =
     static member inline neutral = prop.className "link-neutral"
     /// Only show underline on hover
     static member inline hover = prop.className "link-hover"
+
+[<Erase>]
+type loading =
+
+    ///Shows the spinner animation
+    static member inline spinner = prop.className "loading-spinner"
+    ///Shows the dots animation
+    static member inline dots = prop.className "loading-dots"
+    ///Shows the ring animation
+    static member inline ring = prop.className "loading-ring"
+    ///Shows the ball animation
+    static member inline ball = prop.className "loading-ball"
+    ///Shows the bars animation
+    static member inline bars = prop.className "loading-bars"
+    ///Shows the infinity animation
+    static member inline infinity = prop.className "loading-infinity"
+
+    /// Large size
+    static member inline lg = prop.className "loading-lg"
+    /// Medium size (default)
+    static member inline md = prop.className "loading-md"
+    /// Small size
+    static member inline sm = prop.className "loading-sm"
+    /// Extra small size
+    static member inline xs = prop.className "loading-xs"
 
 [<Erase>]
 type mask =
@@ -269,24 +303,40 @@ type mask =
 
 [<Erase>]
 type menu =
-    /// Makes menu more compact
-    static member inline compact = prop.className "menu-compact"
-    /// Normal text size and normal spacing (default)
-    static member inline normal = prop.className "menu-normal"
-    /// Vertical menu (default)
+
+    /// Large size
+    static member inline lg = prop.className "menu-lg"
+    /// Medium size (default)
+    static member inline md = prop.className "menu-md"
+    /// Small size
+    static member inline sm = prop.className "menu-sm"
+    /// Extra small size
+    static member inline xs = prop.className "menu-xs"
     static member inline vertical = prop.className "menu-vertical"
     /// Horizontal menu
     static member inline horizontal = prop.className "menu-horizontal"
+    /// Shows the `menu-dropdown-toggle` and `menu-dropdown` collapsible submenu using JS
+    static member inline dropdownShow = prop.className "menu-dropdown-show"
 
 [<Erase>]
 type menuItem =
     /// Set menu item as active
     static member inline active = prop.className "active"
+    /// Applies focus style to the element inside <li>
+    static member inline focus = prop.className "focus"
+    /// Sets <li> as disabled
+    static member inline disabled = prop.className "disabled"
 
 [<Erase>]
 type modal =
     /// Add/remove this class to open/close the modal using JS
     static member inline open' = prop.className "modal-open"
+    /// Moves the modal to top
+    static member inline top = prop.className "modal-top"
+    /// Moves the modal to bottom
+    static member inline bottom = prop.className "modal-bottom"
+    /// Moves the modal to middle (default)
+    static member inline middle = prop.className "modal-middle"
 
 [<Erase>]
 type progress =
@@ -353,14 +403,20 @@ type tab =
 
 [<Erase>]
 type table =
-    /// For the active tab
+    /// For <table> to show zebra stripe rows
     static member inline zebra = prop.className "table-zebra"
-    /// Make table more compact
-    static member inline compact = prop.className "table-compact"
-    /// For <tr> to highlight current row
-    static member inline active = prop.className "active"
-    /// For <tr> to highlight current row on hover
-    static member inline hover = prop.className "hover"
+    /// For <table> to make all the rows inside <thead> and <tfoot> sticky
+    static member inline pinRows = prop.className "table-pin-rows"
+    /// For <table> to make all the <th> columns sticky
+    static member inline pinCols = prop.className "table-pin-cols"
+    /// Shows table in extra small size
+    static member inline xs = prop.className "table-xs"
+    /// Shows table in small size
+    static member inline sm = prop.className "table-sm"
+    /// Shows table in medium (default) size
+    static member inline md = prop.className "table-md"
+    /// Shows table in large size
+    static member inline lg = prop.className "table-lg"
 
 [<Erase>]
 type tooltip =
@@ -368,7 +424,8 @@ type tooltip =
     static member inline text (t:string) = prop.custom("data-tip", t)
     /// Force open tooltip
     static member inline open' = prop.className "tooltip-open"
-    /// Put tooltip on bottom
+    /// Put tooltip on top
+    static member inline top = prop.className "tooltip-top"
     static member inline bottom = prop.className "tooltip-bottom"
     /// Put tooltip on left
     static member inline left = prop.className "tooltip-left"

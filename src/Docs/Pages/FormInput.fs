@@ -272,7 +272,14 @@ let inputWithGroup =
         ]
     ]
 ]"""
-    let title = Html.text "Input with group"
+    let title =
+        Html.divClassed "flex flex-col gap-2" [
+            Html.text "Input with group"
+            Daisy.alert [
+                alert.warning
+                prop.text "This component is deprecated and will be removed in the next major version. Use Join instead."
+            ]
+        ]
     codedView title code example
 
 let inputWithVertical =

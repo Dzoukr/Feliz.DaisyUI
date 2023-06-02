@@ -9,25 +9,23 @@ open Docs.SharedView
 let simple =
     let example =
         Daisy.table [
-            prop.className "w-full"
-            prop.children [
-                Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
-                Html.tbody [Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]]
-                Html.tbody [Html.tr [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]
-                Html.tbody [Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]]
-                Html.tbody [Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]]
+            Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
+            Html.tbody [
+                Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]
+                Html.tr [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]
+                Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]
+                Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]
             ]
         ]
         |> Html.div
 
     let code = """Daisy.table [
-    prop.className "w-full"
-    prop.children [
-        Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
-        Html.tbody [Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]]
-        Html.tbody [Html.tr [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]
-        Html.tbody [Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]]
-        Html.tbody [Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]]
+    Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
+    Html.tbody [
+        Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]
+        Html.tr [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]
+        Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]
+        Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]
     ]
 ]"""
     let title = Html.text "Simple"
@@ -36,81 +34,79 @@ let simple =
 let activeRow =
     let example =
         Daisy.table [
-            prop.className "w-full"
-            prop.children [
-                Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
-                Html.tbody [Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]]
-                Html.tbody [Html.tr [table.active; prop.children [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]]
-                Html.tbody [Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]]
-                Html.tbody [Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]]
+            Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
+            Html.tbody [
+                Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]
+                Html.tr [prop.className "bg-yellow-300"; prop.children [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]
+                Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]
+                Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]
             ]
         ]
         |> Html.div
 
     let code = """Daisy.table [
-    prop.className "w-full"
-    prop.children [
-        Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
-        Html.tbody [Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]]
-        Html.tbody [Html.tr [table.active; prop.children [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]]
-        Html.tbody [Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]]
-        Html.tbody [Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]]
+    Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
+    Html.tbody [
+        Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]
+        Html.tr [prop.className "bg-yellow-300"; prop.children [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]
+        Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]
+        Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]
     ]
 ]"""
-    let title = Html.text "Active Row"
+    let title = Html.text "Use your favourite color for making row active"
     codedView title code example
 
 let hoverRow =
     let example =
         Daisy.table [
-            prop.className "w-full"
-            prop.children [
-                Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
-                Html.tbody [Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]]
-                Html.tbody [Html.tr [table.hover; prop.children [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]]
-                Html.tbody [Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]]
-                Html.tbody [Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]]
+            Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
+            Html.tbody [
+                Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]
+                Html.tr [prop.className "hover:bg-yellow-300"; prop.children [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]
+                Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]
+                Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]
             ]
         ]
         |> Html.div
 
     let code = """Daisy.table [
-    prop.className "w-full"
-    prop.children [
-        Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
-        Html.tbody [Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]]
-        Html.tbody [Html.tr [table.hover; prop.children [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]]
-        Html.tbody [Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]]
-        Html.tbody [Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]]
+    Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
+    Html.tbody [
+        Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]
+        Html.tr [prop.className "hover:bg-yellow-300"; prop.children [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]
+        Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]
+        Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]
     ]
 ]"""
-    let title = Html.text "Hover Row"
+    let title = Html.text "Hover row using classic Tailwind approach"
     codedView title code example
 
 let zebra =
     let example =
         Daisy.table [
             table.zebra
-            prop.className "w-full"
             prop.children [
                 Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
-                Html.tbody [Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]]
-                Html.tbody [Html.tr [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]
-                Html.tbody [Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]]
-                Html.tbody [Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]]
+                Html.tbody [
+                    Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]
+                    Html.tr [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]
+                    Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]
+                    Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]
+                ]
             ]
         ]
         |> Html.div
 
     let code = """Daisy.table [
     table.zebra
-    prop.className "w-full"
     prop.children [
         Html.thead [Html.tr [Html.th ""; Html.th "Name"; Html.th "Job"; Html.th "Favorite Color"]]
-        Html.tbody [Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]]
-        Html.tbody [Html.tr [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]]
-        Html.tbody [Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]]
-        Html.tbody [Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]]
+        Html.tbody [
+            Html.tr [Html.td "1"; Html.td "Cy Ganderton"; Html.td "Quality Control Specialist"; Html.td "Blue"]
+            Html.tr [Html.td "2"; Html.td "Hart Hagerty"; Html.td "Desktop Support Technician"; Html.td "Purple"]
+            Html.tr [Html.td "3"; Html.td "Brice Swyre"; Html.td "Tax Accountant"; Html.td "Red"]
+            Html.tr [Html.td "4"; Html.td "Marjy Ferencz"; Html.td "Office Assistant I"; Html.td "Crimson"]
+        ]
     ]
 ]"""
     let title = Html.text "Zebra"
@@ -149,8 +145,6 @@ let tableWithVisuals =
             ]
 
         Daisy.table [
-            table.compact
-            prop.className "w-full"
             prop.children [
                 Html.thead [
                     Html.tr [
@@ -162,7 +156,7 @@ let tableWithVisuals =
                     ]
                 ]
 
- 
+
                 Html.tbody [
                     row ("https://daisyui.com/tailwind-css-component-profile-2@56w.png", "Hart Hagerty", "United States", "Zemlak, Daniel and Leannon", "Desktop Support Technician", "Purple")
                     row ("https://daisyui.com/tailwind-css-component-profile-3@56w.png", "Brice Swyre", "China", "Carroll Group", "Tax Accountant", "Red")
@@ -213,7 +207,6 @@ let tableWithVisuals =
 
 Daisy.table [
     table.compact
-    prop.className "w-full"
     prop.children [
         Html.thead [
             Html.tr [
@@ -225,7 +218,7 @@ Daisy.table [
             ]
         ]
 
- 
+
         Html.tbody [
             row ("https://daisyui.com/tailwind-css-component-profile-2@56w.png", "Hart Hagerty", "United States", "Zemlak, Daniel and Leannon", "Desktop Support Technician", "Purple")
             row ("https://daisyui.com/tailwind-css-component-profile-3@56w.png", "Brice Swyre", "China", "Carroll Group", "Tax Accountant", "Red")
@@ -273,8 +266,7 @@ let compact =
         ]
 
         Daisy.table [
-            table.compact
-            prop.className "w-full"
+            table.xs
             prop.children [
                 Html.thead [Html.tr [for h in header do Html.th h]]
                 Html.tbody [
@@ -313,8 +305,7 @@ let data = [
 ]
 
 Daisy.table [
-    table.compact
-    prop.className "w-full"
+    table.xs // note sizing here
     prop.children [
         Html.thead [Html.tr [for h in header do Html.th h]]
         Html.tbody [
@@ -326,7 +317,7 @@ Daisy.table [
         Html.tfoot [Html.tr [for h in header do Html.th h]]
     ]
 ]"""
-    let title = Html.text "Compact"
+    let title = Html.text "Very tiny table"
     codedView title code example
 
 [<ReactComponent>]

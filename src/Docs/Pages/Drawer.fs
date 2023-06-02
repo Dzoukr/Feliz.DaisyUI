@@ -14,25 +14,23 @@ let simple =
                 Daisy.drawerContent [
                     prop.className "flex flex-col items-center justify-center"
                     prop.children [
-                        Html.div [
-                            prop.children [
-                                Daisy.label [
-                                    button.primary
-                                    prop.htmlFor "my-drawer"
-                                    prop.text "Open Menu"
-                                ]
-                            ]
+                        Daisy.label [
+                            button.primary
+                            prop.htmlFor "my-drawer"
+                            prop.text "Open Menu"
                         ]
                     ]
                 ]
                 Daisy.drawerSide [
-                    Daisy.drawerOverlay [prop.htmlFor "my-drawer"]
-                    Daisy.menu [
-                        prop.className "p-4 overflow-y-auto w-80 bg-base-100 text-base-content"
-                        prop.children [
-                            Html.li "Menu item 1"
-                            Html.li "Menu item 2"
-                            Daisy.label [button.primary; prop.htmlFor "my-drawer"; prop.text "Close"]
+                    prop.className "absolute h-full"
+                    prop.children [
+                        Daisy.drawerOverlay [prop.htmlFor "my-drawer"]
+                        Daisy.menu [
+                            prop.className "p-4 h-full overflow-y-auto w-80 bg-base-100 text-base-content"
+                            prop.children [
+                                Html.li "Menu item 1"
+                                Html.li "Menu item 2"
+                            ]
                         ]
                     ]
                 ]
@@ -46,25 +44,23 @@ let simple =
         Daisy.drawerContent [
             prop.className "flex flex-col items-center justify-center"
             prop.children [
-                Html.div [
-                    prop.children [
-                        Daisy.label [
-                            button.primary
-                            prop.htmlFor "my-drawer"
-                            prop.text "Open Menu"
-                        ]
-                    ]
+                Daisy.label [
+                    button.primary
+                    prop.htmlFor "my-drawer"
+                    prop.text "Open Menu"
                 ]
             ]
         ]
         Daisy.drawerSide [
-            Daisy.drawerOverlay [prop.htmlFor "my-drawer"]
-            Daisy.menu [
-                prop.className "p-4 overflow-y-auto w-80 bg-base-100 text-base-content"
-                prop.children [
-                    Html.li "Menu item 1"
-                    Html.li "Menu item 2"
-                    Daisy.label [button.primary; prop.htmlFor "my-drawer"; prop.text "Close"]
+            prop.className "absolute h-full"
+            prop.children [
+                Daisy.drawerOverlay [prop.htmlFor "my-drawer"]
+                Daisy.menu [
+                    prop.className "p-4 h-full overflow-y-auto w-80 bg-base-100 text-base-content"
+                    prop.children [
+                        Html.li "Menu item 1"
+                        Html.li "Menu item 2"
+                    ]
                 ]
             ]
         ]

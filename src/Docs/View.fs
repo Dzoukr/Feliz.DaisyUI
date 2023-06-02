@@ -88,10 +88,10 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
                             prop.tabIndex 0
                             prop.children [
                                 Daisy.menu [
-                                    menu.compact
+                                    menu.md
                                     color.bgBase200
                                     color.textBaseContent
-                                    prop.className "p-4 h-96 w-52 rounded-b-box overflow-y-auto"
+                                    prop.className "p-4 w-96 h-96 rounded-b-box overflow-y-auto"
 
                                     prop.children [
                                         for n,t in themes do
@@ -111,7 +111,7 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
             ]
         ]
 
-        Html.divClassed "px-5 py-5" [
+        Html.divClassed "px-5 py-5 bg-base-100" [
             Html.h2 [
                 color.textPrimary
                 ++ prop.className "my-6 text-5xl font-bold"
@@ -153,6 +153,23 @@ let private leftSide (p:Page) =
             ]
         ]
 
+    let miDeprecated (b:string) (t: string) (mp:Page) =
+        Html.li [
+            Html.a [
+                prop.href mp
+                prop.onClick Router.goToUrl
+                if p = mp then (menuItem.active ++ prop.className "justify-between")
+                else prop.className "justify-between"
+                prop.children [
+                    Html.span [ prop.className "line-through"; prop.text t ]
+                    Html.span [
+                        prop.className "badge"
+                        prop.text b
+                    ]
+                ]
+            ]
+        ]
+
     let mi (t:string) (mp:Page) =
         Html.li [
             Html.a [
@@ -180,8 +197,24 @@ let private leftSide (p:Page) =
                         ]
                     ]
                 ]
+                Html.divClassed "p-4" [
+                    Daisy.alert [
+                        alert.info
+                        prop.children [
+                            Html.divClassed "flex flex-col gap-2" [
+                                Html.div [
+                                    prop.dangerouslySetInnerHTML "🎉 Now based on <strong>DaisyUI v3!</strong>"
+                                ]
+                                Html.divClassed "text-sm self-center underline" [
+                                    Html.a [ prop.text "Read the change log"; prop.href "https://daisyui.com/docs/changelog/#300-2023-06-01" ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+
                 Daisy.menu [
-                    menu.compact
+                    menu.md
                     prop.className "flex flex-col p-4 pt-0"
                     prop.children [
                         Daisy.menuTitle [ Html.span "Docs" ]
@@ -192,33 +225,36 @@ let private leftSide (p:Page) =
                     ]
                 ]
                 Daisy.menu [
-                    menu.compact
+                    menu.md
                     prop.className "flex flex-col p-4 pt-0"
                     prop.children [
                         Daisy.menuTitle [ Html.span "Components" ]
+                        miBadge "new" "Accordion" Page.Accordion
                         mi "Alert" Page.Alert
                         mi "Artboard" Page.Artboard
                         mi "Avatar" Page.Avatar
-                        mi "Badge" Page.Badge
+                        miBadge "updated" "Badge" Page.Badge
                         mi "Breadcrumbs" Page.Breadcrumbs
-                        mi "Button" Page.Button
-                        mi "ButtonGroup" Page.ButtonGroup
+                        miBadge "updated" "Button" Page.Button
+                        miDeprecated "deprecated" "ButtonGroup" Page.ButtonGroup
                         mi "Card" Page.Card
                         mi "Carousel" Page.Carousel
-                        miBadge "new" "Chat bubble" Page.ChatBubble
+                        mi "Chat bubble" Page.ChatBubble
                         mi "Collapse" Page.Collapse
                         mi "Countdown" Page.Countdown
                         mi "Divider" Page.Divider
-                        mi "Drawer" Page.Drawer
+                        miBadge "updated" "Drawer" Page.Drawer
                         mi "Dropdown" Page.Dropdown
                         mi "Footer" Page.Footer
                         mi "Hero" Page.Hero
                         mi "Indicator" Page.Indicator
+                        miBadge "new" "Join (group items)" Page.Join
                         mi "Kbd" Page.Kbd
                         mi "Link" Page.Link
+                        miBadge "new" "Loading" Page.Loading
                         mi "Mask" Page.Mask
-                        mi "Menu" Page.Menu
-                        mi "Modal" Page.Modal
+                        miBadge "updated" "Menu" Page.Menu
+                        miBadge "updated" "Modal" Page.Modal
                         mi "Navbar" Page.Navbar
                         mi "Pagination" Page.Pagination
                         mi "Progress" Page.Progress
@@ -229,7 +265,7 @@ let private leftSide (p:Page) =
                         mi "Steps" Page.Steps
                         mi "Swap" Page.Swap
                         mi "Tab" Page.Tab
-                        mi "Table" Page.Table
+                        miBadge "updated" "Table" Page.Table
                         miBadge "new" "Toast" Page.Toast
                         mi "Tooltip" Page.Tooltip
                         miBadge "new " "File - Input" Page.FileInput
@@ -255,7 +291,7 @@ let private inLayout state dispatch (title:string) (docLink:string)  (p:Page) (e
         theme.custom state.Theme
         prop.children [
             Daisy.drawer [
-                drawer.mobile
+                prop.className "lg:drawer-open"
                 prop.children [
                     Daisy.drawerToggle [ prop.id "main-menu" ]
                     rightSide state dispatch title docLink elm
@@ -276,6 +312,7 @@ let AppView () =
         | Page.Use          -> "How to use"     , "/docs/use"                , Pages.Use.UseView()
         | Page.Themes       -> "Themes"         , "/docs/default-themes"     , Pages.Themes.ThemesView ()
         | Page.Colors       -> "Colors"         , "/core/colors"             , Pages.Colors.ColorsView ()
+        | Page.Accordion    -> "Accordion"      , "/components/accordion"    , Pages.Accordion.AccordionView ()
         | Page.Alert        -> "Alert"          , "/components/alert"        , Pages.Alert.AlertView ()
         | Page.Artboard     -> "Artboard"       , "/components/artboard"     , Pages.Artboard.ArtboardView ()
         | Page.Avatar       -> "Avatar"         , "/components/avatar"       , Pages.Avatar.AvatarView ()
@@ -294,8 +331,10 @@ let AppView () =
         | Page.Footer       -> "Footer"         , "/components/footer"       , Pages.Footer.FooterView ()
         | Page.Hero         -> "Hero"           , "/components/hero"         , Pages.Hero.HeroView ()
         | Page.Indicator    -> "Indicator"      , "/components/indicator"    , Pages.Indicator.IndicatorView ()
+        | Page.Join         -> "Join"           , "/components/join"         , Pages.Join.JoinView ()
         | Page.Kbd          -> "Kbd"            , "/components/kdb"          , Pages.Kbd.KbdView ()
         | Page.Link         -> "Link"           , "/components/link"         , Pages.Link.LinkView ()
+        | Page.Loading      -> "Loading"        , "/components/loading"      , Pages.Loading.LoadingView ()
         | Page.Mask         -> "Mask"           , "/components/mask"         , Pages.Mask.MaskView ()
         | Page.Menu         -> "Menu"           , "/components/menu"         , Pages.Menu.MenuView ()
         | Page.Modal        -> "Modal"          , "/components/modal"        , Pages.Modal.ModalView ()

@@ -1,5 +1,6 @@
 namespace Feliz.DaisyUI
 
+open System
 open Feliz
 open Fable.Core
 
@@ -35,6 +36,7 @@ module Helpers =
 
 [<Erase>]
 type Daisy =
+
     static member inline alert props = Helpers.Elm.props Html.div props "alert"
     static member inline alert (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "alert"
     static member inline alert elm = Helpers.Elm.elm Html.div elm "alert"
@@ -71,11 +73,22 @@ type Daisy =
     static member inline breadcrumbs int = Helpers.Elm.int Html.div int "breadcrumbs"
     static member inline breadcrumbs float = Helpers.Elm.float Html.div float "breadcrumbs"
 
+    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
     static member inline buttonGroup props = Helpers.Elm.props Html.div props "btn-group"
+
+    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
     static member inline buttonGroup (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "btn-group"
+
+    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
     static member inline buttonGroup elm = Helpers.Elm.elm Html.div elm "btn-group"
+
+    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
     static member inline buttonGroup string = Helpers.Elm.string Html.div string "btn-group"
+
+    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
     static member inline buttonGroup int = Helpers.Elm.int Html.div int "btn-group"
+
+    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
     static member inline buttonGroup float = Helpers.Elm.float Html.div float "btn-group"
 
     static member inline card props = Helpers.Elm.props Html.div props "card"
@@ -195,6 +208,10 @@ type Daisy =
     static member inline indicatorItem int = Helpers.Elm.int Html.div int "indicator-item"
     static member inline indicatorItem float = Helpers.Elm.float Html.div float "indicator-item"
 
+    static member inline join props = Helpers.Elm.props Html.div props "join"
+    static member inline join (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "join"
+    static member inline join elm = Helpers.Elm.elm Html.div elm "join"
+
     static member inline kbd props = Helpers.Elm.props Html.kbd props "kbd"
     static member inline kbd (children: #seq<ReactElement>) = Helpers.Elm.children Html.kbd children "kbd"
     static member inline kbd elm = Helpers.Elm.elm Html.kbd elm "kbd"
@@ -209,6 +226,10 @@ type Daisy =
     static member inline link int = Helpers.Elm.int Html.a int "link"
     static member inline link float = Helpers.Elm.float Html.a float "link"
 
+    static member inline loading props = Helpers.Elm.props Html.span props "loading"
+    static member inline loading (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "loading"
+    static member inline loading elm = Helpers.Elm.elm Html.span elm "loading"
+
     static member inline menu props = Helpers.Elm.props Html.ul props "menu"
     static member inline menu (children: #seq<ReactElement>) = Helpers.Elm.children Html.ul children "menu"
     static member inline menu elm = Helpers.Elm.elm Html.ul elm "menu"
@@ -218,19 +239,29 @@ type Daisy =
     static member inline menuTitle elm = Helpers.Elm.elm Html.li elm "menu-title"
     static member inline menuTitle (title: string) = Helpers.Elm.children Html.li [Html.span title] "menu-title"
 
-    static member inline modal props = Helpers.Elm.props Html.div props "modal"
-    static member inline modal (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "modal"
-    static member inline modal elm = Helpers.Elm.elm Html.div elm "modal"
+    static member inline menuDropdownToggle props = Helpers.Elm.props Html.span props "menu-dropdown-toggle"
+    static member inline menuDropdownToggle (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "menu-dropdown-toggle"
+    static member inline menuDropdownToggle elm = Helpers.Elm.elm Html.span elm "menu-dropdown-toggle"
+    static member inline menuDropdownToggle string = Helpers.Elm.string Html.span string "menu-dropdown-toggle"
+    static member inline menuDropdownToggle int = Helpers.Elm.int Html.span int "menu-dropdown-toggle"
+    static member inline menuDropdownToggle float = Helpers.Elm.float Html.span float "menu-dropdown-toggle"
 
-    static member inline modalBox props = Helpers.Elm.props Html.div props "modal-box"
-    static member inline modalBox (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "modal-box"
-    static member inline modalBox elm = Helpers.Elm.elm Html.div elm "modal-box"
+    static member inline menuDropdown props = Helpers.Elm.props Html.ul props "menu-dropdown"
+    static member inline menuDropdown (children: #seq<ReactElement>) = Helpers.Elm.children Html.ul children "menu-dropdown"
+    static member inline menuDropdown elm = Helpers.Elm.elm Html.ul elm "menu-dropdown"
 
     static member inline modalAction props = Helpers.Elm.props Html.div props "modal-action"
     static member inline modalAction (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "modal-action"
     static member inline modalAction elm = Helpers.Elm.elm Html.div elm "modal-action"
 
     static member inline modalToggle props = Helpers.Elm.props Html.input (prop.type'.checkbox :: props) "modal-toggle"
+
+    static member inline modalBackdrop props = Helpers.Elm.props Html.label props "modal-backdrop"
+    static member inline modalBackdrop (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "modal-backdrop"
+    static member inline modalBackdrop elm = Helpers.Elm.elm Html.label elm "modal-backdrop"
+    static member inline modalBackdrop string = Helpers.Elm.string Html.label string "modal-backdrop"
+    static member inline modalBackdrop int = Helpers.Elm.int Html.label int "modal-backdrop"
+    static member inline modalBackdrop float = Helpers.Elm.float Html.label float "modal-backdrop"
 
     static member inline modalButton props = Helpers.Elm.props Html.label props "btn modal-button"
     static member inline modalButton (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "btn modal-button"
@@ -361,8 +392,13 @@ type Daisy =
 
     static member inline input props = Helpers.Elm.props Html.input (prop.type'.text :: props) "input"
 
+    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
     static member inline inputGroup props = Helpers.Elm.props Html.div props "input-group"
+
+    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
     static member inline inputGroup (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "input-group"
+
+    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
     static member inline inputGroup elm = Helpers.Elm.elm Html.div elm "input-group"
 
     static member inline radio props = Helpers.Elm.props Html.input (prop.type'.radio :: props) "radio"
@@ -504,3 +540,29 @@ module Daisy =
         static member inline submit props = Helpers.Elm.props Html.input (prop.type'.submit :: props) "btn"
         static member inline reset props = Helpers.Elm.props Html.input (prop.type'.reset :: props) "btn"
         static member inline inputButton props = Helpers.Elm.props Html.input (prop.type'.button :: props) "btn"
+
+    [<Erase>]
+    type modal =
+        static member inline div props = Helpers.Elm.props Html.div props "modal"
+        static member inline div (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "modal"
+        static member inline div elm = Helpers.Elm.elm Html.div elm "modal"
+        static member inline div string = Helpers.Elm.string Html.div string "modal"
+        static member inline div int = Helpers.Elm.int Html.div int "modal"
+        static member inline div float = Helpers.Elm.float Html.div float "modal"
+
+        static member inline dialog props = Helpers.Elm.props Html.dialog props "modal"
+        static member inline dialog (children: #seq<ReactElement>) = Helpers.Elm.children Html.dialog children "modal"
+        static member inline dialog elm = Helpers.Elm.elm Html.dialog elm "modal"
+        static member inline dialog string = Helpers.Elm.string Html.dialog string "modal"
+        static member inline dialog int = Helpers.Elm.int Html.dialog int "modal"
+        static member inline dialog float = Helpers.Elm.float Html.dialog float "modal"
+
+    [<Erase>]
+    type modalBox =
+        static member inline div props = Helpers.Elm.props Html.div props "modal-box"
+        static member inline div (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "modal-box"
+        static member inline div elm = Helpers.Elm.elm Html.div elm "modal-box"
+
+        static member inline form props = Helpers.Elm.props Html.form props "modal-box"
+        static member inline form (children: #seq<ReactElement>) = Helpers.Elm.children Html.form children "modal-box"
+        static member inline form elm = Helpers.Elm.elm Html.form elm "modal-box"

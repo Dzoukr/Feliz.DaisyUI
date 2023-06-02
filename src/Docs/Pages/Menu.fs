@@ -184,12 +184,14 @@ let tree =
                         Daisy.menuTitle "Menu title"
                         Html.li [Html.a [prop.text "Level 1"]]
                         Html.li [
-                            Html.span "Parent"
-                            Html.ul [
-                                prop.className "rounded-box p-2 bg-base-100"
-                                prop.children [
-                                    Html.li [Html.a [prop.text "Level 2/1"]]
-                                    Html.li [Html.a [prop.text "Level 2/2"]]
+                            Html.details [
+                                Html.summary "Parent"
+                                Html.ul [
+                                    prop.className "rounded-box p-2 bg-base-100"
+                                    prop.children [
+                                        Html.li [Html.a [prop.text "Level 2/1"]]
+                                        Html.li [Html.a [prop.text "Level 2/2"]]
+                                    ]
                                 ]
                             ]
                         ]

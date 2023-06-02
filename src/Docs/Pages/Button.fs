@@ -32,6 +32,55 @@ let ex1 =
 
 let ex2 =
     let example =
+        [ "neutral", button.neutral
+          "primary", button.primary
+          "secondary", button.secondary
+          "accent", button.accent
+          "ghost", button.ghost
+          "link", button.link ]
+        |> List.map (fun (n,c) ->
+            Daisy.button.button [
+                c
+                prop.text n
+            ]
+        )
+        |> (fun btns ->
+            Html.div [
+                prop.className "flex gap-2"
+                prop.children [
+                    Daisy.button.button [ prop.text "Default" ]
+                    yield! btns
+                ]
+            ]
+        )
+
+
+    let code = """[ "neutral", button.neutral
+  "primary", button.primary
+  "secondary", button.secondary
+  "accent", button.accent
+  "ghost", button.ghost
+  "link", button.link ]
+|> List.map (fun (n,c) ->
+    Daisy.button.button [
+        c
+        prop.text n
+    ]
+)
+|> (fun btns ->
+    Html.div [
+        prop.className "flex gap-2"
+        prop.children [
+            Daisy.button.button [ prop.text "Default" ]
+            yield! btns
+        ]
+    ]
+)"""
+    let title = Html.text "Colors are nice."
+    codedView title code example
+
+let ex3 =
+    let example =
         Html.div [
             prop.className "p-20 bg-cover card bg-base-200"
             prop.style [ style.backgroundImage "url('https://picsum.photos/id/314/400/300')" ]
@@ -70,4 +119,5 @@ let ButtonView () =
     React.fragment [
         ex1
         ex2
+        ex3
     ]
