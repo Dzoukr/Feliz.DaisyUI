@@ -8,22 +8,19 @@ open SharedView
 open Feliz.DaisyUI
 open Feliz.DaisyUI.Operators
 
-type Msg =
+type private Msg =
     | UrlChanged of Page
-    | SetTheme of string
 
-type State =
-    { Page : Page
-      Theme : string }
+type private State =
+    { Page : Page }
 
-let init () =
+let private init () =
     let nextPage = Router.currentUrl() |> Page.parseFromUrlSegments
-    { Page = nextPage; Theme = "light" }, Cmd.navigatePage nextPage
+    { Page = nextPage }, Cmd.navigatePage nextPage
 
-let update (msg:Msg) (state:State) : State * Cmd<Msg> =
+let private update (msg:Msg) (state:State) : State * Cmd<Msg> =
     match msg with
     | UrlChanged page -> { state with Page = page }, Cmd.none
-    | SetTheme theme -> { state with Theme = theme }, Cmd.none
 
 let private rightSide state dispatch (title:string) (docLink:string) elm =
     let themes =
@@ -57,6 +54,9 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
             "night", "🌃 night"
             "coffee", "☕ coffee"
             "winter", "❄ winter"
+            "dim", "🔅 dim"
+            "nord", "⛰️ nord"
+            "sunset", "🌆 sunset"
         ]
 
     Daisy.drawerContent [
@@ -82,6 +82,7 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
             Daisy.navbarEnd [
                 Daisy.dropdown [
                     dropdown.end'
+                    prop.className "z-50"
                     prop.children [
                         Daisy.button.div [ prop.tabIndex 0; button.secondary; prop.text "Change Theme" ]
                         Daisy.dropdownContent [
@@ -96,10 +97,13 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
                                     prop.children [
                                         for n,t in themes do
                                             Html.li [
-                                                Html.a [
-                                                    if n = state.Theme then prop.className "active"
-                                                    prop.text t
-                                                    prop.onClick (fun _ -> SetTheme n |> dispatch )
+                                                Daisy.input [
+                                                    prop.type'.radio
+                                                    theme.controller
+                                                    prop.value n
+                                                    prop.name "theme"
+                                                    prop.className "btn btn-sm btn-block btn-ghost justify-start"
+                                                    prop.custom("aria-label", t)
                                                 ]
                                             ]
                                     ]
@@ -203,10 +207,10 @@ let private leftSide (p:Page) =
                         prop.children [
                             Html.divClassed "flex flex-col gap-2" [
                                 Html.div [
-                                    prop.dangerouslySetInnerHTML "🎉 Now based on <strong>DaisyUI v3!</strong>"
+                                    prop.dangerouslySetInnerHTML "🎉 Now based on <strong>DaisyUI v4!</strong>"
                                 ]
                                 Html.divClassed "text-sm self-center underline" [
-                                    Html.a [ prop.text "Read the change log"; prop.href "https://daisyui.com/docs/changelog/#300-2023-06-01" ]
+                                    Html.a [ prop.text "Read the change log"; prop.href "https://daisyui.com/docs/changelog/#400-2023-11-12" ]
                                 ]
                             ]
                         ]
@@ -229,46 +233,50 @@ let private leftSide (p:Page) =
                     prop.className "flex flex-col p-4 pt-0"
                     prop.children [
                         Daisy.menuTitle [ Html.span "Components" ]
-                        miBadge "new" "Accordion" Page.Accordion
+                        mi "Accordion" Page.Accordion
                         mi "Alert" Page.Alert
                         mi "Artboard" Page.Artboard
                         mi "Avatar" Page.Avatar
-                        miBadge "updated" "Badge" Page.Badge
+                        mi "Badge" Page.Badge
                         mi "Breadcrumbs" Page.Breadcrumbs
-                        miBadge "updated" "Button" Page.Button
+                        mi "Button" Page.Button
                         miDeprecated "deprecated" "ButtonGroup" Page.ButtonGroup
                         mi "Card" Page.Card
                         mi "Carousel" Page.Carousel
                         mi "Chat bubble" Page.ChatBubble
                         mi "Collapse" Page.Collapse
                         mi "Countdown" Page.Countdown
+                        miBadge "new" "Diff" Page.Diff
                         mi "Divider" Page.Divider
-                        miBadge "updated" "Drawer" Page.Drawer
+                        mi "Drawer" Page.Drawer
                         mi "Dropdown" Page.Dropdown
                         mi "Footer" Page.Footer
                         mi "Hero" Page.Hero
                         mi "Indicator" Page.Indicator
-                        miBadge "new" "Join (group items)" Page.Join
+                        mi "Join (group items)" Page.Join
                         mi "Kbd" Page.Kbd
                         mi "Link" Page.Link
-                        miBadge "new" "Loading" Page.Loading
+                        mi "Loading" Page.Loading
                         mi "Mask" Page.Mask
-                        miBadge "updated" "Menu" Page.Menu
-                        miBadge "updated" "Modal" Page.Modal
+                        mi "Menu" Page.Menu
+                        mi "Modal" Page.Modal
                         mi "Navbar" Page.Navbar
                         mi "Pagination" Page.Pagination
                         mi "Progress" Page.Progress
                         mi "Radial Progress" Page.RadialProgress
                         mi "Rating" Page.Rating
+                        miBadge "new" "Skeleton" Page.Skeleton
                         mi "Stack" Page.Stack
                         mi "Stat" Page.Stat
                         mi "Steps" Page.Steps
                         mi "Swap" Page.Swap
-                        mi "Tab" Page.Tab
-                        miBadge "updated" "Table" Page.Table
-                        miBadge "new" "Toast" Page.Toast
+                        miBadge "updated" "Tab" Page.Tab
+                        mi "Table" Page.Table
+                        miBadge "new" "Theme Controller" Page.ThemeController
+                        miBadge "new" "Timeline" Page.Timeline
+                        mi "Toast" Page.Toast
                         mi "Tooltip" Page.Tooltip
-                        miBadge "new " "File - Input" Page.FileInput
+                        mi "File - Input" Page.FileInput
                         mi "Form - Checkbox" Page.FormCheckbox
                         mi "Form - Input" Page.FormInput
                         mi "Form - Radio" Page.FormRadio
@@ -288,7 +296,7 @@ let private leftSide (p:Page) =
 let private inLayout state dispatch (title:string) (docLink:string)  (p:Page) (elm:ReactElement) =
     Html.div [
         prop.className "bg-base-100 text-base-content h-screen"
-        theme.custom state.Theme
+        //theme.custom state.Theme
         prop.children [
             Daisy.drawer [
                 prop.className "lg:drawer-open"
@@ -325,6 +333,7 @@ let AppView () =
         | Page.ChatBubble   -> "ChatBubble"     , "/components/chat"         , Pages.ChatBubble.ChatBubble ()
         | Page.Collapse     -> "Collapse"       , "/components/collapse"     , Pages.Collapse.CollapseView ()
         | Page.Countdown    -> "Countdown"      , "/components/countdown"    , Pages.Countdown.CountdownView ()
+        | Page.Diff         -> "Diff"           , "/components/diff"         , Pages.Diff.DiffView ()
         | Page.Divider      -> "Divider"        , "/components/divider"      , Pages.Divider.DividerView ()
         | Page.Drawer       -> "Drawer"         , "/components/drawer"       , Pages.Drawer.DrawerView ()
         | Page.Dropdown     -> "Dropdown"       , "/components/dropdown"     , Pages.Dropdown.DropdownView ()
@@ -343,12 +352,15 @@ let AppView () =
         | Page.Progress     -> "Progress"       , "/components/progress"     , Pages.Progress.ProgressView ()
         | Page.RadialProgress -> "RadialProgress", "/components/radial-progress", Pages.RadialProgress.RadialProgressView ()
         | Page.Rating       -> "Rating"         , "/components/rating"       , Pages.Rating.RatingView ()
+        | Page.Skeleton     -> "Skeleton"       , "/components/skeleton"     , Pages.Skeleton.SkeletonView ()
         | Page.Stack        -> "Stack"          , "/components/stack"        , Pages.Stack.StackView ()
         | Page.Stat         -> "Stat"           , "/components/stat"         , Pages.Stat.StatView ()
         | Page.Steps        -> "Steps"          , "/components/steps"        , Pages.Step.StepView ()
         | Page.Swap         -> "Swap"           , "/components/swap"         , Pages.Swap.SwapView ()
         | Page.Tab          -> "Tab"            , "/components/tab"          , Pages.Tab.TabView ()
         | Page.Table        -> "Table"          , "/components/table"        , Pages.Table.TableView ()
+        | Page.ThemeController -> "Theme Controller", "/components/theme-controller", Pages.ThemeController.ThemeControllerView ()
+        | Page.Timeline     -> "Timeline"       , "/components/timeline"     , Pages.Timeline.TimelineView()
         | Page.Toast        -> "Toast"          , "/components/toast"        , Pages.Toast.ToastView ()
         | Page.Tooltip      -> "Tooltip"        , "/components/tooltip"      , Pages.Tooltip.TooltipView ()
         | Page.FileInput    -> "File - Input"   , "/components/file-input"   , Pages.FileInput.FileInputView ()

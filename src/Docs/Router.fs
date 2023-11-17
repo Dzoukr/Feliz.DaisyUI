@@ -22,6 +22,7 @@ type Page =
     | ChatBubble
     | Collapse
     | Countdown
+    | Diff
     | Divider
     | Drawer
     | Dropdown
@@ -39,12 +40,15 @@ type Page =
     | Pagination
     | Progress
     | RadialProgress
+    | Skeleton
     | Stack
     | Stat
     | Steps
     | Swap
     | Tab
     | Table
+    | ThemeController
+    | Timeline
     | Toast
     | Tooltip
     | FileInput
@@ -81,6 +85,7 @@ module Page =
         | [ "chatbubble" ] -> Page.ChatBubble
         | [ "collapse" ] -> Page.Collapse
         | [ "countdown" ] -> Page.Countdown
+        | [ "diff" ] -> Page.Diff
         | [ "divider" ] -> Page.Divider
         | [ "drawer" ] -> Page.Drawer
         | [ "dropdown" ] -> Page.Dropdown
@@ -98,12 +103,15 @@ module Page =
         | [ "pagination" ] -> Page.Pagination
         | [ "progress" ] -> Page.Progress
         | [ "radialprogress" ] -> Page.RadialProgress
+        | [ "skeleton" ] -> Page.Skeleton
         | [ "stack" ] -> Page.Stack
         | [ "stat" ] -> Page.Stat
         | [ "steps" ] -> Page.Steps
         | [ "swap" ] -> Page.Swap
         | [ "tab" ] -> Page.Tab
         | [ "table" ] -> Page.Table
+        | [ "themecontroller" ] -> Page.ThemeController
+        | [ "timeline" ] -> Page.Timeline
         | [ "toast" ] -> Page.Toast
         | [ "tooltip" ] -> Page.Tooltip
         | [ "fileinput" ] -> Page.FileInput
@@ -141,6 +149,7 @@ module Page =
         | Page.Collapse -> [ "collapse" ] |> noQueryString
         | Page.ChatBubble -> [ "chatbubble" ] |> noQueryString
         | Page.Countdown -> [ "countdown" ] |> noQueryString
+        | Page.Diff -> [ "diff" ] |> noQueryString
         | Page.Divider -> [ "divider" ] |> noQueryString
         | Page.Drawer -> [ "drawer" ] |> noQueryString
         | Page.Dropdown -> [ "dropdown" ] |> noQueryString
@@ -158,12 +167,15 @@ module Page =
         | Page.Pagination -> [ "pagination" ] |> noQueryString
         | Page.Progress -> [ "progress" ] |> noQueryString
         | Page.RadialProgress -> [ "radialprogress" ] |> noQueryString
+        | Page.Skeleton -> [ "skeleton" ] |> noQueryString
         | Page.Stack -> [ "stack" ] |> noQueryString
         | Page.Stat -> [ "stat" ] |> noQueryString
         | Page.Steps -> [ "steps" ] |> noQueryString
         | Page.Swap -> [ "swap" ] |> noQueryString
         | Page.Tab -> [ "tab" ] |> noQueryString
         | Page.Table -> [ "table" ] |> noQueryString
+        | Page.ThemeController -> [ "themecontroller" ] |> noQueryString
+        | Page.Timeline -> [ "timeline" ] |> noQueryString
         | Page.Toast -> [ "toast" ] |> noQueryString
         | Page.Tooltip -> [ "tooltip" ] |> noQueryString
         | Page.FileInput -> [ "fileinput" ] |> noQueryString

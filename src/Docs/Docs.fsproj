@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Router.fs" />
@@ -10,6 +10,10 @@
         <Compile Include="Pages\Use.fs" />
         <Compile Include="Pages\Alert.fs" />
         <Compile Include="Pages\Accordion.fs" />
+        <Compile Include="Pages\Timeline.fs" />
+        <Compile Include="Pages\Skeleton.fs" />
+        <Compile Include="Pages\Diff.fs" />
+        <Compile Include="Pages\ThemeController.fs" />
         <Compile Include="Pages\Join.fs" />
         <Compile Include="Pages\Loading.fs" />
         <Compile Include="Pages\Swap.fs" />

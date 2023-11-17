@@ -4,6 +4,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Docs", "src\Docs\Docs.fspro
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.DaisyUI", "src\Feliz.DaisyUI\Feliz.DaisyUI.fsproj", "{3F7A6B8B-594C-4E1B-8374-722B2B3D8342}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{B16C297B-9C47-4147-BA13-227447CE82F8}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Build", "Build.fsproj", "{7786477F-AE75-471D-84B8-2B045B3B2952}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,7 +22,12 @@ Global
 		{3F7A6B8B-594C-4E1B-8374-722B2B3D8342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F7A6B8B-594C-4E1B-8374-722B2B3D8342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F7A6B8B-594C-4E1B-8374-722B2B3D8342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7786477F-AE75-471D-84B8-2B045B3B2952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7786477F-AE75-471D-84B8-2B045B3B2952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7786477F-AE75-471D-84B8-2B045B3B2952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7786477F-AE75-471D-84B8-2B045B3B2952}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{7786477F-AE75-471D-84B8-2B045B3B2952} = {B16C297B-9C47-4147-BA13-227447CE82F8}
 	EndGlobalSection
 EndGlobal

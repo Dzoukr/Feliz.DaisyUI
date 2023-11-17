@@ -1,6 +1,6 @@
 STORAGE: NONE
 STRATEGY: MIN
-RESTRICTION: || (== net7.0) (== netstandard2.0)
+RESTRICTION: || (== net8.0) (== netstandard2.0)
 NUGET
   remote: https://api.nuget.org/v3/index.json
     Fable.AST (4.2.1)
@@ -33,11 +33,11 @@ NUGET
     Fable.ReactDom.Types (18.2)
       Fable.React.Types (>= 18.3)
       FSharp.Core (>= 4.7.2)
-    Feliz (2.4.1)
+    Feliz (2.7)
       Fable.ReactDom.Types (>= 18.2)
-      Feliz.CompilerPlugins (>= 2.0)
+      Feliz.CompilerPlugins (>= 2.2)
       FSharp.Core (>= 4.7.2)
-    Feliz.CompilerPlugins (2.0)
+    Feliz.CompilerPlugins (2.2)
       Fable.AST (>= 4.2.1)
       FSharp.Core (>= 4.7.2)
     FSharp.Core (4.7.2)
@@ -45,7 +45,7 @@ NUGET
 GROUP Build
 STORAGE: NONE
 STRATEGY: MIN
-RESTRICTION: == net7.0
+RESTRICTION: == net8.0
 NUGET
   remote: https://api.nuget.org/v3/index.json
     BlackFox.VsWhere (1.1)
@@ -316,7 +316,7 @@ NUGET
 GROUP Docs
 STORAGE: NONE
 STRATEGY: MIN
-RESTRICTION: == net7.0
+RESTRICTION: == net8.0
 NUGET
   remote: https://api.nuget.org/v3/index.json
     Fable.AST (4.2.1)
@@ -340,11 +340,11 @@ NUGET
       Fable.Browser.Event (>= 1.4.4)
       Fable.Core (>= 3.0)
       FSharp.Core (>= 4.7.2)
-    Fable.Core (4.0.0-theta-007)
+    Fable.Core (4.2)
     Fable.Elmish (4.0)
       Fable.Core (>= 3.7.1)
       FSharp.Core (>= 4.7.2)
-    Fable.React (9.2)
+    Fable.React (9.3)
       Fable.React.Types (>= 18.3)
       Fable.ReactDom.Types (>= 18.2)
       FSharp.Core (>= 4.7.2)
@@ -355,18 +355,18 @@ NUGET
     Fable.ReactDom.Types (18.2)
       Fable.React.Types (>= 18.3)
       FSharp.Core (>= 4.7.2)
-    Feliz (2.4.1)
+    Feliz (2.7)
       Fable.ReactDom.Types (>= 18.2)
-      Feliz.CompilerPlugins (>= 2.0)
+      Feliz.CompilerPlugins (>= 2.2)
       FSharp.Core (>= 4.7.2)
-    Feliz.CompilerPlugins (2.0)
+    Feliz.CompilerPlugins (2.2)
       Fable.AST (>= 4.2.1)
       FSharp.Core (>= 4.7.2)
     Feliz.Router (4.0)
       Fable.Elmish (>= 4.0)
       Feliz (>= 2.3)
       FSharp.Core (>= 4.7.2)
-    Feliz.UseElmish (2.3)
+    Feliz.UseElmish (2.4)
       Fable.Elmish (>= 4.0)
       FSharp.Core (>= 4.7.2)
     FSharp.Core (4.7.2)

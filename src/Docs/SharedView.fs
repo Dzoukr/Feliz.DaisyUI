@@ -21,6 +21,7 @@ type Html
                 prop.className cn
                 prop.children elm
             ]
+        static member inline faIcon (cn:string) = Html.i [ prop.className cn ]
 
 let linedMockupCode (code:string) =
     let lines = code.Split("\n")

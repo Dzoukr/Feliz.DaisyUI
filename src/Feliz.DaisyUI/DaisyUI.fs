@@ -506,6 +506,60 @@ type Daisy =
     static member inline chatBubble int = Helpers.Elm.int Html.div int "chat-bubble"
     static member inline chatBubble float = Helpers.Elm.float Html.div float "chat-bubble"
 
+    static member inline timeline props = Helpers.Elm.props Html.ul props "timeline"
+    static member inline timeline (children: #seq<ReactElement>) = Helpers.Elm.children Html.ul children "timeline"
+    static member inline timeline elm = Helpers.Elm.elm Html.ul elm "timeline"
+
+    static member inline timelineStart props = Helpers.Elm.props Html.div props "timeline-start"
+    static member inline timelineStart (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "timeline-start"
+    static member inline timelineStart elm = Helpers.Elm.elm Html.div elm "timeline-start"
+    static member inline timelineStart string = Helpers.Elm.string Html.div string "timeline-start"
+    static member inline timelineStart int = Helpers.Elm.int Html.div int "timeline-start"
+    static member inline timelineStart float = Helpers.Elm.float Html.div float "timeline-start"
+
+    static member inline timelineMiddle props = Helpers.Elm.props Html.div props "timeline-middle"
+    static member inline timelineMiddle (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "timeline-middle"
+    static member inline timelineMiddle elm = Helpers.Elm.elm Html.div elm "timeline-middle"
+    static member inline timelineMiddle string = Helpers.Elm.string Html.div string "timeline-middle"
+    static member inline timelineMiddle int = Helpers.Elm.int Html.div int "timeline-middle"
+    static member inline timelineMiddle float = Helpers.Elm.float Html.div float "timeline-middle"
+
+    static member inline timelineEnd props = Helpers.Elm.props Html.div props "timeline-end"
+    static member inline timelineEnd (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "timeline-end"
+    static member inline timelineEnd elm = Helpers.Elm.elm Html.div elm "timeline-end"
+    static member inline timelineEnd string = Helpers.Elm.string Html.div string "timeline-end"
+    static member inline timelineEnd int = Helpers.Elm.int Html.div int "timeline-end"
+    static member inline timelineEnd float = Helpers.Elm.float Html.div float "timeline-end"
+
+    static member inline skeleton props = Helpers.Elm.props Html.div props "skeleton"
+    static member inline skeleton (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "skeleton"
+    static member inline skeleton elm = Helpers.Elm.elm Html.div elm "skeleton"
+    static member inline skeleton string = Helpers.Elm.string Html.div string "skeleton"
+    static member inline skeleton int = Helpers.Elm.int Html.div int "skeleton"
+    static member inline skeleton float = Helpers.Elm.float Html.div float "skeleton"
+
+    static member inline diff props = Helpers.Elm.props Html.div props "diff"
+    static member inline diff (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "diff"
+    static member inline diff elm = Helpers.Elm.elm Html.div elm "diff"
+
+    static member inline diffItem1 props = Helpers.Elm.props Html.div props "diff-item-1"
+    static member inline diffItem1 (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "diff-item-1"
+    static member inline diffItem1 elm = Helpers.Elm.elm Html.div elm "diff-item-1"
+    static member inline diffItem1 string = Helpers.Elm.string Html.div string "diff-item-1"
+    static member inline diffItem1 int = Helpers.Elm.int Html.div int "diff-item-1"
+    static member inline diffItem1 float = Helpers.Elm.float Html.div float "diff-item-1"
+
+    static member inline diffItem2 props = Helpers.Elm.props Html.div props "diff-item-2"
+    static member inline diffItem2 (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "diff-item-2"
+    static member inline diffItem2 elm = Helpers.Elm.elm Html.div elm "diff-item-2"
+    static member inline diffItem2 string = Helpers.Elm.string Html.div string "diff-item-2"
+    static member inline diffItem2 int = Helpers.Elm.int Html.div int "diff-item-2"
+    static member inline diffItem2 float = Helpers.Elm.float Html.div float "diff-item-2"
+
+    static member inline diffResizer props = Helpers.Elm.props Html.div props "diff-resizer"
+    static member inline diffResizer (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "diff-resizer"
+    static member inline diffResizer elm = Helpers.Elm.elm Html.div elm "diff-resizer"
+
 module Daisy =
     [<Erase>]
     type button =

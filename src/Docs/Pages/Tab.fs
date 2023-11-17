@@ -25,16 +25,22 @@ let simple =
 let bordered =
     let example =
         Daisy.tabs [
-            Daisy.tab [tab.bordered; prop.text "Tab 1"]
-            Daisy.tab [tab.bordered; tab.active; prop.text "Tab 2"]
-            Daisy.tab [tab.bordered; prop.text "Tab 3"]
+            tabs.bordered
+            prop.children [
+                Daisy.tab [prop.text "Tab 1"]
+                Daisy.tab [tab.active; prop.text "Tab 2"]
+                Daisy.tab [prop.text "Tab 3"]
+            ]
         ]
         |> Html.div
 
     let code = """Daisy.tabs [
-    Daisy.tab [tab.bordered; prop.text "Tab 1"]
-    Daisy.tab [tab.bordered; tab.active; prop.text "Tab 2"]
-    Daisy.tab [tab.bordered; prop.text "Tab 3"]
+    tabs.bordered
+    prop.children [
+        Daisy.tab [prop.text "Tab 1"]
+        Daisy.tab [tab.active; prop.text "Tab 2"]
+        Daisy.tab [prop.text "Tab 3"]
+    ]
 ]"""
     let title = Html.text "Bordered"
     codedView title code example
@@ -42,16 +48,22 @@ let bordered =
 let lifted =
     let example =
         Daisy.tabs [
-            Daisy.tab [tab.lifted; prop.text "Tab 1"]
-            Daisy.tab [tab.lifted; tab.active; prop.text "Tab 2"]
-            Daisy.tab [tab.lifted; prop.text "Tab 3"]
+            tabs.lifted
+            prop.children [
+                Daisy.tab [prop.text "Tab 1"]
+                Daisy.tab [tab.active; prop.text "Tab 2"]
+                Daisy.tab [prop.text "Tab 3"]
+            ]
         ]
         |> Html.div
 
     let code = """Daisy.tabs [
-    Daisy.tab [tab.lifted; prop.text "Tab 1"]
-    Daisy.tab [tab.lifted; tab.active; prop.text "Tab 2"]
-    Daisy.tab [tab.lifted; prop.text "Tab 3"]
+    tabs.lifted
+    prop.children [
+        Daisy.tab [prop.text "Tab 1"]
+        Daisy.tab [tab.active; prop.text "Tab 2"]
+        Daisy.tab [prop.text "Tab 3"]
+    ]
 ]"""
     let title = Html.text "Lifted"
     codedView title code example
@@ -82,35 +94,43 @@ let boxed =
 let sizes =
     let example =
         let sizes = [
-            tab.xs, "xs"
-            tab.sm, "sm"
-            tab.md, "md"
-            tab.lg, "lg"
+            tabs.xs, "xs"
+            tabs.sm, "sm"
+            tabs.md, "md"
+            tabs.lg, "lg"
         ]
         Html.div [
             for size, sizeText in sizes do
                Html.div [
                     Daisy.tabs [
-                        Daisy.tab [size; tab.lifted; prop.text sizeText]
-                        Daisy.tab [size; tab.lifted; tab.active; prop.text sizeText]
-                        Daisy.tab [size; tab.lifted; prop.text sizeText]
+                        size
+                        tabs.lifted
+                        prop.children [
+                            Daisy.tab [prop.text sizeText]
+                            Daisy.tab [tab.active; prop.text sizeText]
+                            Daisy.tab [prop.text sizeText]
+                        ]
                     ]
                ]
         ]
 
     let code = """let sizes = [
-    tab.xs, "xs"
-    tab.sm, "sm"
-    tab.md, "md"
-    tab.lg, "lg"
+    tabs.xs, "xs"
+    tabs.sm, "sm"
+    tabs.md, "md"
+    tabs.lg, "lg"
 ]
 Html.div [
     for size, sizeText in sizes do
        Html.div [
             Daisy.tabs [
-                Daisy.tab [size; tab.lifted; prop.text sizeText]
-                Daisy.tab [size; tab.lifted; tab.active; prop.text sizeText]
-                Daisy.tab [size; tab.lifted; prop.text sizeText]
+                size
+                tabs.lifted
+                prop.children [
+                    Daisy.tab [prop.text sizeText]
+                    Daisy.tab [tab.active; prop.text sizeText]
+                    Daisy.tab [prop.text sizeText]
+                ]
             ]
        ]
 ]"""
