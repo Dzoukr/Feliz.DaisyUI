@@ -961,14 +961,14 @@ Html.div [
             ]
         ]
     ]
-]`,l.createElement("div",{children:[l.createElement("div",d(p("navbar",s([["className","mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"],(e=[l.createElement("div",d(s([["className","flex-none"],(t=[(n=h(l.createElement("input",d(p("input",s([["type","text"],["className","input-ghost"],["placeholder","Search"]]))))),l.createElement("div",{className:"form-control",children:c.Children.toArray(Array.from(n))}))],["children",c.Children.toArray(Array.from(t))])]))),l.createElement("div",d(s([["className","flex-none"],(r=[l.createElement("button",d(p("btn",s([["className","btn-square"],["className","btn-ghost"],(a=[l.createElement("i",{className:"fas fa-search"})],["children",c.Children.toArray(Array.from(a))])]))))],["children",c.Children.toArray(Array.from(r))])])))],["children",c.Children.toArray(Array.from(e))])]))))]}))})();function Vv(){return l.createElement(l.Fragment,{},$v,Bv,jv)}const Uv=(()=>{let e;return C("Simple pagination",`Daisy.buttonGroup [
+]`,l.createElement("div",{children:[l.createElement("div",d(p("navbar",s([["className","mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"],(e=[l.createElement("div",d(s([["className","flex-none"],(t=[(n=h(l.createElement("input",d(p("input",s([["type","text"],["className","input-ghost"],["placeholder","Search"]]))))),l.createElement("div",{className:"form-control",children:c.Children.toArray(Array.from(n))}))],["children",c.Children.toArray(Array.from(t))])]))),l.createElement("div",d(s([["className","flex-none"],(r=[l.createElement("button",d(p("btn",s([["className","btn-square"],["className","btn-ghost"],(a=[l.createElement("i",{className:"fas fa-search"})],["children",c.Children.toArray(Array.from(a))])]))))],["children",c.Children.toArray(Array.from(r))])])))],["children",c.Children.toArray(Array.from(e))])]))))]}))})();function Vv(){return l.createElement(l.Fragment,{},$v,Bv,jv)}const Uv=(()=>{let e;return C("Simple pagination",`Daisy.join [
     Daisy.button.button "Previous"
     Daisy.button.button "1"
     Daisy.button.button [button.active; prop.text "2"]
     Daisy.button.button "3"
     Daisy.button.button "4"
     Daisy.button.button "Next"
-]`,(e=s([l.createElement("button",{className:"btn",children:"Previous"}),l.createElement("button",{className:"btn",children:"1"}),l.createElement("button",d(p("btn",s([["className","btn-active"],["children","2"]])))),l.createElement("button",{className:"btn",children:"3"}),l.createElement("button",{className:"btn",children:"4"}),l.createElement("button",{className:"btn",children:"Next"})]),l.createElement("div",{className:"btn-group",children:c.Children.toArray(Array.from(e))})))})(),Wv=(()=>{let e;return C("Sizes",`let sizes = [
+]`,(e=s([l.createElement("button",{className:"btn",children:"Previous"}),l.createElement("button",{className:"btn",children:"1"}),l.createElement("button",d(p("btn",s([["className","btn-active"],["children","2"]])))),l.createElement("button",{className:"btn",children:"3"}),l.createElement("button",{className:"btn",children:"4"}),l.createElement("button",{className:"btn",children:"Next"})]),l.createElement("div",{className:"join",children:c.Children.toArray(Array.from(e))})))})(),Wv=(()=>{let e;return C("Sizes",`let sizes = [
     button.xs, nameof button.xs
     button.sm, nameof button.sm
     button.md, nameof button.md
@@ -976,15 +976,15 @@ Html.div [
 ]
 Html.div [
     for size, sizeText in sizes do
-    Daisy.buttonGroup [
-        Daisy.button.button [size; prop.text "Previous"]
-        Daisy.button.button [size; prop.text "1"]
-        Daisy.button.button [size; button.active; prop.text "2"]
-        Daisy.button.button [size; prop.text "3"]
-        Daisy.button.button [size; prop.text "4"]
-        Daisy.button.button [size; prop.text "Next"]
-    ]
-]`,(e=Y(R(()=>de(n=>{let r;const a=n[0];return B((r=s([l.createElement("button",d(p("btn",s([a,["children","Previous"]])))),l.createElement("button",d(p("btn",s([a,["children","1"]])))),l.createElement("button",d(p("btn",s([a,["className","btn-active"],["children","2"]])))),l.createElement("button",d(p("btn",s([a,["children","3"]])))),l.createElement("button",d(p("btn",s([a,["children","4"]])))),l.createElement("button",d(p("btn",s([a,["children","Next"]]))))]),l.createElement("div",{className:"btn-group",children:c.Children.toArray(Array.from(r))})))},[[["className","btn-xs"],"xs"],[["className","btn-sm"],"sm"],[["className","btn-md"],"md"],[["className","btn-lg"],"lg"]]))),l.createElement("div",{children:c.Children.toArray(Array.from(e))})))})();function Gv(){return l.createElement(l.Fragment,{},Uv,Wv)}const Qv=(()=>{let e;return C("Simple",`Daisy.progress [prop.value 0; prop.max 100]
+        Daisy.join [
+            Daisy.button.button [size; prop.text "Previous"]
+            Daisy.button.button [size; prop.text "1"]
+            Daisy.button.button [size; button.active; prop.text "2"]
+            Daisy.button.button [size; prop.text "3"]
+            Daisy.button.button [size; prop.text "4"]
+            Daisy.button.button [size; prop.text "Next"]
+        ]
+]`,(e=Y(R(()=>de(n=>{let r;const a=n[0];return B((r=s([l.createElement("button",d(p("btn",s([a,["children","Previous"]])))),l.createElement("button",d(p("btn",s([a,["children","1"]])))),l.createElement("button",d(p("btn",s([a,["className","btn-active"],["children","2"]])))),l.createElement("button",d(p("btn",s([a,["children","3"]])))),l.createElement("button",d(p("btn",s([a,["children","4"]])))),l.createElement("button",d(p("btn",s([a,["children","Next"]]))))]),l.createElement("div",{className:"join",children:c.Children.toArray(Array.from(r))})))},[[["className","btn-xs"],"xs"],[["className","btn-sm"],"sm"],[["className","btn-md"],"md"],[["className","btn-lg"],"lg"]]))),l.createElement("div",{children:c.Children.toArray(Array.from(e))})))})();function Gv(){return l.createElement(l.Fragment,{},Uv,Wv)}const Qv=(()=>{let e;return C("Simple",`Daisy.progress [prop.value 0; prop.max 100]
 Daisy.progress [prop.value 25; prop.max 100]
 Daisy.progress [prop.value 50; prop.max 100]
 Daisy.progress [prop.value 75; prop.max 100]
