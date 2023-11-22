@@ -7,7 +7,7 @@ open Docs.SharedView
 
 let simple =
     let example =
-        Daisy.buttonGroup [
+        Daisy.join [
             Daisy.button.button "Previous"
             Daisy.button.button "1"
             Daisy.button.button [button.active; prop.text "2"]
@@ -16,7 +16,7 @@ let simple =
             Daisy.button.button "Next"
         ]
 
-    let code = """Daisy.buttonGroup [
+    let code = """Daisy.join [
     Daisy.button.button "Previous"
     Daisy.button.button "1"
     Daisy.button.button [button.active; prop.text "2"]
@@ -37,14 +37,14 @@ let sizes =
         ]
         Html.div [
             for size, sizeText in sizes do
-            Daisy.buttonGroup [
-                Daisy.button.button [size; prop.text "Previous"]
-                Daisy.button.button [size; prop.text "1"]
-                Daisy.button.button [size; button.active; prop.text "2"]
-                Daisy.button.button [size; prop.text "3"]
-                Daisy.button.button [size; prop.text "4"]
-                Daisy.button.button [size; prop.text "Next"]
-            ]
+                Daisy.join [
+                    Daisy.button.button [size; prop.text "Previous"]
+                    Daisy.button.button [size; prop.text "1"]
+                    Daisy.button.button [size; button.active; prop.text "2"]
+                    Daisy.button.button [size; prop.text "3"]
+                    Daisy.button.button [size; prop.text "4"]
+                    Daisy.button.button [size; prop.text "Next"]
+                ]
         ]
 
     let code = """let sizes = [
@@ -55,14 +55,14 @@ let sizes =
 ]
 Html.div [
     for size, sizeText in sizes do
-    Daisy.buttonGroup [
-        Daisy.button.button [size; prop.text "Previous"]
-        Daisy.button.button [size; prop.text "1"]
-        Daisy.button.button [size; button.active; prop.text "2"]
-        Daisy.button.button [size; prop.text "3"]
-        Daisy.button.button [size; prop.text "4"]
-        Daisy.button.button [size; prop.text "Next"]
-    ]
+        Daisy.join [
+            Daisy.button.button [size; prop.text "Previous"]
+            Daisy.button.button [size; prop.text "1"]
+            Daisy.button.button [size; button.active; prop.text "2"]
+            Daisy.button.button [size; prop.text "3"]
+            Daisy.button.button [size; prop.text "4"]
+            Daisy.button.button [size; prop.text "Next"]
+        ]
 ]"""
     let title = Html.text "Sizes"
     codedView title code example
