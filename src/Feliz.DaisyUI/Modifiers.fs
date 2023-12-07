@@ -253,6 +253,14 @@ type link =
     static member inline accent = prop.className "link-accent"
     /// Link with `neutral` color
     static member inline neutral = prop.className "link-neutral"
+    /// Link with `success` color
+    static member inline success = prop.className "link-success"
+    /// Link with `info` color
+    static member inline info = prop.className "link-info"
+    /// Link with `warning` color
+    static member inline warning = prop.className "link-warning"
+    /// Link with `error` color
+    static member inline error = prop.className "link-error"
     /// Only show underline on hover
     static member inline hover = prop.className "link-hover"
 
