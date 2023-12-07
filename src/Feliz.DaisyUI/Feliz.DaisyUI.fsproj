@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>4.1.0</Version>
-        <PackageReleaseNotes>Major release based on DaisyUI v4</PackageReleaseNotes>
+        <Version>4.2.0</Version>
+        <PackageReleaseNotes>Add missing Link modifiers #11</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />
