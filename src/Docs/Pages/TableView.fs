@@ -206,7 +206,6 @@ let tableWithVisuals =
     ]
 
 Daisy.table [
-    table.compact
     prop.children [
         Html.thead [
             Html.tr [
