@@ -1300,7 +1300,6 @@ Html.div [
     ]
 
 Daisy.table [
-    table.compact
     prop.children [
         Html.thead [
             Html.tr [
