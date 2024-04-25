@@ -120,6 +120,7 @@ type button =
     /// Button with a glass effect
     static member inline glass = prop.className "glass"
     /// Shows loading spinner
+    [<Obsolete("This modifier is deprecated and will be removed in the next major version. For loading please use Loading component. See https://dzoukr.github.io/Feliz.DaisyUI/#/loading")>]
     static member inline loading = prop.className "loading"
     /// Disables click animation
     static member inline animation = prop.className "no-animation"

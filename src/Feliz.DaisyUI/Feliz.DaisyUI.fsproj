@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>4.2.0</Version>
-        <PackageReleaseNotes>Add missing Link modifiers #11</PackageReleaseNotes>
+        <Version>4.2.1</Version>
+        <PackageReleaseNotes>Loading modifier on Button is deprecated #14</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />
