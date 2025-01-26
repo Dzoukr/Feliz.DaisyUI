@@ -240,7 +240,6 @@ let private leftSide (p:Page) =
                         mi "Badge" Page.Badge
                         mi "Breadcrumbs" Page.Breadcrumbs
                         mi "Button" Page.Button
-                        miDeprecated "deprecated" "ButtonGroup" Page.ButtonGroup
                         mi "Card" Page.Card
                         mi "Carousel" Page.Carousel
                         mi "Chat bubble" Page.ChatBubble
@@ -327,7 +326,6 @@ let AppView () =
         | Page.Badge        -> "Badge"          , "/components/badge"        , Pages.Badge.BadgeView ()
         | Page.Breadcrumbs  -> "Breadcrumbs"    , "/components/breadcrumbs"  , Pages.Breadcrumbs.BreadcrumbsView ()
         | Page.Button       -> "Button"         , "/components/button"       , Pages.Button.ButtonView ()
-        | Page.ButtonGroup  -> "ButtonGroup"    , "/components/button-group" , Pages.ButtonGroup.ButtonGroupView ()
         | Page.Card         -> "Card"           , "/components/card"         , Pages.Card.CardView ()
         | Page.Carousel     -> "Carousel"       , "/components/carousel"     , Pages.Carousel.CarouselView ()
         | Page.ChatBubble   -> "ChatBubble"     , "/components/chat"         , Pages.ChatBubble.ChatBubble ()

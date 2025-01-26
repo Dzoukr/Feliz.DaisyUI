@@ -25,7 +25,7 @@ let simple =
 let bordered =
     let example =
         Daisy.tabs [
-            tabs.bordered
+            tabs.border
             prop.children [
                 Daisy.tab [prop.text "Tab 1"]
                 Daisy.tab [tab.active; prop.text "Tab 2"]
@@ -35,7 +35,7 @@ let bordered =
         |> Html.div
 
     let code = """Daisy.tabs [
-    tabs.bordered
+    tabs.border
     prop.children [
         Daisy.tab [prop.text "Tab 1"]
         Daisy.tab [tab.active; prop.text "Tab 2"]
@@ -48,7 +48,7 @@ let bordered =
 let lifted =
     let example =
         Daisy.tabs [
-            tabs.lifted
+            tabs.lift
             prop.children [
                 Daisy.tab [prop.text "Tab 1"]
                 Daisy.tab [tab.active; prop.text "Tab 2"]
@@ -58,7 +58,7 @@ let lifted =
         |> Html.div
 
     let code = """Daisy.tabs [
-    tabs.lifted
+    tabs.lift
     prop.children [
         Daisy.tab [prop.text "Tab 1"]
         Daisy.tab [tab.active; prop.text "Tab 2"]
@@ -71,7 +71,7 @@ let lifted =
 let boxed =
     let example =
         Daisy.tabs [
-            tabs.boxed
+            tabs.box
             prop.children [
                 Daisy.tab [prop.text "Tab 1"]
                 Daisy.tab [tab.active; prop.text "Tab 2"]
@@ -81,7 +81,7 @@ let boxed =
         |> Html.div
 
     let code = """Daisy.tabs [
-    tabs.boxed
+    tabs.box
     prop.children [
         Daisy.tab [prop.text "Tab 1"]
         Daisy.tab [tab.active; prop.text "Tab 2"]
@@ -104,7 +104,7 @@ let sizes =
                Html.div [
                     Daisy.tabs [
                         size
-                        tabs.lifted
+                        tabs.lift
                         prop.children [
                             Daisy.tab [prop.text sizeText]
                             Daisy.tab [tab.active; prop.text sizeText]
@@ -125,7 +125,7 @@ Html.div [
        Html.div [
             Daisy.tabs [
                 size
-                tabs.lifted
+                tabs.lift
                 prop.children [
                     Daisy.tab [prop.text sizeText]
                     Daisy.tab [tab.active; prop.text sizeText]

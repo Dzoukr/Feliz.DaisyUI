@@ -16,7 +16,6 @@ type Page =
     | Badge
     | Breadcrumbs
     | Button
-    | ButtonGroup
     | Card
     | Carousel
     | ChatBubble
@@ -79,7 +78,6 @@ module Page =
         | [ "badge" ] -> Page.Badge
         | [ "breadcrumbs" ] -> Page.Breadcrumbs
         | [ "button" ] -> Page.Button
-        | [ "buttongroup" ] -> Page.ButtonGroup
         | [ "card" ] -> Page.Card
         | [ "carousel" ] -> Page.Carousel
         | [ "chatbubble" ] -> Page.ChatBubble
@@ -143,7 +141,6 @@ module Page =
         | Page.Badge -> [ "badge" ] |> noQueryString
         | Page.Breadcrumbs -> [ "breadcrumbs" ] |> noQueryString
         | Page.Button -> [ "button" ] |> noQueryString
-        | Page.ButtonGroup -> [ "buttongroup" ] |> noQueryString
         | Page.Card -> [ "card" ] |> noQueryString
         | Page.Carousel -> [ "carousel" ] |> noQueryString
         | Page.Collapse -> [ "collapse" ] |> noQueryString

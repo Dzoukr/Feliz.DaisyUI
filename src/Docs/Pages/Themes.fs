@@ -1,4 +1,4 @@
-﻿module Docs.Pages.Themes
+module Docs.Pages.Themes
 
 open Feliz
 open Elmish
@@ -37,7 +37,7 @@ let ex2 =
         Html.div [
             Daisy.card [
                 theme.cyberpunk
-                card.bordered
+                card.border
                 prop.children [
                     Html.figure [
                         prop.className "pt-10"
@@ -61,7 +61,7 @@ let ex2 =
 
     let code = """Daisy.card [
     theme.cyberpunk // <-- use cyberpunk here
-    card.bordered
+    card.border
     prop.children [
         Html.figure [
             prop.className "pt-10"

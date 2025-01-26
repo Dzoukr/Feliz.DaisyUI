@@ -8,7 +8,7 @@ open Docs.SharedView
 let cardFullImage =
     let example =
         Daisy.card [
-            card.bordered
+            card.border
             card.full
             prop.children [
                 Html.figure [Html.img [prop.src "https://picsum.photos/id/1005/400/250"]]
@@ -24,7 +24,7 @@ let cardFullImage =
         |> Html.div
 
     let code = """Daisy.card [
-    card.bordered
+    card.border
     card.full
     prop.children [
         Html.figure [Html.img [prop.src "https://picsum.photos/id/1005/400/250"]]
@@ -43,7 +43,7 @@ let cardFullImage =
 let cardTopImage =
     let example =
         Daisy.card [
-            card.bordered
+            card.border
             prop.children [
                 Html.figure [Html.img [prop.src "https://picsum.photos/id/1005/400/250"]]
                 Daisy.cardBody [
@@ -67,7 +67,7 @@ let cardTopImage =
         |> Html.div
 
     let code = """Daisy.card [
-    card.bordered
+    card.border
     prop.children [
         Html.figure [Html.img [prop.src "https://picsum.photos/id/1005/400/250"]]
         Daisy.cardBody [
@@ -127,7 +127,7 @@ let cardWithShadowNoImage =
 let cardWithBorderNoImage =
     let example =
         Daisy.card [
-            card.bordered
+            card.border
             prop.children [
                 Daisy.cardBody [
                     Daisy.cardTitle "Card with border no image"
@@ -142,7 +142,7 @@ let cardWithBorderNoImage =
         |> Html.div
 
     let code = """Daisy.card [
-    card.bordered
+    card.border
     prop.children [
         Daisy.cardBody [
             Daisy.cardTitle "No Images"

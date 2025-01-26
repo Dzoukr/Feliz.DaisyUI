@@ -44,13 +44,6 @@ type Daisy =
     static member inline alert int = Helpers.Elm.int Html.div int "alert"
     static member inline alert float = Helpers.Elm.float Html.div float "alert"
 
-    static member inline artboard props = Helpers.Elm.props Html.div props "artboard"
-    static member inline artboard (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "artboard"
-    static member inline artboard elm = Helpers.Elm.elm Html.div elm "artboard"
-    static member inline artboard string = Helpers.Elm.string Html.div string "artboard"
-    static member inline artboard int = Helpers.Elm.int Html.div int "artboard"
-    static member inline artboard float = Helpers.Elm.float Html.div float "artboard"
-
     static member inline avatar props = Helpers.Elm.props Html.div props "avatar"
     static member inline avatar (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "avatar"
     static member inline avatar elm = Helpers.Elm.elm Html.div elm "avatar"
@@ -72,24 +65,6 @@ type Daisy =
     static member inline breadcrumbs string = Helpers.Elm.string Html.div string "breadcrumbs"
     static member inline breadcrumbs int = Helpers.Elm.int Html.div int "breadcrumbs"
     static member inline breadcrumbs float = Helpers.Elm.float Html.div float "breadcrumbs"
-
-    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
-    static member inline buttonGroup props = Helpers.Elm.props Html.div props "btn-group"
-
-    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
-    static member inline buttonGroup (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "btn-group"
-
-    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
-    static member inline buttonGroup elm = Helpers.Elm.elm Html.div elm "btn-group"
-
-    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
-    static member inline buttonGroup string = Helpers.Elm.string Html.div string "btn-group"
-
-    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
-    static member inline buttonGroup int = Helpers.Elm.int Html.div int "btn-group"
-
-    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
-    static member inline buttonGroup float = Helpers.Elm.float Html.div float "btn-group"
 
     static member inline card props = Helpers.Elm.props Html.div props "card"
     static member inline card (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "card"
@@ -347,6 +322,8 @@ type Daisy =
     static member inline step int = Helpers.Elm.int Html.li int "step"
     static member inline step float = Helpers.Elm.float Html.li float "step"
 
+    static member inline stepIcon elm = Helpers.Elm.elm Html.span elm "step-icon"
+
     static member inline tabs props = Helpers.Elm.props Html.div props "tabs"
     static member inline tabs (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "tabs"
     static member inline tabs elm = Helpers.Elm.elm Html.div elm "tabs"
@@ -358,6 +335,13 @@ type Daisy =
     static member inline tab int = Helpers.Elm.int Html.a int "tab"
     static member inline tab float = Helpers.Elm.float Html.a float "tab"
 
+    static member inline tabContent props = Helpers.Elm.props Html.div props "tab-content"
+    static member inline tabContent (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "tab-content"
+    static member inline tabContent elm = Helpers.Elm.elm Html.div elm "tab-content"
+    static member inline tabContent string = Helpers.Elm.string Html.div string "tab-content"
+    static member inline tabContent int = Helpers.Elm.int Html.div int "tab-content"
+    static member inline tabContent float = Helpers.Elm.float Html.div float "tab-content"
+
     static member inline table props = Helpers.Elm.props Html.table props "table"
     static member inline table (children: #seq<ReactElement>) = Helpers.Elm.children Html.table children "table"
     static member inline table elm = Helpers.Elm.elm Html.table elm "table"
@@ -366,9 +350,12 @@ type Daisy =
     static member inline tooltip (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "tooltip"
     static member inline tooltip elm = Helpers.Elm.elm Html.div elm "tooltip"
 
-    static member inline formControl props = Helpers.Elm.props Html.div props "form-control"
-    static member inline formControl (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "form-control"
-    static member inline formControl elm = Helpers.Elm.elm Html.div elm "form-control"
+    static member inline tooltipContent props = Helpers.Elm.props Html.div props "tooltip-content"
+    static member inline tooltipContent (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "tooltip-content"
+    static member inline tooltipContent elm = Helpers.Elm.elm Html.div elm "tooltip-content"
+    static member inline tooltipContent string = Helpers.Elm.string Html.div string "tooltip-content"
+    static member inline tooltipContent int = Helpers.Elm.int Html.div int "tooltip-content"
+    static member inline tooltipContent float = Helpers.Elm.float Html.div float "tooltip-content"
 
     static member inline checkbox props = Helpers.Elm.props Html.input (prop.type'.checkbox :: props) "checkbox"
 
@@ -376,30 +363,9 @@ type Daisy =
     static member inline label (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "label"
     static member inline label elm = Helpers.Elm.elm Html.label elm "label"
 
-    static member inline labelText props = Helpers.Elm.props Html.span props "label-text"
-    static member inline labelText (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "label-text"
-    static member inline labelText elm = Helpers.Elm.elm Html.span elm "label-text"
-    static member inline labelText string = Helpers.Elm.string Html.span string "label-text"
-    static member inline labelText int = Helpers.Elm.int Html.span int "label-text"
-    static member inline labelText float = Helpers.Elm.float Html.span float "label-text"
-
-    static member inline labelTextAlt props = Helpers.Elm.props Html.span props "label-text-alt"
-    static member inline labelTextAlt (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "label-text-alt"
-    static member inline labelTextAlt elm = Helpers.Elm.elm Html.span elm "label-text-alt"
-    static member inline labelTextAlt string = Helpers.Elm.string Html.span string "label-text-alt"
-    static member inline labelTextAlt int = Helpers.Elm.int Html.span int "label-text-alt"
-    static member inline labelTextAlt float = Helpers.Elm.float Html.span float "label-text-alt"
+    static member inline floatingLabel (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "floating-label"
 
     static member inline input props = Helpers.Elm.props Html.input (prop.type'.text :: props) "input"
-
-    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
-    static member inline inputGroup props = Helpers.Elm.props Html.div props "input-group"
-
-    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
-    static member inline inputGroup (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "input-group"
-
-    [<Obsolete("This component is deprecated and will be removed in the next major version. Use Join instead.")>]
-    static member inline inputGroup elm = Helpers.Elm.elm Html.div elm "input-group"
 
     static member inline radio props = Helpers.Elm.props Html.input (prop.type'.radio :: props) "radio"
 
@@ -423,13 +389,13 @@ type Daisy =
     static member inline mockupPhone (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-phone"
     static member inline mockupPhone elm = Helpers.Elm.elm Html.div elm "mockup-phone"
 
-    static member inline mockupPhoneCamera props = Helpers.Elm.props Html.div props "camera"
-    static member inline mockupPhoneCamera (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "camera"
-    static member inline mockupPhoneCamera elm = Helpers.Elm.elm Html.div elm "camera"
+    static member inline mockupPhoneCamera props = Helpers.Elm.props Html.div props "mockup-camera"
+    static member inline mockupPhoneCamera (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-camera"
+    static member inline mockupPhoneCamera elm = Helpers.Elm.elm Html.div elm "mockup-camera"
 
-    static member inline mockupPhoneDisplay props = Helpers.Elm.props Html.div props "display"
-    static member inline mockupPhoneDisplay (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "display"
-    static member inline mockupPhoneDisplay elm = Helpers.Elm.elm Html.div elm "display"
+    static member inline mockupPhoneDisplay props = Helpers.Elm.props Html.div props "mockup-display"
+    static member inline mockupPhoneDisplay (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-display"
+    static member inline mockupPhoneDisplay elm = Helpers.Elm.elm Html.div elm "mockup-display"
 
     static member inline mockupWindow props = Helpers.Elm.props Html.div props "mockup-window"
     static member inline mockupWindow (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-window"
