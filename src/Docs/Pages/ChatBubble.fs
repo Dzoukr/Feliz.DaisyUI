@@ -50,7 +50,7 @@ let withImages =
                         prop.children [
                             Html.div [
                                 prop.className "w-10 rounded-full"
-                                prop.children [ Html.img [ prop.src "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" ] ]
+                                prop.children [ Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" ] ]
                             ]
                         ]
                     ]
@@ -65,7 +65,7 @@ let withImages =
                         prop.children [
                             Html.div [
                                 prop.className "w-10 rounded-full"
-                                prop.children [ Html.img [ prop.src "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" ] ]
+                                prop.children [ Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" ] ]
                             ]
                         ]
                     ]
@@ -83,7 +83,7 @@ let withImages =
                 prop.children [
                     Html.div [
                         prop.className "w-10 rounded-full"
-                        prop.children [ Html.img [ prop.src "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" ] ]
+                        prop.children [ Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" ] ]
                     ]
                 ]
             ]
@@ -98,7 +98,7 @@ let withImages =
                 prop.children [
                     Html.div [
                         prop.className "w-10 rounded-full"
-                        prop.children [ Html.img [ prop.src "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" ] ]
+                        prop.children [ Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" ] ]
                     ]
                 ]
             ]
@@ -120,7 +120,7 @@ let header =
                         prop.children [
                             Html.div [
                                 prop.className "w-10 rounded-full"
-                                prop.children [ Html.img [ prop.src "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" ] ]
+                                prop.children [ Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" ] ]
                             ]
                         ]
                     ]
@@ -143,7 +143,7 @@ let header =
                         prop.children [
                             Html.div [
                                 prop.className "w-10 rounded-full"
-                                prop.children [ Html.img [ prop.src "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" ] ]
+                                prop.children [ Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" ] ]
                             ]
                         ]
                     ]
@@ -169,7 +169,7 @@ let header =
                 prop.children [
                     Html.div [
                         prop.className "w-10 rounded-full"
-                        prop.children [ Html.img [ prop.src "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" ] ]
+                        prop.children [ Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" ] ]
                     ]
                 ]
             ]
@@ -192,7 +192,7 @@ let header =
                 prop.children [
                     Html.div [
                         prop.className "w-10 rounded-full"
-                        prop.children [ Html.img [ prop.src "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" ] ]
+                        prop.children [ Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" ] ]
                     ]
                 ]
             ]

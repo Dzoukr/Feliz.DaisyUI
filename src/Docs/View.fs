@@ -239,51 +239,51 @@ let private leftSide (p:Page) =
                         mi "Badge" Page.Badge
                         mi "Breadcrumbs" Page.Breadcrumbs
                         mi "Button" Page.Button
-                        mi "Card" Page.Card
+                        miBadge "updated" "Card" Page.Card
                         mi "Carousel" Page.Carousel
                         mi "Chat bubble" Page.ChatBubble
                         mi "Collapse" Page.Collapse
                         mi "Countdown" Page.Countdown
-                        miBadge "new" "Diff" Page.Diff
+                        mi "Diff" Page.Diff
                         mi "Divider" Page.Divider
                         mi "Drawer" Page.Drawer
                         mi "Dropdown" Page.Dropdown
-                        mi "Footer" Page.Footer
+                        miBadge "updated" "Footer" Page.Footer
                         mi "Hero" Page.Hero
                         mi "Indicator" Page.Indicator
                         mi "Join (group items)" Page.Join
                         mi "Kbd" Page.Kbd
                         mi "Link" Page.Link
                         mi "Loading" Page.Loading
-                        mi "Mask" Page.Mask
-                        mi "Menu" Page.Menu
+                        miBadge "updated" "Mask" Page.Mask
+                        miBadge "updated" "Menu" Page.Menu
                         mi "Modal" Page.Modal
-                        mi "Navbar" Page.Navbar
+                        miBadge "updated" "Navbar" Page.Navbar
                         mi "Pagination" Page.Pagination
                         mi "Progress" Page.Progress
                         mi "Radial Progress" Page.RadialProgress
                         mi "Rating" Page.Rating
-                        miBadge "new" "Skeleton" Page.Skeleton
-                        mi "Stack" Page.Stack
+                        mi "Skeleton" Page.Skeleton
+                        miBadge "updated" "Stack" Page.Stack
                         mi "Stat" Page.Stat
                         mi "Steps" Page.Steps
                         mi "Swap" Page.Swap
                         miBadge "updated" "Tab" Page.Tab
                         mi "Table" Page.Table
-                        miBadge "new" "Theme Controller" Page.ThemeController
-                        miBadge "new" "Timeline" Page.Timeline
+                        mi "Theme Controller" Page.ThemeController
+                        mi "Timeline" Page.Timeline
                         mi "Toast" Page.Toast
                         mi "Tooltip" Page.Tooltip
-                        mi "File - Input" Page.FileInput
-                        mi "Form - Checkbox" Page.FormCheckbox
-                        mi "Form - Input" Page.FormInput
-                        mi "Form - Radio" Page.FormRadio
+                        miBadge "updated" "File - Input" Page.FileInput
+                        miBadge "updated" "Form - Checkbox" Page.FormCheckbox
+                        miBadge "updated" "Form - Input" Page.FormInput
+                        miBadge "updated" "Form - Radio" Page.FormRadio
                         mi "Form - Range" Page.FormRange
-                        mi "Form - Select" Page.FormSelect
-                        mi "Form - Textarea" Page.FormTextarea
-                        mi "Form - Toggle" Page.FormToggle
+                        miBadge "updated" "Form - Select" Page.FormSelect
+                        miBadge "updated" "Form - Textarea" Page.FormTextarea
+                        miBadge "updated" "Form - Toggle" Page.FormToggle
                         mi "MockupCode" Page.MockupCode
-                        mi "MockupPhone" Page.MockupPhone
+                        miBadge "updated" "MockupPhone" Page.MockupPhone
                         mi "MockupWindow" Page.MockupWindow
                     ]
                 ]

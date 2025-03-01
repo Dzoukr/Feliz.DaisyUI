@@ -1,13 +1,11 @@
 @charset "utf-8";
 
 @import '@fortawesome/fontawesome-free/css/all.min.css' layer(base);
-
 @import 'tailwindcss';
+@source '../.fable-build/**/*.{js,ts,jsx,tsx}';
 @plugin 'daisyui' {
     themes: all;
 }
-
-@source '../.fable-build/**/*.{js,ts,jsx,tsx}';
 
 /* a.link {
     @apply text-primary underline font-semibold;

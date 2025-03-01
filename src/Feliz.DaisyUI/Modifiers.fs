@@ -147,7 +147,7 @@ type card =
     /// Button with `border` style
     static member inline border = prop.className "card-border"
     /// Button with `dash` style
-    static member inline dash = prop.className "card-soft"
+    static member inline dash = prop.className "card-dash"
 
 [<Erase>]
 type carousel =

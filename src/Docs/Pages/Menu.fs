@@ -10,7 +10,7 @@ open Docs.SharedView
 let basic =
     let example =
         Html.div [
-            prop.className "rounded-box bg-base-200"
+            prop.className "grid place-content-center rounded-box bg-base-200"
             prop.children [
                 Daisy.menu [
                     prop.className "bg-base-100 rounded-box"
@@ -36,7 +36,7 @@ let basic =
         ]
 
     let code = """Html.div [
-    prop.className "rounded-box bg-base-200"
+    prop.className "grid place-content-center rounded-box bg-base-200"
     prop.children [
         Daisy.menu [
             prop.className "bg-base-100 rounded-box"
@@ -66,7 +66,7 @@ let basic =
 let bordered =
     let example =
         Html.div [
-            prop.className "rounded-box bg-base-200"
+            prop.className "grid place-content-center rounded-box bg-base-200"
             prop.children [
                 Daisy.menu [
                     prop.className "bg-base-100 rounded-box"
@@ -74,15 +74,15 @@ let bordered =
                         Daisy.menuTitle "Menu title"
                         Html.li [Html.a [prop.text "Non Bordered"]]
                         Html.li [
-                            prop.className "bordered"
+                            prop.className "border"
                             prop.children [
                                 Html.a [ prop.text "Bordered"]
                             ]
                         ]
                         Html.li [
-                            prop.className "bordered disabled"
+                            menuItem.disabled
                             prop.children [
-                                Html.a [ prop.text "Bordered Disabled" ]
+                                Html.a [ prop.text "Disabled" ]
                             ]
                         ]
                     ]
@@ -91,7 +91,7 @@ let bordered =
         ]
 
     let code = """Html.div [
-    prop.className "rounded-box bg-base-200"
+    prop.className "grid place-content-center rounded-box bg-base-200"
     prop.children [
         Daisy.menu [
             prop.className "py-3 bg-base-100 rounded-box"
@@ -105,9 +105,9 @@ let bordered =
                     ]
                 ]
                 Html.li [
-                    prop.className "bordered disabled"
+                    menuItem.disabled
                     prop.children [
-                        Html.a [ prop.text "Bordered Disabled" ]
+                        Html.a [ prop.text "Disabled" ]
                     ]
                 ]
             ]
@@ -120,7 +120,7 @@ let bordered =
 let horizontal =
     let example =
         Html.div [
-            prop.className "rounded-box bg-base-200"
+            prop.className "grid place-content-center rounded-box bg-base-200"
             prop.children [
                 Daisy.menu [
                     menu.horizontal
@@ -146,7 +146,7 @@ let horizontal =
         ]
 
     let code = """Html.div [
-    prop.className "rounded-box bg-base-200"
+    prop.className "grid place-content-center rounded-box bg-base-200"
     prop.children [
         Daisy.menu [
             menu.horizontal
@@ -176,7 +176,7 @@ let horizontal =
 let tree =
     let example =
         Html.div [
-            prop.className "py-4 rounded-box bg-base-200"
+            prop.className "grid place-content-center py-4 rounded-box bg-base-200"
             prop.children [
                 Daisy.menu [
                     prop.className "bg-base-100 rounded-box"
@@ -201,7 +201,7 @@ let tree =
         ]
 
     let code = """Html.div [
-    prop.className "py-4 rounded-box bg-base-200"
+    prop.className "grid place-content-center py-4 rounded-box bg-base-200"
     prop.children [
         Daisy.menu [
             prop.className "bg-base-100 rounded-box"

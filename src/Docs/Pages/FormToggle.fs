@@ -16,6 +16,7 @@ let basic =
 let toggleWithLabelAndContainer =
     let example =
         Daisy.card [
+            card.border
             prop.children [
                 Daisy.fieldset [
                     Daisy.fieldsetLabel [
@@ -31,6 +32,7 @@ let toggleWithLabelAndContainer =
 
     let code = """Daisy.card [
     prop.children [
+        card.border
         Daisy.fieldset [
             Daisy.fieldsetLabel [
                 prop.className "justify-between"
@@ -53,6 +55,7 @@ let colors =
             toggle.accent   , nameof toggle.accent
         ]
         Daisy.card [
+            card.border
             prop.children [
                 for color, colorText in colors do
                     Daisy.fieldset [
