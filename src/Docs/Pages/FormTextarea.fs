@@ -7,21 +7,19 @@ open Docs.SharedView
 
 let basic =
     let example =
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Your bio"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "Your bio"
             Daisy.textarea [
                 prop.placeholder "Bio"
                 prop.className "h-24"
-                textarea.bordered
             ]
         ]
         
-    let code = """Daisy.formControl [
-    Daisy.label [Daisy.labelText "Your bio"]
+    let code = """Daisy.fieldset [
+    Daisy.fieldsetLabel "Your bio"
     Daisy.textarea [
         prop.placeholder "Bio"
         prop.className "h-24"
-        textarea.bordered
     ]
 ]"""
     let title = Html.text "Basic"
@@ -40,13 +38,12 @@ let colors =
         ]
         Html.div [
             for color, colorText in colors do
-                Daisy.formControl [
-                    Daisy.label [Daisy.labelText colorText]
+                Daisy.fieldset [
+                    Daisy.fieldsetLabel colorText
                     Daisy.textarea [
                         color
                         prop.placeholder colorText
                         prop.className "h-24"
-                        textarea.bordered
                     ]
                 ]
         ]
@@ -62,13 +59,12 @@ let colors =
 ]
 Html.div [
     for color, colorText in colors do
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText colorText]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel colorText
             Daisy.textarea [
                 color
                 prop.placeholder colorText
                 prop.className "h-24"
-                textarea.bordered
             ]
         ]
 ]"""

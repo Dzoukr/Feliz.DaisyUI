@@ -121,9 +121,6 @@ type button =
     static member inline disabled = prop.className "btn-disabled"
     /// Button with a glass effect
     static member inline glass = prop.className "glass"
-    /// Shows loading spinner
-    [<Obsolete("This modifier is deprecated and will be removed in the next major version. For loading please use Loading component. See https://dzoukr.github.io/Feliz.DaisyUI/#/loading")>]
-    static member inline loading = prop.className "loading"
     /// Disables click animation
     static member inline animation = prop.className "no-animation"
     /// Button with `dash` style
@@ -576,19 +573,6 @@ type input =
     static member inline sm = prop.className "input-sm"
     /// Extra small size for input
     static member inline xs = prop.className "input-xs"
-
-[<Erase>]
-type inputGroup =
-    /// Large size for input-group wrapper
-    static member inline lg = prop.className "input-group-lg"
-    /// Medium (default) size for input-group wrapper
-    static member inline md = prop.className "input-group-md"
-    /// Small size for input-group wrapper
-    static member inline sm = prop.className "input-group-sm"
-    /// Extra small size for input-group wrapper
-    static member inline xs = prop.className "input-group-xs"
-    /// Vertical direction for input-group items
-    static member inline vertical = prop.className "input-group-vertical"
 
 [<Erase>]
 type radio =

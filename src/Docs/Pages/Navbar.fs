@@ -122,8 +122,8 @@ let withInput =
                 Html.div [
                     prop.className "flex-none"
                     prop.children [
-                        Daisy.formControl [
-                            Daisy.input [input.ghost; prop.placeholder "Search"]
+                        Daisy.fieldset [
+                            Daisy.input [ input.ghost; prop.placeholder "Search" ]
                         ]
                     ]
                 ]
@@ -149,8 +149,8 @@ let withInput =
         Html.div [
             prop.className "flex-none"
             prop.children [
-                Daisy.formControl [
-                    Daisy.input [input.ghost; prop.placeholder "Search"]
+                Daisy.fieldset [
+                    Daisy.input [ input.ghost; prop.placeholder "Search" ]
                 ]
             ]
         ]

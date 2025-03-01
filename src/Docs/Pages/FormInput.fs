@@ -7,15 +7,15 @@ open Docs.SharedView
 
 let inputWithBorder =
     let example =
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Username"]
-            Daisy.input [input.bordered; prop.placeholder "Username"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "Username"
+            Daisy.input [ prop.placeholder "Username" ]
         ]
         |> Html.div
 
-    let code = """Daisy.formControl [
-    Daisy.label [Daisy.labelText "Username"]
-    Daisy.input [input.bordered; prop.placeholder "Username"]
+    let code = """Daisy.fieldset [
+    Daisy.fieldsetLabel "Username"
+    Daisy.input [ prop.placeholder "Username" ]
 ]"""
     let title = Html.text "Input with border"
     codedView title code example
@@ -25,9 +25,9 @@ let inputWithoutBorder =
         Daisy.card [
             prop.className "p-10 bg-base-200"
             prop.children [
-                Daisy.formControl [
-                    Daisy.label [Daisy.labelText "Username"]
-                    Daisy.input [input.bordered; prop.placeholder "Username"]
+                Daisy.fieldset [
+                    Daisy.fieldsetLabel "Username"
+                    Daisy.input [prop.placeholder "Username"]
                 ]
             ]
         ]
@@ -35,9 +35,9 @@ let inputWithoutBorder =
     let code = """Daisy.card [
     prop.className "p-10 bg-base-200"
     prop.children [
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Username"]
-            Daisy.input [input.bordered; prop.placeholder "Username"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "Username"
+            Daisy.input [prop.placeholder "Username"]
         ]
     ]
 ]"""
@@ -49,8 +49,8 @@ let inputGhostNoBackground =
         Daisy.card [
             prop.className "p-10 bg-base-200"
             prop.children [
-                Daisy.formControl [
-                    Daisy.label [Daisy.labelText "Username"]
+                Daisy.fieldset [
+                    Daisy.fieldsetLabel "Username"
                     Daisy.input [input.ghost; prop.placeholder "Username"]
                 ]
             ]
@@ -59,8 +59,8 @@ let inputGhostNoBackground =
     let code = """Daisy.card [
     prop.className "p-10 bg-base-200"
     prop.children [
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Username"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "Username"
             Daisy.input [input.ghost; prop.placeholder "Username"]
         ]
     ]
@@ -70,14 +70,14 @@ let inputGhostNoBackground =
 
 let inputDisabled =
     let example =
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Disabled input"]
-            Daisy.input [input.bordered; prop.disabled true; prop.placeholder "Username"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "Disabled input"
+            Daisy.input [prop.disabled true; prop.placeholder "Username"]
         ]
 
-    let code = """Daisy.formControl [
-    Daisy.label [Daisy.labelText "Disabled input"]
-    Daisy.input [input.bordered; prop.disabled true; prop.placeholder "Username"]
+    let code = """Daisy.fieldset [
+    Daisy.fieldsetLabel "Disabled input"
+    Daisy.input [prop.disabled true; prop.placeholder "Username"]
 ]"""
     let title = Html.text "Input ghost (no background)"
     codedView title code example
@@ -93,10 +93,10 @@ let inputWithColors =
             input.warning  , "warning"
             input.error    , "error"
         ]
-        Daisy.formControl [
+        Daisy.fieldset [
             for color, colorText in colors do
-                Daisy.label [Daisy.labelText colorText]
-                Daisy.input [color; input.bordered; prop.placeholder "Username"]
+                Daisy.fieldsetLabel colorText
+                Daisy.input [color; prop.placeholder "Username"]
         ]
 
     let code = """let colors = [
@@ -108,10 +108,10 @@ let inputWithColors =
     input.warning  , "warning"
     input.error    , "error"
 ]
-Daisy.formControl [
+Daisy.fieldset [
     for color, colorText in colors do
-        Daisy.label [Daisy.labelText colorText]
-        Daisy.input [color; input.bordered; prop.placeholder "Username"]
+        Daisy.fieldsetLabel colorText
+        Daisy.input [color; prop.placeholder "Username"]
 ]"""
     let title = Html.text "Input with colors"
     codedView title code example
@@ -124,10 +124,10 @@ let inputWithSizes =
             input.md, "md"
             input.lg, "lg"
         ]
-        Daisy.formControl [
+        Daisy.fieldset [
             for size, sizeText in sizes do
-                Daisy.label [Daisy.labelText sizeText]
-                Daisy.input [size; input.bordered; prop.placeholder "Username"]
+                Daisy.fieldsetLabel sizeText
+                Daisy.input [size; prop.placeholder "Username"]
         ]
 
     let code = """let sizes = [
@@ -136,23 +136,22 @@ let inputWithSizes =
     input.md, "md"
     input.lg, "lg"
 ]
-Daisy.formControl [
+Daisy.fieldset [
     for size, sizeText in sizes do
-        Daisy.label [Daisy.labelText sizeText]
-        Daisy.input [size; input.bordered; prop.placeholder "Username"]
+        Daisy.fieldsetLabel sizeText
+        Daisy.input [size; prop.placeholder "Username"]
 ]"""
     let title = Html.text "Input with sizes"
     codedView title code example
 
 let inputWithButton =
     let example =
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Connected"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "Connected"
             Html.div [
                 prop.className "relative"
                 prop.children [
                     Daisy.input [
-                        input.bordered
                         input.primary
                         prop.placeholder "Search"
                         prop.className "w-full pr-16"
@@ -166,12 +165,16 @@ let inputWithButton =
             ]
         ]
 
-    let code = """Daisy.formControl [
-    Daisy.label [Daisy.labelText "Connected"]
+    let code = """Daisy.fieldset [
+    Daisy.fieldsetLabel "Connected"
     Html.div [
         prop.className "relative"
         prop.children [
-            Daisy.input [input.bordered; input.primary; prop.placeholder "Search"]
+            Daisy.input [
+                input.primary
+                prop.placeholder "Search"
+                prop.className "w-full pr-16"
+            ]
             Daisy.button.button [
                 button.primary
                 prop.className "absolute top-0 right-0 rounded-l-none"
@@ -181,131 +184,6 @@ let inputWithButton =
     ]
 ]"""
     let title = Html.text "Input with sizes"
-    codedView title code example
-
-let inputWithGroup =
-    let example =
-        Html.div [
-            Daisy.formControl [
-                Daisy.label [Daisy.labelText "Vertical"]
-                Daisy.inputGroup [
-                    Html.span "Email"
-                    Daisy.input [input.bordered; prop.placeholder "info@site.com"]
-                ]
-            ]
-
-            Daisy.formControl [
-                Daisy.label [Daisy.labelText "medium"]
-                Daisy.inputGroup [
-                    inputGroup.md
-                    prop.children [
-                        Daisy.input [input.bordered; input.md; prop.value "0.0099"]
-                        Html.span "BTC"
-                    ]
-                ]
-            ]
-
-            Daisy.formControl [
-                Daisy.label [Daisy.labelText "small"]
-                Daisy.inputGroup [
-                    inputGroup.sm
-                    prop.children [
-                        Html.span "Price"
-                        Daisy.input [input.bordered; input.sm; prop.value "20.99"]
-                        Html.span "USD"
-                    ]
-                ]
-            ]
-
-            Daisy.formControl [
-                Daisy.label [Daisy.labelText "tiny"]
-                Daisy.inputGroup [
-                    inputGroup.xs
-                    prop.children [
-                        Html.span "@"
-                        Daisy.input [input.bordered; input.xs; prop.placeholder "username"]
-                    ]
-                ]
-            ]
-        ]
-
-    let code = """Html.div [
-    Daisy.formControl [
-        Daisy.label [Daisy.labelText "Vertical"]
-        Daisy.inputGroup [
-            Html.span "Email"
-            Daisy.input [input.bordered; prop.placeholder "info@site.com"]
-        ]
-    ]
-
-    Daisy.formControl [
-        Daisy.label [Daisy.labelText "medium"]
-        Daisy.inputGroup [
-            inputGroup.md
-            prop.children [
-                Daisy.input [input.bordered; input.md; prop.value "0.0099"]
-                Html.span "BTC"
-            ]
-        ]
-    ]
-
-    Daisy.formControl [
-        Daisy.label [Daisy.labelText "small"]
-        Daisy.inputGroup [
-            inputGroup.sm
-            prop.children [
-                Html.span "Price"
-                Daisy.input [input.bordered; input.sm; prop.value "20.99"]
-                Html.span "USD"
-            ]
-        ]
-    ]
-
-    Daisy.formControl [
-        Daisy.label [Daisy.labelText "tiny"]
-        Daisy.inputGroup [
-            inputGroup.xs
-            prop.children [
-                Html.span "@"
-                Daisy.input [input.bordered; input.xs; prop.placeholder "username"]
-            ]
-        ]
-    ]
-]"""
-    let title =
-        Html.divClassed "flex flex-col gap-2" [
-            Html.text "Input with group"
-            Daisy.alert [
-                alert.warning
-                prop.text "This component is deprecated and will be removed in the next major version. Use Join instead."
-            ]
-        ]
-    codedView title code example
-
-let inputWithVertical =
-    let example =
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Vertical"]
-            Daisy.inputGroup [
-                inputGroup.vertical
-                prop.children [
-                    Html.span "Email"
-                    Daisy.input [input.bordered; prop.placeholder "info@site.com"]
-                ]
-            ]
-        ]
-
-    let code = """Daisy.formControl [
-    Daisy.label [Daisy.labelText "Vertical"]
-    Daisy.inputGroup [
-        inputGroup.vertical
-        prop.children [
-            Html.span "Email"
-            Daisy.input [input.bordered; prop.placeholder "info@site.com"]
-        ]
-    ]
-]"""
-    let title = Html.text "Input with vertical"
     codedView title code example
 
 [<ReactComponent>]
@@ -318,6 +196,4 @@ let FormInputView () =
         inputWithColors
         inputWithSizes
         inputWithButton
-        inputWithGroup
-        inputWithVertical
     ]

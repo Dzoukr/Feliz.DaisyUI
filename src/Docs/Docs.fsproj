@@ -17,7 +17,6 @@
         <Compile Include="Pages\Join.fs" />
         <Compile Include="Pages\Loading.fs" />
         <Compile Include="Pages\Swap.fs" />
-        <Compile Include="Pages\Artboard.fs" />
         <Compile Include="Pages\Button.fs" />
         <Compile Include="Pages\Breadcrumbs.fs" />
         <Compile Include="Pages\Badge.fs" />

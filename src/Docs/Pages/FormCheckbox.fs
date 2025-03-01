@@ -23,17 +23,23 @@ let basicChecked =
 
 let basicLabel =
     let example =
-        Daisy.formControl [
-            Daisy.label [
-                Daisy.labelText "Remember me"
-                Daisy.checkbox []
+        Daisy.fieldset [
+            Daisy.fieldsetLabel [
+                prop.className "justify-between"
+                prop.children [
+                    Html.text "Remember me"
+                    Daisy.checkbox []
+                ]
             ]
         ]
 
-    let code = """Daisy.formControl [
-    Daisy.label [
-        Daisy.labelText "Remember me"
-        Daisy.checkbox []
+    let code = """Daisy.fieldset [
+    Daisy.fieldsetLabel [
+        prop.className "justify-between"
+        prop.children [
+            Html.text "Remember me"
+            Daisy.checkbox []
+        ]
     ]
 ]"""
     let title = Html.text "Basic Label"
@@ -57,16 +63,22 @@ let all =
         Html.div [
             for size, sizeText in sizes do
                 for color, colorText in colors do
-                    Daisy.formControl [
-                        Daisy.label [
-                            Daisy.labelText (sprintf "%s - %s" sizeText colorText)
-                            Daisy.checkbox [color; size; prop.defaultChecked true]
+                    Daisy.fieldset [
+                        Daisy.fieldsetLabel [
+                            prop.className "justify-between"
+                            prop.children [
+                                Html.text (sprintf "%s - %s" sizeText colorText)
+                                Daisy.checkbox [color; size; prop.defaultChecked true]
+                            ]
                         ]
                     ]
-                    Daisy.formControl [
-                        Daisy.label [
-                            Daisy.labelText (sprintf "%s - %s (disabled)" sizeText colorText)
-                            Daisy.checkbox [color; size; prop.disabled true; prop.defaultChecked true]
+                    Daisy.fieldset [
+                        Daisy.fieldsetLabel [
+                            prop.className "justify-between"
+                            prop.children [
+                                Html.text (sprintf "%s - %s (disabled)" sizeText colorText)
+                                Daisy.checkbox [color; size; prop.disabled true; prop.defaultChecked true]
+                            ]
                         ]
                     ]
         ]
@@ -87,16 +99,22 @@ let sizes = [
 Html.div [
     for size, sizeText in sizes do
         for color, colorText in colors do
-            Daisy.formControl [
-                Daisy.label [
-                    Daisy.labelText (sprintf "%s - %s" sizeText colorText)
-                    Daisy.checkbox [color; size; prop.defaultChecked true]
+            Daisy.fieldset [
+                Daisy.fieldsetLabel [
+                    prop.className "justify-between"
+                    prop.children [
+                        Html.text (sprintf "%s - %s" sizeText colorText)
+                        Daisy.checkbox [color; size; prop.defaultChecked true]
+                    ]
                 ]
             ]
-            Daisy.formControl [
-                Daisy.label [
-                    Daisy.labelText (sprintf "%s - %s (disabled)" sizeText colorText)
-                    Daisy.checkbox [color; size; prop.disabled true; prop.defaultChecked true]
+            Daisy.fieldset [
+                Daisy.fieldsetLabel [
+                    prop.className "justify-between"
+                    prop.children [
+                        Html.text (sprintf "%s - %s (disabled)" sizeText colorText)
+                        Daisy.checkbox [color; size; prop.disabled true; prop.defaultChecked true]
+                    ]
                 ]
             ]
 ]"""

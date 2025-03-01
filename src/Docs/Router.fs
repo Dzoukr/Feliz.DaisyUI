@@ -11,7 +11,6 @@ type Page =
     | Colors
     | Accordion
     | Alert
-    | Artboard
     | Avatar
     | Badge
     | Breadcrumbs
@@ -73,7 +72,6 @@ module Page =
         | [ "colors" ] -> Page.Colors
         | [ "alert" ] -> Page.Alert
         | [ "accordion" ] -> Page.Accordion
-        | [ "artboard" ] -> Page.Artboard
         | [ "avatar" ] -> Page.Avatar
         | [ "badge" ] -> Page.Badge
         | [ "breadcrumbs" ] -> Page.Breadcrumbs
@@ -136,7 +134,6 @@ module Page =
         | Page.Colors -> [ "colors" ] |> noQueryString
         | Page.Accordion -> [ "accordion" ] |> noQueryString
         | Page.Alert -> [ "alert" ] |> noQueryString
-        | Page.Artboard -> [ "artboard" ] |> noQueryString
         | Page.Avatar -> [ "avatar" ] |> noQueryString
         | Page.Badge -> [ "badge" ] |> noQueryString
         | Page.Breadcrumbs -> [ "breadcrumbs" ] |> noQueryString

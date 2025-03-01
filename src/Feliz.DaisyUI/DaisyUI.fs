@@ -389,13 +389,13 @@ type Daisy =
     static member inline mockupPhone (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-phone"
     static member inline mockupPhone elm = Helpers.Elm.elm Html.div elm "mockup-phone"
 
-    static member inline mockupPhoneCamera props = Helpers.Elm.props Html.div props "mockup-camera"
-    static member inline mockupPhoneCamera (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-camera"
-    static member inline mockupPhoneCamera elm = Helpers.Elm.elm Html.div elm "mockup-camera"
+    static member inline mockupPhoneCamera props = Helpers.Elm.props Html.div props "mockup-phone-camera"
+    static member inline mockupPhoneCamera (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-phone-camera"
+    static member inline mockupPhoneCamera elm = Helpers.Elm.elm Html.div elm "mockup-phone-camera"
 
-    static member inline mockupPhoneDisplay props = Helpers.Elm.props Html.div props "mockup-display"
-    static member inline mockupPhoneDisplay (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-display"
-    static member inline mockupPhoneDisplay elm = Helpers.Elm.elm Html.div elm "mockup-display"
+    static member inline mockupPhoneDisplay props = Helpers.Elm.props Html.div props "mockup-phone-display"
+    static member inline mockupPhoneDisplay (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-phone-display"
+    static member inline mockupPhoneDisplay elm = Helpers.Elm.elm Html.div elm "mockup-phone-display"
 
     static member inline mockupWindow props = Helpers.Elm.props Html.div props "mockup-window"
     static member inline mockupWindow (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-window"
@@ -525,6 +525,17 @@ type Daisy =
     static member inline diffResizer props = Helpers.Elm.props Html.div props "diff-resizer"
     static member inline diffResizer (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "diff-resizer"
     static member inline diffResizer elm = Helpers.Elm.elm Html.div elm "diff-resizer"
+
+    static member inline fieldset props = Helpers.Elm.props Html.fieldSet props "fieldset"
+    static member inline fieldset (children: #seq<ReactElement>) = Helpers.Elm.children Html.fieldSet children "fieldset"
+    static member inline fieldset elm = Helpers.Elm.elm Html.fieldSet elm "fieldset"
+
+    static member inline fieldsetLegend string = Helpers.Elm.string Html.label string "fieldset-legend"
+
+    static member inline fieldsetLabel string = Helpers.Elm.string Html.label string "fieldset-label"
+    static member inline fieldsetLabel props = Helpers.Elm.props Html.label props "fieldset-label"
+    static member inline fieldsetLabel (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "fieldset-label"
+    static member inline fieldsetLabel elm = Helpers.Elm.elm Html.label elm "fieldset-label"
 
 module Daisy =
     [<Erase>]

@@ -207,10 +207,10 @@ let private leftSide (p:Page) =
                         prop.children [
                             Html.divClassed "flex flex-col gap-2" [
                                 Html.div [
-                                    prop.dangerouslySetInnerHTML "🎉 Now based on <strong>DaisyUI v4!</strong>"
+                                    prop.dangerouslySetInnerHTML "🎉 Now based on <strong>DaisyUI v5!</strong>"
                                 ]
                                 Html.divClassed "text-sm self-center underline" [
-                                    Html.a [ prop.text "Read the change log"; prop.href "https://daisyui.com/docs/changelog/#400-2023-11-12" ]
+                                    Html.a [ prop.text "Read the change log"; prop.href "https://daisyui.com/docs/changelog/#500" ]
                                 ]
                             ]
                         ]
@@ -219,7 +219,7 @@ let private leftSide (p:Page) =
 
                 Daisy.menu [
                     menu.md
-                    prop.className "flex flex-col p-4 pt-0"
+                    prop.className "flex flex-col p-4 pt-0 w-full"
                     prop.children [
                         Daisy.menuTitle [ Html.span "Docs" ]
                         mi "Install" Page.Install
@@ -230,12 +230,11 @@ let private leftSide (p:Page) =
                 ]
                 Daisy.menu [
                     menu.md
-                    prop.className "flex flex-col p-4 pt-0"
+                    prop.className "flex flex-col p-4 pt-0 w-full"
                     prop.children [
                         Daisy.menuTitle [ Html.span "Components" ]
                         mi "Accordion" Page.Accordion
                         mi "Alert" Page.Alert
-                        mi "Artboard" Page.Artboard
                         mi "Avatar" Page.Avatar
                         mi "Badge" Page.Badge
                         mi "Breadcrumbs" Page.Breadcrumbs
@@ -321,7 +320,6 @@ let AppView () =
         | Page.Colors       -> "Colors"         , "/core/colors"             , Pages.Colors.ColorsView ()
         | Page.Accordion    -> "Accordion"      , "/components/accordion"    , Pages.Accordion.AccordionView ()
         | Page.Alert        -> "Alert"          , "/components/alert"        , Pages.Alert.AlertView ()
-        | Page.Artboard     -> "Artboard"       , "/components/artboard"     , Pages.Artboard.ArtboardView ()
         | Page.Avatar       -> "Avatar"         , "/components/avatar"       , Pages.Avatar.AvatarView ()
         | Page.Badge        -> "Badge"          , "/components/badge"        , Pages.Badge.BadgeView ()
         | Page.Breadcrumbs  -> "Breadcrumbs"    , "/components/breadcrumbs"  , Pages.Breadcrumbs.BreadcrumbsView ()

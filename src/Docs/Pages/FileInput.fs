@@ -7,14 +7,14 @@ open Docs.SharedView
 
 let fileWithBorder =
     let example =
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "File Selection"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "File Selection"
             Daisy.file [file.bordered]
         ]
         |> Html.div
 
-    let code = """Daisy.formControl [
-    Daisy.label [Daisy.labelText "File Selection"]
+    let code = """Daisy.fieldset [
+    Daisy.fieldsetLabel "File Selection"
     Daisy.file [file.bordered]
 ]"""
     let title = Html.text "File Input with border"
@@ -25,8 +25,8 @@ let fileWithoutBorder =
         Daisy.card [
             prop.className "p-10 bg-base-200"
             prop.children [
-                Daisy.formControl [
-                    Daisy.label [Daisy.labelText "File Selection"]
+                Daisy.fieldset [
+                    Daisy.fieldsetLabel "File Selection"
                     Daisy.file [file.bordered]
                 ]
             ]
@@ -35,8 +35,8 @@ let fileWithoutBorder =
     let code = """Daisy.card [
     prop.className "p-10 bg-base-200"
     prop.children [
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "File Selection"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "File Selection"
             Daisy.file [file.bordered]
         ]
     ]
@@ -49,8 +49,8 @@ let fileGhostNoBackground =
         Daisy.card [
             prop.className "p-10 bg-base-200"
             prop.children [
-                Daisy.formControl [
-                    Daisy.label [Daisy.labelText "File Selection"]
+                Daisy.fieldset [
+                    Daisy.fieldsetLabel "File Selection"
                     Daisy.file [file.ghost]
                 ]
             ]
@@ -59,8 +59,8 @@ let fileGhostNoBackground =
     let code = """Daisy.card [
     prop.className "p-10 bg-base-200"
     prop.children [
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "File Selection"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "File Selection"
             Daisy.file [file.ghost]
         ]
     ]
@@ -70,13 +70,13 @@ let fileGhostNoBackground =
 
 let fileDisabled =
     let example =
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Disabled file"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "Disabled file"
             Daisy.file [file.bordered; prop.disabled true]
         ]
 
-    let code = """Daisy.formControl [
-    Daisy.label [Daisy.labelText "Disabled file"]
+    let code = """Daisy.fieldset [
+    Daisy.fieldsetLabel "Disabled file"
     Daisy.file [file.bordered; prop.disabled true]
 ]"""
     let title = Html.text "File Input ghost (no background)"
@@ -93,9 +93,9 @@ let fileWithColors =
             file.warning  , "warning"
             file.error    , "error"
         ]
-        Daisy.formControl [
+        Daisy.fieldset [
             for color, colorText in colors do
-                Daisy.label [Daisy.labelText colorText]
+                Daisy.fieldsetLabel colorText
                 Daisy.file [color; file.bordered]
         ]
 
@@ -108,9 +108,9 @@ let fileWithColors =
     file.warning  , "warning"
     file.error    , "error"
 ]
-Daisy.formControl [
+Daisy.fieldset [
     for color, colorText in colors do
-        Daisy.label [Daisy.labelText colorText]
+        Daisy.fieldsetLabel colorText
         Daisy.file [color; file.bordered]
 ]"""
     let title = Html.text "File Input with colors"
@@ -124,9 +124,9 @@ let fileWithSizes =
             file.md, "md"
             file.lg, "lg"
         ]
-        Daisy.formControl [
+        Daisy.fieldset [
             for size, sizeText in sizes do
-                Daisy.label [Daisy.labelText sizeText]
+                Daisy.fieldsetLabel sizeText
                 Daisy.file [size; file.bordered]
         ]
 
@@ -136,9 +136,9 @@ let fileWithSizes =
     file.md, "md"
     file.lg, "lg"
 ]
-Daisy.formControl [
+Daisy.fieldset [
     for size, sizeText in sizes do
-        Daisy.label [Daisy.labelText sizeText]
+        Daisy.fieldsetLabel sizeText
         Daisy.file [size; file.bordered]
 ]"""
     let title = Html.text "File Input with sizes"
@@ -146,8 +146,8 @@ Daisy.formControl [
 
 let fileWithButton =
     let example =
-        Daisy.formControl [
-            Daisy.label [Daisy.labelText "Connected"]
+        Daisy.fieldset [
+            Daisy.fieldsetLabel "Connected"
             Html.div [
                 prop.className "relative"
                 prop.children [
@@ -165,8 +165,8 @@ let fileWithButton =
             ]
         ]
 
-    let code = """Daisy.formControl [
-    Daisy.label [Daisy.labelText "Connected"]
+    let code = """Daisy.fieldset [
+    Daisy.fieldsetLabel "Connected"
     Html.div [
         prop.className "relative"
         prop.children [
