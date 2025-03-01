@@ -359,12 +359,6 @@ type Daisy =
 
     static member inline checkbox props = Helpers.Elm.props Html.input (prop.type'.checkbox :: props) "checkbox"
 
-    static member inline label props = Helpers.Elm.props Html.label props "label"
-    static member inline label (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "label"
-    static member inline label elm = Helpers.Elm.elm Html.label elm "label"
-
-    static member inline floatingLabel (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "floating-label"
-
     static member inline input props = Helpers.Elm.props Html.input (prop.type'.text :: props) "input"
 
     static member inline radio props = Helpers.Elm.props Html.input (prop.type'.radio :: props) "radio"
@@ -530,12 +524,55 @@ type Daisy =
     static member inline fieldset (children: #seq<ReactElement>) = Helpers.Elm.children Html.fieldSet children "fieldset"
     static member inline fieldset elm = Helpers.Elm.elm Html.fieldSet elm "fieldset"
 
-    static member inline fieldsetLegend string = Helpers.Elm.string Html.label string "fieldset-legend"
+    static member inline fieldsetLegend string = Helpers.Elm.string Html.legend string "fieldset-legend"
+    static member inline fieldsetLegend int = Helpers.Elm.int Html.legend int "fieldset-legend"
+    static member inline fieldsetLegend float = Helpers.Elm.float Html.legend float "fieldset-legend"
 
-    static member inline fieldsetLabel string = Helpers.Elm.string Html.label string "fieldset-label"
     static member inline fieldsetLabel props = Helpers.Elm.props Html.label props "fieldset-label"
     static member inline fieldsetLabel (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "fieldset-label"
     static member inline fieldsetLabel elm = Helpers.Elm.elm Html.label elm "fieldset-label"
+    static member inline fieldsetLabel string = Helpers.Elm.string Html.label string "fieldset-label"
+    static member inline fieldsetLabel int = Helpers.Elm.int Html.label int "fieldset-label"
+    static member inline fieldsetLabel float = Helpers.Elm.float Html.label float "fieldset-label"
+
+    static member status props = Helpers.Elm.props Html.div props "status"
+
+    static member inline dock props = Helpers.Elm.props Html.div props "dock"
+    static member inline dock (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "dock"
+    static member inline dock elm = Helpers.Elm.elm Html.div elm "dock"
+
+    static member inline dockLabel props = Helpers.Elm.props Html.span props "dock-label"
+    static member inline dockLabel (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "dock-label"
+    static member inline dockLabel elm = Helpers.Elm.elm Html.span elm "dock-label"
+    static member inline dockLabel string = Helpers.Elm.string Html.span string "dock-label"
+    static member inline dockLabel int = Helpers.Elm.int Html.span int "dock-label"
+    static member inline dockLabel float = Helpers.Elm.float Html.span float "dock-label"
+
+    static member inline validatorHint props = Helpers.Elm.props Html.div props "validator-hint"
+    static member inline validatorHint (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "validator-hint"
+    static member inline validatorHint elm = Helpers.Elm.elm Html.div elm "validator-hint"
+    static member inline validatorHint string = Helpers.Elm.string Html.div string "validator-hint"
+
+    static member inline filterReset props = Helpers.Elm.props Html.input (prop.type'.radio :: props) "btn filter-reset"
+
+    static member inline floatingLabel props = Helpers.Elm.props Html.label props "floating-label"
+    static member inline floatingLabel (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "floating-label"
+    static member inline floatingLabel elm = Helpers.Elm.elm Html.label elm "floating-label"
+
+    static member inline label props = Helpers.Elm.props Html.span props "label"
+    static member inline label (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "label"
+    static member inline label elm = Helpers.Elm.elm Html.span elm "label"
+    static member inline label string = Helpers.Elm.string Html.span string "label"
+    static member inline label int = Helpers.Elm.int Html.span int "label"
+    static member inline label float = Helpers.Elm.float Html.span float "label"
+
+    static member inline list props = Helpers.Elm.props Html.ul props "list"
+    static member inline list (children: #seq<ReactElement>) = Helpers.Elm.children Html.ul children "list"
+    static member inline list elm = Helpers.Elm.elm Html.ul elm "list"
+
+    static member inline listRow props = Helpers.Elm.props Html.li props "list-row"
+    static member inline listRow (children: #seq<ReactElement>) = Helpers.Elm.children Html.li children "list-row"
+    static member inline listRow elm = Helpers.Elm.elm Html.li elm "list-row"
 
 module Daisy =
     [<Erase>]
@@ -569,6 +606,7 @@ module Daisy =
         static member inline a float = Helpers.Elm.float Html.a float "btn"
 
         static member inline submit props = Helpers.Elm.props Html.input (prop.type'.submit :: props) "btn"
+        static member inline radio props = Helpers.Elm.props Html.input (prop.type'.radio :: props) "btn"
         static member inline reset props = Helpers.Elm.props Html.input (prop.type'.reset :: props) "btn"
         static member inline inputButton props = Helpers.Elm.props Html.input (prop.type'.button :: props) "btn"
 
@@ -597,3 +635,34 @@ module Daisy =
         static member inline form props = Helpers.Elm.props Html.form props "modal-box"
         static member inline form (children: #seq<ReactElement>) = Helpers.Elm.children Html.form children "modal-box"
         static member inline form elm = Helpers.Elm.elm Html.form elm "modal-box"
+
+    [<Erase>]
+    type validator =
+        static member inline input props = Helpers.Elm.props Html.input props "input validator"
+        static member inline email props = Helpers.Elm.props Html.input (prop.type'.email :: props) "input validator"
+        static member inline password props = Helpers.Elm.props Html.input (prop.type'.password :: props) "input validator"
+        static member inline number props = Helpers.Elm.props Html.input (prop.type'.number :: props) "input validator"
+        static member inline date props = Helpers.Elm.props Html.input (prop.type'.date :: props) "input validator"
+        static member inline checkbox props = Helpers.Elm.props Html.input (prop.type'.checkbox :: props) "checkbox validator"
+        static member inline toggle props = Helpers.Elm.props Html.input (prop.type'.checkbox :: props) "toggle validator"
+
+    [<Erase>]
+    type filter =
+        static member inline div props = Helpers.Elm.props Html.div props "filter"
+        static member inline div (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "filter"
+        static member inline div elm = Helpers.Elm.elm Html.div elm "filter"
+
+        static member inline form props = Helpers.Elm.props Html.form props "filter"
+        static member inline form (children: #seq<ReactElement>) = Helpers.Elm.children Html.form children "filter"
+        static member inline form elm = Helpers.Elm.elm Html.form elm "filter"
+
+    [<Erase>]
+    type containerWithLabel =
+        static member inline input props = Helpers.Elm.props Html.label props "input"
+        static member inline input (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "input"
+        static member inline input elm = Helpers.Elm.elm Html.label elm "input"
+
+        static member inline select props = Helpers.Elm.props Html.label props "select"
+        static member inline select (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "select"
+        static member inline select elm = Helpers.Elm.elm Html.label elm "select"
+        

@@ -203,8 +203,12 @@ type drawer =
 
 [<Erase>]
 type dropdown =
-    /// Aligns to end
+    /// Align horizontally to end
     static member inline end' = prop.className "dropdown-end"
+    /// Align horizontally to start (Default)
+    static member inline start = prop.className "dropdown-start"
+    /// Align horizontally to center
+    static member inline center = prop.className "dropdown-center"
     /// Open from top
     static member inline top = prop.className "dropdown-top"
     /// Open from left
@@ -416,6 +420,8 @@ type stack =
 type steps =
     /// makes `steps` vertical
     static member inline vertical = prop.className "steps-vertical"
+    /// makes `steps` horizontal (default)
+    static member inline horizontal = prop.className "steps-horizontal"
 
 [<Erase>]
 type step =
@@ -902,22 +908,65 @@ type theme =
     static member inline controller = prop.className "theme-controller"
 
 [<Erase>]
+type status =
+    /// Adds `primary` color to status
+    static member inline primary = prop.className "status-primary"
+    /// Adds `secondary` color to status
+    static member inline secondary = prop.className "status-secondary"
+    /// Adds `accent` color to status
+    static member inline accent = prop.className "status-accent"
+    /// Adds `info` color to status
+    static member inline info = prop.className "status-info"
+    /// Adds `success` color to status
+    static member inline success = prop.className "status-success"
+    /// Adds `warning` color to status
+    static member inline warning = prop.className "status-warning"
+    /// Adds `error` color to status
+    static member inline error = prop.className "status-error"
+    /// Adds `neutral` color to status
+    static member inline neutral = prop.className "status-neutral"
+    /// Extra large size for status
+    static member inline xl = prop.className "status-xl"
+    /// Large size for status
+    static member inline lg = prop.className "status-lg"
+    /// Medium (default) size for status
+    static member inline md = prop.className "status-md"
+    /// Small size for status
+    static member inline sm = prop.className "status-sm"
+    /// Extra small size for status
+    static member inline xs = prop.className "status-xs"
+
+[<Erase>]
+type dock =
+    /// Makes the Dock Item look active
+    static member inline active = prop.className "dock-active"
+    /// Extra large size for dock
+    static member inline xl = prop.className "dock-xl"
+    /// Large size for dock
+    static member inline lg = prop.className "dock-lg"
+    /// Medium (default) size for dock
+    static member inline md = prop.className "dock-md"
+    /// Small size for dock
+    static member inline sm = prop.className "dock-sm"
+    /// Extra small size for dock
+    static member inline xs = prop.className "dock-xs"
+
+[<Erase>]
+type list =
+    /// For one of direct children of list-row to push it to the next line
+    static member inline colWrap = prop.className "list-col-wrap"
+    /// For one of direct children of list-row to make it fill the remaining space. By default, the second child of the list-row will fill the remaining space.
+    static member inline colGrow = prop.className "list-col-grow"
+
+[<Erase>]
 type color =
     static member inline bgPrimary = prop.className "bg-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline bgPrimaryFocus = prop.className "bg-primary-focus"
     static member inline bgPrimaryContent = prop.className "bg-primary-content"
     static member inline bgSecondary = prop.className "bg-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline bgSecondaryFocus = prop.className "bg-secondary-focus"
     static member inline bgSecondaryContent = prop.className "bg-secondary-content"
     static member inline bgAccent = prop.className "bg-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline bgAccentFocus = prop.className "bg-accent-focus"
     static member inline bgAccentContent = prop.className "bg-accent-content"
     static member inline bgNeutral = prop.className "bg-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline bgNeutralFocus = prop.className "bg-neutral-focus"
     static member inline bgNeutralContent = prop.className "bg-neutral-content"
     static member inline bgBase100 = prop.className "bg-base-100"
     static member inline bgBase200 = prop.className "bg-base-200"
@@ -928,20 +977,12 @@ type color =
     static member inline bgWarning = prop.className "bg-warning"
     static member inline bgError = prop.className "bg-error"
     static member inline textPrimary = prop.className "text-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline textPrimaryFocus = prop.className "text-primary-focus"
     static member inline textPrimaryContent = prop.className "text-primary-content"
     static member inline textSecondary = prop.className "text-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline textSecondaryFocus = prop.className "text-secondary-focus"
     static member inline textSecondaryContent = prop.className "text-secondary-content"
     static member inline textAccent = prop.className "text-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline textAccentFocus = prop.className "text-accent-focus"
     static member inline textAccentContent = prop.className "text-accent-content"
     static member inline textNeutral = prop.className "text-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline textNeutralFocus = prop.className "text-neutral-focus"
     static member inline textNeutralContent = prop.className "text-neutral-content"
     static member inline textBase100 = prop.className "text-base-100"
     static member inline textBase200 = prop.className "text-base-200"
@@ -952,20 +993,12 @@ type color =
     static member inline textWarning = prop.className "text-warning"
     static member inline textError = prop.className "text-error"
     static member inline borderPrimary = prop.className "border-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline borderPrimaryFocus = prop.className "border-primary-focus"
     static member inline borderPrimaryContent = prop.className "border-primary-content"
     static member inline borderSecondary = prop.className "border-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline borderSecondaryFocus = prop.className "border-secondary-focus"
     static member inline borderSecondaryContent = prop.className "border-secondary-content"
     static member inline borderAccent = prop.className "border-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline borderAccentFocus = prop.className "border-accent-focus"
     static member inline borderAccentContent = prop.className "border-accent-content"
     static member inline borderNeutral = prop.className "border-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline borderNeutralFocus = prop.className "border-neutral-focus"
     static member inline borderNeutralContent = prop.className "border-neutral-content"
     static member inline borderBase100 = prop.className "border-base-100"
     static member inline borderBase200 = prop.className "border-base-200"
@@ -976,20 +1009,12 @@ type color =
     static member inline borderWarning = prop.className "border-warning"
     static member inline borderError = prop.className "border-error"
     static member inline fromPrimary = prop.className "from-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline fromPrimaryFocus = prop.className "from-primary-focus"
     static member inline fromPrimaryContent = prop.className "from-primary-content"
     static member inline fromSecondary = prop.className "from-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline fromSecondaryFocus = prop.className "from-secondary-focus"
     static member inline fromSecondaryContent = prop.className "from-secondary-content"
     static member inline fromAccent = prop.className "from-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline fromAccentFocus = prop.className "from-accent-focus"
     static member inline fromAccentContent = prop.className "from-accent-content"
     static member inline fromNeutral = prop.className "from-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline fromNeutralFocus = prop.className "from-neutral-focus"
     static member inline fromNeutralContent = prop.className "from-neutral-content"
     static member inline fromBase100 = prop.className "from-base-100"
     static member inline fromBase200 = prop.className "from-base-200"
@@ -1000,20 +1025,12 @@ type color =
     static member inline fromWarning = prop.className "from-warning"
     static member inline fromError = prop.className "from-error"
     static member inline viaPrimary = prop.className "via-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline viaPrimaryFocus = prop.className "via-primary-focus"
     static member inline viaPrimaryContent = prop.className "via-primary-content"
     static member inline viaSecondary = prop.className "via-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline viaSecondaryFocus = prop.className "via-secondary-focus"
     static member inline viaSecondaryContent = prop.className "via-secondary-content"
     static member inline viaAccent = prop.className "via-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline viaAccentFocus = prop.className "via-accent-focus"
     static member inline viaAccentContent = prop.className "via-accent-content"
     static member inline viaNeutral = prop.className "via-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline viaNeutralFocus = prop.className "via-neutral-focus"
     static member inline viaNeutralContent = prop.className "via-neutral-content"
     static member inline viaBase100 = prop.className "via-base-100"
     static member inline viaBase200 = prop.className "via-base-200"
@@ -1024,20 +1041,12 @@ type color =
     static member inline viaWarning = prop.className "via-warning"
     static member inline viaError = prop.className "via-error"
     static member inline toPrimary = prop.className "to-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline toPrimaryFocus = prop.className "to-primary-focus"
     static member inline toPrimaryContent = prop.className "to-primary-content"
     static member inline toSecondary = prop.className "to-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline toSecondaryFocus = prop.className "to-secondary-focus"
     static member inline toSecondaryContent = prop.className "to-secondary-content"
     static member inline toAccent = prop.className "to-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline toAccentFocus = prop.className "to-accent-focus"
     static member inline toAccentContent = prop.className "to-accent-content"
     static member inline toNeutral = prop.className "to-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline toNeutralFocus = prop.className "to-neutral-focus"
     static member inline toNeutralContent = prop.className "to-neutral-content"
     static member inline toBase100 = prop.className "to-base-100"
     static member inline toBase200 = prop.className "to-base-200"
@@ -1048,20 +1057,12 @@ type color =
     static member inline toWarning = prop.className "to-warning"
     static member inline toError = prop.className "to-error"
     static member inline placeholderPrimary = prop.className "placeholder-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline placeholderPrimaryFocus = prop.className "placeholder-primary-focus"
     static member inline placeholderPrimaryContent = prop.className "placeholder-primary-content"
     static member inline placeholderSecondary = prop.className "placeholder-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline placeholderSecondaryFocus = prop.className "placeholder-secondary-focus"
     static member inline placeholderSecondaryContent = prop.className "placeholder-secondary-content"
     static member inline placeholderAccent = prop.className "placeholder-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline placeholderAccentFocus = prop.className "placeholder-accent-focus"
     static member inline placeholderAccentContent = prop.className "placeholder-accent-content"
     static member inline placeholderNeutral = prop.className "placeholder-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline placeholderNeutralFocus = prop.className "placeholder-neutral-focus"
     static member inline placeholderNeutralContent = prop.className "placeholder-neutral-content"
     static member inline placeholderBase100 = prop.className "placeholder-base-100"
     static member inline placeholderBase200 = prop.className "placeholder-base-200"
@@ -1072,20 +1073,12 @@ type color =
     static member inline placeholderWarning = prop.className "placeholder-warning"
     static member inline placeholderError = prop.className "placeholder-error"
     static member inline dividePrimary = prop.className "divide-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline dividePrimaryFocus = prop.className "divide-primary-focus"
     static member inline dividePrimaryContent = prop.className "divide-primary-content"
     static member inline divideSecondary = prop.className "divide-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline divideSecondaryFocus = prop.className "divide-secondary-focus"
     static member inline divideSecondaryContent = prop.className "divide-secondary-content"
     static member inline divideAccent = prop.className "divide-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline divideAccentFocus = prop.className "divide-accent-focus"
     static member inline divideAccentContent = prop.className "divide-accent-content"
     static member inline divideNeutral = prop.className "divide-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline divideNeutralFocus = prop.className "divide-neutral-focus"
     static member inline divideNeutralContent = prop.className "divide-neutral-content"
     static member inline divideBase100 = prop.className "divide-base-100"
     static member inline divideBase200 = prop.className "divide-base-200"
@@ -1096,20 +1089,12 @@ type color =
     static member inline divideWarning = prop.className "divide-warning"
     static member inline divideError = prop.className "divide-error"
     static member inline ringPrimary = prop.className "ring-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringPrimaryFocus = prop.className "ring-primary-focus"
     static member inline ringPrimaryContent = prop.className "ring-primary-content"
     static member inline ringSecondary = prop.className "ring-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringSecondaryFocus = prop.className "ring-secondary-focus"
     static member inline ringSecondaryContent = prop.className "ring-secondary-content"
     static member inline ringAccent = prop.className "ring-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringAccentFocus = prop.className "ring-accent-focus"
     static member inline ringAccentContent = prop.className "ring-accent-content"
     static member inline ringNeutral = prop.className "ring-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringNeutralFocus = prop.className "ring-neutral-focus"
     static member inline ringNeutralContent = prop.className "ring-neutral-content"
     static member inline ringBase100 = prop.className "ring-base-100"
     static member inline ringBase200 = prop.className "ring-base-200"
@@ -1120,20 +1105,12 @@ type color =
     static member inline ringWarning = prop.className "ring-warning"
     static member inline ringError = prop.className "ring-error"
     static member inline ringOffsetPrimary = prop.className "ring-offset-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringOffsetPrimaryFocus = prop.className "ring-offset-primary-focus"
     static member inline ringOffsetPrimaryContent = prop.className "ring-offset-primary-content"
     static member inline ringOffsetSecondary = prop.className "ring-offset-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringOffsetSecondaryFocus = prop.className "ring-offset-secondary-focus"
     static member inline ringOffsetSecondaryContent = prop.className "ring-offset-secondary-content"
     static member inline ringOffsetAccent = prop.className "ring-offset-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringOffsetAccentFocus = prop.className "ring-offset-accent-focus"
     static member inline ringOffsetAccentContent = prop.className "ring-offset-accent-content"
     static member inline ringOffsetNeutral = prop.className "ring-offset-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringOffsetNeutralFocus = prop.className "ring-offset-neutral-focus"
     static member inline ringOffsetNeutralContent = prop.className "ring-offset-neutral-content"
     static member inline ringOffsetBase100 = prop.className "ring-offset-base-100"
     static member inline ringOffsetBase200 = prop.className "ring-offset-base-200"

@@ -22,14 +22,19 @@ type Page =
     | Countdown
     | Diff
     | Divider
+    | Dock
     | Drawer
     | Dropdown
+    | Fieldset
+    | Filter
     | Footer
     | Hero
     | Join
     | Indicator
     | Kbd
+    | Label
     | Link
+    | List
     | Loading
     | Mask
     | Menu
@@ -41,6 +46,7 @@ type Page =
     | Skeleton
     | Stack
     | Stat
+    | Status
     | Steps
     | Swap
     | Tab
@@ -49,6 +55,7 @@ type Page =
     | Timeline
     | Toast
     | Tooltip
+    | Validator
     | FileInput
     | FormCheckbox
     | FormInput
@@ -83,14 +90,19 @@ module Page =
         | [ "countdown" ] -> Page.Countdown
         | [ "diff" ] -> Page.Diff
         | [ "divider" ] -> Page.Divider
+        | [ "dock" ] -> Page.Dock
         | [ "drawer" ] -> Page.Drawer
         | [ "dropdown" ] -> Page.Dropdown
+        | [ "fieldset" ] -> Page.Fieldset
+        | [ "filter" ] -> Page.Filter
         | [ "footer" ] -> Page.Footer
         | [ "hero" ] -> Page.Hero
         | [ "indicator" ] -> Page.Indicator
         | [ "join" ] -> Page.Join
         | [ "kbd" ] -> Page.Kbd
+        | [ "label" ] -> Page.Label
         | [ "link" ] -> Page.Link
+        | [ "list" ] -> Page.List
         | [ "loading" ] -> Page.Loading
         | [ "mask" ] -> Page.Mask
         | [ "menu" ] -> Page.Menu
@@ -102,6 +114,7 @@ module Page =
         | [ "skeleton" ] -> Page.Skeleton
         | [ "stack" ] -> Page.Stack
         | [ "stat" ] -> Page.Stat
+        | [ "status" ] -> Page.Status
         | [ "steps" ] -> Page.Steps
         | [ "swap" ] -> Page.Swap
         | [ "tab" ] -> Page.Tab
@@ -110,6 +123,7 @@ module Page =
         | [ "timeline" ] -> Page.Timeline
         | [ "toast" ] -> Page.Toast
         | [ "tooltip" ] -> Page.Tooltip
+        | [ "validator" ] -> Page.Validator
         | [ "fileinput" ] -> Page.FileInput
         | [ "formcheckbox" ] -> Page.FormCheckbox
         | [ "forminput" ] -> Page.FormInput
@@ -145,14 +159,19 @@ module Page =
         | Page.Countdown -> [ "countdown" ] |> noQueryString
         | Page.Diff -> [ "diff" ] |> noQueryString
         | Page.Divider -> [ "divider" ] |> noQueryString
+        | Page.Dock -> [ "dock" ] |> noQueryString
         | Page.Drawer -> [ "drawer" ] |> noQueryString
         | Page.Dropdown -> [ "dropdown" ] |> noQueryString
+        | Page.Fieldset -> [ "fieldset" ] |> noQueryString
+        | Page.Filter -> [ "filter" ] |> noQueryString
         | Page.Footer -> [ "footer" ] |> noQueryString
         | Page.Hero -> [ "hero" ] |> noQueryString
         | Page.Indicator -> [ "indicator" ] |> noQueryString
         | Page.Join -> [ "join" ] |> noQueryString
         | Page.Kbd -> [ "kbd" ] |> noQueryString
+        | Page.Label -> [ "label" ] |> noQueryString
         | Page.Link -> [ "link" ] |> noQueryString
+        | Page.List -> [ "list" ] |> noQueryString
         | Page.Loading -> [ "loading" ] |> noQueryString
         | Page.Mask -> [ "mask" ] |> noQueryString
         | Page.Menu -> [ "menu" ] |> noQueryString
@@ -164,6 +183,7 @@ module Page =
         | Page.Skeleton -> [ "skeleton" ] |> noQueryString
         | Page.Stack -> [ "stack" ] |> noQueryString
         | Page.Stat -> [ "stat" ] |> noQueryString
+        | Page.Status -> [ "status" ] |> noQueryString
         | Page.Steps -> [ "steps" ] |> noQueryString
         | Page.Swap -> [ "swap" ] |> noQueryString
         | Page.Tab -> [ "tab" ] |> noQueryString
@@ -172,6 +192,7 @@ module Page =
         | Page.Timeline -> [ "timeline" ] |> noQueryString
         | Page.Toast -> [ "toast" ] |> noQueryString
         | Page.Tooltip -> [ "tooltip" ] |> noQueryString
+        | Page.Validator -> [ "validator" ] |> noQueryString
         | Page.FileInput -> [ "fileinput" ] |> noQueryString
         | Page.FormCheckbox -> [ "formcheckbox" ] |> noQueryString
         | Page.FormInput -> [ "forminput" ] |> noQueryString

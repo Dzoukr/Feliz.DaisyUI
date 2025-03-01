@@ -57,6 +57,9 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
             "dim", "🔅 dim"
             "nord", "⛰️ nord"
             "sunset", "🌆 sunset"
+            "abyss", "🕳️ abyss"
+            "caramellatte", "☕ caramellatte"
+            "silk", "👗 silk"
         ]
 
     Daisy.drawerContent [
@@ -92,7 +95,7 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
                                     menu.md
                                     color.bgBase200
                                     color.textBaseContent
-                                    prop.className "p-4 w-96 h-96 rounded-b-box overflow-y-auto"
+                                    prop.className "p-4 w-96 h-120 rounded-b-box overflow-y-auto"
 
                                     prop.children [
                                         for n,t in themes do
@@ -234,11 +237,11 @@ let private leftSide (p:Page) =
                     prop.children [
                         Daisy.menuTitle [ Html.span "Components" ]
                         mi "Accordion" Page.Accordion
-                        mi "Alert" Page.Alert
+                        miBadge "updated" "Alert" Page.Alert
                         mi "Avatar" Page.Avatar
-                        mi "Badge" Page.Badge
+                        miBadge "updated" "Badge" Page.Badge
                         mi "Breadcrumbs" Page.Breadcrumbs
-                        mi "Button" Page.Button
+                        miBadge "updated" "Button" Page.Button
                         miBadge "updated" "Card" Page.Card
                         mi "Carousel" Page.Carousel
                         mi "Chat bubble" Page.ChatBubble
@@ -246,18 +249,23 @@ let private leftSide (p:Page) =
                         mi "Countdown" Page.Countdown
                         mi "Diff" Page.Diff
                         mi "Divider" Page.Divider
+                        miBadge "new" "Dock" Page.Dock
                         mi "Drawer" Page.Drawer
-                        mi "Dropdown" Page.Dropdown
+                        miBadge "updated" "Dropdown" Page.Dropdown
+                        miBadge "new" "Fieldset" Page.Fieldset
+                        miBadge "new" "Filter" Page.Filter
                         miBadge "updated" "Footer" Page.Footer
                         mi "Hero" Page.Hero
                         mi "Indicator" Page.Indicator
                         mi "Join (group items)" Page.Join
                         mi "Kbd" Page.Kbd
+                        miBadge "new" "Label" Page.Label
                         mi "Link" Page.Link
+                        miBadge "new" "List" Page.List
                         mi "Loading" Page.Loading
                         miBadge "updated" "Mask" Page.Mask
                         miBadge "updated" "Menu" Page.Menu
-                        mi "Modal" Page.Modal
+                        miBadge "updated" "Modal" Page.Modal
                         miBadge "updated" "Navbar" Page.Navbar
                         mi "Pagination" Page.Pagination
                         mi "Progress" Page.Progress
@@ -266,7 +274,8 @@ let private leftSide (p:Page) =
                         mi "Skeleton" Page.Skeleton
                         miBadge "updated" "Stack" Page.Stack
                         mi "Stat" Page.Stat
-                        mi "Steps" Page.Steps
+                        miBadge "new" "Status" Page.Status
+                        miBadge "updated" "Steps" Page.Steps
                         mi "Swap" Page.Swap
                         miBadge "updated" "Tab" Page.Tab
                         mi "Table" Page.Table
@@ -274,6 +283,7 @@ let private leftSide (p:Page) =
                         mi "Timeline" Page.Timeline
                         mi "Toast" Page.Toast
                         mi "Tooltip" Page.Tooltip
+                        miBadge "new" "Validator" Page.Validator
                         miBadge "updated" "File - Input" Page.FileInput
                         miBadge "updated" "Form - Checkbox" Page.FormCheckbox
                         miBadge "updated" "Form - Input" Page.FormInput
@@ -331,14 +341,19 @@ let AppView () =
         | Page.Countdown    -> "Countdown"      , "/components/countdown"    , Pages.Countdown.CountdownView ()
         | Page.Diff         -> "Diff"           , "/components/diff"         , Pages.Diff.DiffView ()
         | Page.Divider      -> "Divider"        , "/components/divider"      , Pages.Divider.DividerView ()
+        | Page.Dock         -> "Dock"           , "/components/dock"         , Pages.Dock.DockView ()
         | Page.Drawer       -> "Drawer"         , "/components/drawer"       , Pages.Drawer.DrawerView ()
         | Page.Dropdown     -> "Dropdown"       , "/components/dropdown"     , Pages.Dropdown.DropdownView ()
+        | Page.Fieldset     -> "Fieldset"       , "/components/fieldset"     , Pages.Fieldset.FieldsetView ()
+        | Page.Filter       -> "Filter"         , "/components/filter"       , Pages.Filter.FilterView ()
         | Page.Footer       -> "Footer"         , "/components/footer"       , Pages.Footer.FooterView ()
         | Page.Hero         -> "Hero"           , "/components/hero"         , Pages.Hero.HeroView ()
         | Page.Indicator    -> "Indicator"      , "/components/indicator"    , Pages.Indicator.IndicatorView ()
         | Page.Join         -> "Join"           , "/components/join"         , Pages.Join.JoinView ()
         | Page.Kbd          -> "Kbd"            , "/components/kdb"          , Pages.Kbd.KbdView ()
+        | Page.Label        -> "Label"          , "/components/label"        , Pages.Label.LabelView ()
         | Page.Link         -> "Link"           , "/components/link"         , Pages.Link.LinkView ()
+        | Page.List         -> "List"           , "/components/list"         , Pages.List.ListView ()
         | Page.Loading      -> "Loading"        , "/components/loading"      , Pages.Loading.LoadingView ()
         | Page.Mask         -> "Mask"           , "/components/mask"         , Pages.Mask.MaskView ()
         | Page.Menu         -> "Menu"           , "/components/menu"         , Pages.Menu.MenuView ()
@@ -351,6 +366,7 @@ let AppView () =
         | Page.Skeleton     -> "Skeleton"       , "/components/skeleton"     , Pages.Skeleton.SkeletonView ()
         | Page.Stack        -> "Stack"          , "/components/stack"        , Pages.Stack.StackView ()
         | Page.Stat         -> "Stat"           , "/components/stat"         , Pages.Stat.StatView ()
+        | Page.Status       -> "Status"         , "/components/status"       , Pages.Status.StatusView ()
         | Page.Steps        -> "Steps"          , "/components/steps"        , Pages.Step.StepView ()
         | Page.Swap         -> "Swap"           , "/components/swap"         , Pages.Swap.SwapView ()
         | Page.Tab          -> "Tab"            , "/components/tab"          , Pages.Tab.TabView ()
@@ -359,6 +375,7 @@ let AppView () =
         | Page.Timeline     -> "Timeline"       , "/components/timeline"     , Pages.Timeline.TimelineView()
         | Page.Toast        -> "Toast"          , "/components/toast"        , Pages.Toast.ToastView ()
         | Page.Tooltip      -> "Tooltip"        , "/components/tooltip"      , Pages.Tooltip.TooltipView ()
+        | Page.Validator    -> "Validator"      , "/components/validator"    , Pages.Validator.ValidatorView ()
         | Page.FileInput    -> "File - Input"   , "/components/file-input"   , Pages.FileInput.FileInputView ()
         | Page.FormCheckbox -> "Form - Checkbox", "/components/form/checkbox", Pages.FormCheckbox.FormCheckboxView ()
         | Page.FormInput    -> "Form - Input"   , "/components/form/input"   , Pages.FormInput.FormInputView ()
