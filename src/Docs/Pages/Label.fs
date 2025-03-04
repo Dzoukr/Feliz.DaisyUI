@@ -6,12 +6,12 @@ open Docs.SharedView
 
 let input' =
     let example =
-        Daisy.containerWithLabel.input [
+        Daisy.input.label [
             Daisy.label "https://"
             Html.input [ prop.placeholder "URL" ]
         ]
 
-    let code = """Daisy.containerWithLabel.input [
+    let code = """Daisy.input.label [
     Daisy.label "https://"
     Html.input [ prop.placeholder "URL" ]
 ]"""
@@ -20,12 +20,12 @@ let input' =
 
 let inputEnd =
     let example =
-        Daisy.containerWithLabel.input [
+        Daisy.input.label [
             Html.input  [ prop.placeholder "domain name" ]
             Daisy.label ".com"
         ]
 
-    let code = """Daisy.containerWithLabel.input [
+    let code = """Daisy.input.label [
     Html.input [ prop.placeholder "domain name" ]
     Daisy.label ".com"
 ] """
@@ -34,7 +34,7 @@ let inputEnd =
 
 let select =
     let example =
-        Daisy.containerWithLabel.select [
+        Daisy.select.label [
             Daisy.label "Type"
             Html.select [
                 Html.option "Personal"
@@ -42,7 +42,7 @@ let select =
             ]
         ]
 
-    let code = """Daisy.containerWithLabel.select [
+    let code = """Daisy.select.label [
     Daisy.label "Type"
     Html.select [
         Html.option "Personal"

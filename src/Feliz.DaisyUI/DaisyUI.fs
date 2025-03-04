@@ -657,12 +657,13 @@ module Daisy =
         static member inline form elm = Helpers.Elm.elm Html.form elm "filter"
 
     [<Erase>]
-    type containerWithLabel =
-        static member inline input props = Helpers.Elm.props Html.label props "input"
-        static member inline input (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "input"
-        static member inline input elm = Helpers.Elm.elm Html.label elm "input"
+    type input =
+        static member inline label props = Helpers.Elm.props Html.label props "input"
+        static member inline label (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "input"
+        static member inline label elm = Helpers.Elm.elm Html.label elm "input"
 
-        static member inline select props = Helpers.Elm.props Html.label props "select"
-        static member inline select (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "select"
-        static member inline select elm = Helpers.Elm.elm Html.label elm "select"
-        
+    [<Erase>]
+    type select =
+        static member inline label props = Helpers.Elm.props Html.label props "select"
+        static member inline label (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "select"
+        static member inline label elm = Helpers.Elm.elm Html.label elm "select"
