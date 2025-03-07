@@ -11,20 +11,10 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v2
 
-      - name: Setup .NET 6 SDK
-        uses: actions/setup-dotnet@v1.7.2
-        with:
-          dotnet-version: 6.0.403
-
       - name: Setup .NET 8 SDK
         uses: actions/setup-dotnet@v1.7.2
         with:
           dotnet-version: 8.0.406
-
-      - name: Setup .NET 9 SDK
-        uses: actions/setup-dotnet@v1.7.2
-        with:
-          dotnet-version: 9.0.200
 
       - name: Install Tools
         run: dotnet tool restore
@@ -43,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download app artifact
-        uses: actions/download-artifact@v2.0.5
+        uses: actions/download-artifact@v4
         with:
           name: docs
           path: docs
