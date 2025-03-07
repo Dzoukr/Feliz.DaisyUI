@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>4.2.1</Version>
-        <PackageReleaseNotes>Loading modifier on Button is deprecated #14</PackageReleaseNotes>
+        <Version>5.0.0</Version>
+        <PackageReleaseNotes>Move to DaisyUI 5 #18, big kudos to @kerams</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />

@@ -1,5 +1,6 @@
 module Docs.Pages.Validator
 
+open System.Text.RegularExpressions
 open Feliz
 open Feliz.DaisyUI
 open Docs.SharedView
@@ -31,7 +32,7 @@ let password =
                 prop.required true
                 prop.placeholder "Password"
                 prop.minLength 8
-                prop.pattern "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                prop.pattern (Regex "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
                 prop.title "Must be more than 8 characters, including number, lowercase letter, uppercase letter"
             ]
             Daisy.validatorHint [
@@ -51,7 +52,7 @@ let password =
         prop.required true
         prop.placeholder "Password"
         prop.minLength 8
-        prop.pattern "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        prop.pattern (Regex "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
         prop.title "Must be more than 8 characters, including number, lowercase letter, uppercase letter"
     ]
     Daisy.validatorHint [
