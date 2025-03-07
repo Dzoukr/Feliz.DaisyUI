@@ -8,7 +8,6 @@ open Docs.SharedView
 let basic =
     let example =
         Daisy.select [
-            select.bordered
             prop.className "w-full max-w-xs"
             prop.children [
                 Html.option "Choose your superpower"
@@ -19,7 +18,6 @@ let basic =
         ]
 
     let code = """Daisy.select [
-    select.bordered
     prop.className "w-full max-w-xs"
     prop.children [
         Html.option "Choose your superpower"
@@ -48,7 +46,6 @@ let colors =
             for color, colorText in colors do
                 Daisy.select [
                     color
-                    select.bordered
                     prop.className "w-full max-w-xs"
                     prop.children [
                         Html.option colorText
@@ -74,7 +71,6 @@ Html.div [
     for color, colorText in colors do
         Daisy.select [
             color
-            select.bordered
             prop.className "w-full max-w-xs"
             prop.children [
                 Html.option colorText
@@ -100,7 +96,6 @@ let sizes =
             for size, sizeText in sizes do
                 Daisy.select [
                     size
-                    select.bordered
                     prop.className "w-full max-w-xs"
                     prop.children [
                         Html.option sizeText
@@ -126,7 +121,6 @@ Html.div [
     for color, colorText in colors do
         Daisy.select [
             color
-            select.bordered
             prop.className "w-full max-w-xs"
             prop.children [
                 Html.option colorText
@@ -142,24 +136,22 @@ Html.div [
 let disabled =
     let example =
         Daisy.select [
-            select.bordered
             prop.disabled true
             prop.className "w-full max-w-xs"
             prop.children [
                 Html.option "Choose your superpower"
-                Html.option "telekenesis"
+                Html.option "telekinesis"
                 Html.option "time travel"
                 Html.option "invisibility"
             ]
         ]
 
     let code = """Daisy.select [
-    select.bordered
     prop.disabled true
     prop.className "w-full max-w-xs"
     prop.children [
         Html.option "Choose your superpower"
-        Html.option "telekenesis"
+        Html.option "telekinesis"
         Html.option "time travel"
         Html.option "invisibility"
     ]

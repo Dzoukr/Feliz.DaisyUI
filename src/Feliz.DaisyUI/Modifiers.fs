@@ -14,34 +14,25 @@ type alert =
     static member inline warning = prop.className "alert-warning"
     /// Alert with `error` color
     static member inline error = prop.className "alert-error"
-
-[<Erase>]
-type artboard =
-    /// Adds shadow and radius. Puts items in center
-    static member inline demo = prop.className "artboard-demo"
-    /// Size 1
-    static member inline phone1 = prop.className "phone-1"
-    /// Size 2
-    static member inline phone2 = prop.className "phone-2"
-    /// Size 3
-    static member inline phone3 = prop.className "phone-3"
-    /// Size 4
-    static member inline phone4 = prop.className "phone-4"
-    /// Size 5
-    static member inline phone5 = prop.className "phone-5"
-    /// Size 6
-    static member inline phone6 = prop.className "phone-6"
-    /// Shows horizontal view
-    static member inline horizontal = prop.className "horizontal"
+    /// Alert with `outline` style
+    static member inline outline = prop.className "alert-outline"
+    /// Alert with `dash` style
+    static member inline dash = prop.className "alert-dash"
+    /// Alert with `soft` style
+    static member inline soft = prop.className "alert-soft"
+    /// Alert with `horizontal` direction
+    static member inline horizontal = prop.className "alert-horizontal"
+    /// Alert with `vertical` direction
+    static member inline vertical = prop.className "alert-vertical"
 
 [<Erase>]
 type avatar =
     /// shows a green dot as online indicator
-    static member inline online = prop.className "online"
+    static member inline online = prop.className "avatar-online"
     /// shows a gray dot as online indicator
-    static member inline offline = prop.className "offline"
+    static member inline offline = prop.className "avatar-offline"
     /// to show some letters as avatar placeholder
-    static member inline placeholder = prop.className "placeholder"
+    static member inline placeholder = prop.className "avatar-placeholder"
     /// avatar class name usable for combination with other elements
     static member inline className = prop.className "avatar"
 
@@ -65,6 +56,10 @@ type badge =
     static member inline warning = prop.className "badge-warning"
     /// badge with `error` color
     static member inline error = prop.className "badge-error"
+    /// badge with `neutral` color
+    static member inline neutral = prop.className "badge-neutral"
+    /// badge with extra large size
+    static member inline xl = prop.className "badge-xl"
     /// badge with large size
     static member inline lg = prop.className "badge-lg"
     /// badge with medium size (default)
@@ -73,10 +68,15 @@ type badge =
     static member inline sm = prop.className "badge-sm"
     /// badge with extra small size
     static member inline xs = prop.className "badge-xs"
-    static member inline neutral = prop.className "badge-neutral"
+    /// badge with `dash` style
+    static member inline dash = prop.className "badge-dash"
+    /// badge with `soft` style
+    static member inline soft = prop.className "badge-soft"
 
 [<Erase>]
 type button =
+    /// Extra large button
+    static member inline xl = prop.className "btn-xl"
     /// Large button
     static member inline lg = prop.className "btn-lg"
     /// Medium button (default)
@@ -107,6 +107,8 @@ type button =
     static member inline warning = prop.className "btn-warning"
     /// Button with `error` color
     static member inline error = prop.className "btn-error"
+    /// Button with `neutral` color
+    static member inline neutral = prop.className "btn-neutral"
     /// Button with ghost style
     static member inline ghost = prop.className "btn-ghost"
     /// Button styled as a link
@@ -119,23 +121,33 @@ type button =
     static member inline disabled = prop.className "btn-disabled"
     /// Button with a glass effect
     static member inline glass = prop.className "glass"
-    /// Shows loading spinner
-    [<Obsolete("This modifier is deprecated and will be removed in the next major version. For loading please use Loading component. See https://dzoukr.github.io/Feliz.DaisyUI/#/loading")>]
-    static member inline loading = prop.className "loading"
     /// Disables click animation
     static member inline animation = prop.className "no-animation"
-    static member inline neutral = prop.className "btn-neutral"
+    /// Button with `dash` style
+    static member inline dash = prop.className "btn-dash"
+    /// Button with `soft` style
+    static member inline soft = prop.className "btn-soft"
 
 [<Erase>]
 type card =
-    /// Adds border
-    static member inline bordered = prop.className "bordered"
-    /// Less padding
-    static member inline compact = prop.className "compact"
+    /// Extra large card
+    static member inline xl = prop.className "card-xl"
+    /// Large card
+    static member inline lg = prop.className "card-lg"
+    /// Medium card (default)
+    static member inline md = prop.className "card-md"
+    /// Small card
+    static member inline sm = prop.className "card-sm"
+    /// Extra small card
+    static member inline xs = prop.className "card-xs"
     /// The image in <figure> will be on to the side
     static member inline side = prop.className "card-side"
     /// The image in <figure> element will be the background
     static member inline full = prop.className "image-full"
+    /// Button with `border` style
+    static member inline border = prop.className "card-border"
+    /// Button with `dash` style
+    static member inline dash = prop.className "card-dash"
 
 [<Erase>]
 type carousel =
@@ -191,8 +203,12 @@ type drawer =
 
 [<Erase>]
 type dropdown =
-    /// Aligns to end
+    /// Align horizontally to end
     static member inline end' = prop.className "dropdown-end"
+    /// Align horizontally to start (Default)
+    static member inline start = prop.className "dropdown-start"
+    /// Align horizontally to center
+    static member inline center = prop.className "dropdown-center"
     /// Open from top
     static member inline top = prop.className "dropdown-top"
     /// Open from left
@@ -208,6 +224,10 @@ type dropdown =
 type footer =
     /// Aligns footer content to center
     static member inline center = prop.className "footer-center"
+    /// Footer with `horizontal` direction
+    static member inline horizontal = prop.className "footer-horizontal"
+    /// Footer with `vertical` direction
+    static member inline vertical = prop.className "footer-vertical"
 
 [<Erase>]
 type indicator =
@@ -235,6 +255,8 @@ type join =
 
 [<Erase>]
 type kbd =
+    /// Extra large size
+    static member inline xl = prop.className "kbd-xl"
     /// Large size
     static member inline lg = prop.className "kbd-lg"
     /// Medium size (default)
@@ -267,7 +289,6 @@ type link =
 
 [<Erase>]
 type loading =
-
     ///Shows the spinner animation
     static member inline spinner = prop.className "loading-spinner"
     ///Shows the dots animation
@@ -280,7 +301,8 @@ type loading =
     static member inline bars = prop.className "loading-bars"
     ///Shows the infinity animation
     static member inline infinity = prop.className "loading-infinity"
-
+    /// Extra large size
+    static member inline xl = prop.className "loading-xl"
     /// Large size
     static member inline lg = prop.className "loading-lg"
     /// Medium size (default)
@@ -310,14 +332,6 @@ type mask =
     static member inline square = prop.className "mask mask-square"
     /// Applies `circle` shape
     static member inline circle = prop.className "mask mask-circle"
-    /// Applies `parallelogram` shape
-    static member inline parallelogram = prop.className "mask mask-parallelogram"
-    /// Applies `parallelogram` alternative shape
-    static member inline parallelogram2 = prop.className "mask mask-parallelogram-2"
-    /// Applies `parallelogram` alternative shape
-    static member inline parallelogram3 = prop.className "mask mask-parallelogram-3"
-    /// Applies `parallelogram` alternative shape
-    static member inline parallelogram4 = prop.className "mask mask-parallelogram-4"
     /// Applies `star` shape
     static member inline star = prop.className "mask mask-star"
     /// Applies `star` alternative shape
@@ -333,7 +347,8 @@ type mask =
 
 [<Erase>]
 type menu =
-
+    /// Extra large size
+    static member inline xl = prop.className "menu-xl"
     /// Large size
     static member inline lg = prop.className "menu-lg"
     /// Medium size (default)
@@ -342,8 +357,9 @@ type menu =
     static member inline sm = prop.className "menu-sm"
     /// Extra small size
     static member inline xs = prop.className "menu-xs"
+    /// Menu with `vertical` direction
     static member inline vertical = prop.className "menu-vertical"
-    /// Horizontal menu
+    /// Menu with `horizontal` direction
     static member inline horizontal = prop.className "menu-horizontal"
     /// Shows the `menu-dropdown-toggle` and `menu-dropdown` collapsible submenu using JS
     static member inline dropdownShow = prop.className "menu-dropdown-show"
@@ -351,11 +367,11 @@ type menu =
 [<Erase>]
 type menuItem =
     /// Set menu item as active
-    static member inline active = prop.className "active"
+    static member inline active = prop.className "menu-active"
     /// Applies focus style to the element inside <li>
-    static member inline focus = prop.className "focus"
+    static member inline focus = prop.className "menu-focus"
     /// Sets <li> as disabled
-    static member inline disabled = prop.className "disabled"
+    static member inline disabled = prop.className "menu-disabled"
 
 [<Erase>]
 type modal =
@@ -367,6 +383,10 @@ type modal =
     static member inline bottom = prop.className "modal-bottom"
     /// Moves the modal to middle (default)
     static member inline middle = prop.className "modal-middle"
+    /// Moves the modal to start horizontally
+    static member inline start = prop.className "modal-start"
+    /// Moves the modal to end horizontally
+    static member inline end' = prop.className "modal-end"
 
 [<Erase>]
 type progress =
@@ -386,9 +406,22 @@ type progress =
     static member inline error = prop.className "progress-error"
 
 [<Erase>]
+type stack =
+    /// Aligns the children elements to the top
+    static member inline top = prop.className "stack-top"
+    /// Aligns the children elements to the bottom (default)
+    static member inline bottom = prop.className "stack-bottom"
+    /// Aligns the children elements to the start (horizontally)
+    static member inline start = prop.className "stack-start"
+    /// Aligns the children elements to the end (horizontally)
+    static member inline end' = prop.className "stack-end"
+
+[<Erase>]
 type steps =
     /// makes `steps` vertical
     static member inline vertical = prop.className "steps-vertical"
+    /// makes `steps` horizontal (default)
+    static member inline horizontal = prop.className "steps-horizontal"
 
 [<Erase>]
 type step =
@@ -412,11 +445,15 @@ type step =
 [<Erase>]
 type tabs =
     /// Adds a box style to tabs container
-    static member inline boxed = prop.className "tabs-boxed"
+    static member inline box = prop.className "tabs-box"
     /// Adds a border to tabs container
-    static member inline bordered = prop.className "tabs-bordered"
+    static member inline border = prop.className "tabs-border"
     /// Adds a shadow to tabs container
-    static member inline lifted = prop.className "tabs-lifted"
+    static member inline lift = prop.className "tabs-lift"
+    /// Puts tab buttons on top of the tab-content (default)
+    static member inline top = prop.className "tabs-top"
+    /// Puts tabs under the tab-content
+    static member inline bottom = prop.className "tabs-bottom"
     /// Shows tabs in extra small size
     static member inline xs = prop.className "tabs-xs"
     /// Shows tabs in small size
@@ -425,22 +462,15 @@ type tabs =
     static member inline md = prop.className "tabs-md"
     /// Shows tabs in large size
     static member inline lg = prop.className "tabs-lg"
+    /// Shows tabs in extra large size
+    static member inline xl = prop.className "tabs-xl"
+
 [<Erase>]
 type tab =
-    /// For the active tab
+    /// Makes a single tab look active
     static member inline active = prop.className "tab-active"
-    [<Obsolete("This modifier is deprecated and will be removed in the next major version")>]
-    static member inline bordered = prop.className "tab-bordered"
-    [<Obsolete("This modifier is deprecated and will be removed in the next major version")>]
-    static member inline lifted = prop.className "tab-lifted"
-    [<Obsolete("This modifier is deprecated and will be removed in the next major version")>]
-    static member inline xs = prop.className "tab-xs"
-    [<Obsolete("This modifier is deprecated and will be removed in the next major version")>]
-    static member inline sm = prop.className "tab-sm"
-    [<Obsolete("This modifier is deprecated and will be removed in the next major version")>]
-    static member inline md = prop.className "tab-md"
-    [<Obsolete("This modifier is deprecated and will be removed in the next major version")>]
-    static member inline lg = prop.className "tab-lg"
+    /// Makes a single tab look disabled
+    static member inline disabled = prop.className "tab-disabled"
 
 [<Erase>]
 type table =
@@ -458,6 +488,8 @@ type table =
     static member inline md = prop.className "table-md"
     /// Shows table in large size
     static member inline lg = prop.className "table-lg"
+    /// Shows table in extra large size
+    static member inline xl = prop.className "table-xl"
 
 [<Erase>]
 type tooltip =
@@ -465,8 +497,9 @@ type tooltip =
     static member inline text (t:string) = prop.custom("data-tip", t)
     /// Force open tooltip
     static member inline open' = prop.className "tooltip-open"
-    /// Put tooltip on top
+    /// Put tooltip on top (default)
     static member inline top = prop.className "tooltip-top"
+    /// Put tooltip on bottom
     static member inline bottom = prop.className "tooltip-bottom"
     /// Put tooltip on left
     static member inline left = prop.className "tooltip-left"
@@ -486,15 +519,29 @@ type tooltip =
     static member inline warning = prop.className "tooltip-warning"
     /// Adds `error` color to tooltip
     static member inline error = prop.className "tooltip-error"
+    /// Adds `neutral` color to tooltip
+    static member inline neutral = prop.className "tooltip-neutral"
 
 [<Erase>]
 type checkbox =
-    /// Adds `primary` to checkbox
+    /// Checkbox with `primary` color 
     static member inline primary = prop.className "checkbox-primary"
-    /// Adds `secondary` to checkbox
+    /// Checkbox with `secondary` color 
     static member inline secondary = prop.className "checkbox-secondary"
-    /// Adds `accent` to checkbox
+    /// Checkbox with `accent` color 
     static member inline accent = prop.className "checkbox-accent"
+    /// Checkbox with `neutral` color 
+    static member inline neutral = prop.className "checkbox-neutral"
+    /// Checkbox with `success` color 
+    static member inline success = prop.className "checkbox-success"
+    /// Checkbox with `warning` color 
+    static member inline warning = prop.className "checkbox-warning"
+    /// Checkbox with `info` color 
+    static member inline info = prop.className "checkbox-info"
+    /// Checkbox with `accent` color 
+    static member inline error = prop.className "checkbox-error"
+    /// Extra large checkbox
+    static member inline xl = prop.className "checkbox-xl"
     /// Large checkbox
     static member inline lg = prop.className "checkbox-lg"
     /// Medium checkbox (default)
@@ -506,8 +553,6 @@ type checkbox =
 
 [<Erase>]
 type input =
-    /// Adds border to input
-    static member inline bordered = prop.className "input-bordered"
     /// Adds ghost style to checkbox
     static member inline ghost = prop.className "input-ghost"
     /// Adds `primary` color to input
@@ -524,6 +569,8 @@ type input =
     static member inline warning = prop.className "input-warning"
     /// Adds `error` color to input
     static member inline error = prop.className "input-error"
+    /// Extra large size for input
+    static member inline xl = prop.className "input-xl"
     /// Large size for input
     static member inline lg = prop.className "input-lg"
     /// Medium (default) size for input
@@ -534,26 +581,23 @@ type input =
     static member inline xs = prop.className "input-xs"
 
 [<Erase>]
-type inputGroup =
-    /// Large size for input-group wrapper
-    static member inline lg = prop.className "input-group-lg"
-    /// Medium (default) size for input-group wrapper
-    static member inline md = prop.className "input-group-md"
-    /// Small size for input-group wrapper
-    static member inline sm = prop.className "input-group-sm"
-    /// Extra small size for input-group wrapper
-    static member inline xs = prop.className "input-group-xs"
-    /// Vertical direction for input-group items
-    static member inline vertical = prop.className "input-group-vertical"
-
-[<Erase>]
 type radio =
-    /// Adds `primary` to radio
+    /// Adds `primary` color to radio
     static member inline primary = prop.className "radio-primary"
-    /// Adds `secondary` to radio
+    /// Adds `secondary` color to radio
     static member inline secondary = prop.className "radio-secondary"
-    /// Adds `accent` to radio
+    /// Adds `accent` color to radio
     static member inline accent = prop.className "radio-accent"
+    /// Adds `success` color to radio
+    static member inline success = prop.className "radio-success"
+    /// Adds `warning` color to radio
+    static member inline warning = prop.className "radio-warning"
+    /// Adds `info` color to radio
+    static member inline info = prop.className "radio-info"
+    /// Adds `error` color to radio
+    static member inline error = prop.className "radio-error"
+    /// Extra large radio
+    static member inline xl = prop.className "radio-xl"
     /// Large radio
     static member inline lg = prop.className "radio-lg"
     /// Medium radio (default)
@@ -565,12 +609,22 @@ type radio =
 
 [<Erase>]
 type range =
-    /// primary color
+    /// Adds `primary` color to range
     static member inline primary = prop.className "range-primary"
-    /// secondary color
+    /// Adds `secondary` color to range
     static member inline secondary = prop.className "range-secondary"
-    /// accent color
+    /// Adds `accent` color to range
     static member inline accent = prop.className "range-accent"
+    /// Adds `success` color to range
+    static member inline success = prop.className "range-success"
+    /// Adds `warning` color to range
+    static member inline warning = prop.className "range-warning"
+    /// Adds `info` color to range
+    static member inline info = prop.className "range-info"
+    /// Adds `error` color to range
+    static member inline error = prop.className "range-error"
+    /// Extra large range
+    static member inline xl = prop.className "range-xl"
     /// Large range
     static member inline lg = prop.className "range-lg"
     /// Medium range (default)
@@ -582,8 +636,6 @@ type range =
 
 [<Erase>]
 type select =
-    /// Adds border to select
-    static member inline bordered = prop.className "select-bordered"
     /// Adds ghost style to checkbox
     static member inline ghost = prop.className "select-ghost"
     /// Adds `primary` color to select
@@ -600,6 +652,8 @@ type select =
     static member inline warning = prop.className "select-warning"
     /// Adds `error` color to select
     static member inline error = prop.className "select-error"
+    /// Extra large size for select
+    static member inline xl = prop.className "select-xl"
     /// Large size for select
     static member inline lg = prop.className "select-lg"
     /// Medium (default) size for select
@@ -611,8 +665,6 @@ type select =
 
 [<Erase>]
 type textarea =
-    /// Adds border to textarea
-    static member inline bordered = prop.className "textarea-bordered"
     /// Adds ghost style to checkbox
     static member inline ghost = prop.className "textarea-ghost"
     /// Adds `primary` color to textarea
@@ -629,21 +681,44 @@ type textarea =
     static member inline warning = prop.className "textarea-warning"
     /// Adds `error` color to textarea
     static member inline error = prop.className "textarea-error"
+    /// Adds `neutral` color to textarea
+    static member inline neutral = prop.className "textarea-neutral"
+    /// Extra large size for textarea
+    static member inline xl = prop.className "textarea-xl"
+    /// Large size for textarea
+    static member inline lg = prop.className "textarea-lg"
+    /// Medium (default) size for textarea
+    static member inline md = prop.className "textarea-md"
+    /// Small size for textarea
+    static member inline sm = prop.className "textarea-sm"
+    /// Extra small size for textarea
+    static member inline xs = prop.className "textarea-xs"
 
 [<Erase>]
 type mockupCode =
     /// Add prefix on a code line (used on PRE element level)
     static member inline prefix (prefix:string) = prop.custom("data-prefix", prefix)
 
-
 [<Erase>]
 type toggle =
-    /// Adds `primary` to toggle
+    /// Adds `primary` color to toggle
     static member inline primary = prop.className "toggle-primary"
-    /// Adds `secondary` to toggle
+    /// Adds `secondary` color to toggle
     static member inline secondary = prop.className "toggle-secondary"
-    /// Adds `accent` to toggle
+    /// Adds `accent` color to toggle
     static member inline accent = prop.className "toggle-accent"
+    /// Adds `info` color to toggle
+    static member inline info = prop.className "toggle-info"
+    /// Adds `success` color to toggle
+    static member inline success = prop.className "toggle-success"
+    /// Adds `warning` color to toggle
+    static member inline warning = prop.className "toggle-warning"
+    /// Adds `error` color to toggle
+    static member inline error = prop.className "toggle-error"
+    /// Adds `neutral` color to toggle
+    static member inline neutral = prop.className "toggle-neutral"
+    /// Extra large toggle
+    static member inline xl = prop.className "toggle-xl"
     /// Large toggle
     static member inline lg = prop.className "toggle-lg"
     /// Medium toggle (default)
@@ -715,6 +790,8 @@ type file =
     static member inline warning = prop.className "file-input-warning"
     /// Adds `error` color to file-input
     static member inline error = prop.className "file-input-error"
+    /// Extra large size for file-input
+    static member inline xl = prop.className "file-input-xl"
     /// Large size for file-input
     static member inline lg = prop.className "file-input-lg"
     /// Medium (default) size for file-input
@@ -747,6 +824,8 @@ type chatBubble =
     static member inline warning = prop.className "chat-bubble-warning"
     /// Adds `error` color to the chat bubble
     static member inline error = prop.className "chat-bubble-error"
+    /// Adds `neutral` color to the chat bubble
+    static member inline neutral = prop.className "chat-bubble-neutral"
 
 [<Erase>]
 type timeline =
@@ -758,6 +837,8 @@ type timeline =
     static member inline horizontal = prop.className "timeline-horizontal"
     /// Applies a box style to timeline-start or timeline-end
     static member inline box = prop.className "timeline-box"
+    /// Forces all items on one side
+    static member inline compact = prop.className "timeline-compact"
 
 [<Erase>]
 type theme =
@@ -827,22 +908,65 @@ type theme =
     static member inline controller = prop.className "theme-controller"
 
 [<Erase>]
+type status =
+    /// Adds `primary` color to status
+    static member inline primary = prop.className "status-primary"
+    /// Adds `secondary` color to status
+    static member inline secondary = prop.className "status-secondary"
+    /// Adds `accent` color to status
+    static member inline accent = prop.className "status-accent"
+    /// Adds `info` color to status
+    static member inline info = prop.className "status-info"
+    /// Adds `success` color to status
+    static member inline success = prop.className "status-success"
+    /// Adds `warning` color to status
+    static member inline warning = prop.className "status-warning"
+    /// Adds `error` color to status
+    static member inline error = prop.className "status-error"
+    /// Adds `neutral` color to status
+    static member inline neutral = prop.className "status-neutral"
+    /// Extra large size for status
+    static member inline xl = prop.className "status-xl"
+    /// Large size for status
+    static member inline lg = prop.className "status-lg"
+    /// Medium (default) size for status
+    static member inline md = prop.className "status-md"
+    /// Small size for status
+    static member inline sm = prop.className "status-sm"
+    /// Extra small size for status
+    static member inline xs = prop.className "status-xs"
+
+[<Erase>]
+type dock =
+    /// Makes the Dock Item look active
+    static member inline active = prop.className "dock-active"
+    /// Extra large size for dock
+    static member inline xl = prop.className "dock-xl"
+    /// Large size for dock
+    static member inline lg = prop.className "dock-lg"
+    /// Medium (default) size for dock
+    static member inline md = prop.className "dock-md"
+    /// Small size for dock
+    static member inline sm = prop.className "dock-sm"
+    /// Extra small size for dock
+    static member inline xs = prop.className "dock-xs"
+
+[<Erase>]
+type list =
+    /// For one of direct children of list-row to push it to the next line
+    static member inline colWrap = prop.className "list-col-wrap"
+    /// For one of direct children of list-row to make it fill the remaining space. By default, the second child of the list-row will fill the remaining space.
+    static member inline colGrow = prop.className "list-col-grow"
+
+[<Erase>]
 type color =
     static member inline bgPrimary = prop.className "bg-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline bgPrimaryFocus = prop.className "bg-primary-focus"
     static member inline bgPrimaryContent = prop.className "bg-primary-content"
     static member inline bgSecondary = prop.className "bg-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline bgSecondaryFocus = prop.className "bg-secondary-focus"
     static member inline bgSecondaryContent = prop.className "bg-secondary-content"
     static member inline bgAccent = prop.className "bg-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline bgAccentFocus = prop.className "bg-accent-focus"
     static member inline bgAccentContent = prop.className "bg-accent-content"
     static member inline bgNeutral = prop.className "bg-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline bgNeutralFocus = prop.className "bg-neutral-focus"
     static member inline bgNeutralContent = prop.className "bg-neutral-content"
     static member inline bgBase100 = prop.className "bg-base-100"
     static member inline bgBase200 = prop.className "bg-base-200"
@@ -853,20 +977,12 @@ type color =
     static member inline bgWarning = prop.className "bg-warning"
     static member inline bgError = prop.className "bg-error"
     static member inline textPrimary = prop.className "text-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline textPrimaryFocus = prop.className "text-primary-focus"
     static member inline textPrimaryContent = prop.className "text-primary-content"
     static member inline textSecondary = prop.className "text-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline textSecondaryFocus = prop.className "text-secondary-focus"
     static member inline textSecondaryContent = prop.className "text-secondary-content"
     static member inline textAccent = prop.className "text-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline textAccentFocus = prop.className "text-accent-focus"
     static member inline textAccentContent = prop.className "text-accent-content"
     static member inline textNeutral = prop.className "text-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline textNeutralFocus = prop.className "text-neutral-focus"
     static member inline textNeutralContent = prop.className "text-neutral-content"
     static member inline textBase100 = prop.className "text-base-100"
     static member inline textBase200 = prop.className "text-base-200"
@@ -877,20 +993,12 @@ type color =
     static member inline textWarning = prop.className "text-warning"
     static member inline textError = prop.className "text-error"
     static member inline borderPrimary = prop.className "border-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline borderPrimaryFocus = prop.className "border-primary-focus"
     static member inline borderPrimaryContent = prop.className "border-primary-content"
     static member inline borderSecondary = prop.className "border-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline borderSecondaryFocus = prop.className "border-secondary-focus"
     static member inline borderSecondaryContent = prop.className "border-secondary-content"
     static member inline borderAccent = prop.className "border-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline borderAccentFocus = prop.className "border-accent-focus"
     static member inline borderAccentContent = prop.className "border-accent-content"
     static member inline borderNeutral = prop.className "border-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline borderNeutralFocus = prop.className "border-neutral-focus"
     static member inline borderNeutralContent = prop.className "border-neutral-content"
     static member inline borderBase100 = prop.className "border-base-100"
     static member inline borderBase200 = prop.className "border-base-200"
@@ -901,20 +1009,12 @@ type color =
     static member inline borderWarning = prop.className "border-warning"
     static member inline borderError = prop.className "border-error"
     static member inline fromPrimary = prop.className "from-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline fromPrimaryFocus = prop.className "from-primary-focus"
     static member inline fromPrimaryContent = prop.className "from-primary-content"
     static member inline fromSecondary = prop.className "from-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline fromSecondaryFocus = prop.className "from-secondary-focus"
     static member inline fromSecondaryContent = prop.className "from-secondary-content"
     static member inline fromAccent = prop.className "from-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline fromAccentFocus = prop.className "from-accent-focus"
     static member inline fromAccentContent = prop.className "from-accent-content"
     static member inline fromNeutral = prop.className "from-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline fromNeutralFocus = prop.className "from-neutral-focus"
     static member inline fromNeutralContent = prop.className "from-neutral-content"
     static member inline fromBase100 = prop.className "from-base-100"
     static member inline fromBase200 = prop.className "from-base-200"
@@ -925,20 +1025,12 @@ type color =
     static member inline fromWarning = prop.className "from-warning"
     static member inline fromError = prop.className "from-error"
     static member inline viaPrimary = prop.className "via-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline viaPrimaryFocus = prop.className "via-primary-focus"
     static member inline viaPrimaryContent = prop.className "via-primary-content"
     static member inline viaSecondary = prop.className "via-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline viaSecondaryFocus = prop.className "via-secondary-focus"
     static member inline viaSecondaryContent = prop.className "via-secondary-content"
     static member inline viaAccent = prop.className "via-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline viaAccentFocus = prop.className "via-accent-focus"
     static member inline viaAccentContent = prop.className "via-accent-content"
     static member inline viaNeutral = prop.className "via-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline viaNeutralFocus = prop.className "via-neutral-focus"
     static member inline viaNeutralContent = prop.className "via-neutral-content"
     static member inline viaBase100 = prop.className "via-base-100"
     static member inline viaBase200 = prop.className "via-base-200"
@@ -949,20 +1041,12 @@ type color =
     static member inline viaWarning = prop.className "via-warning"
     static member inline viaError = prop.className "via-error"
     static member inline toPrimary = prop.className "to-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline toPrimaryFocus = prop.className "to-primary-focus"
     static member inline toPrimaryContent = prop.className "to-primary-content"
     static member inline toSecondary = prop.className "to-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline toSecondaryFocus = prop.className "to-secondary-focus"
     static member inline toSecondaryContent = prop.className "to-secondary-content"
     static member inline toAccent = prop.className "to-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline toAccentFocus = prop.className "to-accent-focus"
     static member inline toAccentContent = prop.className "to-accent-content"
     static member inline toNeutral = prop.className "to-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline toNeutralFocus = prop.className "to-neutral-focus"
     static member inline toNeutralContent = prop.className "to-neutral-content"
     static member inline toBase100 = prop.className "to-base-100"
     static member inline toBase200 = prop.className "to-base-200"
@@ -973,20 +1057,12 @@ type color =
     static member inline toWarning = prop.className "to-warning"
     static member inline toError = prop.className "to-error"
     static member inline placeholderPrimary = prop.className "placeholder-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline placeholderPrimaryFocus = prop.className "placeholder-primary-focus"
     static member inline placeholderPrimaryContent = prop.className "placeholder-primary-content"
     static member inline placeholderSecondary = prop.className "placeholder-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline placeholderSecondaryFocus = prop.className "placeholder-secondary-focus"
     static member inline placeholderSecondaryContent = prop.className "placeholder-secondary-content"
     static member inline placeholderAccent = prop.className "placeholder-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline placeholderAccentFocus = prop.className "placeholder-accent-focus"
     static member inline placeholderAccentContent = prop.className "placeholder-accent-content"
     static member inline placeholderNeutral = prop.className "placeholder-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline placeholderNeutralFocus = prop.className "placeholder-neutral-focus"
     static member inline placeholderNeutralContent = prop.className "placeholder-neutral-content"
     static member inline placeholderBase100 = prop.className "placeholder-base-100"
     static member inline placeholderBase200 = prop.className "placeholder-base-200"
@@ -997,20 +1073,12 @@ type color =
     static member inline placeholderWarning = prop.className "placeholder-warning"
     static member inline placeholderError = prop.className "placeholder-error"
     static member inline dividePrimary = prop.className "divide-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline dividePrimaryFocus = prop.className "divide-primary-focus"
     static member inline dividePrimaryContent = prop.className "divide-primary-content"
     static member inline divideSecondary = prop.className "divide-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline divideSecondaryFocus = prop.className "divide-secondary-focus"
     static member inline divideSecondaryContent = prop.className "divide-secondary-content"
     static member inline divideAccent = prop.className "divide-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline divideAccentFocus = prop.className "divide-accent-focus"
     static member inline divideAccentContent = prop.className "divide-accent-content"
     static member inline divideNeutral = prop.className "divide-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline divideNeutralFocus = prop.className "divide-neutral-focus"
     static member inline divideNeutralContent = prop.className "divide-neutral-content"
     static member inline divideBase100 = prop.className "divide-base-100"
     static member inline divideBase200 = prop.className "divide-base-200"
@@ -1021,20 +1089,12 @@ type color =
     static member inline divideWarning = prop.className "divide-warning"
     static member inline divideError = prop.className "divide-error"
     static member inline ringPrimary = prop.className "ring-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringPrimaryFocus = prop.className "ring-primary-focus"
     static member inline ringPrimaryContent = prop.className "ring-primary-content"
     static member inline ringSecondary = prop.className "ring-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringSecondaryFocus = prop.className "ring-secondary-focus"
     static member inline ringSecondaryContent = prop.className "ring-secondary-content"
     static member inline ringAccent = prop.className "ring-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringAccentFocus = prop.className "ring-accent-focus"
     static member inline ringAccentContent = prop.className "ring-accent-content"
     static member inline ringNeutral = prop.className "ring-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringNeutralFocus = prop.className "ring-neutral-focus"
     static member inline ringNeutralContent = prop.className "ring-neutral-content"
     static member inline ringBase100 = prop.className "ring-base-100"
     static member inline ringBase200 = prop.className "ring-base-200"
@@ -1045,20 +1105,12 @@ type color =
     static member inline ringWarning = prop.className "ring-warning"
     static member inline ringError = prop.className "ring-error"
     static member inline ringOffsetPrimary = prop.className "ring-offset-primary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringOffsetPrimaryFocus = prop.className "ring-offset-primary-focus"
     static member inline ringOffsetPrimaryContent = prop.className "ring-offset-primary-content"
     static member inline ringOffsetSecondary = prop.className "ring-offset-secondary"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringOffsetSecondaryFocus = prop.className "ring-offset-secondary-focus"
     static member inline ringOffsetSecondaryContent = prop.className "ring-offset-secondary-content"
     static member inline ringOffsetAccent = prop.className "ring-offset-accent"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringOffsetAccentFocus = prop.className "ring-offset-accent-focus"
     static member inline ringOffsetAccentContent = prop.className "ring-offset-accent-content"
     static member inline ringOffsetNeutral = prop.className "ring-offset-neutral"
-    [<Obsolete("This color is deprecated and will be removed in the next major version")>]
-    static member inline ringOffsetNeutralFocus = prop.className "ring-offset-neutral-focus"
     static member inline ringOffsetNeutralContent = prop.className "ring-offset-neutral-content"
     static member inline ringOffsetBase100 = prop.className "ring-offset-base-100"
     static member inline ringOffsetBase200 = prop.className "ring-offset-base-200"

@@ -54,7 +54,7 @@ let avatar =
                 Html.div [
                     prop.className "w-24 h-24 rounded-btn"
                     prop.children [
-                        Html.img [prop.src "http://daisyui.com/tailwind-css-component-profile-1@94w.png"]
+                        Html.img [prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"]
                     ]
                 ]
             ]
@@ -67,7 +67,7 @@ let avatar =
         Html.div [
             prop.className "w-24 h-24 rounded-btn"
             prop.children [
-                Html.img [prop.src "http://daisyui.com/tailwind-css-component-profile-1@94w.png"]
+                Html.img [prop.src "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"]
             ]
         ]
     ]

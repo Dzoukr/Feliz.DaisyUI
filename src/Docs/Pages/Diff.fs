@@ -1,10 +1,7 @@
-﻿module Docs.Pages.Diff
+module Docs.Pages.Diff
 
 open Feliz
-open Elmish
-open Feliz.UseElmish
 open Feliz.DaisyUI
-open Feliz.DaisyUI.Operators
 open Docs.SharedView
 
 let ex1 =
@@ -13,10 +10,10 @@ let ex1 =
             prop.className "aspect-[16/9]"
             prop.children [
                 Daisy.diffItem1 [
-                    Html.img [ prop.src "https://daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.jpg" ]
+                    Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.webp" ]
                 ]
                 Daisy.diffItem2 [
-                    Html.img [ prop.src "https://daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.jpg" ]
+                    Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.webp" ]
                 ]
                 Daisy.diffResizer []
             ]
@@ -26,10 +23,10 @@ let ex1 =
     prop.className "aspect-[16/9]"
     prop.children [
         Daisy.diffItem1 [
-            Html.img [ prop.src "https://daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.jpg" ]
+            Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.webp" ]
         ]
         Daisy.diffItem2 [
-            Html.img [ prop.src "https://daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.jpg" ]
+            Html.img [ prop.src "https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.webp" ]
         ]
         Daisy.diffResizer []
     ]

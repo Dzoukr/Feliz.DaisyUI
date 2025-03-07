@@ -1,30 +1,33 @@
 module Docs.Pages.MockupPhone
 
 open Feliz
-open Elmish
 open Feliz.DaisyUI
 open Docs.SharedView
 
 let iphoneMockup =
     let example =
-        Daisy.mockupPhone [
-            Daisy.mockupPhoneCamera []
-            Daisy.mockupPhoneDisplay [
-                Daisy.artboard [
-                    artboard.demo
-                    artboard.phone1
-                    prop.text "Hi."
+        Html.div [
+            Daisy.mockupPhone [
+                prop.className "bg-base-300"
+                prop.children [
+                    Daisy.mockupPhoneCamera []
+                    Daisy.mockupPhoneDisplay [
+                        prop.className "grid place-content-center"
+                        prop.text "Hi."
+                    ]
                 ]
             ]
         ]
 
-    let code = """Daisy.mockupPhone [
-    Daisy.mockupPhoneCamera []
-    Daisy.mockupPhoneDisplay [
-        Daisy.artboard [
-            artboard.demo
-            artboard.phone1
-            prop.text "Hi."
+    let code = """Html.div [
+    Daisy.mockupPhone [
+        prop.children [
+            prop.className "bg-base-300"
+            Daisy.mockupPhoneCamera []
+            Daisy.mockupPhoneDisplay [
+                prop.className "grid place-content-center"
+                prop.text "Hi."
+            ]
         ]
     ]
 ]"""
@@ -33,28 +36,28 @@ let iphoneMockup =
 
 let iphoneWithColor =
     let example =
-        Daisy.mockupPhone [
-            color.borderPrimary
-            prop.children [
-                Daisy.mockupPhoneCamera []
-                Daisy.mockupPhoneDisplay [
-                    Daisy.artboard [
-                        artboard.demo
-                        artboard.phone1
+        Html.div [
+            Daisy.mockupPhone [
+                prop.className "bg-base-300"
+                color.borderPrimary
+                prop.children [
+                    Daisy.mockupPhoneCamera []
+                    Daisy.mockupPhoneDisplay [
+                        prop.className "grid place-content-center"
                         prop.text "Hi."
                     ]
                 ]
             ]
         ]
 
-    let code = """Daisy.mockupPhone [
-    color.borderPrimary
-    prop.children [
-        Daisy.mockupPhoneCamera []
-        Daisy.mockupPhoneDisplay [
-            Daisy.artboard [
-                artboard.demo
-                artboard.phone1
+    let code = """Html.div [
+    Daisy.mockupPhone [
+        prop.className "bg-base-300"
+        color.borderPrimary
+        prop.children [
+            Daisy.mockupPhoneCamera []
+            Daisy.mockupPhoneDisplay [
+                prop.className "grid place-content-center"
                 prop.text "Hi."
             ]
         ]
@@ -66,55 +69,51 @@ let iphoneWithColor =
 let allPhones =
     let example =
         let phones = [
-            artboard.phone1, "phone1", color.borderPrimary
-            artboard.phone2, "phone2", color.borderAccent
-            artboard.phone3, "phone3", color.borderError
-            artboard.phone4, "phone4", color.borderInfo
-            artboard.phone5, "phone5", color.borderSuccess
-            artboard.phone6, "phone6", color.borderWarning
+            "w-[320px] h-[568px]", "phone1", color.borderPrimary
+            "w-[375px] h-[667px]", "phone2", color.borderAccent
+            "w-[414px] h-[736px]", "phone3", color.borderError
+            "w-[375px] h-[812px]", "phone4", color.borderInfo
+            "w-[414px] h-[896px]", "phone5", color.borderSuccess
+            "w-[320px] h-[1024px]", "phone6", color.borderWarning
         ]
         Html.div [
             for phone, phoneText, borderColor in phones do 
                 Daisy.mockupPhone [
+                    prop.className "bg-base-300"
                     borderColor
                     prop.children [
                         Daisy.mockupPhoneCamera []
                         Daisy.mockupPhoneDisplay [
-                            Daisy.artboard [
-                                artboard.demo
-                                phone
-                                prop.text phoneText
-                            ]
+                            prop.className $"grid place-content-center {phone}"
+                            prop.text phoneText
                         ]
                     ]
                 ]
         ]
 
     let code = """let phones = [
-    artboard.phone1, "phone1", color.borderPrimary
-    artboard.phone2, "phone2", color.borderAccent
-    artboard.phone3, "phone3", color.borderError
-    artboard.phone4, "phone4", color.borderInfo
-    artboard.phone5, "phone5", color.borderSuccess
-    artboard.phone6, "phone6", color.borderWarning
+    "w-[320px] h-[568px]", "phone1", color.borderPrimary
+    "w-[375px] h-[667px]", "phone2", color.borderAccent
+    "w-[414px] h-[736px]", "phone3", color.borderError
+    "w-[375px] h-[812px]", "phone4", color.borderInfo
+    "w-[414px] h-[896px]", "phone5", color.borderSuccess
+    "w-[320px] h-[1024px]", "phone6", color.borderWarning
 ]
 Html.div [
     for phone, phoneText, borderColor in phones do 
         Daisy.mockupPhone [
+            prop.className "bg-base-300"
             borderColor
             prop.children [
                 Daisy.mockupPhoneCamera []
                 Daisy.mockupPhoneDisplay [
-                    Daisy.artboard [
-                        artboard.demo
-                        phone
-                        prop.text phoneText
-                    ]
+                    prop.className $"grid place-content-center {phone}"
+                    prop.text phoneText
                 ]
             ]
         ]
 ]"""
-    let title = Html.text "All phones"
+    let title = Html.text "Phone sizes"
     codedView title code example
 
 [<ReactComponent>]

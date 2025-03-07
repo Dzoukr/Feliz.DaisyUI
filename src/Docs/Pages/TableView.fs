@@ -123,9 +123,14 @@ let tableWithVisuals =
                         prop.classes ["flex"; "items-center"; "space-x-3"]
                         prop.children [
                             Daisy.avatar [
-                                Html.img [
+                                Html.div [
                                     mask.squircle ++ prop.className "w-12 h-12"
-                                    prop.src url
+
+                                    prop.children [
+                                        Html.img [
+                                            prop.src url
+                                        ]
+                                    ]
                                 ]
                             ]
                             Html.div [
@@ -158,10 +163,10 @@ let tableWithVisuals =
 
 
                 Html.tbody [
-                    row ("https://daisyui.com/tailwind-css-component-profile-2@56w.png", "Hart Hagerty", "United States", "Zemlak, Daniel and Leannon", "Desktop Support Technician", "Purple")
-                    row ("https://daisyui.com/tailwind-css-component-profile-3@56w.png", "Brice Swyre", "China", "Carroll Group", "Tax Accountant", "Red")
-                    row ("https://daisyui.com/tailwind-css-component-profile-4@56w.png", "Marjy Ferencz", "Russia", "Rowe-Schoen", "Office Assistant I", "Crimson")
-                    row ("https://daisyui.com/tailwind-css-component-profile-5@56w.png", "Yancy Tear", "Brazil", "Wyman-Ledner", "Community Outreach Specialist", "Indigo")
+                    row ("https://img.daisyui.com/images/profile/demo/2@94.webp", "Hart Hagerty", "United States", "Zemlak, Daniel and Leannon", "Desktop Support Technician", "Purple")
+                    row ("https://img.daisyui.com/images/profile/demo/3@94.webp", "Brice Swyre", "China", "Carroll Group", "Tax Accountant", "Red")
+                    row ("https://img.daisyui.com/images/profile/demo/4@94.webp", "Marjy Ferencz", "Russia", "Rowe-Schoen", "Office Assistant I", "Crimson")
+                    row ("https://img.daisyui.com/images/profile/demo/5@94.webp", "Yancy Tear", "Brazil", "Wyman-Ledner", "Community Outreach Specialist", "Indigo")
                 ]
                 Html.thead [
                     Html.tr [
@@ -184,9 +189,14 @@ let tableWithVisuals =
                 prop.classes ["flex"; "items-center"; "space-x-3"]
                 prop.children [
                     Daisy.avatar [
-                        Html.img [
+                        Html.div [
                             mask.squircle ++ prop.className "w-12 h-12"
-                            prop.src url
+
+                            prop.children [
+                                Html.img [
+                                    prop.src url
+                                ]
+                            ]
                         ]
                     ]
                     Html.div [
@@ -219,10 +229,10 @@ Daisy.table [
 
 
         Html.tbody [
-            row ("https://daisyui.com/tailwind-css-component-profile-2@56w.png", "Hart Hagerty", "United States", "Zemlak, Daniel and Leannon", "Desktop Support Technician", "Purple")
-            row ("https://daisyui.com/tailwind-css-component-profile-3@56w.png", "Brice Swyre", "China", "Carroll Group", "Tax Accountant", "Red")
-            row ("https://daisyui.com/tailwind-css-component-profile-4@56w.png", "Marjy Ferencz", "Russia", "Rowe-Schoen", "Office Assistant I", "Crimson")
-            row ("https://daisyui.com/tailwind-css-component-profile-5@56w.png", "Yancy Tear", "Brazil", "Wyman-Ledner", "Community Outreach Specialist", "Indigo")
+            row ("https://img.daisyui.com/images/profile/demo/2@94.webp", "Hart Hagerty", "United States", "Zemlak, Daniel and Leannon", "Desktop Support Technician", "Purple")
+            row ("https://img.daisyui.com/images/profile/demo/3@94.webp", "Brice Swyre", "China", "Carroll Group", "Tax Accountant", "Red")
+            row ("https://img.daisyui.com/images/profile/demo/4@94.webp", "Marjy Ferencz", "Russia", "Rowe-Schoen", "Office Assistant I", "Crimson")
+            row ("https://img.daisyui.com/images/profile/demo/5@94.webp", "Yancy Tear", "Brazil", "Wyman-Ledner", "Community Outreach Specialist", "Indigo")
         ]
         Html.thead [
             Html.tr [

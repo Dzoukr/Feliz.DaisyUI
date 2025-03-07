@@ -42,33 +42,39 @@ let withoutStack =
 let withStack =
     let example =
         Daisy.stack [
-            Html.div [
-                prop.className "grid w-32 h-20 rounded bg-primary text-primary-content place-content-center"
-                prop.text "1"
-            ]
-            Html.div [
-                prop.className "grid w-32 h-20 rounded bg-accent text-accent-content place-content-center"
-                prop.text "2"
-            ]
-            Html.div [
-                prop.className "grid w-32 h-20 rounded bg-secondary text-secondary-content place-content-center"
-                prop.text "3"
+            prop.className "w-32 h-20"
+            prop.children [
+                Html.div [
+                    prop.className "grid rounded bg-primary text-primary-content place-content-center"
+                    prop.text "1"
+                ]
+                Html.div [
+                    prop.className "grid rounded bg-accent text-accent-content place-content-center"
+                    prop.text "2"
+                ]
+                Html.div [
+                    prop.className "grid rounded bg-secondary text-secondary-content place-content-center"
+                    prop.text "3"
+                ]
             ]
         ]
         |> Html.div
 
     let code = """Daisy.stack [
-    Html.div [
-        prop.className "grid w-32 h-20 rounded bg-primary text-primary-content place-content-center"
-        prop.text "1"
-    ]
-    Html.div [
-        prop.className "grid w-32 h-20 rounded bg-accent text-accent-content place-content-center"
-        prop.text "2"
-    ]
-    Html.div [
-        prop.className "grid w-32 h-20 rounded bg-secondary text-secondary-content place-content-center"
-        prop.text "3"
+    prop.className "w-32 h-20"
+    prop.children [
+        Html.div [
+            prop.className "grid rounded bg-primary text-primary-content place-content-center"
+            prop.text "1"
+        ]
+        Html.div [
+            prop.className "grid rounded bg-accent text-accent-content place-content-center"
+            prop.text "2"
+        ]
+        Html.div [
+            prop.className "grid rounded bg-secondary text-secondary-content place-content-center"
+            prop.text "3"
+        ]
     ]
 ]"""
     let title = Html.text "With stack"
@@ -78,26 +84,26 @@ let stackedImages =
     let example =
         Daisy.stack [
             Html.img [
-                prop.src "https://daisyui.com/tailwind-css-component-profile-1@94w.png"
+                prop.src "https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
             ]
             Html.img [
-                prop.src "https://daisyui.com/tailwind-css-component-profile-2@94w.png"
+                prop.src "https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
             ]
             Html.img [
-                prop.src "https://daisyui.com/tailwind-css-component-profile-3@94w.png"
+                prop.src "https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
             ]
         ]
         |> Html.div
 
     let code = """Daisy.stack [
     Html.img [
-        prop.src "https://daisyui.com/tailwind-css-component-profile-1@94w.png"
+        prop.src "https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
     ]
     Html.img [
-        prop.src "https://daisyui.com/tailwind-css-component-profile-2@94w.png"
+        prop.src "https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
     ]
     Html.img [
-        prop.src "https://daisyui.com/tailwind-css-component-profile-3@94w.png"
+        prop.src "https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
     ]
 ]"""
     let title = Html.text "Stacked images"

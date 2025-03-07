@@ -8,6 +8,7 @@ open Docs.SharedView
 let simple =
     let example =
         Daisy.footer [
+            footer.horizontal
             prop.className "p-10 bg-neutral text-neutral-content"
             prop.children [
                 Html.div [
@@ -36,6 +37,7 @@ let simple =
         |> Html.div
 
     let code = """Daisy.footer [
+    footer.horizontal
     prop.className "p-10 bg-neutral text-neutral-content"
     prop.children [
         Html.div [
@@ -61,7 +63,7 @@ let simple =
         ]
     ]
 ]"""
-    let title = Html.text "Simple"
+    let title = Html.text "Simple, horizontal"
     codedView title code example
 
 [<ReactComponent>]

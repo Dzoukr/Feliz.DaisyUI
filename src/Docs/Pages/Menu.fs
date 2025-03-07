@@ -9,8 +9,8 @@ open Docs.SharedView
 
 let basic =
     let example =
-        Daisy.artboard [
-            artboard.demo ++ color.bgBase200
+        Html.div [
+            prop.className "grid place-content-center rounded-box bg-base-200"
             prop.children [
                 Daisy.menu [
                     prop.className "bg-base-100 rounded-box"
@@ -35,8 +35,8 @@ let basic =
             ]
         ]
 
-    let code = """Daisy.artboard [
-    artboard.demo ++ color.bgBase200
+    let code = """Html.div [
+    prop.className "grid place-content-center rounded-box bg-base-200"
     prop.children [
         Daisy.menu [
             prop.className "bg-base-100 rounded-box"
@@ -65,8 +65,8 @@ let basic =
 
 let bordered =
     let example =
-        Daisy.artboard [
-            artboard.demo ++ color.bgBase200
+        Html.div [
+            prop.className "grid place-content-center rounded-box bg-base-200"
             prop.children [
                 Daisy.menu [
                     prop.className "bg-base-100 rounded-box"
@@ -74,15 +74,15 @@ let bordered =
                         Daisy.menuTitle "Menu title"
                         Html.li [Html.a [prop.text "Non Bordered"]]
                         Html.li [
-                            prop.className "bordered"
+                            prop.className "border"
                             prop.children [
                                 Html.a [ prop.text "Bordered"]
                             ]
                         ]
                         Html.li [
-                            prop.className "bordered disabled"
+                            menuItem.disabled
                             prop.children [
-                                Html.a [ prop.text "Bordered Disabled" ]
+                                Html.a [ prop.text "Disabled" ]
                             ]
                         ]
                     ]
@@ -90,8 +90,8 @@ let bordered =
             ]
         ]
 
-    let code = """Daisy.artboard [
-    artboard.demo ++ color.bgBase200
+    let code = """Html.div [
+    prop.className "grid place-content-center rounded-box bg-base-200"
     prop.children [
         Daisy.menu [
             prop.className "py-3 bg-base-100 rounded-box"
@@ -105,9 +105,9 @@ let bordered =
                     ]
                 ]
                 Html.li [
-                    prop.className "bordered disabled"
+                    menuItem.disabled
                     prop.children [
-                        Html.a [ prop.text "Bordered Disabled" ]
+                        Html.a [ prop.text "Disabled" ]
                     ]
                 ]
             ]
@@ -119,8 +119,8 @@ let bordered =
 
 let horizontal =
     let example =
-        Daisy.artboard [
-            artboard.demo ++ color.bgBase200
+        Html.div [
+            prop.className "grid place-content-center rounded-box bg-base-200"
             prop.children [
                 Daisy.menu [
                     menu.horizontal
@@ -145,8 +145,8 @@ let horizontal =
             ]
         ]
 
-    let code = """Daisy.artboard [
-    artboard.demo ++ color.bgBase200
+    let code = """Html.div [
+    prop.className "grid place-content-center rounded-box bg-base-200"
     prop.children [
         Daisy.menu [
             menu.horizontal
@@ -175,8 +175,8 @@ let horizontal =
 
 let tree =
     let example =
-        Daisy.artboard [
-            prop.className "py-4" ++ artboard.demo ++ color.bgBase200
+        Html.div [
+            prop.className "grid place-content-center py-4 rounded-box bg-base-200"
             prop.children [
                 Daisy.menu [
                     prop.className "bg-base-100 rounded-box"
@@ -200,8 +200,8 @@ let tree =
             ]
         ]
 
-    let code = """Daisy.artboard [
-    prop.className "py-4" ++ artboard.demo ++ color.bgBase200
+    let code = """Html.div [
+    prop.className "grid place-content-center py-4 rounded-box bg-base-200"
     prop.children [
         Daisy.menu [
             prop.className "bg-base-100 rounded-box"

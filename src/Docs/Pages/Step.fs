@@ -49,6 +49,41 @@ let verticalSteps =
     let title = Html.text "Vertical Steps"
     codedView title code example
 
+let withIcons =
+    let example =
+        Daisy.steps [
+            Daisy.step [
+                Daisy.stepIcon (Html.text "😕")
+                Html.text "Step 1"
+            ]
+            Daisy.step [
+                Daisy.stepIcon (Html.text "😃")
+                Html.text "Step 2"
+            ]
+            Daisy.step [
+                Daisy.stepIcon (Html.text "😍")
+                Html.text "Step 3"
+            ]
+        ]
+        |> Html.div
+
+    let code = """Daisy.steps [
+    Daisy.step [
+        Daisy.stepIcon (Html.text "😕")
+        Html.text "Step 1"
+    ]
+    Daisy.step [
+        Daisy.stepIcon (Html.text "😃")
+        Html.text "Step 2"
+    ]
+    Daisy.step [
+        Daisy.stepIcon (Html.text "😍")
+        Html.text "Step 3"
+    ]
+]"""
+    let title = Html.text "Icons"
+    codedView title code example
+
 let customContent =
     let example =
         Daisy.steps [
@@ -82,4 +117,5 @@ let StepView () =
         horizontalSteps
         verticalSteps
         customContent
+        withIcons
     ]

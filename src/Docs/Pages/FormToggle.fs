@@ -16,24 +16,30 @@ let basic =
 let toggleWithLabelAndContainer =
     let example =
         Daisy.card [
-            card.bordered
+            card.border
             prop.children [
-                Daisy.formControl [
-                    Daisy.label [
-                        Daisy.labelText "Remember me"
-                        Daisy.toggle []
+                Daisy.fieldset [
+                    Daisy.fieldsetLabel [
+                        prop.className "justify-between"
+                        prop.children [
+                            Html.text "Remember me"
+                            Daisy.toggle []
+                        ]
                     ]
                 ]
             ]
         ]
 
     let code = """Daisy.card [
-    card.bordered
     prop.children [
-        Daisy.formControl [
-            Daisy.label [
-                Daisy.labelText "Remember me"
-                Daisy.toggle []
+        card.border
+        Daisy.fieldset [
+            Daisy.fieldsetLabel [
+                prop.className "justify-between"
+                prop.children [
+                    Html.text "Remember me"
+                    Daisy.toggle []
+                ]
             ]
         ]
     ]
@@ -49,13 +55,16 @@ let colors =
             toggle.accent   , nameof toggle.accent
         ]
         Daisy.card [
-            card.bordered
+            card.border
             prop.children [
                 for color, colorText in colors do
-                    Daisy.formControl [
-                        Daisy.label [
-                            Daisy.labelText colorText
-                            Daisy.toggle [color; prop.defaultChecked true]
+                    Daisy.fieldset [
+                        Daisy.fieldsetLabel [
+                            prop.className "justify-between"
+                            prop.children [
+                                Html.text colorText
+                                Daisy.toggle [color; prop.defaultChecked true]
+                            ]
                         ]
                     ]
             ]
@@ -67,13 +76,15 @@ let colors =
     toggle.accent   , nameof toggle.accent
 ]
 Daisy.card [
-    card.bordered
     prop.children [
         for color, colorText in colors do
-            Daisy.formControl [
-                Daisy.label [
-                    Daisy.labelText colorText
-                    Daisy.toggle [color; prop.defaultChecked true]
+            Daisy.fieldset [
+                Daisy.fieldsetLabel [
+                    prop.className "justify-between"
+                    prop.children [
+                        Html.text colorText
+                        Daisy.toggle [color; prop.defaultChecked true]
+                    ]
                 ]
             ]
     ]
