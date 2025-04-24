@@ -900,9 +900,18 @@ type theme =
     static member inline coffee = prop.custom("data-theme", "coffee")
     /// Set 'winter' theme
     static member inline winter = prop.custom("data-theme", "winter")
+    /// Set 'dim' theme
     static member inline dim = prop.custom("data-theme", "dim")
+    /// Set 'nord' theme
     static member inline nord = prop.custom("data-theme", "nord")
+    /// Set 'sunset' theme
     static member inline sunset = prop.custom("data-theme", "sunset")
+    /// Set 'caramellatte' theme
+    static member inline caramellatte = prop.custom("data-theme", "caramellatte")
+    /// Set 'abyss' theme
+    static member inline abyss = prop.custom("data-theme", "abyss")
+    /// Set 'silk' theme
+    static member inline silk = prop.custom("data-theme", "silk")
     /// Set custom theme
     static member inline custom (t:string) = prop.custom("data-theme", t)
     static member inline controller = prop.className "theme-controller"
