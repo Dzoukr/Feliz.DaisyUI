@@ -57,8 +57,8 @@ let private rightSide state dispatch (title:string) (docLink:string) elm =
             "dim", "🔅 dim"
             "nord", "⛰️ nord"
             "sunset", "🌆 sunset"
-            "abyss", "🕳️ abyss"
             "caramellatte", "☕ caramellatte"
+            "abyss", "🕳️ abyss"
             "silk", "👗 silk"
         ]
 
