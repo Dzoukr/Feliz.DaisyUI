@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>5.0.0</Version>
-        <PackageReleaseNotes>Move to DaisyUI 5 #18, big kudos to @kerams</PackageReleaseNotes>
+        <Version>5.1.0</Version>
+        <PackageReleaseNotes>Add new themes #22</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />
