@@ -14,7 +14,7 @@ let simple =
                 Daisy.drawerContent [
                     prop.className "flex flex-col items-center justify-center"
                     prop.children [
-                        Daisy.label [
+                        Html.label [
                             button.primary
                             prop.htmlFor "my-drawer"
                             prop.text "Open Menu"
@@ -44,7 +44,7 @@ let simple =
         Daisy.drawerContent [
             prop.className "flex flex-col items-center justify-center"
             prop.children [
-                Daisy.label [
+                Html.label [
                     button.primary
                     prop.htmlFor "my-drawer"
                     prop.text "Open Menu"
