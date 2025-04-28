@@ -134,6 +134,10 @@ type Daisy =
     static member inline drawerContent (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "drawer-content"
     static member inline drawerContent elm = Helpers.Elm.elm Html.div elm "drawer-content"
 
+    static member inline drawerButton props = Helpers.Elm.props Html.label props "btn drawer-button"
+    static member inline drawerButton (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "btn drawer-button"
+    static member inline drawerButton elm = Helpers.Elm.elm Html.label elm "btn drawer-button"
+
     static member inline drawerSide props = Helpers.Elm.props Html.div props "drawer-side"
     static member inline drawerSide (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "drawer-side"
     static member inline drawerSide elm = Helpers.Elm.elm Html.div elm "drawer-side"
