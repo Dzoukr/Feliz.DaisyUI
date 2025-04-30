@@ -604,7 +604,7 @@ Html.div [
         Daisy.drawerContent [
             prop.className "flex flex-col items-center justify-center"
             prop.children [
-                Daisy.label [
+                Daisy.drawerButton [
                     button.primary
                     prop.htmlFor "my-drawer"
                     prop.text "Open Menu"
@@ -625,7 +625,7 @@ Html.div [
             ]
         ]
     ]
-]`,a.createElement("div",h(b("drawer",d([["className","rounded-lg shadow bg-base-200 h-52"],(r=[a.createElement("input",h(b("drawer-toggle",d([["type","checkbox"],["id","my-drawer"]])))),a.createElement("div",h(b("drawer-content",d([["className","flex flex-col items-center justify-center"],(i=[a.createElement("span",h(b("label",d([["className","btn-primary"],["htmlFor","my-drawer"],["children","Open Menu"]]))))],["children",m.Children.toArray(Array.from(i))])])))),a.createElement("div",h(b("drawer-side",d([["className","absolute h-full"],(o=[a.createElement("label",h(b("drawer-overlay",v(["htmlFor","my-drawer"])))),a.createElement("ul",h(b("menu",d([["className","p-4 h-full overflow-y-auto w-80 bg-base-100 text-base-content"],(u=[a.createElement("li",{children:["Menu item 1"]}),a.createElement("li",{children:["Menu item 2"]})],["children",m.Children.toArray(Array.from(u))])]))))],["children",m.Children.toArray(Array.from(o))])]))))],["children",m.Children.toArray(Array.from(r))])])))))})();function Rv(){return a.createElement(a.Fragment,{},Ov)}const Uv=(()=>{let r,i,o,u,p;return H("Simple",`Daisy.dropdown [
+]`,a.createElement("div",h(b("drawer",d([["className","rounded-lg shadow bg-base-200 h-52"],(r=[a.createElement("input",h(b("drawer-toggle",d([["type","checkbox"],["id","my-drawer"]])))),a.createElement("div",h(b("drawer-content",d([["className","flex flex-col items-center justify-center"],(i=[a.createElement("label",h(b("btn drawer-button",d([["className","btn-primary"],["htmlFor","my-drawer"],["children","Open Menu"]]))))],["children",m.Children.toArray(Array.from(i))])])))),a.createElement("div",h(b("drawer-side",d([["className","absolute h-full"],(o=[a.createElement("label",h(b("drawer-overlay",v(["htmlFor","my-drawer"])))),a.createElement("ul",h(b("menu",d([["className","p-4 h-full overflow-y-auto w-80 bg-base-100 text-base-content"],(u=[a.createElement("li",{children:["Menu item 1"]}),a.createElement("li",{children:["Menu item 2"]})],["children",m.Children.toArray(Array.from(u))])]))))],["children",m.Children.toArray(Array.from(o))])]))))],["children",m.Children.toArray(Array.from(r))])])))))})();function Rv(){return a.createElement(a.Fragment,{},Ov)}const Uv=(()=>{let r,i,o,u,p;return H("Simple",`Daisy.dropdown [
     Daisy.button.button [
         button.primary
         prop.text "Dropdown"
