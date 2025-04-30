@@ -10,8 +10,8 @@
         <PackageIconUrl></PackageIconUrl>
         <PackageTags>fsharp;fable;tailwindcss;feliz;daisy</PackageTags>
         <Authors>Roman Provazník</Authors>
-        <Version>5.1.0</Version>
-        <PackageReleaseNotes>Add new themes #22</PackageReleaseNotes>
+        <Version>5.2.0</Version>
+        <PackageReleaseNotes>Added DaisyUI.drawerButton binding #25</PackageReleaseNotes>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Modifiers.fs" />
