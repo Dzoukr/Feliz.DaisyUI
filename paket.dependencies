@@ -1,5 +1,5 @@
 source https://api.nuget.org/v3/index.json
-framework: net8.0, netstandard2.1
+framework: net10.0, netstandard2.1
 storage: none
 strategy: min
 
@@ -8,7 +8,7 @@ nuget Fable.Core
 
 group Docs
     source https://api.nuget.org/v3/index.json
-    framework: net8.0
+    framework: net10.0
     strategy: min
     storage: none
 
@@ -20,7 +20,7 @@ group Docs
 
 group Build
     source https://api.nuget.org/v3/index.json
-    framework: net8.0
+    framework: net10.0
     strategy: min
     storage: none
 
