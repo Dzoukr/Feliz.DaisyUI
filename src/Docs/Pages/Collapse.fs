@@ -78,7 +78,7 @@ let withCheckbox =
 
 [<ReactComponent>]
 let CollapseView () =
-    React.fragment [
+    React.Fragment [
         basic
         arrow
         withCheckbox

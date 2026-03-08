@@ -78,7 +78,7 @@ Html.div [
 
 [<ReactComponent>]
 let MaskView () =
-    React.fragment [
+    React.Fragment [
         simple
         allShapes
     ]

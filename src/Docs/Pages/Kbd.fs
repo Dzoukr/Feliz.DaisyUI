@@ -46,7 +46,7 @@ Daisy.kbd "del" """
 
 [<ReactComponent>]
 let KbdView () =
-    React.fragment [
+    React.Fragment [
         single
         sizes
         keyCombo

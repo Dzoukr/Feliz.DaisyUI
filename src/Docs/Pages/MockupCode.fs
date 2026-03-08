@@ -38,7 +38,7 @@ let prefix =
 
 [<ReactComponent>]
 let MockupCodeView () =
-    React.fragment [
+    React.Fragment [
         noPrefix
         prefix
     ]

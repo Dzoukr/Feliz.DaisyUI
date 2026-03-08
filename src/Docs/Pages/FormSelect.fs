@@ -162,7 +162,7 @@ let disabled =
 
 [<ReactComponent>]
 let FormSelectView () =
-    React.fragment [
+    React.Fragment [
         basic
         colors
         sizes

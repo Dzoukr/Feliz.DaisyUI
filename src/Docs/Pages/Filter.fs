@@ -42,7 +42,7 @@ let div =
 
 [<ReactComponent>]
 let FilterView () =
-    React.fragment [
+    React.Fragment [
         form
         div
     ]

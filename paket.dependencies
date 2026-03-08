@@ -1,9 +1,10 @@
 source https://api.nuget.org/v3/index.json
-framework: net8.0, netstandard2.0
+framework: net8.0, netstandard2.1
 storage: none
 strategy: min
 
-nuget Feliz >= 2.4.1
+nuget Feliz >= 3.1.0
+nuget Fable.Core
 
 group Docs
     source https://api.nuget.org/v3/index.json
@@ -14,7 +15,7 @@ group Docs
     nuget Fable.Core
     nuget Fable.React
     nuget Feliz
-    nuget Feliz.Router
+    nuget alex312.Feliz.Router
     nuget Feliz.UseElmish
 
 group Build

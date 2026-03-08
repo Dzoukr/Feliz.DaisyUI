@@ -89,7 +89,7 @@ let ex2 =
 
 [<ReactComponent>]
 let ThemesView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
     ]

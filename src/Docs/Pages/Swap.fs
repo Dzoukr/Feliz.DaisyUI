@@ -57,7 +57,7 @@ let ex2 =
 
 [<ReactComponent>]
 let SwapView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
     ]

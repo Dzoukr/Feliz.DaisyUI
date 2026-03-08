@@ -82,7 +82,7 @@ let horizontal =
 
 [<ReactComponent>]
 let DividerView () =
-    React.fragment [
+    React.Fragment [
         vertical
         horizontal
     ]

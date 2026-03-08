@@ -68,7 +68,7 @@ let small =
 
 [<ReactComponent>]
 let RatingView () =
-    React.fragment [
+    React.Fragment [
         big
         small
     ]

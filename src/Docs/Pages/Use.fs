@@ -9,7 +9,7 @@ open Docs.SharedView
 
 [<ReactComponent>]
 let UseView () =
-    React.fragment [
+    React.Fragment [
         Html.divClassed "description" [ Html.text "After installation just open proper namespace:" ]
         Html.divClassed "max-w-xl" [
             linedMockupCode "open Feliz.DaisyUI"

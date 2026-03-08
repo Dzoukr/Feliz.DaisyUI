@@ -46,7 +46,7 @@ let ex2 =
 
 [<ReactComponent>]
 let SkeletonView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
     ]

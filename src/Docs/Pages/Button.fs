@@ -116,7 +116,7 @@ let ex3 =
 
 [<ReactComponent>]
 let ButtonView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
         ex3

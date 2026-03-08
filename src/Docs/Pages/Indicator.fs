@@ -114,7 +114,7 @@ let allPositions =
 
 [<ReactComponent>]
 let IndicatorView () =
-    React.fragment [
+    React.Fragment [
         simple
         button
         avatar

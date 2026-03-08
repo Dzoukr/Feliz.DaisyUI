@@ -43,7 +43,7 @@ let allColors =
                 Daisy.progress [color; prop.value 75; prop.max 100]
                 Daisy.progress [color; prop.value 100; prop.max 100]
         ]
-    
+
     let code = """let colors =
     [ progress.primary  , "primary"
       progress.secondary, "secondary"
@@ -67,7 +67,7 @@ Html.div [
 
 [<ReactComponent>]
 let ProgressView () =
-    React.fragment [
+    React.Fragment [
         simple
         allColors
     ]

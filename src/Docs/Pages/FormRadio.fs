@@ -129,7 +129,7 @@ let sizes =
 
 [<ReactComponent>]
 let FormRadioView () =
-    React.fragment [
+    React.Fragment [
         colors
         sizes
     ]

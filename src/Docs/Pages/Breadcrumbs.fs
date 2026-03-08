@@ -31,6 +31,6 @@ let ex1 =
 
 [<ReactComponent>]
 let BreadcrumbsView () =
-    React.fragment [
+    React.Fragment [
         ex1
     ]

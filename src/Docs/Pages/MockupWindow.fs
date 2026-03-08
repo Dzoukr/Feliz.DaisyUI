@@ -58,7 +58,7 @@ let withBgColor =
 
 [<ReactComponent>]
 let MockupWindowView () =
-    React.fragment [
+    React.Fragment [
         simple
         withBgColor
     ]

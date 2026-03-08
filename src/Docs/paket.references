@@ -3,6 +3,6 @@ group Docs
     Fable.React
     Feliz
     Feliz.CompilerPlugins
-    Feliz.Router
+    alex312.Feliz.Router
     Feliz.UseElmish
 

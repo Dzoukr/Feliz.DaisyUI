@@ -193,7 +193,7 @@ Html.div [
 
 [<ReactComponent>]
 let DropdownView () =
-    React.fragment [
+    React.Fragment [
         simple
         hover
         open'

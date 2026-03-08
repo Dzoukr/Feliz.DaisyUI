@@ -76,7 +76,7 @@ let colors =
 
 [<ReactComponent>]
 let LinkView () =
-    React.fragment [
+    React.Fragment [
         basic
         color
         hover

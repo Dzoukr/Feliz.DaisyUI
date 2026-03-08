@@ -71,6 +71,6 @@ let simple =
 
 [<ReactComponent>]
 let DrawerView () =
-    React.fragment [
+    React.Fragment [
         simple
     ]

@@ -173,7 +173,7 @@ let withInput =
 
 [<ReactComponent>]
 let NavbarView () =
-    React.fragment [
+    React.Fragment [
         iconAndText
         startCenterEnd
         withInput

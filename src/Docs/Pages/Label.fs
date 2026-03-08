@@ -127,7 +127,7 @@ let floatingSizes =
 
 [<ReactComponent>]
 let LabelView () =
-    React.fragment [
+    React.Fragment [
         input'
         inputEnd
         select

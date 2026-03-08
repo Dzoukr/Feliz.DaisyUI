@@ -23,6 +23,6 @@ let ex1 =
 
 [<ReactComponent>]
 let ThemeControllerView () =
-    React.fragment [
+    React.Fragment [
         ex1
     ]

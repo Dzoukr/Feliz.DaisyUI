@@ -61,7 +61,7 @@ let vertical =
 
 [<ReactComponent>]
 let CarouselView () =
-    React.fragment [
+    React.Fragment [
         horizontal
         vertical
     ]

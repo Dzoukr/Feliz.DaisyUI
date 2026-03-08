@@ -105,7 +105,7 @@ let joined =
 
 [<ReactComponent>]
 let FieldsetView () =
-    React.fragment [
+    React.Fragment [
         labelLegend
         multiple
         joined

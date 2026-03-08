@@ -61,7 +61,7 @@ let grow =
                                 ]
                             ]
                         ]
-                    ]                    
+                    ]
                 ]
 
                 Daisy.listRow [
@@ -110,7 +110,7 @@ let grow =
                                 ]
                             ]
                         ]
-                    ]                    
+                    ]
                 ]
 
                 Daisy.listRow [
@@ -159,7 +159,7 @@ let grow =
                                 ]
                             ]
                         ]
-                    ]                    
+                    ]
                 ]
             ]
         ]
@@ -220,7 +220,7 @@ let grow =
                         ]
                     ]
                 ]
-            ]                    
+            ]
         ]
 
         Daisy.listRow [
@@ -269,7 +269,7 @@ let grow =
                         ]
                     ]
                 ]
-            ]                    
+            ]
         ]
 
         Daisy.listRow [
@@ -318,7 +318,7 @@ let grow =
                         ]
                     ]
                 ]
-            ]                    
+            ]
         ]
     ]
 ]"""
@@ -378,7 +378,7 @@ let wrap =
                                 ]
                             ]
                         ]
-                    ]                    
+                    ]
                 ]
 
                 Daisy.listRow [
@@ -423,7 +423,7 @@ let wrap =
                                 ]
                             ]
                         ]
-                    ]                    
+                    ]
                 ]
 
                 Daisy.listRow [
@@ -468,7 +468,7 @@ let wrap =
                                 ]
                             ]
                         ]
-                    ]                    
+                    ]
                 ]
             ]
         ]
@@ -525,7 +525,7 @@ let wrap =
                         ]
                     ]
                 ]
-            ]                    
+            ]
         ]
 
         Daisy.listRow [
@@ -570,7 +570,7 @@ let wrap =
                         ]
                     ]
                 ]
-            ]                    
+            ]
         ]
 
         Daisy.listRow [
@@ -615,7 +615,7 @@ let wrap =
                         ]
                     ]
                 ]
-            ]                    
+            ]
         ]
     ]
 ]"""
@@ -624,7 +624,7 @@ let wrap =
 
 [<ReactComponent>]
 let ListView () =
-    React.fragment [
+    React.Fragment [
         grow
         wrap
     ]

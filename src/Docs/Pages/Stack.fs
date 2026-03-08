@@ -111,7 +111,7 @@ let stackedImages =
 
 [<ReactComponent>]
 let StackView () =
-    React.fragment [
+    React.Fragment [
         withoutStack
         withStack
         stackedImages

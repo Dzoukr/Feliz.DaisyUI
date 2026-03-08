@@ -54,6 +54,6 @@ let advanced =
 
 [<ReactComponent>]
 let HeroView () =
-    React.fragment [
+    React.Fragment [
         advanced
     ]

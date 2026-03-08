@@ -66,7 +66,7 @@ let ex3 =
 
 [<ReactComponent>]
 let BadgeView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
         ex3

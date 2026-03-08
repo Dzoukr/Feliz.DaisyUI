@@ -14,7 +14,7 @@ let basic =
                 prop.className "h-24"
             ]
         ]
-        
+
     let code = """Daisy.fieldset [
     Daisy.fieldsetLabel "Your bio"
     Daisy.textarea [
@@ -47,7 +47,7 @@ let colors =
                     ]
                 ]
         ]
-        
+
     let code = """let colors = [
     textarea.primary  , "primary"
     textarea.secondary, "secondary"
@@ -73,7 +73,7 @@ Html.div [
 
 [<ReactComponent>]
 let FormTextareaView () =
-    React.fragment [
+    React.Fragment [
         basic
         colors
     ]

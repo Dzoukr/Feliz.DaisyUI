@@ -68,6 +68,6 @@ let simple =
 
 [<ReactComponent>]
 let FooterView () =
-    React.fragment [
+    React.Fragment [
         simple
     ]

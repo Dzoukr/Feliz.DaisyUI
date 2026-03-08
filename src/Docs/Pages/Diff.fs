@@ -79,7 +79,7 @@ let ex2 =
 
 [<ReactComponent>]
 let DiffView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
     ]

@@ -39,7 +39,7 @@ let ex1 =
 
 [<ReactComponent>]
 let ColorsView () =
-    React.fragment [
+    React.Fragment [
         ex1
     ]
 

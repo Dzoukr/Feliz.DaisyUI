@@ -77,7 +77,7 @@ let allPhones =
             "w-[320px] h-[1024px]", "phone6", color.borderWarning
         ]
         Html.div [
-            for phone, phoneText, borderColor in phones do 
+            for phone, phoneText, borderColor in phones do
                 Daisy.mockupPhone [
                     prop.className "bg-base-300"
                     borderColor
@@ -100,7 +100,7 @@ let allPhones =
     "w-[320px] h-[1024px]", "phone6", color.borderWarning
 ]
 Html.div [
-    for phone, phoneText, borderColor in phones do 
+    for phone, phoneText, borderColor in phones do
         Daisy.mockupPhone [
             prop.className "bg-base-300"
             borderColor
@@ -118,7 +118,7 @@ Html.div [
 
 [<ReactComponent>]
 let MockupPhoneView () =
-    React.fragment [
+    React.Fragment [
         iphoneMockup
         iphoneWithColor
         allPhones

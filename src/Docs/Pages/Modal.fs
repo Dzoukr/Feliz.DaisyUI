@@ -57,6 +57,6 @@ let modalWithToggle =
 
 [<ReactComponent>]
 let ModalView () =
-    React.fragment [
+    React.Fragment [
         modalWithToggle
     ]

@@ -77,7 +77,7 @@ let ex4 =
 
 [<ReactComponent>]
 let AlertView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
         ex3
