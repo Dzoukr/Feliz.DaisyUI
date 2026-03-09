@@ -47,7 +47,7 @@ let ping =
 
 [<ReactComponent>]
 let StatusView () =
-    React.fragment [
+    React.Fragment [
         basic
         ping
     ]

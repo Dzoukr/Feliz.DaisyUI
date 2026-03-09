@@ -71,7 +71,7 @@ let allColors =
 
 [<ReactComponent>]
 let RadialProgressView () =
-    React.fragment [
+    React.Fragment [
         simple
         allColors
     ]

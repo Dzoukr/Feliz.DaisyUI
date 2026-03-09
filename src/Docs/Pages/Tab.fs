@@ -139,7 +139,7 @@ Html.div [
 
 [<ReactComponent>]
 let TabView () =
-    React.fragment [
+    React.Fragment [
         simple
         bordered
         lifted

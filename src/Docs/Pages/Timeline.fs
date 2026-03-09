@@ -108,7 +108,7 @@ let ex2 =
 
 [<ReactComponent>]
 let TimelineView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
     ]

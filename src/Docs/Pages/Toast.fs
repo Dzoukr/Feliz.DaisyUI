@@ -95,7 +95,7 @@ let topLeft =
 
 [<ReactComponent>]
 let ToastView () =
-    React.fragment [
+    React.Fragment [
         middle
         bottom
         topLeft

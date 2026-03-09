@@ -168,6 +168,6 @@ let simple =
 
 [<ReactComponent>]
 let DockView () =
-    React.fragment [
+    React.Fragment [
         simple
     ]

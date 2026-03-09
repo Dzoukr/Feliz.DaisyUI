@@ -124,7 +124,7 @@ Html.div [
 
 [<ReactComponent>]
 let FormCheckboxView () =
-    React.fragment [
+    React.Fragment [
         basic
         basicChecked
         basicLabel

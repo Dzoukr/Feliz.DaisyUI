@@ -43,7 +43,7 @@ let sizes =
 
 [<ReactComponent>]
 let FormRangeView () =
-    React.fragment [
+    React.Fragment [
         colors
         sizes
     ]

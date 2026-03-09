@@ -100,7 +100,7 @@ Html.div [
 
 [<ReactComponent>]
 let TooltipView () =
-    React.fragment [
+    React.Fragment [
         simple
         directions
         colors

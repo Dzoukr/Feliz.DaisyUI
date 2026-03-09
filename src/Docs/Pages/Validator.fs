@@ -91,7 +91,7 @@ let toggle =
 
 [<ReactComponent>]
 let ValidatorView () =
-    React.fragment [
+    React.Fragment [
         simple
         password
         toggle

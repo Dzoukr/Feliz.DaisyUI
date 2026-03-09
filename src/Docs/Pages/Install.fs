@@ -9,7 +9,7 @@ open Docs.SharedView
 
 [<ReactComponent>]
 let InstallView () =
-    React.fragment [
+    React.Fragment [
         Html.divClassed "description" [
             Html.text "First of all you need to follow the "
             Html.a [ prop.className "link"; prop.href "https://daisyui.com/docs/install"; prop.text "DaisyUI installation steps" ]

@@ -113,7 +113,7 @@ let ex2 =
 
 [<ReactComponent>]
 let AvatarView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
     ]

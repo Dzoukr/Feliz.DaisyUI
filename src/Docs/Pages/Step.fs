@@ -113,7 +113,7 @@ let customContent =
 
 [<ReactComponent>]
 let StepView () =
-    React.fragment [
+    React.Fragment [
         horizontalSteps
         verticalSteps
         customContent

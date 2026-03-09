@@ -62,6 +62,6 @@ let basic (state: State) (dispatch: Msg -> unit) =
 let CountdownView () =
     let state,dispatch = React.useElmish(init, update, [||])
 
-    React.fragment [
+    React.Fragment [
         basic state dispatch
     ]

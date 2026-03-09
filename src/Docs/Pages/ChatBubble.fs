@@ -261,7 +261,7 @@ Html.div [
 
 [<ReactComponent>]
 let ChatBubble () =
-    React.fragment [
+    React.Fragment [
         simple
         withImages
         header

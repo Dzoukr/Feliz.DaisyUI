@@ -1,4 +1,4 @@
-﻿module Docs.Pages.Join
+module Docs.Pages.Join
 
 open Feliz
 open Elmish
@@ -55,6 +55,6 @@ let ex1 =
 
 [<ReactComponent>]
 let JoinView () =
-    React.fragment [
+    React.Fragment [
         ex1
     ]

@@ -331,7 +331,7 @@ Daisy.table [
 
 [<ReactComponent>]
 let TableView () =
-    React.fragment [
+    React.Fragment [
         simple
         activeRow
         hoverRow

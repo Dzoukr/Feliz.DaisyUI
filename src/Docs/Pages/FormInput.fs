@@ -188,7 +188,7 @@ let inputWithButton =
 
 [<ReactComponent>]
 let FormInputView () =
-    React.fragment [
+    React.Fragment [
         inputWithBorder
         inputWithoutBorder
         inputGhostNoBackground

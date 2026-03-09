@@ -159,7 +159,7 @@ let cardWithBorderNoImage =
 
 [<ReactComponent>]
 let CardView () =
-    React.fragment [
+    React.Fragment [
         cardWithBorderNoImage
         cardWithShadowNoImage
         cardTopImage

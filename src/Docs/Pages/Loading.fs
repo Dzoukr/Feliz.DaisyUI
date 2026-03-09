@@ -1,4 +1,4 @@
-﻿module Docs.Pages.Loading
+module Docs.Pages.Loading
 
 open Feliz
 open Elmish
@@ -69,7 +69,7 @@ let ex3 =
 
 [<ReactComponent>]
 let LoadingView () =
-    React.fragment [
+    React.Fragment [
         ex1
         ex2
         ex3

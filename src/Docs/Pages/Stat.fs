@@ -158,7 +158,7 @@ let centered =
 
 [<ReactComponent>]
 let StatView () =
-    React.fragment [
+    React.Fragment [
         simple
         withFigure
         centered

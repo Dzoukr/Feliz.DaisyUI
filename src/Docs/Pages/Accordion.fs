@@ -75,7 +75,7 @@ let ex1 =
 
 [<ReactComponent>]
 let AccordionView () =
-    React.fragment [
+    React.Fragment [
         Html.divClassed "flex flex-col gap-2" [
             Daisy.alert "Accordion uses the same style as the collapse component but it works with radio inputs. You can control which item to be open by checking/unchecking the hidden radio input."
             Daisy.alert "All radio inputs with the same name work together and only one of them can be open at a time. If you have more than one set of accordion items on a page, use different names for the radio inputs on each set."

@@ -69,7 +69,7 @@ Html.div [
 
 [<ReactComponent>]
 let PaginationView () =
-    React.fragment [
+    React.Fragment [
         simple
         sizes
     ]

@@ -186,7 +186,7 @@ let fileWithButton =
 
 [<ReactComponent>]
 let FileInputView () =
-    React.fragment [
+    React.Fragment [
         fileWithBorder
         fileWithoutBorder
         fileGhostNoBackground

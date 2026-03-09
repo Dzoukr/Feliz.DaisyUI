@@ -94,7 +94,7 @@ Daisy.card [
 
 [<ReactComponent>]
 let FormToggleView () =
-    React.fragment [
+    React.Fragment [
         basic
         toggleWithLabelAndContainer
         colors

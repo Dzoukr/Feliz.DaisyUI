@@ -227,7 +227,7 @@ let tree =
 
 [<ReactComponent>]
 let MenuView () =
-    React.fragment [
+    React.Fragment [
         basic
         bordered
         horizontal
