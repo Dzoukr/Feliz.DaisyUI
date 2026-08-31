@@ -4,6 +4,7 @@
 .farmer/
 .idea/
 .ionide/
+.vscode/
 .vs/
 obj/
 bin/

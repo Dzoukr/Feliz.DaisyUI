@@ -242,11 +242,18 @@ type Daisy =
     static member inline modalBackdrop int = Helpers.Elm.int Html.label int "modal-backdrop"
     static member inline modalBackdrop float = Helpers.Elm.float Html.label float "modal-backdrop"
 
+    /// Obsolete: `modal-button` was removed from daisyUI; use current modal action or backdrop markup.
+    [<Obsolete("The modal-button class was removed from daisyUI. Use Daisy.button.button or Daisy.button.label with current modal markup.")>]
     static member inline modalButton props = Helpers.Elm.props Html.label props "btn modal-button"
+    [<Obsolete("The modal-button class was removed from daisyUI. Use Daisy.button.button or Daisy.button.label with current modal markup.")>]
     static member inline modalButton (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "btn modal-button"
+    [<Obsolete("The modal-button class was removed from daisyUI. Use Daisy.button.button or Daisy.button.label with current modal markup.")>]
     static member inline modalButton elm = Helpers.Elm.elm Html.label elm "btn modal-button"
+    [<Obsolete("The modal-button class was removed from daisyUI. Use Daisy.button.button or Daisy.button.label with current modal markup.")>]
     static member inline modalButton string = Helpers.Elm.string Html.label string "btn modal-button"
+    [<Obsolete("The modal-button class was removed from daisyUI. Use Daisy.button.button or Daisy.button.label with current modal markup.")>]
     static member inline modalButton int = Helpers.Elm.int Html.label int "btn modal-button"
+    [<Obsolete("The modal-button class was removed from daisyUI. Use Daisy.button.button or Daisy.button.label with current modal markup.")>]
     static member inline modalButton float = Helpers.Elm.float Html.label float "btn modal-button"
 
     static member inline navbar props = Helpers.Elm.props Html.div props "navbar"
@@ -315,6 +322,10 @@ type Daisy =
     static member inline statFigure int = Helpers.Elm.int Html.div int "stat-figure"
     static member inline statFigure float = Helpers.Elm.float Html.div float "stat-figure"
 
+    static member inline statActions props = Helpers.Elm.props Html.div props "stat-actions"
+    static member inline statActions (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "stat-actions"
+    static member inline statActions elm = Helpers.Elm.elm Html.div elm "stat-actions"
+
     static member inline steps props = Helpers.Elm.props Html.ul props "steps"
     static member inline steps (children: #seq<ReactElement>) = Helpers.Elm.children Html.ul children "steps"
     static member inline steps elm = Helpers.Elm.elm Html.ul elm "steps"
@@ -382,6 +393,14 @@ type Daisy =
     static member inline mockupCode props = Helpers.Elm.props Html.div props "mockup-code"
     static member inline mockupCode (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-code"
     static member inline mockupCode elm = Helpers.Elm.elm Html.div elm "mockup-code"
+
+    static member inline mockupBrowser props = Helpers.Elm.props Html.div props "mockup-browser"
+    static member inline mockupBrowser (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-browser"
+    static member inline mockupBrowser elm = Helpers.Elm.elm Html.div elm "mockup-browser"
+
+    static member inline mockupBrowserToolbar props = Helpers.Elm.props Html.div props "mockup-browser-toolbar"
+    static member inline mockupBrowserToolbar (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-browser-toolbar"
+    static member inline mockupBrowserToolbar elm = Helpers.Elm.elm Html.div elm "mockup-browser-toolbar"
 
     static member inline mockupPhone props = Helpers.Elm.props Html.div props "mockup-phone"
     static member inline mockupPhone (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "mockup-phone"
@@ -577,6 +596,52 @@ type Daisy =
     static member inline listRow props = Helpers.Elm.props Html.li props "list-row"
     static member inline listRow (children: #seq<ReactElement>) = Helpers.Elm.children Html.li children "list-row"
     static member inline listRow elm = Helpers.Elm.elm Html.li elm "list-row"
+
+    static member inline aura props = Helpers.Elm.props Html.div props "aura"
+    static member inline aura (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "aura"
+    static member inline aura elm = Helpers.Elm.elm Html.div elm "aura"
+
+    static member inline fab props = Helpers.Elm.props Html.div props "fab"
+    static member inline fab (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "fab"
+    static member inline fab elm = Helpers.Elm.elm Html.div elm "fab"
+
+    static member inline fabClose props = Helpers.Elm.props Html.button props "btn fab-close"
+    static member inline fabClose (children: #seq<ReactElement>) = Helpers.Elm.children Html.button children "btn fab-close"
+    static member inline fabClose elm = Helpers.Elm.elm Html.button elm "btn fab-close"
+    static member inline fabClose string = Helpers.Elm.string Html.button string "btn fab-close"
+    static member inline fabClose int = Helpers.Elm.int Html.button int "btn fab-close"
+    static member inline fabClose float = Helpers.Elm.float Html.button float "btn fab-close"
+
+    static member inline fabMainAction props = Helpers.Elm.props Html.button props "btn fab-main-action"
+    static member inline fabMainAction (children: #seq<ReactElement>) = Helpers.Elm.children Html.button children "btn fab-main-action"
+    static member inline fabMainAction elm = Helpers.Elm.elm Html.button elm "btn fab-main-action"
+    static member inline fabMainAction string = Helpers.Elm.string Html.button string "btn fab-main-action"
+    static member inline fabMainAction int = Helpers.Elm.int Html.button int "btn fab-main-action"
+    static member inline fabMainAction float = Helpers.Elm.float Html.button float "btn fab-main-action"
+
+    static member inline hoverGallery props = Helpers.Elm.props Html.figure props "hover-gallery"
+    static member inline hoverGallery (children: #seq<ReactElement>) = Helpers.Elm.children Html.figure children "hover-gallery"
+    static member inline hoverGallery elm = Helpers.Elm.elm Html.figure elm "hover-gallery"
+
+    static member inline hover3d props = Helpers.Elm.props Html.div props "hover-3d"
+    static member inline hover3d (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "hover-3d"
+    static member inline hover3d elm = Helpers.Elm.elm Html.div elm "hover-3d"
+
+    static member inline textRotate props = Helpers.Elm.props Html.span props "text-rotate"
+    static member inline textRotate (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "text-rotate"
+    static member inline textRotate elm = Helpers.Elm.elm Html.span elm "text-rotate"
+
+    static member inline megamenu props = Helpers.Elm.props Html.div props "megamenu"
+    static member inline megamenu (children: #seq<ReactElement>) = Helpers.Elm.children Html.div children "megamenu"
+    static member inline megamenu elm = Helpers.Elm.elm Html.div elm "megamenu"
+
+    static member inline megamenuActive props = Helpers.Elm.props Html.span props "megamenu-active"
+    static member inline megamenuActive (children: #seq<ReactElement>) = Helpers.Elm.children Html.span children "megamenu-active"
+    static member inline megamenuActive elm = Helpers.Elm.elm Html.span elm "megamenu-active"
+
+    static member inline otp props = Helpers.Elm.props Html.label props "otp"
+    static member inline otp (children: #seq<ReactElement>) = Helpers.Elm.children Html.label children "otp"
+    static member inline otp elm = Helpers.Elm.elm Html.label elm "otp"
 
 module Daisy =
     [<Erase>]

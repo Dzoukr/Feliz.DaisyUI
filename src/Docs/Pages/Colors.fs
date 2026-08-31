@@ -14,6 +14,10 @@ let ex1 =
             Html.div [ color.textSuccess; prop.text "I am success!" ]
             Html.div [ color.bgAccent; prop.text "Background accent" ]
             Html.div [ (color.bgError ++ color.textSuccess); prop.text "Success with error background 🤦" ]
+            Html.div [ color.bgInfo; color.textInfoContent; prop.text "Info content on info" ]
+            Html.div [ color.bgSuccess; color.textSuccessContent; prop.text "Success content on success" ]
+            Html.div [ color.bgWarning; color.textWarningContent; prop.text "Warning content on warning" ]
+            Html.div [ color.bgError; color.textErrorContent; prop.text "Error content on error" ]
         ]
 
     let code = """Html.div [
@@ -25,6 +29,10 @@ let ex1 =
         (color.bgError ++ color.textSuccess)
         prop.text "Success with error background 🤦"
     ]
+    Html.div [ color.bgInfo; color.textInfoContent; prop.text "Info content on info" ]
+    Html.div [ color.bgSuccess; color.textSuccessContent; prop.text "Success content on success" ]
+    Html.div [ color.bgWarning; color.textWarningContent; prop.text "Warning content on warning" ]
+    Html.div [ color.bgError; color.textErrorContent; prop.text "Error content on error" ]
 ]"""
 
     let title =

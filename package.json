@@ -8,13 +8,13 @@
         "build": "dotnet fable ./src/Docs --outDir ./src/Docs/.fable-build --run vite build"
     },
     "devDependencies": {
-        "@vitejs/plugin-react": "^5.1.4",
+        "@vitejs/plugin-react": "^6.0.0",
         "@tailwindcss/vite":"^4.0.11",
-        "vite": "^7.3.1"
+        "vite": "^8.2.0"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^7.2.0",
-        "daisyui": "^5.0.0",
+        "daisyui": "^5.7.16",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "tailwindcss": "^4.0.11",

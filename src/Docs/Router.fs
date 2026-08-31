@@ -11,6 +11,7 @@ type Page =
     | Colors
     | Accordion
     | Alert
+    | Aura
     | Avatar
     | Badge
     | Breadcrumbs
@@ -25,10 +26,13 @@ type Page =
     | Dock
     | Drawer
     | Dropdown
+    | Fab
     | Fieldset
     | Filter
     | Footer
     | Hero
+    | Hover3D
+    | HoverGallery
     | Join
     | Indicator
     | Kbd
@@ -38,8 +42,10 @@ type Page =
     | Loading
     | Mask
     | Menu
+    | Megamenu
     | Modal
     | Navbar
+    | Otp
     | Pagination
     | Progress
     | RadialProgress
@@ -51,6 +57,7 @@ type Page =
     | Swap
     | Tab
     | Table
+    | TextRotate
     | ThemeController
     | Timeline
     | Toast
@@ -64,6 +71,7 @@ type Page =
     | FormSelect
     | FormTextarea
     | FormToggle
+    | MockupBrowser
     | MockupCode
     | MockupPhone
     | MockupWindow
@@ -78,6 +86,7 @@ module Page =
         | [ "themes" ] -> Page.Themes
         | [ "colors" ] -> Page.Colors
         | [ "alert" ] -> Page.Alert
+        | [ "aura" ] -> Page.Aura
         | [ "accordion" ] -> Page.Accordion
         | [ "avatar" ] -> Page.Avatar
         | [ "badge" ] -> Page.Badge
@@ -93,10 +102,13 @@ module Page =
         | [ "dock" ] -> Page.Dock
         | [ "drawer" ] -> Page.Drawer
         | [ "dropdown" ] -> Page.Dropdown
+        | [ "fab" ] -> Page.Fab
         | [ "fieldset" ] -> Page.Fieldset
         | [ "filter" ] -> Page.Filter
         | [ "footer" ] -> Page.Footer
         | [ "hero" ] -> Page.Hero
+        | [ "hover3d" ] -> Page.Hover3D
+        | [ "hovergallery" ] -> Page.HoverGallery
         | [ "indicator" ] -> Page.Indicator
         | [ "join" ] -> Page.Join
         | [ "kbd" ] -> Page.Kbd
@@ -106,8 +118,10 @@ module Page =
         | [ "loading" ] -> Page.Loading
         | [ "mask" ] -> Page.Mask
         | [ "menu" ] -> Page.Menu
+        | [ "megamenu" ] -> Page.Megamenu
         | [ "modal" ] -> Page.Modal
         | [ "navbar" ] -> Page.Navbar
+        | [ "otp" ] -> Page.Otp
         | [ "pagination" ] -> Page.Pagination
         | [ "progress" ] -> Page.Progress
         | [ "radialprogress" ] -> Page.RadialProgress
@@ -119,6 +133,7 @@ module Page =
         | [ "swap" ] -> Page.Swap
         | [ "tab" ] -> Page.Tab
         | [ "table" ] -> Page.Table
+        | [ "textrotate" ] -> Page.TextRotate
         | [ "themecontroller" ] -> Page.ThemeController
         | [ "timeline" ] -> Page.Timeline
         | [ "toast" ] -> Page.Toast
@@ -132,6 +147,7 @@ module Page =
         | [ "formselect" ] -> Page.FormSelect
         | [ "formtextarea" ] -> Page.FormTextarea
         | [ "formtoggle" ] -> Page.FormToggle
+        | [ "mockupbrowser" ] -> Page.MockupBrowser
         | [ "mockupcode" ] -> Page.MockupCode
         | [ "mockupphone" ] -> Page.MockupPhone
         | [ "mockupwindow" ] -> Page.MockupWindow
@@ -148,6 +164,7 @@ module Page =
         | Page.Colors -> [ "colors" ] |> noQueryString
         | Page.Accordion -> [ "accordion" ] |> noQueryString
         | Page.Alert -> [ "alert" ] |> noQueryString
+        | Page.Aura -> [ "aura" ] |> noQueryString
         | Page.Avatar -> [ "avatar" ] |> noQueryString
         | Page.Badge -> [ "badge" ] |> noQueryString
         | Page.Breadcrumbs -> [ "breadcrumbs" ] |> noQueryString
@@ -162,10 +179,13 @@ module Page =
         | Page.Dock -> [ "dock" ] |> noQueryString
         | Page.Drawer -> [ "drawer" ] |> noQueryString
         | Page.Dropdown -> [ "dropdown" ] |> noQueryString
+        | Page.Fab -> [ "fab" ] |> noQueryString
         | Page.Fieldset -> [ "fieldset" ] |> noQueryString
         | Page.Filter -> [ "filter" ] |> noQueryString
         | Page.Footer -> [ "footer" ] |> noQueryString
         | Page.Hero -> [ "hero" ] |> noQueryString
+        | Page.Hover3D -> [ "hover3d" ] |> noQueryString
+        | Page.HoverGallery -> [ "hovergallery" ] |> noQueryString
         | Page.Indicator -> [ "indicator" ] |> noQueryString
         | Page.Join -> [ "join" ] |> noQueryString
         | Page.Kbd -> [ "kbd" ] |> noQueryString
@@ -175,8 +195,10 @@ module Page =
         | Page.Loading -> [ "loading" ] |> noQueryString
         | Page.Mask -> [ "mask" ] |> noQueryString
         | Page.Menu -> [ "menu" ] |> noQueryString
+        | Page.Megamenu -> [ "megamenu" ] |> noQueryString
         | Page.Modal -> [ "modal" ] |> noQueryString
         | Page.Navbar -> [ "navbar" ] |> noQueryString
+        | Page.Otp -> [ "otp" ] |> noQueryString
         | Page.Pagination -> [ "pagination" ] |> noQueryString
         | Page.Progress -> [ "progress" ] |> noQueryString
         | Page.RadialProgress -> [ "radialprogress" ] |> noQueryString
@@ -188,6 +210,7 @@ module Page =
         | Page.Swap -> [ "swap" ] |> noQueryString
         | Page.Tab -> [ "tab" ] |> noQueryString
         | Page.Table -> [ "table" ] |> noQueryString
+        | Page.TextRotate -> [ "textrotate" ] |> noQueryString
         | Page.ThemeController -> [ "themecontroller" ] |> noQueryString
         | Page.Timeline -> [ "timeline" ] |> noQueryString
         | Page.Toast -> [ "toast" ] |> noQueryString
@@ -201,6 +224,7 @@ module Page =
         | Page.FormSelect -> [ "formselect" ] |> noQueryString
         | Page.FormTextarea -> [ "formtextarea" ] |> noQueryString
         | Page.FormToggle -> [ "formtoggle" ] |> noQueryString
+        | Page.MockupBrowser -> [ "mockupbrowser" ] |> noQueryString
         | Page.MockupCode -> [ "mockupcode" ] |> noQueryString
         | Page.MockupPhone -> [ "mockupphone" ] |> noQueryString
         | Page.MockupWindow -> [ "mockupwindow" ] |> noQueryString

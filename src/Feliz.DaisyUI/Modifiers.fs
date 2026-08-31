@@ -121,7 +121,8 @@ type button =
     static member inline disabled = prop.className "btn-disabled"
     /// Button with a glass effect
     static member inline glass = prop.className "glass"
-    /// Disables click animation
+    /// Obsolete: `no-animation` was removed from daisyUI and has no current selector.
+    [<Obsolete("The no-animation class was removed from daisyUI. Use a Tailwind utility such as transition-none or animate-none.")>]
     static member inline animation = prop.className "no-animation"
     /// Button with `dash` style
     static member inline dash = prop.className "btn-dash"
@@ -151,10 +152,14 @@ type card =
 
 [<Erase>]
 type carousel =
+    /// Snap elements to start (default)
+    static member inline start = prop.className "carousel-start"
     /// Snap elements to center
     static member inline center = prop.className "carousel-center"
     /// Snap elements to end
     static member inline end' = prop.className "carousel-end"
+    /// Horizontal carousel (default)
+    static member inline horizontal = prop.className "carousel-horizontal"
     /// Vertical carousel
     static member inline vertical = prop.className "carousel-vertical"
 
@@ -200,6 +205,8 @@ type divider =
 type drawer =
     /// puts drawer to the right
     static member inline end' = prop.className "drawer-end"
+    /// Keeps the drawer open
+    static member inline open' = prop.className "drawer-open"
 
 [<Erase>]
 type dropdown =
@@ -211,6 +218,8 @@ type dropdown =
     static member inline center = prop.className "dropdown-center"
     /// Open from top
     static member inline top = prop.className "dropdown-top"
+    /// Open from bottom (default)
+    static member inline bottom = prop.className "dropdown-bottom"
     /// Open from left
     static member inline left = prop.className "dropdown-left"
     /// Open from right
@@ -219,6 +228,8 @@ type dropdown =
     static member inline hover = prop.className "dropdown-hover"
     /// Force open
     static member inline open' = prop.className "dropdown-open"
+    /// Force close
+    static member inline close = prop.className "dropdown-close"
 
 [<Erase>]
 type footer =
@@ -314,6 +325,10 @@ type loading =
 
 [<Erase>]
 type mask =
+    /// Shows the first half of an element
+    static member inline half1 = prop.className "mask mask-half-1"
+    /// Shows the second half of an element
+    static member inline half2 = prop.className "mask mask-half-2"
     /// Applies `squircle` shape
     static member inline squircle = prop.className "mask mask-squircle"
     /// Applies `heart` shape
@@ -363,6 +378,8 @@ type menu =
     static member inline horizontal = prop.className "menu-horizontal"
     /// Shows the `menu-dropdown-toggle` and `menu-dropdown` collapsible submenu using JS
     static member inline dropdownShow = prop.className "menu-dropdown-show"
+    /// Enables paged navigation for nested menus
+    static member inline paged = prop.className "menu-paged"
 
 [<Erase>]
 type menuItem =
@@ -390,6 +407,8 @@ type modal =
 
 [<Erase>]
 type progress =
+    /// Adds `neutral` color
+    static member inline neutral = prop.className "progress-neutral"
     /// Adds `primary` color
     static member inline primary = prop.className "progress-primary"
     /// Adds `secondary` color
@@ -425,6 +444,8 @@ type steps =
 
 [<Erase>]
 type step =
+    /// Adds `neutral` color to step
+    static member inline neutral = prop.className "step-neutral"
     /// Adds `primary` color to step
     static member inline primary = prop.className "step-primary"
     /// Adds `secondary` color to step
@@ -505,6 +526,12 @@ type tooltip =
     static member inline left = prop.className "tooltip-left"
     /// Put tooltip on right
     static member inline right = prop.className "tooltip-right"
+    /// Align tooltip content to start
+    static member inline start = prop.className "tooltip-start"
+    /// Align tooltip content to center (default)
+    static member inline center = prop.className "tooltip-center"
+    /// Align tooltip content to end
+    static member inline end' = prop.className "tooltip-end"
     /// Adds `primary` color to tooltip
     static member inline primary = prop.className "tooltip-primary"
     /// Adds `secondary` color to tooltip
@@ -519,7 +546,8 @@ type tooltip =
     static member inline warning = prop.className "tooltip-warning"
     /// Adds `error` color to tooltip
     static member inline error = prop.className "tooltip-error"
-    /// Adds `neutral` color to tooltip
+    /// Obsolete: `tooltip-neutral` was removed from daisyUI; neutral is the default tooltip color.
+    [<Obsolete("The tooltip-neutral class was removed from daisyUI. Omit this modifier for the default neutral tooltip, or use explicit theme-color utilities.")>]
     static member inline neutral = prop.className "tooltip-neutral"
 
 [<Erase>]
@@ -555,6 +583,8 @@ type checkbox =
 type input =
     /// Adds ghost style to checkbox
     static member inline ghost = prop.className "input-ghost"
+    /// Adds `neutral` color to input
+    static member inline neutral = prop.className "input-neutral"
     /// Adds `primary` color to input
     static member inline primary = prop.className "input-primary"
     /// Adds `secondary` color to input
@@ -582,6 +612,8 @@ type input =
 
 [<Erase>]
 type radio =
+    /// Adds `neutral` color to radio
+    static member inline neutral = prop.className "radio-neutral"
     /// Adds `primary` color to radio
     static member inline primary = prop.className "radio-primary"
     /// Adds `secondary` color to radio
@@ -609,6 +641,8 @@ type radio =
 
 [<Erase>]
 type range =
+    /// Adds `neutral` color to range
+    static member inline neutral = prop.className "range-neutral"
     /// Adds `primary` color to range
     static member inline primary = prop.className "range-primary"
     /// Adds `secondary` color to range
@@ -633,11 +667,15 @@ type range =
     static member inline sm = prop.className "range-sm"
     /// Extra small range
     static member inline xs = prop.className "range-xs"
+    /// Shows the range vertically
+    static member inline vertical = prop.className "range-vertical"
 
 [<Erase>]
 type select =
     /// Adds ghost style to checkbox
     static member inline ghost = prop.className "select-ghost"
+    /// Adds `neutral` color to select
+    static member inline neutral = prop.className "select-neutral"
     /// Adds `primary` color to select
     static member inline primary = prop.className "select-primary"
     /// Adds `secondary` color to select
@@ -730,6 +768,12 @@ type toggle =
 
 [<Erase>]
 type rating =
+    /// Enables half-star rating items
+    static member inline half = prop.className "rating-half"
+    /// Hides a rating reset input
+    static member inline hidden = prop.className "rating-hidden"
+    /// Extra large size for rating
+    static member inline xl = prop.className "rating-xl"
     /// Large size for rating
     static member inline lg = prop.className "rating-lg"
     /// Medium (default) size for rating
@@ -772,10 +816,13 @@ type toast =
 
 [<Erase>]
 type file =
-    /// Adds border to file-input
+    /// Obsolete: `file-input-bordered` was removed in daisyUI 5 because file inputs have a border by default.
+    [<Obsolete("The file-input-bordered class was removed in daisyUI 5. File inputs have a border by default; use file.ghost for the borderless style.")>]
     static member inline bordered = prop.className "file-input-bordered"
     /// Adds ghost style to checkbox
     static member inline ghost = prop.className "file-input-ghost"
+    /// Adds `neutral` color to file-input
+    static member inline neutral = prop.className "file-input-neutral"
     /// Adds `primary` color to file-input
     static member inline primary = prop.className "file-input-primary"
     /// Adds `secondary` color to file-input
@@ -968,6 +1015,91 @@ type list =
     static member inline colGrow = prop.className "list-col-grow"
 
 [<Erase>]
+type skeleton =
+    /// Uses the skeleton animation as a text fill
+    static member inline text = prop.className "skeleton-text"
+
+[<Erase>]
+type aura =
+    /// Uses two opposing aura highlights
+    static member inline dual = prop.className "aura-dual"
+    /// Uses a rainbow aura
+    static member inline rainbow = prop.className "aura-rainbow"
+    /// Uses a holographic aura
+    static member inline holo = prop.className "aura-holo"
+    /// Uses a gold aura
+    static member inline gold = prop.className "aura-gold"
+    /// Uses a silver aura
+    static member inline silver = prop.className "aura-silver"
+    /// Uses a pulsing glow aura
+    static member inline glow = prop.className "aura-glow"
+    /// Extra large aura width
+    static member inline xl = prop.className "aura-xl"
+    /// Large aura width
+    static member inline lg = prop.className "aura-lg"
+    /// Medium (default) aura width
+    static member inline md = prop.className "aura-md"
+    /// Small aura width
+    static member inline sm = prop.className "aura-sm"
+    /// Extra small aura width
+    static member inline xs = prop.className "aura-xs"
+
+[<Erase>]
+type fab =
+    /// Arranges FAB actions in a flower shape
+    static member inline flower = prop.className "fab-flower"
+
+[<Erase>]
+type megamenu =
+    /// Makes the popover as wide as the megamenu
+    static member inline wide = prop.className "megamenu-wide"
+    /// Makes the popover full width
+    static member inline full = prop.className "megamenu-full"
+    /// Displays the megamenu vertically
+    static member inline vertical = prop.className "megamenu-vertical"
+    /// Extra large size for megamenu
+    static member inline xl = prop.className "megamenu-xl"
+    /// Large size for megamenu
+    static member inline lg = prop.className "megamenu-lg"
+    /// Medium (default) size for megamenu
+    static member inline md = prop.className "megamenu-md"
+    /// Small size for megamenu
+    static member inline sm = prop.className "megamenu-sm"
+    /// Extra small size for megamenu
+    static member inline xs = prop.className "megamenu-xs"
+
+[<Erase>]
+type otp =
+    /// Joins the OTP cells without gaps
+    static member inline joined = prop.className "otp-joined"
+    /// Adds `neutral` color to OTP
+    static member inline neutral = prop.className "otp-neutral"
+    /// Adds `primary` color to OTP
+    static member inline primary = prop.className "otp-primary"
+    /// Adds `secondary` color to OTP
+    static member inline secondary = prop.className "otp-secondary"
+    /// Adds `accent` color to OTP
+    static member inline accent = prop.className "otp-accent"
+    /// Adds `info` color to OTP
+    static member inline info = prop.className "otp-info"
+    /// Adds `success` color to OTP
+    static member inline success = prop.className "otp-success"
+    /// Adds `warning` color to OTP
+    static member inline warning = prop.className "otp-warning"
+    /// Adds `error` color to OTP
+    static member inline error = prop.className "otp-error"
+    /// Extra large size for OTP
+    static member inline xl = prop.className "otp-xl"
+    /// Large size for OTP
+    static member inline lg = prop.className "otp-lg"
+    /// Medium (default) size for OTP
+    static member inline md = prop.className "otp-md"
+    /// Small size for OTP
+    static member inline sm = prop.className "otp-sm"
+    /// Extra small size for OTP
+    static member inline xs = prop.className "otp-xs"
+
+[<Erase>]
 type color =
     static member inline bgPrimary = prop.className "bg-primary"
     static member inline bgPrimaryContent = prop.className "bg-primary-content"
@@ -982,9 +1114,13 @@ type color =
     static member inline bgBase300 = prop.className "bg-base-300"
     static member inline bgBaseContent = prop.className "bg-base-content"
     static member inline bgInfo = prop.className "bg-info"
+    static member inline bgInfoContent = prop.className "bg-info-content"
     static member inline bgSuccess = prop.className "bg-success"
+    static member inline bgSuccessContent = prop.className "bg-success-content"
     static member inline bgWarning = prop.className "bg-warning"
+    static member inline bgWarningContent = prop.className "bg-warning-content"
     static member inline bgError = prop.className "bg-error"
+    static member inline bgErrorContent = prop.className "bg-error-content"
     static member inline textPrimary = prop.className "text-primary"
     static member inline textPrimaryContent = prop.className "text-primary-content"
     static member inline textSecondary = prop.className "text-secondary"
@@ -998,9 +1134,13 @@ type color =
     static member inline textBase300 = prop.className "text-base-300"
     static member inline textBaseContent = prop.className "text-base-content"
     static member inline textInfo = prop.className "text-info"
+    static member inline textInfoContent = prop.className "text-info-content"
     static member inline textSuccess = prop.className "text-success"
+    static member inline textSuccessContent = prop.className "text-success-content"
     static member inline textWarning = prop.className "text-warning"
+    static member inline textWarningContent = prop.className "text-warning-content"
     static member inline textError = prop.className "text-error"
+    static member inline textErrorContent = prop.className "text-error-content"
     static member inline borderPrimary = prop.className "border-primary"
     static member inline borderPrimaryContent = prop.className "border-primary-content"
     static member inline borderSecondary = prop.className "border-secondary"
@@ -1014,9 +1154,13 @@ type color =
     static member inline borderBase300 = prop.className "border-base-300"
     static member inline borderBaseContent = prop.className "border-base-content"
     static member inline borderInfo = prop.className "border-info"
+    static member inline borderInfoContent = prop.className "border-info-content"
     static member inline borderSuccess = prop.className "border-success"
+    static member inline borderSuccessContent = prop.className "border-success-content"
     static member inline borderWarning = prop.className "border-warning"
+    static member inline borderWarningContent = prop.className "border-warning-content"
     static member inline borderError = prop.className "border-error"
+    static member inline borderErrorContent = prop.className "border-error-content"
     static member inline fromPrimary = prop.className "from-primary"
     static member inline fromPrimaryContent = prop.className "from-primary-content"
     static member inline fromSecondary = prop.className "from-secondary"
@@ -1030,9 +1174,13 @@ type color =
     static member inline fromBase300 = prop.className "from-base-300"
     static member inline fromBaseContent = prop.className "from-base-content"
     static member inline fromInfo = prop.className "from-info"
+    static member inline fromInfoContent = prop.className "from-info-content"
     static member inline fromSuccess = prop.className "from-success"
+    static member inline fromSuccessContent = prop.className "from-success-content"
     static member inline fromWarning = prop.className "from-warning"
+    static member inline fromWarningContent = prop.className "from-warning-content"
     static member inline fromError = prop.className "from-error"
+    static member inline fromErrorContent = prop.className "from-error-content"
     static member inline viaPrimary = prop.className "via-primary"
     static member inline viaPrimaryContent = prop.className "via-primary-content"
     static member inline viaSecondary = prop.className "via-secondary"
@@ -1046,9 +1194,13 @@ type color =
     static member inline viaBase300 = prop.className "via-base-300"
     static member inline viaBaseContent = prop.className "via-base-content"
     static member inline viaInfo = prop.className "via-info"
+    static member inline viaInfoContent = prop.className "via-info-content"
     static member inline viaSuccess = prop.className "via-success"
+    static member inline viaSuccessContent = prop.className "via-success-content"
     static member inline viaWarning = prop.className "via-warning"
+    static member inline viaWarningContent = prop.className "via-warning-content"
     static member inline viaError = prop.className "via-error"
+    static member inline viaErrorContent = prop.className "via-error-content"
     static member inline toPrimary = prop.className "to-primary"
     static member inline toPrimaryContent = prop.className "to-primary-content"
     static member inline toSecondary = prop.className "to-secondary"
@@ -1062,9 +1214,13 @@ type color =
     static member inline toBase300 = prop.className "to-base-300"
     static member inline toBaseContent = prop.className "to-base-content"
     static member inline toInfo = prop.className "to-info"
+    static member inline toInfoContent = prop.className "to-info-content"
     static member inline toSuccess = prop.className "to-success"
+    static member inline toSuccessContent = prop.className "to-success-content"
     static member inline toWarning = prop.className "to-warning"
+    static member inline toWarningContent = prop.className "to-warning-content"
     static member inline toError = prop.className "to-error"
+    static member inline toErrorContent = prop.className "to-error-content"
     static member inline placeholderPrimary = prop.className "placeholder-primary"
     static member inline placeholderPrimaryContent = prop.className "placeholder-primary-content"
     static member inline placeholderSecondary = prop.className "placeholder-secondary"
@@ -1078,9 +1234,13 @@ type color =
     static member inline placeholderBase300 = prop.className "placeholder-base-300"
     static member inline placeholderBaseContent = prop.className "placeholder-base-content"
     static member inline placeholderInfo = prop.className "placeholder-info"
+    static member inline placeholderInfoContent = prop.className "placeholder-info-content"
     static member inline placeholderSuccess = prop.className "placeholder-success"
+    static member inline placeholderSuccessContent = prop.className "placeholder-success-content"
     static member inline placeholderWarning = prop.className "placeholder-warning"
+    static member inline placeholderWarningContent = prop.className "placeholder-warning-content"
     static member inline placeholderError = prop.className "placeholder-error"
+    static member inline placeholderErrorContent = prop.className "placeholder-error-content"
     static member inline dividePrimary = prop.className "divide-primary"
     static member inline dividePrimaryContent = prop.className "divide-primary-content"
     static member inline divideSecondary = prop.className "divide-secondary"
@@ -1094,9 +1254,13 @@ type color =
     static member inline divideBase300 = prop.className "divide-base-300"
     static member inline divideBaseContent = prop.className "divide-base-content"
     static member inline divideInfo = prop.className "divide-info"
+    static member inline divideInfoContent = prop.className "divide-info-content"
     static member inline divideSuccess = prop.className "divide-success"
+    static member inline divideSuccessContent = prop.className "divide-success-content"
     static member inline divideWarning = prop.className "divide-warning"
+    static member inline divideWarningContent = prop.className "divide-warning-content"
     static member inline divideError = prop.className "divide-error"
+    static member inline divideErrorContent = prop.className "divide-error-content"
     static member inline ringPrimary = prop.className "ring-primary"
     static member inline ringPrimaryContent = prop.className "ring-primary-content"
     static member inline ringSecondary = prop.className "ring-secondary"
@@ -1110,9 +1274,13 @@ type color =
     static member inline ringBase300 = prop.className "ring-base-300"
     static member inline ringBaseContent = prop.className "ring-base-content"
     static member inline ringInfo = prop.className "ring-info"
+    static member inline ringInfoContent = prop.className "ring-info-content"
     static member inline ringSuccess = prop.className "ring-success"
+    static member inline ringSuccessContent = prop.className "ring-success-content"
     static member inline ringWarning = prop.className "ring-warning"
+    static member inline ringWarningContent = prop.className "ring-warning-content"
     static member inline ringError = prop.className "ring-error"
+    static member inline ringErrorContent = prop.className "ring-error-content"
     static member inline ringOffsetPrimary = prop.className "ring-offset-primary"
     static member inline ringOffsetPrimaryContent = prop.className "ring-offset-primary-content"
     static member inline ringOffsetSecondary = prop.className "ring-offset-secondary"
@@ -1126,10 +1294,22 @@ type color =
     static member inline ringOffsetBase300 = prop.className "ring-offset-base-300"
     static member inline ringOffsetBaseContent = prop.className "ring-offset-base-content"
     static member inline ringOffsetInfo = prop.className "ring-offset-info"
+    static member inline ringOffsetInfoContent = prop.className "ring-offset-info-content"
     static member inline ringOffsetSuccess = prop.className "ring-offset-success"
+    static member inline ringOffsetSuccessContent = prop.className "ring-offset-success-content"
     static member inline ringOffsetWarning = prop.className "ring-offset-warning"
+    static member inline ringOffsetWarningContent = prop.className "ring-offset-warning-content"
     static member inline ringOffsetError = prop.className "ring-offset-error"
+    static member inline ringOffsetErrorContent = prop.className "ring-offset-error-content"
+    /// Obsolete: `info-content` was never a valid Tailwind/daisyUI utility because it has no utility prefix.
+    [<Obsolete("The info-content class is not a valid utility. Use a prefixed helper such as color.textInfoContent or color.bgInfoContent.")>]
     static member inline infoContent = prop.className "info-content"
+    /// Obsolete: `success-content` was never a valid Tailwind/daisyUI utility because it has no utility prefix.
+    [<Obsolete("The success-content class is not a valid utility. Use a prefixed helper such as color.textSuccessContent or color.bgSuccessContent.")>]
     static member inline successContent = prop.className "success-content"
+    /// Obsolete: `warning-content` was never a valid Tailwind/daisyUI utility because it has no utility prefix.
+    [<Obsolete("The warning-content class is not a valid utility. Use a prefixed helper such as color.textWarningContent or color.bgWarningContent.")>]
     static member inline warningContent = prop.className "warning-content"
+    /// Obsolete: `error-content` was never a valid Tailwind/daisyUI utility because it has no utility prefix.
+    [<Obsolete("The error-content class is not a valid utility. Use a prefixed helper such as color.textErrorContent or color.bgErrorContent.")>]
     static member inline errorContent = prop.className "error-content"

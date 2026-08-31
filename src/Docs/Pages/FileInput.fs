@@ -5,29 +5,29 @@ open Elmish
 open Feliz.DaisyUI
 open Docs.SharedView
 
-let fileWithBorder =
+let defaultFileInput =
     let example =
         Daisy.fieldset [
             Daisy.fieldsetLabel "File Selection"
-            Daisy.file [file.bordered]
+            Daisy.file []
         ]
         |> Html.div
 
     let code = """Daisy.fieldset [
     Daisy.fieldsetLabel "File Selection"
-    Daisy.file [file.bordered]
+    Daisy.file []
 ]"""
-    let title = Html.text "File Input with border"
+    let title = Html.text "Default file input"
     codedView title code example
 
-let fileWithoutBorder =
+let defaultFileInputOnBackground =
     let example =
         Daisy.card [
             prop.className "p-10 bg-base-200"
             prop.children [
                 Daisy.fieldset [
                     Daisy.fieldsetLabel "File Selection"
-                    Daisy.file [file.bordered]
+                    Daisy.file []
                 ]
             ]
         ]
@@ -37,11 +37,11 @@ let fileWithoutBorder =
     prop.children [
         Daisy.fieldset [
             Daisy.fieldsetLabel "File Selection"
-            Daisy.file [file.bordered]
+            Daisy.file []
         ]
     ]
 ]"""
-    let title = Html.text "File Input with border"
+    let title = Html.text "Default file input on a background"
     codedView title code example
 
 let fileGhostNoBackground =
@@ -72,14 +72,14 @@ let fileDisabled =
     let example =
         Daisy.fieldset [
             Daisy.fieldsetLabel "Disabled file"
-            Daisy.file [file.bordered; prop.disabled true]
+            Daisy.file [prop.disabled true]
         ]
 
     let code = """Daisy.fieldset [
     Daisy.fieldsetLabel "Disabled file"
-    Daisy.file [file.bordered; prop.disabled true]
+    Daisy.file [prop.disabled true]
 ]"""
-    let title = Html.text "File Input ghost (no background)"
+    let title = Html.text "Disabled file input"
     codedView title code example
 
 let fileWithColors =
@@ -96,7 +96,7 @@ let fileWithColors =
         Daisy.fieldset [
             for color, colorText in colors do
                 Daisy.fieldsetLabel colorText
-                Daisy.file [color; file.bordered]
+                Daisy.file [color]
         ]
 
     let code = """let colors = [
@@ -111,7 +111,7 @@ let fileWithColors =
 Daisy.fieldset [
     for color, colorText in colors do
         Daisy.fieldsetLabel colorText
-        Daisy.file [color; file.bordered]
+        Daisy.file [color]
 ]"""
     let title = Html.text "File Input with colors"
     codedView title code example
@@ -127,7 +127,7 @@ let fileWithSizes =
         Daisy.fieldset [
             for size, sizeText in sizes do
                 Daisy.fieldsetLabel sizeText
-                Daisy.file [size; file.bordered]
+                Daisy.file [size]
         ]
 
     let code = """let sizes = [
@@ -139,7 +139,7 @@ let fileWithSizes =
 Daisy.fieldset [
     for size, sizeText in sizes do
         Daisy.fieldsetLabel sizeText
-        Daisy.file [size; file.bordered]
+        Daisy.file [size]
 ]"""
     let title = Html.text "File Input with sizes"
     codedView title code example
@@ -152,7 +152,6 @@ let fileWithButton =
                 prop.className "relative"
                 prop.children [
                     Daisy.file [
-                        file.bordered
                         file.primary
                         prop.className "w-full pr-16"
                     ]
@@ -170,7 +169,7 @@ let fileWithButton =
     Html.div [
         prop.className "relative"
         prop.children [
-            Daisy.file [file.bordered; file.primary]
+            Daisy.file [file.primary]
             Daisy.button.button [
                 button.primary
                 prop.className "absolute top-0 right-0 rounded-l-none"
@@ -179,7 +178,7 @@ let fileWithButton =
         ]
     ]
 ]"""
-    let title = Html.text "File Input with sizes"
+    let title = Html.text "File input with button"
     codedView title code example
 
 
@@ -187,8 +186,8 @@ let fileWithButton =
 [<ReactComponent>]
 let FileInputView () =
     React.Fragment [
-        fileWithBorder
-        fileWithoutBorder
+        defaultFileInput
+        defaultFileInputOnBackground
         fileGhostNoBackground
         fileDisabled
         fileWithColors

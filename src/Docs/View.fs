@@ -186,6 +186,10 @@ let private leftSide (p:Page) =
                 prop.onClick Router.goToUrl
             ]
         ]
+
+    let categoryDivider () =
+        Html.li []
+
     Daisy.drawerSide [
         Daisy.drawerOverlay [ prop.htmlFor "main-menu" ]
         Html.aside [
@@ -236,65 +240,93 @@ let private leftSide (p:Page) =
                     prop.className "flex flex-col p-4 pt-0 w-full"
                     prop.children [
                         Daisy.menuTitle [ Html.span "Components" ]
+
+                        Daisy.menuTitle [ Html.span "Actions" ]
+                        mi "Button" Page.Button
+                        mi "Dropdown" Page.Dropdown
+                        mi "FAB / Speed Dial" Page.Fab
+                        mi "Modal" Page.Modal
+                        mi "Swap" Page.Swap
+                        mi "Theme Controller" Page.ThemeController
+
+                        categoryDivider ()
+                        Daisy.menuTitle [ Html.span "Data display" ]
                         mi "Accordion" Page.Accordion
-                        miBadge "updated" "Alert" Page.Alert
                         mi "Avatar" Page.Avatar
-                        miBadge "updated" "Badge" Page.Badge
-                        mi "Breadcrumbs" Page.Breadcrumbs
-                        miBadge "updated" "Button" Page.Button
-                        miBadge "updated" "Card" Page.Card
+                        miBadge "new" "Aura" Page.Aura
+                        mi "Badge" Page.Badge
+                        mi "Card" Page.Card
                         mi "Carousel" Page.Carousel
                         mi "Chat bubble" Page.ChatBubble
                         mi "Collapse" Page.Collapse
                         mi "Countdown" Page.Countdown
                         mi "Diff" Page.Diff
+                        mi "Hover 3D card" Page.Hover3D
+                        mi "Hover Gallery" Page.HoverGallery
+                        mi "Kbd" Page.Kbd
+                        mi "List" Page.List
+                        mi "Stat" Page.Stat
+                        mi "Status" Page.Status
+                        mi "Table" Page.Table
+                        mi "Text Rotate" Page.TextRotate
+                        mi "Timeline" Page.Timeline
+
+                        categoryDivider ()
+                        Daisy.menuTitle [ Html.span "Navigation" ]
+                        mi "Breadcrumbs" Page.Breadcrumbs
+                        mi "Dock" Page.Dock
+                        mi "Link" Page.Link
+                        miBadge "new" "Megamenu" Page.Megamenu
+                        mi "Menu" Page.Menu
+                        mi "Navbar" Page.Navbar
+                        mi "Pagination" Page.Pagination
+                        mi "Steps" Page.Steps
+                        mi "Tab" Page.Tab
+
+                        categoryDivider ()
+                        Daisy.menuTitle [ Html.span "Feedback" ]
+                        mi "Alert" Page.Alert
+                        mi "Loading" Page.Loading
+                        mi "Progress" Page.Progress
+                        mi "Radial progress" Page.RadialProgress
+                        mi "Skeleton" Page.Skeleton
+                        mi "Toast" Page.Toast
+                        mi "Tooltip" Page.Tooltip
+
+                        categoryDivider ()
+                        Daisy.menuTitle [ Html.span "Data input" ]
+                        mi "Checkbox" Page.FormCheckbox
+                        mi "Fieldset" Page.Fieldset
+                        mi "File Input" Page.FileInput
+                        mi "Filter" Page.Filter
+                        mi "Label" Page.Label
+                        mi "Radio" Page.FormRadio
+                        mi "Range" Page.FormRange
+                        mi "Rating" Page.Rating
+                        mi "Select" Page.FormSelect
+                        mi "Input field" Page.FormInput
+                        mi "Textarea" Page.FormTextarea
+                        mi "Toggle" Page.FormToggle
+                        mi "Validator" Page.Validator
+                        miBadge "new" "OTP" Page.Otp
+
+                        categoryDivider ()
+                        Daisy.menuTitle [ Html.span "Layout" ]
                         mi "Divider" Page.Divider
-                        miBadge "new" "Dock" Page.Dock
-                        mi "Drawer" Page.Drawer
-                        miBadge "updated" "Dropdown" Page.Dropdown
-                        miBadge "new" "Fieldset" Page.Fieldset
-                        miBadge "new" "Filter" Page.Filter
-                        miBadge "updated" "Footer" Page.Footer
+                        mi "Drawer sidebar" Page.Drawer
+                        mi "Footer" Page.Footer
                         mi "Hero" Page.Hero
                         mi "Indicator" Page.Indicator
                         mi "Join (group items)" Page.Join
-                        mi "Kbd" Page.Kbd
-                        miBadge "new" "Label" Page.Label
-                        mi "Link" Page.Link
-                        miBadge "new" "List" Page.List
-                        mi "Loading" Page.Loading
-                        miBadge "updated" "Mask" Page.Mask
-                        miBadge "updated" "Menu" Page.Menu
-                        miBadge "updated" "Modal" Page.Modal
-                        miBadge "updated" "Navbar" Page.Navbar
-                        mi "Pagination" Page.Pagination
-                        mi "Progress" Page.Progress
-                        mi "Radial Progress" Page.RadialProgress
-                        mi "Rating" Page.Rating
-                        mi "Skeleton" Page.Skeleton
-                        miBadge "updated" "Stack" Page.Stack
-                        mi "Stat" Page.Stat
-                        miBadge "new" "Status" Page.Status
-                        miBadge "updated" "Steps" Page.Steps
-                        mi "Swap" Page.Swap
-                        miBadge "updated" "Tab" Page.Tab
-                        mi "Table" Page.Table
-                        mi "Theme Controller" Page.ThemeController
-                        mi "Timeline" Page.Timeline
-                        mi "Toast" Page.Toast
-                        mi "Tooltip" Page.Tooltip
-                        miBadge "new" "Validator" Page.Validator
-                        miBadge "updated" "File - Input" Page.FileInput
-                        miBadge "updated" "Form - Checkbox" Page.FormCheckbox
-                        miBadge "updated" "Form - Input" Page.FormInput
-                        miBadge "updated" "Form - Radio" Page.FormRadio
-                        mi "Form - Range" Page.FormRange
-                        miBadge "updated" "Form - Select" Page.FormSelect
-                        miBadge "updated" "Form - Textarea" Page.FormTextarea
-                        miBadge "updated" "Form - Toggle" Page.FormToggle
-                        mi "MockupCode" Page.MockupCode
-                        miBadge "updated" "MockupPhone" Page.MockupPhone
-                        mi "MockupWindow" Page.MockupWindow
+                        mi "Mask" Page.Mask
+                        mi "Stack" Page.Stack
+
+                        categoryDivider ()
+                        Daisy.menuTitle [ Html.span "Mockup" ]
+                        mi "Browser" Page.MockupBrowser
+                        mi "Code" Page.MockupCode
+                        mi "Phone" Page.MockupPhone
+                        mi "Window" Page.MockupWindow
                     ]
                 ]
             ]
@@ -330,6 +362,7 @@ let AppView () =
         | Page.Colors       -> "Colors"         , "/core/colors"             , Pages.Colors.ColorsView ()
         | Page.Accordion    -> "Accordion"      , "/components/accordion"    , Pages.Accordion.AccordionView ()
         | Page.Alert        -> "Alert"          , "/components/alert"        , Pages.Alert.AlertView ()
+        | Page.Aura         -> "Aura"           , "/components/aura"         , Pages.Aura.AuraView ()
         | Page.Avatar       -> "Avatar"         , "/components/avatar"       , Pages.Avatar.AvatarView ()
         | Page.Badge        -> "Badge"          , "/components/badge"        , Pages.Badge.BadgeView ()
         | Page.Breadcrumbs  -> "Breadcrumbs"    , "/components/breadcrumbs"  , Pages.Breadcrumbs.BreadcrumbsView ()
@@ -344,10 +377,13 @@ let AppView () =
         | Page.Dock         -> "Dock"           , "/components/dock"         , Pages.Dock.DockView ()
         | Page.Drawer       -> "Drawer"         , "/components/drawer"       , Pages.Drawer.DrawerView ()
         | Page.Dropdown     -> "Dropdown"       , "/components/dropdown"     , Pages.Dropdown.DropdownView ()
+        | Page.Fab          -> "FAB"            , "/components/fab"          , Pages.Fab.FabView ()
         | Page.Fieldset     -> "Fieldset"       , "/components/fieldset"     , Pages.Fieldset.FieldsetView ()
         | Page.Filter       -> "Filter"         , "/components/filter"       , Pages.Filter.FilterView ()
         | Page.Footer       -> "Footer"         , "/components/footer"       , Pages.Footer.FooterView ()
         | Page.Hero         -> "Hero"           , "/components/hero"         , Pages.Hero.HeroView ()
+        | Page.Hover3D      -> "Hover 3D"       , "/components/hover-3d"     , Pages.Hover3D.Hover3DView ()
+        | Page.HoverGallery -> "Hover Gallery"  , "/components/hover-gallery", Pages.HoverGallery.HoverGalleryView ()
         | Page.Indicator    -> "Indicator"      , "/components/indicator"    , Pages.Indicator.IndicatorView ()
         | Page.Join         -> "Join"           , "/components/join"         , Pages.Join.JoinView ()
         | Page.Kbd          -> "Kbd"            , "/components/kdb"          , Pages.Kbd.KbdView ()
@@ -357,8 +393,10 @@ let AppView () =
         | Page.Loading      -> "Loading"        , "/components/loading"      , Pages.Loading.LoadingView ()
         | Page.Mask         -> "Mask"           , "/components/mask"         , Pages.Mask.MaskView ()
         | Page.Menu         -> "Menu"           , "/components/menu"         , Pages.Menu.MenuView ()
+        | Page.Megamenu     -> "Megamenu"       , "/components/megamenu"     , Pages.Megamenu.MegamenuView ()
         | Page.Modal        -> "Modal"          , "/components/modal"        , Pages.Modal.ModalView ()
         | Page.Navbar       -> "Navbar"         , "/components/navbar"       , Pages.Navbar.NavbarView ()
+        | Page.Otp          -> "OTP"            , "/components/otp"          , Pages.Otp.OtpView ()
         | Page.Pagination   -> "Pagination"     , "/components/pagination"   , Pages.Pagination.PaginationView ()
         | Page.Progress     -> "Progress"       , "/components/progress"     , Pages.Progress.ProgressView ()
         | Page.RadialProgress -> "RadialProgress", "/components/radial-progress", Pages.RadialProgress.RadialProgressView ()
@@ -371,6 +409,7 @@ let AppView () =
         | Page.Swap         -> "Swap"           , "/components/swap"         , Pages.Swap.SwapView ()
         | Page.Tab          -> "Tab"            , "/components/tab"          , Pages.Tab.TabView ()
         | Page.Table        -> "Table"          , "/components/table"        , Pages.Table.TableView ()
+        | Page.TextRotate   -> "Text Rotate"    , "/components/text-rotate"  , Pages.TextRotate.TextRotateView ()
         | Page.ThemeController -> "Theme Controller", "/components/theme-controller", Pages.ThemeController.ThemeControllerView ()
         | Page.Timeline     -> "Timeline"       , "/components/timeline"     , Pages.Timeline.TimelineView()
         | Page.Toast        -> "Toast"          , "/components/toast"        , Pages.Toast.ToastView ()
@@ -384,6 +423,7 @@ let AppView () =
         | Page.FormSelect   -> "Form - Select"  , "/components/form/select"  , Pages.FormSelect.FormSelectView ()
         | Page.FormTextarea -> "Form - Textarea", "/components/form/textarea", Pages.FormTextarea.FormTextareaView ()
         | Page.FormToggle   -> "Form - Toggle"  , "/components/form/toggle"  , Pages.FormToggle.FormToggleView ()
+        | Page.MockupBrowser -> "Browser Mockup", "/components/mockup-browser", Pages.MockupBrowser.MockupBrowserView ()
         | Page.MockupCode   -> "MockupCode"     , "/components/mockup/code"  , Pages.MockupCode.MockupCodeView ()
         | Page.MockupPhone  -> "MockupPhone"    , "/components/mockup/phone" , Pages.MockupPhone.MockupPhoneView ()
         | Page.MockupWindow -> "MockupWindow"   , "/components/mockup/window", Pages.MockupWindow.MockupWindowView ()

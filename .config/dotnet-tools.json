@@ -17,7 +17,7 @@
       "rollForward": false
     },
     "fable": {
-      "version": "5.0.0-rc.2",
+      "version": "5.15.0",
       "commands": [
         "fable"
       ],

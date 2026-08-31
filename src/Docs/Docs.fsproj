@@ -9,6 +9,7 @@
         <Compile Include="Pages\Install.fs" />
         <Compile Include="Pages\Use.fs" />
         <Compile Include="Pages\Alert.fs" />
+        <Compile Include="Pages\Aura.fs" />
         <Compile Include="Pages\Accordion.fs" />
         <Compile Include="Pages\Timeline.fs" />
         <Compile Include="Pages\Skeleton.fs" />
@@ -29,11 +30,14 @@
         <Compile Include="Pages\Dock.fs" />
         <Compile Include="Pages\Drawer.fs" />
         <Compile Include="Pages\Dropdown.fs" />
+        <Compile Include="Pages\Fab.fs" />
         <Compile Include="Pages\Fieldset.fs" />
         <Compile Include="Pages\Filter.fs" />
         <Compile Include="Pages\FileInput.fs" />
         <Compile Include="Pages\Footer.fs" />
         <Compile Include="Pages\Hero.fs" />
+        <Compile Include="Pages\Hover3D.fs" />
+        <Compile Include="Pages\HoverGallery.fs" />
         <Compile Include="Pages\Indicator.fs" />
         <Compile Include="Pages\FormCheckbox.fs" />
         <Compile Include="Pages\FormInput.fs" />
@@ -48,11 +52,14 @@
         <Compile Include="Pages\List.fs" />
         <Compile Include="Pages\Mask.fs" />
         <Compile Include="Pages\Menu.fs" />
+        <Compile Include="Pages\Megamenu.fs" />
+        <Compile Include="Pages\MockupBrowser.fs" />
         <Compile Include="Pages\MockupCode.fs" />
         <Compile Include="Pages\MockupPhone.fs" />
         <Compile Include="Pages\MockupWindow.fs" />
         <Compile Include="Pages\Modal.fs" />
         <Compile Include="Pages\Navbar.fs" />
+        <Compile Include="Pages\Otp.fs" />
         <Compile Include="Pages\Pagination.fs" />
         <Compile Include="Pages\Progress.fs" />
         <Compile Include="Pages\RadialProgress.fs" />
@@ -63,6 +70,7 @@
         <Compile Include="Pages\Step.fs" />
         <Compile Include="Pages\Tab.fs" />
         <Compile Include="Pages\TableView.fs" />
+        <Compile Include="Pages\TextRotate.fs" />
         <Compile Include="Pages\Tooltip.fs" />
         <Compile Include="Pages\Toast.fs" />
         <Compile Include="Pages\Validator.fs" />
